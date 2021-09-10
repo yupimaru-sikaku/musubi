@@ -1,0 +1,147 @@
+$title_size: 32px;
+$sub_title_size: 20px;
+$title_size_sm: 24px;
+$title_weight: 900;
+$sub_title_size_sm: 16px;
+$sub_weight: 900;
+
+.order_confirm_content {
+  margin: 0px 150px;
+  font-family: "游ゴシック体", YuGothic;
+
+  .order_confirm_title {
+    text-align: center;
+    color: #59b69e;
+    font-weight: bold;
+    font-size: $title_size;
+  }
+
+  .order_confirm_items {
+    .order_confirm_item {
+      display: flex;
+      margin: 10px 0px;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+
+      .order_confirm_item_title {
+        font-size: $sub_title_size;
+        width: 30%;
+      }
+
+      .order_confirm_item_context {
+        width: 70%;
+
+        .order_confirm_item_context_sub {
+          display: flex;
+          padding: 10px;
+
+          p:nth-child(1) {
+            width: 200px;
+          }
+        }
+        .order_confirm_item_context_sub:nth-child(3) {
+          font-size: $sub_title_size;
+          font-weight: bold;
+          color: #b12704;
+        }
+      }
+    }
+  }
+
+  .order_confirm_register {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a:nth-child(1) {
+      width: 250px;
+      background-color: #ffd814;
+      box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+      padding: 15px 50px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+    a:nth-child(2) {
+      width: 250px;
+      background-color: #bdbdbd;
+      box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+      padding: 15px 40px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .order_confirm_content {
+    margin: 50px 20px 0px;
+    font-family: "游ゴシック体", YuGothic;
+    text-align: center;
+
+    .order_confirm_title {
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $title_size_sm;
+    }
+
+    .order_confirm_items {
+      .order_confirm_item {
+        display: block;
+        margin: 10px 0px;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+
+        .order_confirm_item_title {
+          font-size: $sub_title_size;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .order_confirm_item_context {
+          width: 100%;
+
+          .order_confirm_item_context_sub {
+            display: flex;
+            padding: 10px;
+
+            p:nth-child(1) {
+              width: 200px;
+            }
+          }
+          .order_confirm_item_context_sub:nth-child(3) {
+            font-size: $sub_title_size;
+            font-weight: bold;
+            color: #b12704;
+          }
+        }
+      }
+    }
+
+    .order_confirm_register {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a:nth-child(1) {
+        width: 250px;
+        background-color: #ffd814;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 50px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 50px;
+      }
+      a:nth-child(2) {
+        width: 250px;
+        background-color: #bdbdbd;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 40px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}

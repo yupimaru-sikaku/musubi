@@ -1,0 +1,26 @@
+// フラッシュメッセージ
+.alert{
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #f8ffd3;
+  width: 50%;
+  margin: 0px auto;
+  margin-bottom: -30px;
+}
+
+
+@media screen and (max-width: 750px) {
+ 
+  // フラッシュメッセージ
+  .alert{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #f8ffd3;
+    width: 100%;
+    margin: 0px auto;
+    margin-bottom: -20px;
+    font-size: 12px;
+  }
+}

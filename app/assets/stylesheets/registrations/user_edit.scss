@@ -1,0 +1,371 @@
+$input-border: 1px solid rgb(151, 151, 151);
+$input-margin-top: 10px;
+$input-border-radius: 5px;
+$input-padding-left: 10px;
+$span-font-size: 16px;
+
+$span-sm-font-size: 14px;
+$label-sm-font-size: 14px;
+$input-sm-font-size: 14px;
+$select-sm-font-size: 14px;
+
+
+// 登録エラー時のスタイル崩れを防ぐ
+.field_with_errors {
+  display: contents;
+}
+
+// 新規登録画面
+.registration-edit-user-content{
+  // background-color: #eee;
+  // height: 100vh;
+  // overflow: auto;
+  // margin-left: 260px;
+  
+  .registration-edit-user-title{
+    font-size: 32px;
+    text-align: center;
+    
+    span{
+      font-size: 20px;
+      display: block;
+      color: #b6b8bf;
+    }
+  }
+  
+  .registration-edit-user-fields{
+    width: 45%;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    
+    .registration-edit-user-field{
+      border-radius: 10px;
+      text-align: center;
+      
+
+      .alert_danger{
+        background-color: #fff1f1;
+      }
+      
+      .registration-edit-user-field-1{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        
+        span{
+          color: red;
+          font-size: $span-font-size;
+        }
+      }
+      .registration-edit-user-field-2{
+        span > button#address_btn{
+          width: 80px;
+          height: 30px;
+          text-align: center;
+          background-color: rgb(52, 20, 230);
+          border-radius: 5px;
+          color: white;
+        }
+      }
+
+      input, select{
+        display: block;
+        margin-top: $input-margin-top;
+        padding-left: $input-padding-left;
+        width: 100%;
+        height: 35px;
+        border: none;
+        border-bottom: $input-border;
+        outline: none;
+        text-align: left;
+      }
+      
+      .registration-edit-user-field-2{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        
+        span{
+          color: green;
+          font-size: $span-font-size;
+        }
+        
+      }
+    }
+
+    .registration-edit-user-field-check{
+
+      .alert_danger{
+        background-color: #fff1f1;
+        text-align: center;
+      }
+
+      .registration-edit-user-field-check-1{
+        
+        span{
+          color: red;
+          font-size: $span-font-size;
+        }
+        
+      }
+      .registration-edit-user-field-check-2{
+        margin-top: 10px;
+        word-break : break-all;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .registration-edit-user-field-check-3{
+          padding: 10px;
+          padding-left: 20px;
+
+          .service_type_textfield{
+            margin-top: $input-margin-top;
+            padding-left: $input-padding-left;
+            width: 100%;
+            border: none;
+            border-bottom: $input-border;
+            outline: none;
+            margin-left: 20px;
+            display: none;
+          }
+      
+          #service_typeその他:checked ~ .service_type_textfield{
+              display: block;
+          }
+        }
+
+      }
+    }
+
+    .registration-edit-user-field-button{
+      input{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #666ad6;
+        padding: 15px 50px;
+        border-radius: 5px;
+        color: white;
+  
+        &:hover{
+          opacity: 0.5;
+          cursor: pointer;
+        }
+      }
+    }
+    .address_field{
+      margin-left: 50px;
+    }
+  }
+  a{
+    color: black;
+    display: block;
+    text-align: center; 
+    
+    &:hover{
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  // 新規登録画面
+  .registration-edit-user-content{
+    
+    .registration-edit-user-title{
+      font-size: 24px;
+      
+      span{
+        font-size: $span-sm-font-size;
+      }
+    }
+    
+    .registration-edit-user-fields{
+      width: 90%;
+      padding: 0px;
+      
+      .registration-edit-user-field{
+        
+        .registration-edit-user-field-1{
+          display: block;
+          text-align: start;
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+
+          label{
+            font-size: $label-sm-font-size;
+          }
+        }
+        
+        label, input, span{
+          font-size: $span-sm-font-size;
+        }
+
+        .registration-edit-user-field-2{
+          text-align: start;
+
+          span > button#address_btn{
+            width: 50px;
+          }
+
+          label, span{
+            font-size: $span-sm-font-size;
+          }
+        }
+
+        input, select{
+          font-size: $label-sm-font-size;
+        }
+
+        label{
+          font-size: $label-sm-font-size;
+        }
+      }
+
+      .registration-edit-user-field-check{
+
+        .registration-edit-user-field-check-1{
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+
+          label{
+            font-size: $label-sm-font-size;
+          }
+          
+        }
+        .registration-edit-user-field-check-2{
+          height: 700px;
+
+          .registration-edit-user-field-check-3{
+            padding-left: 10px;
+
+            label{
+              font-size: 14px;
+            }
+            input{
+              width: 12px;
+            }
+
+          }
+        }
+      }
+
+      .registration-edit-user-field-button{
+        input{
+          padding: 10px 50px;
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+  // 新規登録画面
+  .registration-edit-user-content{
+    
+    .registration-edit-user-title{
+      font-size: 24px;
+      
+      span{
+        font-size: $span-sm-font-size;
+      }
+    }
+    
+    .registration-edit-user-fields{
+      width: 90%;
+      padding: 0px;
+      
+      .registration-edit-user-field{
+        
+        .registration-edit-user-field-1{
+          display: block;
+          text-align: start;
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+
+          label{
+            font-size: $label-sm-font-size;
+          }
+        }
+        
+        label, input, span{
+          font-size: $span-sm-font-size;
+        }
+
+        .registration-edit-user-field-2{
+          display: block;
+          text-align: start;
+
+          span > button#address_btn{
+            width: 50px;
+          }
+
+          label, span{
+            font-size: $span-sm-font-size;
+          }
+        }
+
+        input, select{
+          font-size: $label-sm-font-size;
+        }
+
+        label{
+          font-size: $label-sm-font-size;
+        }
+      }
+
+      .registration-edit-user-field-check{
+
+        .registration-edit-user-field-check-1{
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+
+          label{
+            font-size: $label-sm-font-size;
+          }
+          
+        }
+        .registration-edit-user-field-check-2{
+          height: 700px;
+
+          .registration-edit-user-field-check-3{
+            padding-left: 0px;
+
+            label{
+              font-size: 12px;
+            }
+            input{
+              width: 12px;
+            }
+
+          }
+        }
+      }
+
+      .registration-edit-user-field-button{
+        input{
+          padding: 10px 50px;
+        }
+      }
+    }
+  }
+
+}

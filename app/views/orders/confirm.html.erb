@@ -1,0 +1,71 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="order_confirm_content">
+    
+    <div class="order_confirm_title">
+        <p>ご購入内容確認</p>
+    </div>
+    
+    <div class="module-spacer--medium"></div>
+
+    <div class="order_confirm_items">
+
+        <div class="order_confirm_item">
+            <div class="order_confirm_item_title">
+                <p>１.　ご請求金額</p>
+            </div>
+            <div class="order_confirm_item_context">
+                <div class="order_confirm_item_context_sub">
+                    <p>商品の小計：</p>
+                    <p>¥<%= @cart_total_price.to_s(:delimited) %></p>
+                </div>
+                <div class="order_confirm_item_context_sub">
+                    <p>配送料・手数料：</p>
+                    <p>¥<%= @ship_fee.to_s(:delimited) %></p>
+                </div>
+                <div class="order_confirm_item_context_sub">
+                    <p>ご請求金額：</p>
+                    <p>¥<%= @billing_amount.to_s(:delimited) %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="order_confirm_item">
+            <div class="order_confirm_item_title">
+                <p>２.　お届け先</p>
+            </div>
+            <div class="order_confirm_item_context">
+                <p>下記から選択してください</p>
+                <p><%= current_user.address %></p>
+                <%= hidden_field_tag :address, current_user.address %>
+            </div>
+        </div>
+
+        <div class="order_confirm_item">
+            <div class="order_confirm_item_title">
+                <p>３.　お支払い方法</p>
+            </div>
+
+            <div class="order_confirm_item_context">
+                <p>銀行振込</p><span></span>
+                <p>近日、クレジットカード決済対応の予定です</p><span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <div class="order_confirm_register">
+        <%= link_to "注文を確定する", orders_path, method: :post %>
+        <%= link_to "カートに戻る", carts_show_path, method: :get %>
+    </div>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

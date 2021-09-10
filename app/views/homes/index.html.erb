@@ -1,0 +1,139 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--large"></div>
+
+<nav class="home_container">
+    <%#画像%>
+    <%= link_to '（仮置）パスワードのnew', new_user_password_path %>
+    <%= link_to '（仮置）新規登録画面', new_user_registration_path %>
+    <%= link_to '（仮置）ログインはこちら', new_user_session_path %>
+    <%= link_to '（仮置）商品一覧', products_path %>    
+    
+    
+    <div class="home_index_img">
+        <img src="https://source.unsplash.com/random" alt="トップ画像">
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <%#会社概要%>
+    <div class="home_index_about">
+        <div class="home_index_about_title">
+            <p>会社概要</p>        
+        </div>
+
+       <div class="module-spacer--medium"></div>
+
+        <div class="home_index_about_contents">
+            <div class="home_index_about_content">
+                <div class="home_index_about_content_item">
+                    <p>法人名</p>        
+                </div>
+                <div class="home_index_about_content_description">
+                    <p>株式会社 むすび</p>        
+                </div>
+            </div>
+            <div class="home_index_about_content">
+                <div class="home_index_about_content_item">
+                    <p>代表者氏名</p>        
+                </div>
+                <div class="home_index_about_content_description">
+                    <p>宮里　康和</p>        
+                </div>
+            </div>
+            <div class="home_index_about_content">
+                <div class="home_index_about_content_item">
+                    <p>所在地</p>        
+                </div>
+                <div class="home_index_about_content_description">
+                    <p>大阪府東大阪市稲田新町二丁目14番7号</p>        
+                </div>
+            </div>
+            <div class="home_index_about_content">
+                <div class="home_index_about_content_item">
+                    <p>事業内容</p>        
+                </div>
+                <div class="home_index_about_content_description">
+                    <p>インターネット販売関連事業</p>        
+                    <p>インターネットメディア事業</p>        
+                    <p>物品の仕入れ販売業務</p>        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <%#事業紹介%>
+    <div class="home_index_activity">
+        <div class="home_index_activity_title">
+            <p>事業紹介</p>        
+        </div>
+
+        <div class="module-spacer--medium"></div>
+
+        <div class="home_index_activity_contents">
+            <a href="/">
+                <section class="home_index_activity_card">
+                    <img class="card-img" src="https://source.unsplash.com/random" alt="">
+                    <div class="card-content">
+                        <h1 class="card-title">消毒液拡販事業</h1>
+                        <p class="card-text">長時間の除菌を実現する消毒液を販売しています</p>
+                    </div>
+                </section>
+            </a>
+            <a href="/">
+                <section class="home_index_activity_card">
+                    <img class="card-img" src="https://source.unsplash.com/random" alt="" width=350px>
+                    <div class="card-content">
+                        <h1 class="card-title">2</h1>
+                        <p class="card-text">○○○○○○○○○○○○○○○○○○○</p>
+                    </div>
+                </section>
+            </a>
+            <a href="/">
+                <section class="home_index_activity_card">
+                    <img class="card-img" src="https://source.unsplash.com/random" alt="" width=350px>
+                    <div class="card-content">
+                        <h1 class="card-title">3</h1>
+                        <p class="card-text">○○○○○○○○○○○○○○○○○○○</p>
+                    </div>
+                </section>
+            </a>
+            <a href="/">
+                <section class="home_index_activity_card">
+                    <img class="card-img" src="https://source.unsplash.com/random" alt="">
+                    <div class="card-content">
+                        <h1 class="card-title">4</h1>
+                        <p class="card-text">○○○○○○○○○○○○○○○○○○○</p>
+                    </div>
+                </section>
+            </a>
+            <a href="/">
+                <section class="home_index_activity_card">
+                    <img class="card-img" src="https://source.unsplash.com/random" alt="" width=350px>
+                    <div class="card-content">
+                        <h1 class="card-title">5</h1>
+                        <p class="card-text">○○○○○○○○○○○○○○○○○○○</p>
+                    </div>
+                </section>
+            </a>
+            <a href="/">
+                <section class="home_index_activity_card">
+                    <img class="card-img" src="https://source.unsplash.com/random" alt="" width=350px>
+                    <div class="card-content">
+                        <h1 class="card-title">6</h1>
+                        <p class="card-text">○○○○○○○○○○○○○○○○○○○</p>
+                    </div>
+                </section>
+            </a>
+
+        </div>
+    </div>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

@@ -1,0 +1,81 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="cart_show_content">
+    
+    <% if @cart.blank? %>
+        <div class="cart_show_title">
+            <p>カート内に商品はありません</p>
+        </div>
+    <% else %>
+
+        
+        <div class="cart_show_title">
+            <p>ショッピングカート</p>
+        </div>
+        
+        <div class="module-spacer--medium"></div>
+
+        <div class="cart_show_items">
+
+            <% @cart.each do |cart| %>
+    
+                <div class="cart_show_item">
+
+                    <div class="cart_show_img">
+                        <%= link_to product_path(cart[:product_id]) do %>
+                        <%= image_tag cart[:images][0].variant(resize_to_fit: [180,180]) %>
+                        <% end%>
+                    </div>
+                    <div class="cart_show_context">
+                        <div class="cart_show_context_title">
+                            <p><%= cart[:product_name].truncate(30) %></p>
+                       </div>      
+                        <div class="cart_show_context_buy">
+                            <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>
+                                <%= f.number_field :quantity, value: cart[:quantity], min: 1, class:"cart_show_context_buy_quantity" %> 個
+                                <%= hidden_field_tag :product_id, cart[:product_id] %>
+                                <%= f.submit "更新", class:"cart_show_context_buy_update" %>
+                            <% end %>
+                            <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
+                                <%= hidden_field_tag :product_id, cart[:product_id] %>
+                                <%= f.submit "削除", class:"cart_show_context_buy_delete" %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="cart_show_price">
+                        <p>¥<%= cart[:price].to_s(:delimited) %></p>
+                    </div>
+                </div>
+
+            <% end %>
+
+            <div class="cart_show_total_price">
+                <p>小計</p>
+                <p>（<%= @cart_total_quantity %>個の商品）（税込）：</p>
+                <p>¥<%= @cart_total_price.to_s(:delimited) %></p>
+            </div>
+
+        </div>
+    <% end %>
+
+    <div class="module-spacer--large"></div>
+
+    <% if @cart.blank? %>
+        <div class="cart_show_register">
+            <%= link_to "商品一覧に戻る", products_path %>
+        </div>
+    <% else %>
+        <div class="cart_show_register">
+            <%= link_to "レジに進む", confirm_orders_path %>
+            <%= link_to "商品一覧に戻る", products_path %>
+        </div>
+    <% end %>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

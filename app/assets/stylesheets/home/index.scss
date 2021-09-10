@@ -1,0 +1,208 @@
+$font_family: "Noto Sans JP", sans-serif;
+$title_size: 32px;
+$title_size_sm: 24px;
+$title_weight: 900;
+$sub_size: 20px;
+$sub_size_sm: 16px;
+$sub_weight: 900;
+
+.home_container {
+  padding: 0px 150px;
+
+  //   画像
+  .home_index_img {
+    text-align: center;
+    img {
+      width: 50vw;
+    }
+  }
+
+  //   会社概要
+  .home_index_about {
+    font-family: $font_family;
+    text-align: center;
+    .home_index_about_title {
+      font-size: $title_size;
+      font-weight: $title_weight;
+    }
+
+    .home_index_about_contents {
+      font-size: $sub_size;
+      font-weight: $sub_weight;
+
+      .home_index_about_content {
+        display: flex;
+        justify-content: center;
+        margin: 0px 0px 60px 0px;
+
+        .home_index_about_content_item {
+          width: 50%;
+          text-align: right;
+          margin-right: 50px;
+        }
+        .home_index_about_content_description {
+          width: 50%;
+          text-align: left;
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+
+  //   事業紹介
+  .home_index_activity {
+    text-align: center;
+    .home_index_activity_title {
+      font-size: $title_size;
+      font-weight: $title_weight;
+      font-family: $font_family;
+    }
+    .home_index_activity_contents {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .home_index_activity_card:hover {
+        .card-img {
+          transform: scale(1.2, 1.2);
+          transition: 1s all;
+        }
+      }
+
+      .home_index_activity_card {
+        width: 350px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #ccc;
+        margin: 30px 10px;
+        overflow: hidden; //これを記述することではみ出た部分を非表示にします。
+
+        .card-img {
+          width: 350px;
+          height: 200px;
+          border-radius: 5px 5px 0 0;
+          transition: 1s all;
+        }
+        .card-content {
+          padding: 20px;
+
+          .card-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+          }
+          .card-text {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+          }
+        }
+        .card-link {
+          text-align: center;
+          border-top: 1px solid #eee;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .home_container {
+    padding: 0px 20px;
+    margin-top: 100px;
+
+    //   画像
+    .home_index_img {
+      img {
+        width: 80vw;
+      }
+    }
+
+    //   会社概要
+    .home_index_about {
+      font-family: $font_family;
+      text-align: center;
+      .home_index_about_title {
+        font-size: $title_size_sm;
+        font-weight: $title_weight;
+      }
+
+      .home_index_about_contents {
+        font-size: $sub_size_sm;
+        font-weight: $sub_weight;
+
+        .home_index_about_content {
+          display: flex;
+          justify-content: center;
+          margin: 0px 0px 40px 0px;
+
+          .home_index_about_content_item {
+            width: 150px;
+            text-align: right;
+            margin-right: 5px;
+          }
+          .home_index_about_content_description {
+            width: 100%;
+            text-align: left;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    //   事業紹介
+    .home_index_activity {
+      text-align: center;
+      .home_index_activity_title {
+        font-size: $title_size_sm;
+        font-weight: $title_weight;
+        font-family: $font_family;
+      }
+      .home_index_activity_contents {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .home_index_activity_card {
+          width: 300px;
+          background: #fff;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px #ccc;
+          margin: 30px 10px;
+
+          .card-img {
+            width: 300px;
+            height: 200px;
+            border-radius: 5px 5px 0 0;
+          }
+          .card-content {
+            padding: 20px;
+
+            .card-title {
+              font-size: 20px;
+              margin-bottom: 20px;
+              text-align: center;
+              color: #333;
+              font-family: $font_family;
+            }
+            .card-text {
+              color: #777;
+              font-size: 14px;
+              line-height: 1.5;
+              text-align: center;
+              font-family: $font_family;
+            }
+          }
+          .card-link {
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}

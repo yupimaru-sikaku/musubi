@@ -1,0 +1,249 @@
+@charset "UTF-8";
+.field_with_errors {
+  display: contents;
+}
+
+.registration-edit-content {
+  background-color: #eee;
+  height: 100vh;
+  overflow: auto;
+  margin-left: 260px;
+}
+
+.registration-edit-content .registration-edit-title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.registration-edit-content .registration-edit-title span {
+  font-size: 20px;
+  display: block;
+  color: #b6b8bf;
+}
+
+.registration-edit-content .registration-edit-fields {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px 50px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field {
+  border-radius: 10px;
+  text-align: center;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field .alert_danger {
+  background-color: #fff1f1;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-1 span {
+  color: red;
+  font-size: 16px;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-2 span > button#address_btn {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  background-color: #3414e6;
+  border-radius: 5px;
+  color: white;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field input, .registration-edit-content .registration-edit-fields .registration-edit-field select {
+  display: block;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid #979797;
+  outline: none;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-2 span {
+  color: green;
+  font-size: 16px;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-check .alert_danger {
+  background-color: #fff1f1;
+  text-align: center;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-1 span {
+  color: red;
+  font-size: 16px;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 {
+  margin-top: 10px;
+  word-break: break-all;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 {
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 .service_type_textfield {
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #979797;
+  outline: none;
+  margin-left: 20px;
+  display: none;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 #service_typeその他:checked ~ .service_type_textfield {
+  display: block;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-button input {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #666ad6;
+  padding: 15px 50px;
+  border-radius: 5px;
+  color: white;
+}
+
+.registration-edit-content .registration-edit-fields .registration-edit-field-button input:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.registration-edit-content a {
+  color: black;
+  display: block;
+  text-align: center;
+}
+
+.registration-edit-content a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .registration-edit-content {
+    margin-left: 260px;
+  }
+  .registration-edit-content .registration-edit-title {
+    font-size: 24px;
+  }
+  .registration-edit-content .registration-edit-title span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields {
+    width: 90%;
+    padding: 20px 10px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-1 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-1 span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-2 span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-1 span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 {
+    padding: 5px;
+    padding-left: 10px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 .service_type_textfield {
+    margin-left: 10px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-button input {
+    padding: 10px 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .registration-edit-content {
+    margin-left: 0px;
+  }
+  .registration-edit-content .registration-edit-title {
+    font-size: 24px;
+  }
+  .registration-edit-content .registration-edit-title span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields {
+    width: 90%;
+    padding: 20px 10px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-1 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-1 span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field .registration-edit-field-2 span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-1 span {
+    font-size: 14px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 {
+    padding: 5px;
+    padding-left: 10px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-check .registration-edit-field-check-2 .registration-edit-field-check-3 .service_type_textfield {
+    margin-left: 10px;
+  }
+  .registration-edit-content .registration-edit-fields .registration-edit-field-button input {
+    padding: 10px 50px;
+  }
+}
+/*# sourceMappingURL=edit.css.map */

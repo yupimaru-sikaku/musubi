@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*** The new CSS Reset - version 1.0.0 (last updated 8.7.2021) ***/
+/* ブラウザのUAスタイルシートのすべてのスタイルを削除します、displayは除く */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap");
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* box-sizingの優先値 */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* リストのスタイル（箇条書き・番号）を削除します */
+ol, ul {
+  list-style: none;
+}
+
+/* 画像がコンテナを超えないようにするため */
+img {
+  max-width: 100%;
+}
+
+/* テーブルのセル間のスペースを削除します */
+table {
+  border-collapse: collapse;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+* {
+  font-family: '游ゴシック', YuGothic, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3','ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+}
+/*# sourceMappingURL=application.css.map */

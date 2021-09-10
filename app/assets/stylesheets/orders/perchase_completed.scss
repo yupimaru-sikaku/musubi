@@ -1,0 +1,68 @@
+$title_size: 32px;
+$sub_title_size: 20px;
+$title_size_sm: 24px;
+$title_weight: 900;
+$sub_title_size_sm: 16px;
+$sub_weight: 900;
+
+.order_purchase_content {
+  margin: 0px 150px;
+  font-family: "游ゴシック体", YuGothic;
+
+  .order_purchase_title {
+    text-align: center;
+    color: #59b69e;
+    font-weight: bold;
+    font-size: $title_size;
+  }
+  .order_purchase_number {
+    text-align: center;
+    font-weight: bold;
+    font-size: $title_size;
+  }
+
+  .order_purchase_back {
+    text-align: center;
+
+    a {
+      width: 250px;
+      background-color: #bdbdbd;
+      box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+      padding: 15px 50px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .order_purchase_content {
+    margin: 50px 20px 50px;
+    font-family: "游ゴシック体", YuGothic;
+
+    .order_purchase_title {
+      text-align: center;
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $title_size_sm;
+    }
+    .order_purchase_number {
+      text-align: center;
+      font-weight: bold;
+      font-size: $title_size_sm;
+    }
+
+    .order_purchase_back {
+      text-align: center;
+
+      a {
+        width: 250px;
+        background-color: #bdbdbd;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 50px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="product_show_content">
+
+    <div class="product_show_img">
+        <%= image_tag @product.images[0].variant(resize_to_fit: [500,500]).processed, class: 'img' %>
+    </div>
+
+    <div class="product_show_context">
+
+        <div class="product_show_title">
+            <p><%=@product.product_name %></p>
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="product_show_price">
+            <p>¥<%=@product.price.to_s(:delimited) %></p>
+        </div>
+
+        <div class="module-spacer--medium"></div>
+
+        <div class="product_show_buy">
+
+            <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
+                <%= f.label :quantity, "購入個数", class: "pur-number-box"%>
+                <%= f.number_field :quantity, :value =>1 %>
+                <%= hidden_field_tag :product_id, @product.id %>
+                <%= f.button :type => "submit", style: 'cart-button' do %>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>カートへ入れる</span>
+                <% end %>
+            <% end %>
+
+        </div>
+
+        <div class="module-spacer--large"></div>
+
+        <div class="product_show_description">
+            <p><%=@product.description %></p>
+        </div>
+    
+    </div>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

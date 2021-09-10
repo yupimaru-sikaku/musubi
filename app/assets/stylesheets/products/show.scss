@@ -1,0 +1,117 @@
+$font_family: "Noto Sans JP", sans-serif;
+$title_size: 32px;
+$title_size_sm: 24px;
+$title_weight: 900;
+$sub_size: 20px;
+$sub_size_sm: 16px;
+$sub_weight: 900;
+
+.product_show_content {
+  padding: 0px 150px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "游ゴシック体", YuGothic;
+
+  .product_show_img {
+    width: 50vw;
+    text-align: center;
+  }
+
+  .product_show_context {
+    width: 50%;
+    .product_show_title {
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $title_size;
+    }
+    .product_show_price {
+      font-size: $title_size;
+    }
+    .product_show_buy {
+      font-size: $sub_size;
+
+      input {
+        border: 1px solid #eee;
+        width: 100px;
+        margin-left: 30px;
+        height: 50px;
+        text-align: center;
+        box-shadow: 0 2px 5px #ccc;
+        border-radius: 8px;
+        padding-left: 10px;
+      }
+
+      button {
+        background-color: #ffd814;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .product_show_description {
+    font-size: $sub_size;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .product_show_content {
+    margin-top: 50px;
+    padding: 0px 20px;
+    font-family: "游ゴシック体", YuGothic;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .product_show_img {
+      width: 150px;
+      margin-bottom: 50px;
+    }
+
+    .product_show_context {
+      width: 100%;
+      .product_show_title {
+        color: #59b69e;
+        font-weight: bold;
+        font-size: $title_size_sm;
+        text-align: center;
+      }
+      .product_show_price {
+        font-size: $title_size_sm;
+        text-align: center;
+      }
+      .product_show_buy {
+        font-size: $sub_size;
+        text-align: center;
+
+        input {
+          border: 1px solid #eee;
+          width: 75px;
+          margin-left:25px;
+          margin-bottom:25px;
+          height: 40px;
+          text-align: center;
+          box-shadow: 0 2px 5px #ccc;
+          border-radius: 8px;
+          padding-left: 10px;
+        }
+
+        button {
+          background-color: #ffd814;
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          padding: 10px 20px;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-left: 0px;
+        }
+      }
+    }
+
+    .product_show_description {
+      font-size: $sub_size_sm;
+    }
+  }
+}

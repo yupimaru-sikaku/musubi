@@ -1,0 +1,62 @@
+<%= render partial: 'shared/header' %>
+<div class="module-spacer--large"></div>
+<%= render partial: 'shared/flash' %>
+<div class="module-spacer--medium"></div>
+
+<div class="session-content">
+  <h2 class="session-title">ログイン画面</h2>
+
+  <div class="module-spacer--large"></div>
+
+  <% if @user.errors.any? %>
+  <div id="error_explanation" class="alert_danger">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= form_with model: @user, url: user_session_path, class: 'session-fields', local: true do |f| %>
+
+  <div class="session-field">
+    <div class="session-field-1">
+      <%= f.label :email, "登録しているメールアドレス" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.email_field :email, placeholder: "例）taro@gmail.com", autofocus: true %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="session-field">
+    <div class="session-field-1">
+      <%= f.label :password, "パスワード" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="session-field-button">
+    <%= f.submit "ログイン" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= link_to "新規登録はこちら", new_user_registration_path %>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= link_to "パスワードをお忘れの方はこちら", new_user_password_path %>
+
+  <% end %>
+</div>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

@@ -1,0 +1,87 @@
+.footer {
+  background-color: #212529;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  border-top: 5px solid #59b69e;
+  padding: 0px 205px;
+}
+
+.footer .footer_logo {
+  font-size: 40px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-bottom: 0.5px solid #ababab;
+}
+
+.footer .footer_logo p {
+  padding: 30px 0px;
+}
+
+.footer .footer_menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+}
+
+.footer .footer_menus .footer_menu {
+  padding: 0px 25px;
+  font-family: "M PLUS Rounded 1c";
+}
+
+.footer .footer_menus .footer_menu p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  padding: 0px 0px 10px 0px;
+}
+
+.footer .footer_menus .footer_menu a {
+  display: block;
+}
+
+.footer .footer_copyright {
+  color: white;
+  text-align: right;
+}
+
+@media screen and (max-width: 750px) {
+  .footer {
+    background-color: #212529;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    border-top: 5px solid #59b69e;
+    padding: 0px 20px;
+  }
+  .footer .footer_logo {
+    font-size: 32px;
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    border-bottom: 0.5px solid #ababab;
+  }
+  .footer .footer_logo p {
+    padding: 15px 0px;
+  }
+  .footer .footer_menus {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: white;
+  }
+  .footer .footer_menus .footer_menu {
+    padding: 0px 25px;
+    font-family: "M PLUS Rounded 1c";
+  }
+  .footer .footer_menus .footer_menu p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    padding: 0px 0px 10px 0px;
+  }
+  .footer .footer_menus .footer_menu a {
+    display: block;
+    font-size: 14px;
+  }
+  .footer .footer_copyright {
+    color: white;
+    text-align: right;
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

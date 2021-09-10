@@ -1,0 +1,306 @@
+$input-border: 1px solid rgb(151, 151, 151);
+$input-margin-top: 10px;
+$input-border-radius: 5px;
+$input-padding-left: 10px;
+$span-font-size: 16px;
+
+$span-sm-font-size: 14px;
+
+// 登録エラー時のスタイル崩れを防ぐ
+.field_with_errors {
+  display: contents;
+}
+
+// 新規登録画面
+.registration-edit-content{
+  background-color: #eee;
+  height: 100vh;
+  overflow: auto;
+  margin-left: 260px;
+  
+  .registration-edit-title{
+    font-size: 32px;
+    text-align: center;
+    
+    span{
+      font-size: 20px;
+      display: block;
+      color: #b6b8bf;
+    }
+  }
+  
+  .registration-edit-fields{
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 50px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    font-size: 14px;
+    border-radius: 10px;
+    
+    .registration-edit-field{
+      border-radius: 10px;
+      text-align: center;
+
+      .alert_danger{
+        background-color: #fff1f1;
+      }
+      
+      .registration-edit-field-1{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        
+        span{
+          color: red;
+          font-size: $span-font-size;
+        }
+      }
+      .registration-edit-field-2{
+        span > button#address_btn{
+          width: 80px;
+          height: 30px;
+          text-align: center;
+          background-color: rgb(52, 20, 230);
+          border-radius: 5px;
+          color: white;
+        }
+      }
+
+      input, select{
+        display: block;
+        margin-top: $input-margin-top;
+        padding-left: $input-padding-left;
+        width: 100%;
+        height: 35px;
+        border: none;
+        border-bottom: $input-border;
+        outline: none;
+      }
+      
+      .registration-edit-field-2{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        
+        span{
+          color: green;
+          font-size: $span-font-size;
+        }
+        
+      }
+    }
+
+    .registration-edit-field-check{
+
+      .alert_danger{
+        background-color: #fff1f1;
+        text-align: center;
+      }
+
+      .registration-edit-field-check-1{
+        
+        span{
+          color: red;
+          font-size: $span-font-size;
+        }
+        
+      }
+      .registration-edit-field-check-2{
+        margin-top: 10px;
+        word-break : break-all;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .registration-edit-field-check-3{
+          padding: 10px;
+          padding-left: 20px;
+
+          .service_type_textfield{
+            margin-top: $input-margin-top;
+            padding-left: $input-padding-left;
+            width: 100%;
+            border: none;
+            border-bottom: $input-border;
+            outline: none;
+            margin-left: 20px;
+            display: none;
+          }
+      
+          #service_typeその他:checked ~ .service_type_textfield{
+              display: block;
+          }
+        }
+
+      }
+    }
+
+    .registration-edit-field-button{
+      input{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #666ad6;
+        padding: 15px 50px;
+        border-radius: 5px;
+        color: white;
+  
+        &:hover{
+          opacity: 0.5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  a{
+    color: black;
+    display: block;
+    text-align: center; 
+    
+    &:hover{
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px){
+
+  // 新規登録画面
+  .registration-edit-content{
+    margin-left: 260px;
+    
+    .registration-edit-title{
+      font-size: 24px;
+      
+      span{
+        font-size: 14px;
+      }
+    }
+    
+    .registration-edit-fields{
+      width: 90%;
+      padding: 20px 10px;
+      
+      .registration-edit-field{
+
+        .registration-edit-field-1{
+          flex-wrap: wrap;
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+        }
+
+        .registration-edit-field-2{
+          span{
+            font-size: $span-sm-font-size;
+          }
+          
+        }
+      }
+
+      .registration-edit-field-check{
+
+        .registration-edit-field-check-1{
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+          
+        }
+        .registration-edit-field-check-2{
+
+          .registration-edit-field-check-3{
+            padding: 5px;
+            padding-left: 10px;
+
+            .service_type_textfield{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .registration-edit-field-button{
+        input{
+          padding: 10px 50px;
+        }
+      }
+    }
+      
+  } 
+}
+
+@media screen and (max-width: 750px){
+
+  // 新規登録画面
+  .registration-edit-content{
+    margin-left: 0px;
+    
+    .registration-edit-title{
+      font-size: 24px;
+      
+      span{
+        font-size: 14px;
+      }
+    }
+    
+    .registration-edit-fields{
+      width: 90%;
+      padding: 20px 10px;
+      
+      .registration-edit-field{
+
+        .registration-edit-field-1{
+          flex-wrap: wrap;
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+        }
+
+        .registration-edit-field-2{
+          span{
+            font-size: $span-sm-font-size;
+          }
+          
+        }
+      }
+
+      .registration-edit-field-check{
+
+        .registration-edit-field-check-1{
+          
+          span{
+            font-size: $span-sm-font-size;
+          }
+          
+        }
+        .registration-edit-field-check-2{
+
+          .registration-edit-field-check-3{
+            padding: 5px;
+            padding-left: 10px;
+
+            .service_type_textfield{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .registration-edit-field-button{
+        input{
+          padding: 10px 50px;
+        }
+      }
+    }
+      
+  } 
+}

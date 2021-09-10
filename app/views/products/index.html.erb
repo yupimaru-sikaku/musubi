@@ -1,0 +1,28 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="product_index_content">
+
+    <div class="product_index_items">
+        <%@products.each do |product|%>
+            <div class="product_index_item">
+                <%= link_to product_path(product) do %>
+                    <section class="product_index_item_card">
+                        <%= image_tag product.images[0].variant(resize_to_fit: [300,280]), class: 'card-img' %>
+                        <div class="card-content">
+                            <h1 class="card-title"><%= product.product_name.truncate(30) %></h1>
+                            <p class="card-text">¥<%= product.price.to_s(:delimited) %></p>
+                        </div>
+                    </section>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

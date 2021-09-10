@@ -1,0 +1,211 @@
+.home_container {
+  padding: 0px 150px;
+}
+
+.home_container .home_index_img {
+  text-align: center;
+}
+
+.home_container .home_index_img img {
+  width: 50vw;
+}
+
+.home_container .home_index_about {
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center;
+}
+
+.home_container .home_index_about .home_index_about_title {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.home_container .home_index_about .home_index_about_contents {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.home_container .home_index_about .home_index_about_contents .home_index_about_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px 0px 60px 0px;
+}
+
+.home_container .home_index_about .home_index_about_contents .home_index_about_content .home_index_about_content_item {
+  width: 50%;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.home_container .home_index_about .home_index_about_contents .home_index_about_content .home_index_about_content_description {
+  width: 50%;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.home_container .home_index_activity {
+  text-align: center;
+}
+
+.home_container .home_index_activity .home_index_activity_title {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.home_container .home_index_activity .home_index_activity_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card:hover .card-img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card {
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px #ccc;
+          box-shadow: 0 2px 5px #ccc;
+  margin: 30px 10px;
+  overflow: hidden;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-img {
+  width: 350px;
+  height: 200px;
+  border-radius: 5px 5px 0 0;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content {
+  padding: 20px;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .home_container {
+    padding: 0px 20px;
+    margin-top: 100px;
+  }
+  .home_container .home_index_img img {
+    width: 80vw;
+  }
+  .home_container .home_index_about {
+    font-family: "Noto Sans JP", sans-serif;
+    text-align: center;
+  }
+  .home_container .home_index_about .home_index_about_title {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .home_container .home_index_about .home_index_about_contents {
+    font-size: 16px;
+    font-weight: 900;
+  }
+  .home_container .home_index_about .home_index_about_contents .home_index_about_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0px 0px 40px 0px;
+  }
+  .home_container .home_index_about .home_index_about_contents .home_index_about_content .home_index_about_content_item {
+    width: 150px;
+    text-align: right;
+    margin-right: 5px;
+  }
+  .home_container .home_index_about .home_index_about_contents .home_index_about_content .home_index_about_content_description {
+    width: 100%;
+    text-align: left;
+    margin-left: 5px;
+  }
+  .home_container .home_index_activity {
+    text-align: center;
+  }
+  .home_container .home_index_activity .home_index_activity_title {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .home_container .home_index_activity .home_index_activity_contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card {
+    width: 300px;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 5px #ccc;
+            box-shadow: 0 2px 5px #ccc;
+    margin: 30px 10px;
+  }
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-img {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px 5px 0 0;
+  }
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content {
+    padding: 20px;
+  }
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-text {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-link {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 20px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

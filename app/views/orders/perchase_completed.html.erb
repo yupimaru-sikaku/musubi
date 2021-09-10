@@ -1,0 +1,32 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="order_purchase_content">
+    
+    <div class="order_purchase_title">
+        <p>ご購入が完了しました</p>
+    </div>
+    
+    <div class="module-spacer--medium"></div>
+
+    <div class="order_purchase_number">
+        <p>注文番号</p>
+
+        <div class="module-spacer--medium"></div>
+
+        <p><%= @display_number %></p>
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <div class="order_purchase_back">
+      <%= link_to "トップ画面に戻る", root_path %>
+    </div>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

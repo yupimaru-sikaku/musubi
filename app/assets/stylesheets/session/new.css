@@ -1,0 +1,153 @@
+.session-content .session-title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.session-content .session-title span {
+  font-size: 20px;
+  display: block;
+  color: #b6b8bf;
+}
+
+.session-content .session-fields {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.session-content .session-fields .session-field {
+  border-radius: 10px;
+  text-align: center;
+}
+
+.session-content .session-fields .session-field .session-field-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.session-content .session-fields .session-field .session-field-1 span {
+  color: red;
+  font-size: 16px;
+}
+
+.session-content .session-fields .session-field input, .session-content .session-fields .session-field select {
+  display: block;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid #979797;
+  outline: none;
+  text-align: left;
+}
+
+.session-content .session-fields .session-field .session-field-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.session-content .session-fields .session-field .session-field-2 span {
+  color: green;
+  font-size: 16px;
+}
+
+.session-content .session-fields .session-field-button input {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #666ad6;
+  padding: 15px 50px;
+  border-radius: 5px;
+  color: white;
+}
+
+.session-content .session-fields .session-field-button input:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.session-content a {
+  color: black;
+  display: block;
+  text-align: center;
+}
+
+.session-content a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .session-content .session-title {
+    font-size: 24px;
+  }
+  .session-content .session-title span {
+    font-size: 14px;
+  }
+  .session-content .session-fields {
+    width: 50%;
+  }
+  .session-content .session-fields .session-field label {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field .session-field-1 span {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field input, .session-content .session-fields .session-field select {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field .session-field-2 span {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field-button input {
+    padding: 10px 50px;
+  }
+  .session-content a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .session-content .session-title {
+    font-size: 24px;
+  }
+  .session-content .session-title span {
+    font-size: 14px;
+  }
+  .session-content .session-fields {
+    width: 90%;
+  }
+  .session-content .session-fields .session-field label {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field .session-field-1 span {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field input, .session-content .session-fields .session-field select {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field .session-field-2 span {
+    font-size: 14px;
+  }
+  .session-content .session-fields .session-field-button input {
+    padding: 10px 50px;
+  }
+  .session-content a {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=new.css.map */

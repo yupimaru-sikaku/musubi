@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.order_purchase_content {
+  margin: 0px 150px;
+  font-family: "游ゴシック体", YuGothic;
+}
+
+.order_purchase_content .order_purchase_title {
+  text-align: center;
+  color: #59b69e;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.order_purchase_content .order_purchase_number {
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.order_purchase_content .order_purchase_back {
+  text-align: center;
+}
+
+.order_purchase_content .order_purchase_back a {
+  width: 250px;
+  background-color: #bdbdbd;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  padding: 15px 50px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .order_purchase_content {
+    margin: 50px 20px 50px;
+    font-family: "游ゴシック体", YuGothic;
+  }
+  .order_purchase_content .order_purchase_title {
+    text-align: center;
+    color: #59b69e;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .order_purchase_content .order_purchase_number {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .order_purchase_content .order_purchase_back {
+    text-align: center;
+  }
+  .order_purchase_content .order_purchase_back a {
+    width: 250px;
+    background-color: #bdbdbd;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=perchase_completed.css.map */

@@ -1,0 +1,156 @@
+@charset "UTF-8";
+.order_confirm_content {
+  margin: 0px 150px;
+  font-family: "游ゴシック体", YuGothic;
+}
+
+.order_confirm_content .order_confirm_title {
+  text-align: center;
+  color: #59b69e;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.order_confirm_content .order_confirm_items .order_confirm_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_title {
+  font-size: 20px;
+  width: 30%;
+}
+
+.order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context {
+  width: 70%;
+}
+
+.order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+}
+
+.order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(1) {
+  width: 200px;
+}
+
+.order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub:nth-child(3) {
+  font-size: 20px;
+  font-weight: bold;
+  color: #b12704;
+}
+
+.order_confirm_content .order_confirm_register {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order_confirm_content .order_confirm_register a:nth-child(1) {
+  width: 250px;
+  background-color: #ffd814;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  padding: 15px 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.order_confirm_content .order_confirm_register a:nth-child(2) {
+  width: 250px;
+  background-color: #bdbdbd;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  padding: 15px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .order_confirm_content {
+    margin: 50px 20px 0px;
+    font-family: "游ゴシック体", YuGothic;
+    text-align: center;
+  }
+  .order_confirm_content .order_confirm_title {
+    color: #59b69e;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item {
+    display: block;
+    margin: 10px 0px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_title {
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context {
+    width: 100%;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(1) {
+    width: 200px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub:nth-child(3) {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b12704;
+  }
+  .order_confirm_content .order_confirm_register {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .order_confirm_content .order_confirm_register a:nth-child(1) {
+    width: 250px;
+    background-color: #ffd814;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 50px;
+  }
+  .order_confirm_content .order_confirm_register a:nth-child(2) {
+    width: 250px;
+    background-color: #bdbdbd;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=confirm.css.map */
