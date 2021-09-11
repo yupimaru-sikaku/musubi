@@ -71,3 +71,7 @@ gem 'image_processing', '~> 1.2'
 
  # RailsでjQueryを使えるようにするgem
  gem 'jquery-rails'
+
+# pdfを作成する
+gem 'prawn'
+gem 'prawn-table'
