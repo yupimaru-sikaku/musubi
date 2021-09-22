@@ -8,11 +8,16 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-family: "游ゴシック体", YuGothic;
+  letter-spacing: 2px;
 }
 
 .product_show_content .product_show_img {
   width: 50vw;
   text-align: center;
+}
+
+.product_show_content .slider {
+  width: 350px;
 }
 
 .product_show_content .product_show_context {

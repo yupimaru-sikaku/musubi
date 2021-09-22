@@ -5,17 +5,17 @@
   </div>
 
   <div class="header_menus">
-    <div class="header_menu">
-        <a href="/">ホーム</a>
-    </div>
 
-    <div class="header_menu">
-        <a href="/">むすびについて</a>
-    </div>
+    <% if user_signed_in? %>
+      <div class="header_menu">
+          <%= link_to "#{current_user.human_name}さん", edit_user_registration_path %>
+      </div>
+    <% else %>
+      <div class="header_menu">
+          <%= link_to "ログイン", new_user_session_path %>
+      </div>
+    <% end %>
 
-    <div class="header_menu">
-        <%= link_to "ログイン", new_user_session_path %>
-    </div>
 
     <div class="header_menu">
         <%= link_to "商品一覧", products_path %>
@@ -47,7 +47,7 @@
 
 <nav class="globalMenuSp">
     <ul>
-        <li><i class="fas fa-building"></i><a href="#">むすびについて</a></li>
+        <li><i class="fas fa-building"></i><%= link_to "招待する", invitation_homes_path %></li>
         <li><i class="fas fa-gift"></i><%= link_to "ログイン", new_user_session_path %></li>
         <li><i class="far fa-id-card"></i><%= link_to "商品一覧", products_path %></li>
         <li><i class="fas fa-headset"></i><a href="#">お問い合わせ</a></li>

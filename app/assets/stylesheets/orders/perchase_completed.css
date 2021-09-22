@@ -2,6 +2,7 @@
 .order_purchase_content {
   margin: 0px 150px;
   font-family: "游ゴシック体", YuGothic;
+  letter-spacing: 2px;
 }
 
 .order_purchase_content .order_purchase_title {

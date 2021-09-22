@@ -1,9 +1,8 @@
 class OrdersController < ApplicationController
+      before_action :authenticate_user! , only: [:confirm]
 
       def create
-        if session[:cart].blank?
-          return redirect_to carts_show_path
-        end
+        return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
 
         # ランダムな16桁を生成
         require 'securerandom'
@@ -11,7 +10,6 @@ class OrdersController < ApplicationController
 
         order = Order.create!(
           order_number: order_detail_number,
-          agency_name: current_user.agency_name,
           human_name: current_user.human_name,
           order_date: Time.current,
           user_id: current_user.id
@@ -27,6 +25,35 @@ class OrdersController < ApplicationController
             product_id: cart["product_id"].to_i,
           )
         end
+
+        # ポイントを入れる
+        unless current_user.agency_code.blank?
+          # ユーザーに紐付いている代理店を特定
+          company_id = Company.find_by(agency_code: current_user.agency_code).id
+          # 加算するポイントの初期化
+          syodoku_point = 0
+          # 各商品ごとのポイントを加算していく
+          session[:cart].each do |cart|
+            if Product.find_by(id: cart["product_id"]).product_type == "消毒液"
+              quantity = cart["quantity"]
+              syodoku_point += quantity
+            end
+          end
+          # 購入手続きで各ポイントが1以上付与の予定なら各ポイントに加算していく
+          if syodoku_point >= 1 
+            if Point.find_by(point_type: "消毒液", company_id: company_id)
+              point = Point.find_by(point_type: "消毒液", company_id: company_id)
+              syodoku_point += point.count
+              point.update(count: syodoku_point)
+            else
+              Point.create(
+                point_type: "消毒液",
+                count: syodoku_point,
+                company_id: company_id
+              )
+            end
+          end
+        end
         session[:cart].clear
         redirect_to perchase_completed_path(order.id)
       end
@@ -36,7 +63,7 @@ class OrdersController < ApplicationController
       end
 
       def confirm
-        return if session[:cart].blank?
+        return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
   
         @cart = []
         session[:cart].each do |cart|

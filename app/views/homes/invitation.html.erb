@@ -1,0 +1,19 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--large"></div>
+
+<nav class="home_invitation_container">
+
+    <%= form_with url: homes_send_invitation_email_path, method: :post, local: true do |f| %>
+        <%= f.label :email, "招待する方のメールアドレスを入力下さい" %>
+        <%= f.email_field :email, autofocus: true %>
+        <%= f.button :type => "submit" do %>
+            <i class="fas fa-shopping-cart"></i>
+            <span>招待する</span>
+        <% end %>
+    <% end %>
+
+</nav>
+
+<%= render partial: 'shared/footer' %>

@@ -3,6 +3,10 @@
   display: contents;
 }
 
+.registration-edit-user-content {
+  letter-spacing: 2px;
+}
+
 .registration-edit-user-content .registration-edit-user-title {
   font-size: 32px;
   text-align: center;

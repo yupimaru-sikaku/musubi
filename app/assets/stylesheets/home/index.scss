@@ -1,13 +1,15 @@
-$font_family: "Noto Sans JP", sans-serif;
-$title_size: 32px;
-$title_size_sm: 24px;
-$title_weight: 900;
-$sub_size: 20px;
+$font-family: "游ゴシック体", YuGothic;
+$title_size: 30px;
+$title_size_sm: 20px;
+$title_weight: normal;
+$sub_size: 16px;
 $sub_size_sm: 16px;
 $sub_weight: 900;
 
 .home_container {
   padding: 0px 150px;
+  letter-spacing: 2px;
+  font-family: $font-family;
 
   //   画像
   .home_index_img {
@@ -27,24 +29,122 @@ $sub_weight: 900;
     }
 
     .home_index_about_contents {
-      font-size: $sub_size;
-      font-weight: $sub_weight;
-
+      width: 70%;
+      margin: 0 auto;
       .home_index_about_content {
+        font-size: 14px;
+        text-align: start;
         display: flex;
-        justify-content: center;
-        margin: 0px 0px 60px 0px;
+        padding: 15px 0px;
+        border-bottom: 1px solid #ddd;
 
-        .home_index_about_content_item {
-          width: 50%;
-          text-align: right;
-          margin-right: 50px;
+        span {
+          display: block;
+          font-weight: bold;
+          width: 250px;
+          text-align: end;
         }
-        .home_index_about_content_description {
-          width: 50%;
-          text-align: left;
-          margin-left: 50px;
+        p {
+          display: block;
+          width: 100%;
+          text-align: start;
+          margin-left: 30px;
         }
+      }
+      .home_index_about_content:first-child {
+        border-top: 1px solid #ddd;
+      }
+    }
+  }
+  // 経営陣略歴
+  .home_index_biography {
+    text-align: center;
+
+    .home_index_biography_title {
+      font-size: $title_size;
+      font-weight: $title_weight;
+      font-family: $font_family;
+    }
+
+    .home_index_biography_context {
+      .home_index_biography_context_name {
+        font-size: 28px;
+        border-left: 5px solid #59b69e;
+        text-align: start;
+        padding-left: 20px;
+        line-height: 100px;
+      }
+      .home_index_biography_context_detail {
+        display: flex;
+        .home_index_biography_img {
+          width: 50%;
+          img {
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+          }
+        }
+        .home_index_biography_items {
+          width: 50%;
+          .home_index_biography_item {
+            font-size: 14px;
+            text-align: start;
+            display: flex;
+            text-align: end;
+            padding: 15px 0px;
+            border-bottom: 1px solid #ddd;
+
+            span {
+              display: block;
+              font-weight: bold;
+              width: 150px;
+              text-align: start;
+            }
+            p {
+              width: 100%;
+              text-align: start;
+            }
+          }
+          .home_index_biography_item:first-child {
+            border-top: 1px solid #ddd;
+          }
+        }
+      }
+    }
+  }
+
+  // 社長あいさつ
+  .home_index_president {
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+
+    .home_index_president_title {
+      font-size: $title_size;
+      font-weight: $title_weight;
+      font-family: $font_family;
+    }
+    .home_index_president_img {
+      img {
+        width: 100%;
+        height: 450px;
+      }
+    }
+    .home_index_president_message {
+      .home_index_president_message_title {
+        font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+        font-size: 30px;
+        padding-left: 20px;
+        border-left: 5px solid #59b69e;
+        line-height: 50px;
+      }
+      .home_index_president_message_main {
+        line-height: 2em;
+        text-align: start;
+      }
+      .home_index_president_message_end {
+        text-align: end;
+        font-size: $sub_size;
       }
     }
   }
@@ -112,7 +212,7 @@ $sub_weight: 900;
 @media screen and (max-width: 750px) {
   .home_container {
     padding: 0px 20px;
-    margin-top: 100px;
+    margin-top: 50px;
 
     //   画像
     .home_index_img {
@@ -127,32 +227,126 @@ $sub_weight: 900;
       text-align: center;
       .home_index_about_title {
         font-size: $title_size_sm;
-        font-weight: $title_weight;
       }
 
       .home_index_about_contents {
-        font-size: $sub_size_sm;
-        font-weight: $sub_weight;
-
+        width: 90%;
+        margin: 0 auto;
         .home_index_about_content {
+          font-size: 14px;
+          text-align: start;
           display: flex;
-          justify-content: center;
-          margin: 0px 0px 40px 0px;
+          padding: 15px 0px;
+          border-bottom: 1px solid #ddd;
 
-          .home_index_about_content_item {
-            width: 150px;
-            text-align: right;
-            margin-right: 5px;
+          span {
+            display: block;
+            font-weight: bold;
+            width: 250px;
+            text-align: end;
           }
-          .home_index_about_content_description {
+          p {
+            display: block;
             width: 100%;
-            text-align: left;
-            margin-left: 5px;
+            text-align: start;
+            margin-left: 30px;
+          }
+        }
+        .home_index_about_content:first-child {
+          border-top: 1px solid #ddd;
+        }
+      }
+    }
+    // 経営陣略歴
+    .home_index_biography {
+      text-align: center;
+
+      .home_index_biography_title {
+        font-size: $title_size_sm;
+      }
+
+      .home_index_biography_context {
+        .home_index_biography_context_name {
+          font-size: $title_size_sm;
+          border-left: 5px solid #59b69e;
+          text-align: start;
+          padding-left: 10px;
+          line-height: 50px;
+        }
+        .home_index_biography_context_detail {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .home_index_biography_img {
+            width: 90%;
+            img {
+              width: 250px;
+              height: 250px;
+              border-radius: 100%;
+            }
+          }
+          .home_index_biography_items {
+            margin-top: 10px;
+            width: 90%;
+            .home_index_biography_item {
+              font-size: 14px;
+              text-align: start;
+              display: flex;
+              text-align: end;
+              padding: 15px 0px;
+              border-bottom: 1px solid #ddd;
+
+              span {
+                display: block;
+                font-weight: bold;
+                width: 150px;
+                text-align: start;
+              }
+              p {
+                width: 100%;
+                text-align: start;
+              }
+            }
+            .home_index_biography_item:first-child {
+              border-top: 1px solid #ddd;
+            }
           }
         }
       }
     }
 
+    // 社長あいさつ
+    .home_index_president {
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+
+      .home_index_president_title {
+        font-size: $title_size_sm;
+      }
+      .home_index_president_img {
+        img {
+          height: 200px;
+        }
+      }
+      .home_index_president_message {
+        .home_index_president_message_title {
+          font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+          font-size: 20px;
+          padding-left: 0px;
+          border-left: 5px solid #59b69e;
+          line-height: 50px;
+        }
+        .home_index_president_message_main {
+          line-height: 2em;
+          text-align: start;
+        }
+        .home_index_president_message_end {
+          text-align: end;
+          font-size: $sub_size;
+        }
+      }
+    }
     //   事業紹介
     .home_index_activity {
       text-align: center;

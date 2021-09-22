@@ -1,156 +1,199 @@
 <%= render partial: 'shared/header' %>
 
-<div class="module-spacer--large"></div>
-<div class="module-spacer--large"></div>
+<div class="registration_new_content">
 
-<div class="registration-new-content">
-  <h2 class="registration-new-title">新規登録画面</h2>
+  <%= form_with model: @user, url: user_registration_path, class: 'registration_new_fields', local: true do |f| %>
 
-  <div class="module-spacer--large"></div>
+  <h2 class="registration_new_title">新規登録画面</h2>
 
-  <%= form_with model: @user, url: user_registration_path, class: 'registration-new-fields', local: true do |f| %>
+  <div class="module-spacer--small"></div>
 
-  <div class="registration-new-field">
+  <div class="registration_new_field">
 
-    <% if @user.errors.include?(:agency_name) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:agency_name).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :agency_name, "代理店名" %>
-      <span>（必須）</span>
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:human_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:human_name).first %>
+      <% end %>
     </div>
-    <%= f.text_field :agency_name, placeholder: "例）代理店名", autofocus: true %>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :human_name, "お名前" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :human_name, autofocus: true %>
+        <p>例）むすび 太郎</p>
+      </div>
+    </div>
+
   </div>
 
   <div class="module-spacer--medium"></div>
 
-  <div class="registration-new-field">
+  <div class="registration_new_field">
 
-    <% if @user.errors.include?(:human_name) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:human_name).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :human_name, "代表者名" %>
-      <span>（必須）</span>
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :agency_code, "代理店コード" %>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :agency_code %>
+        <p>代理店から招待された方は入力下さい</p>
+      </div>
     </div>
-    <%= f.text_field :human_name, placeholder: "例）代表者名" %>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:postal_code) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:postal_code).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :postal_code, "商品お届け先郵便番号" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :postal_code, id: "postal_code", maxlength: 7 %>
+        <p>半角数字でハイフン無し</p>
+        <p>例）1234567</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:address) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:address).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :address, "商品お届け先住所" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :address, id: "address" %>
+        <p>例）大阪府大阪市北区〇〇町〇〇丁目〇〇番地〇〇号</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:phone_number) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:phone_number).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :phone_number, "電話番号" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :phone_number, maxlength: 11 %>
+        <p>半角数字でハイフン無し</p>
+        <p>例）09012345678</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:email) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:email).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :email, "メールアドレス" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.email_field :email %>
+        <p>例）musubi@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:password) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:password).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :password, "パスワード" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.password_field :password %>
+        <p>8桁以上の半角英数字、記号は含まない</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
   
-  </div>
+  <div class="registration_new_field">
 
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration-new-field">
-
-    <% if @user.errors.include?(:phone_number) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:phone_number).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :phone_number, "代表者の電話番号（半角、ハイフン無し）" %>
-      <span>（必須）</span>
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:password_confirmation) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:password_confirmation).first %>
+      <% end %>
     </div>
-    <%= f.text_field :phone_number, maxlength: 11, placeholder: "例）08072831647" %>
-  </div>
 
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration-new-field">
-
-    <% if @user.errors.include?(:email) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:email).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :email, "代表者のメールアドレス" %>
-      <span>（必須）</span>
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :password_confirmation, "パスワード（確認用）" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.password_field :password_confirmation %>
+      </div>
     </div>
-    <%= f.email_field :email, placeholder: "例）taro@gmail.com" %>
-  </div>
 
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration-new-field">
-
-    <% if @user.errors.include?(:postal_code) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:postal_code).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :postal_code, "郵便番号（半角）" %>
-      <span>（必須）</span>
-    </div>
-    <div class="registration-new-field-2">
-      <%= f.text_field :postal_code, placeholder: "例）1234567（ハイフン無し）", maxlength: 7, id: 'postal_code' %>
-      <span><button id="address_btn">住所検索</button></span>
-    </div>
-  </div>
-
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration-new-field">
-
-    <% if @user.errors.include?(:address) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:address).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :address, "住所" %>
-      <span>（必須）</span>
-    </div>
-    <%= f.text_field :address, id: 'address' %>
-  </div>
-
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration-new-field">
-
-    <% if @user.errors.include?(:password) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:password).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :password, "パスワード（8桁以上の半角英数字）" %>
-      <span>（必須）</span>
-    </div>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration-new-field">
-
-    <% if @user.errors.include?(:password_confirmation) %>
-    <p class="alert_danger" style=" color: red;">
-      <%= @user.errors.full_messages_for(:password_confirmation).first %>
-    <div class="module-spacer--small"></div>
-    <% end %>
-
-    <div class="registration-new-field-1">
-      <%= f.label :password_confirmation, "パスワード(確認用)" %>
-      <span>（必須）</span>
-    </div>
-    <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="module-spacer--large"></div>
 
-  <div class="registration-new-field-button">
+  <div class="registration_new_field_button">
     <%= f.submit "新規登録" %>
   </div>
 
@@ -162,6 +205,5 @@
 
 </div>
 
-<div class="module-spacer--large"></div>
-
 <%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag "shared/address" %>

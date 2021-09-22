@@ -55,6 +55,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # devise
 gem 'devise'
+gem 'devise_invitable'
+
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 
@@ -75,3 +77,6 @@ gem 'image_processing', '~> 1.2'
 # pdfを作成する
 gem 'prawn'
 gem 'prawn-table'
+
+# .envを使用する
+gem 'dotenv-rails'

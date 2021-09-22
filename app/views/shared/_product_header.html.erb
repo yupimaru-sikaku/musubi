@@ -1,0 +1,20 @@
+<%##レスポンス（PC）%>
+<nav class="product_header">
+  <div class="header_logo">
+    <a href="/">MUSUBI</a>
+  </div>
+
+  <div class="header_menus">
+    <div class="header_menu">
+        <%= link_to carts_show_path do %>
+          <i class="fas fa-shopping-cart"></i>
+          <% if session[:cart].sum { |arr| arr["quantity"] } >= 100 %>
+            <p class="cart_quantity_count">99+</p>
+          <% elsif session[:cart].sum { |arr| arr["quantity"] } != 0 %>
+            <p class="cart_quantity_count"><%= session[:cart].sum { |arr| arr["quantity"] } %></p>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+
+</nav>

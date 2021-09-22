@@ -11,10 +11,16 @@ $sub_weight: 900;
   display: flex;
   justify-content: space-between;
   font-family: "游ゴシック体", YuGothic;
+  letter-spacing: 2px;
+
 
   .product_show_img {
     width: 50vw;
     text-align: center;
+  }
+
+  .slider{
+    width:350px;
   }
 
   .product_show_context {

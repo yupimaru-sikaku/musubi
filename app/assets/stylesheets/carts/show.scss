@@ -8,6 +8,8 @@ $sub_weight: 900;
 .cart_show_content {
   margin: 0px 300px;
   font-family: "游ゴシック体", YuGothic;
+  letter-spacing: 2px;
+
   .cart_show_title {
     text-align: center;
     color: #59b69e;
@@ -208,7 +210,7 @@ $sub_weight: 900;
       align-items: center;
 
       a:nth-child(1) {
-        width: 200px;
+        width: 210px;
         background-color: #ffd814;
         box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
         padding: 15px 50px;
@@ -217,7 +219,7 @@ $sub_weight: 900;
         margin-bottom: 50px;
       }
       a:nth-child(2) {
-        width: 200px;
+        width: 210px;
         background-color: #bdbdbd;
         box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
         padding: 15px 40px;

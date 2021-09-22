@@ -2,6 +2,7 @@
 .order_confirm_content {
   margin: 0px 150px;
   font-family: "游ゴシック体", YuGothic;
+  letter-spacing: 2px;
 }
 
 .order_confirm_content .order_confirm_title {

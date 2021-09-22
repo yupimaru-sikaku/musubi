@@ -9,8 +9,15 @@
   <div class="footer_menus">
 
     <div class="footer_menu">
+      <p>Login</p>
+      <%= link_to "ユーザーログイン", user_session_path %>
+      <%= link_to "代理店ログイン", company_session_path %>
+      <%= link_to "ユーザーログアウト", destroy_user_session_path, method: :delete %>
+      <%= link_to "代理店ログアウト", destroy_company_session_path, method: :delete %>
+    </div>
+
+    <div class="footer_menu">
       <p>ABOUT</p>
-      <a href="/">むすびについて</a>
       <a href="/">お問い合わせ</a>
     </div>
 
@@ -20,6 +27,7 @@
       <a href="/">代理店契約</a>
       <a href="/">消毒液販売</a>
     </div>
+
 
   </div>
 

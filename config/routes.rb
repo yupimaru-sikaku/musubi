@@ -1,9 +1,26 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  # エンドユーザー
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    passwords:     'users/passwords',
+    registrations: 'users/registrations'
+  }
+  # 代理店
+  devise_for :companies, controllers: {
+    sessions:      'companies/sessions',
+    passwords:     'companies/passwords',
+    registrations: 'companies/registrations',
+    invitations: 'companies/invitations'
+  }
   # HPの画面
   root to: 'homes#index'
-  resources :homes, only: [:index]
+  resources :homes, only: [:index] do
+    collection do
+      get 'invitation'
+    end
+  end
+  post 'homes/send_invitation_email', to: 'homes#send_invitation_email'
 
   resources :products
   resource :services, only: [:index] do

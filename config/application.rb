@@ -15,5 +15,10 @@ module Musubi
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+   
+    # pdf自動作成
+    config.eager_load_paths += %W(#{Rails.root}/lib/pdf)
+    # deviseエラーメッセージの日本語化
+    config.i18n.default_locale = :ja
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_091305) do
+ActiveRecord::Schema.define(version: 2021_09_18_103643) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,43 @@ ActiveRecord::Schema.define(version: 2021_09_08_091305) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "agency_name", null: false
+    t.string "invitation_code"
+    t.string "agency_code"
+    t.string "human_name", null: false
+    t.string "birth_day", null: false
+    t.integer "postal_code", null: false
+    t.string "address", null: false
+    t.string "phone_number", null: false
+    t.string "email", default: "", null: false
+    t.string "financial_facility_name", null: false
+    t.string "bank_branch_name", null: false
+    t.string "bank_account_type", null: false
+    t.integer "bank_account_number", null: false
+    t.string "bank_account_holder", null: false
+    t.integer "invited_person_number", default: 0, null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
+    t.index ["email"], name: "index_companies_on_email", unique: true
+    t.index ["invitation_token"], name: "index_companies_on_invitation_token", unique: true
+    t.index ["invited_by_id"], name: "index_companies_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_companies_on_invited_by_type_and_invited_by_id"
+    t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
+  end
+
   create_table "homes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -59,13 +96,21 @@ ActiveRecord::Schema.define(version: 2021_09_08_091305) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "order_number", null: false
-    t.string "agency_name", null: false
     t.string "human_name", null: false
     t.string "order_date", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "point_type", null: false
+    t.integer "count", default: 0, null: false
+    t.bigint "company_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_points_on_company_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,12 +125,12 @@ ActiveRecord::Schema.define(version: 2021_09_08_091305) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "agency_name", null: false
     t.string "human_name", null: false
-    t.string "phone_number", null: false
-    t.integer "postal_code", null: false
+    t.string "postal_code", null: false
     t.string "address", null: false
+    t.string "phone_number", null: false
     t.string "email", default: "", null: false
+    t.string "agency_code"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -100,4 +145,5 @@ ActiveRecord::Schema.define(version: 2021_09_08_091305) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "points", "companies"
 end

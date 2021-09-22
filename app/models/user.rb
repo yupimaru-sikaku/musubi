@@ -2,17 +2,15 @@ class User < ApplicationRecord
 
   has_many :orders;
 
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
 
   with_options presence: true do
-    validates :agency_name
     validates :human_name
-    validates :phone_number
-    validates :email
     validates :postal_code
     validates :address
+    validates :phone_number
+    validates :email
   end
 
   # postal_code

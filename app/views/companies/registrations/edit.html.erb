@@ -1,0 +1,384 @@
+<%= render partial: 'shared/header' %>
+
+<div class="registration_new_content">
+
+  <%= form_with model: @company, url: company_registration_path, class: 'registration_new_fields', local: true do |f| %>
+
+  <h2 class="registration_new_title">代理店情報変更画面</h2>
+
+  <div class="module-spacer--small"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:agency_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:agency_name).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :agency_name, "代理店名" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :agency_name, disabled: true %>
+        <p>代理店名は変更できません</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:agency_code) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:agency_code).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :agency_code, "代理店コード" %>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :agency_code, disabled: true %>
+        <p>代理店コードは変更できません</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:human_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:human_name).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :human_name, "代表取締役名または代表社員名（代表者）" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :human_name %>
+        <p>例）むすび 太郎</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:birth_day) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:birth_day).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :birth_day, "代表者の生年月日" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :birth_day %>
+        <p>例）2000年3月14日</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:postal_code) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:postal_code).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :postal_code, "代理店の郵便番号" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :postal_code, id: "postal_code", maxlength: 7 %>
+        <p>半角数字でハイフン無し</p>
+        <p>例）1234567</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:address) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:address).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :address, "代理店の住所" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :address %>
+        <p>例）大阪府大阪市北区〇〇町〇〇丁目〇〇番地〇〇号</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:phone_number) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:phone_number).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :phone_number, "代表者の電話番号" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :phone_number, maxlength: 11 %>
+        <p>半角数字でハイフン無し</p>
+        <p>例）09012345678</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:email) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:email).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :email, "代表者のメールアドレス" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.email_field :email %>
+        <p>例）musubi@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:financial_facility_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:financial_facility_name).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :financial_facility_name, "金融機関名" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :financial_facility_name %>
+        <p class="registration_important">以降の金融機関の情報はコミッションの振込時に使用させて頂きます</p>
+        <p>例）三菱UFJ銀行</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:bank_branch_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:bank_branch_name).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :bank_branch_name, "支店名（店番）" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :bank_branch_name %>
+        <p>例）000</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:bank_account_type) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:bank_account_type).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :bank_account_type, "口座種別" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :bank_account_type %>
+        <p>例）普通、当座、総合口座、振替口座</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:bank_account_number) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:bank_account_number).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :bank_account_number, "口座番号" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :bank_account_number, maxlength: 11 %>
+        <p>例）1234567</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:bank_account_holder) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:bank_account_holder).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :bank_account_holder, "口座名義人（カナ）" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :bank_account_holder %>
+        <p>例）カ）ムスビ</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:password) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:password).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :password, "パスワード（変更する場合は入力）" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.password_field :password, id: "company_password" %>
+        <p>8桁以上の半角英数字、記号は含まない</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+  
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:password_confirmation) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:password_confirmation).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :password_confirmation, "パスワード（確認用）", id: "company_password_confirmation" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--large"></div>
+
+  <div class="registration_new_field_button">
+    <%= f.submit "情報変更", class:"edit_btn" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <% end %>
+
+</div>
+
+<%= render partial: 'shared/footer' %>
+
+<%= javascript_pack_tag "companies/password" %>

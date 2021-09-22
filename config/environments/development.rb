@@ -32,7 +32,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  # productionでメールを送れるように実装後（Googleアプリケーションパスワード実装あと）developmentでは下記一行が無いとメールが送られない
+  config.action_mailer.delivery_method = :sendmail
 
   config.action_mailer.perform_caching = false
 
@@ -60,6 +62,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # mailer setting
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # deviseのパスワード変更時に使用（パスワードをお忘れの方）
+  config.action_mailer.default_url_options = { host: 'localhost:3000'}
 end

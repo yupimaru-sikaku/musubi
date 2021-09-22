@@ -1,0 +1,200 @@
+<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/flash' %>
+
+<div class="module-spacer--large"></div>
+
+<div class="registration-new-content">
+  <h2 class="registration-new-title">新規登録画面<span> - 事業所 -</span></h2>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= form_with model: @company, url: company_registration_path, class: 'registration-new-fields', local: true do |f| %>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:company_name) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:company_name).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :company_name, "法人名" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.text_field :company_name, placeholder: "例）株式会社○○", autofocus: true %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:postal_code) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:postal_code).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :postal_code, "法人の郵便番号（半角、ハイフン無し）" %>
+      <span>（必須）</span>
+    </div>
+    <div class="registration-new-field-2">
+      <%= f.text_field :postal_code, placeholder: "例）1234567", maxlength: 7, id: 'postal_code' %>
+      <span><button id="address_btn">住所検索</button></span>
+    </div>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:address_city) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:address_city).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :address_city, "法人の住所（市区町村）" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.text_field :address_city, id: 'address_city' %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field address_field">
+
+    <% if @company.errors.include?(:address_street) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:address_street).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :address_street, "ー 法人の住所（番地）" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.text_field :address_street, id: 'address' %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field address_field">
+
+    <% if @company.errors.include?(:address_building) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:address_building).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-2">
+      <%= f.label :address_building, "ー 法人の住所（建物名、部屋番号）" %>
+      <span>（任意）</span>
+    </div>
+    <%= f.text_field :address_building, id: 'address' %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:name) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:name).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :name, "ご担当者名" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.text_field :name, placeholder: "例）山田 太郎" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:phone_number) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:phone_number).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :phone_number, "ご担当者の電話番号（半角、ハイフン無し）" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.text_field :phone_number, maxlength: 11, placeholder: "例）08072831647" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:email) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:email).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :email, "ご担当者のメールアドレス" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.email_field :email, placeholder: "例）taro@gmail.com" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:password) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:password).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :password, "パスワード（8桁以上の半角英数字混在）
+" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration-new-field">
+
+    <% if @company.errors.include?(:password_confirmation) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @company.errors.full_messages_for(:password_confirmation).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="registration-new-field-1">
+      <%= f.label :password_confirmation, "パスワード(確認用)" %>
+      <span>（必須）</span>
+    </div>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="module-spacer--large"></div>
+
+  <div class="registration-new-field-button">
+    <%= f.submit "新規登録" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= link_to "既に登録している方はこちら（ログイン）", new_company_session_path %>
+
+  <% end %>
+</div>
+
+<%= render partial: 'shared/footer' %>
+
+<%= javascript_pack_tag "shared/address" %>

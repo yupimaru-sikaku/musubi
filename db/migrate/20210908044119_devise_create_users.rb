@@ -1,22 +1,18 @@
-# frozen_string_literal: true
-
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
-      ## Database authenticatable
-
-      # 代理店名
-      t.string :agency_name, null: false
-      # 代表者名
+      # お名前
       t.string :human_name, null: false
+      # お届け先郵便番号
+      t.string :postal_code, null: false
+      # お届け先住所
+      t.string :address, null: false
       # 電話番号
       t.string :phone_number, null: false
-      # 代理店の郵便番号
-      t.integer :postal_code, null: false
-      # 代理店の住所
-      t.string :address, null: false
       # メールアドレス
       t.string :email, null: false, default: ""
+      # 代理店コード
+      t.string :agency_code
       # パスワード
       t.string :encrypted_password, null: false, default: ""
 
