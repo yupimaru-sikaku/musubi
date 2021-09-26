@@ -35,6 +35,30 @@
   <div class="registration_new_field">
 
     <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:agency_code) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:agency_code).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :agency_code, "代理店コード" %>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :agency_code %>
+        <p>招待された方は入力下さい</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
       <% if @user.errors.include?(:postal_code) %>
       <p class="alert_danger" style=" color: red;">
         <%= @user.errors.full_messages_for(:postal_code).first %>
@@ -123,29 +147,6 @@
       <div class="registration_new_field_main_enter">
         <%= f.email_field :email %>
         <p>例）musubi@gmail.com</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration_new_field">
-
-    <div class="registration_new_field_alert">
-      <% if @user.errors.include?(:agency_code) %>
-      <p class="alert_danger" style=" color: red;">
-        <%= @user.errors.full_messages_for(:agency_code).first %>
-      <% end %>
-    </div>
-
-    <div class="registration_new_field_main">
-      <div class="registration_new_field_main_title">
-        <%= f.label :agency_code, "代理店コード" %>
-      </div>
-      <div class="registration_new_field_main_enter">
-        <%= f.text_field :agency_code %>
-        <p>招待された方は入力下さい</p>
       </div>
     </div>
 

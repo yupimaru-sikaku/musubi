@@ -139,7 +139,7 @@
     text-align: center;
     color: #59b69e;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
   }
   .cart_show_content .cart_show_items .cart_show_item {
     display: -webkit-box;
@@ -233,7 +233,7 @@
     background-color: #ffd814;
     -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
             box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-    padding: 15px 50px;
+    padding: 15px 0px;
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 50px;

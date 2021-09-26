@@ -10,7 +10,6 @@ $sub_weight: 900;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
 
-
   .order_purchase_title {
     text-align: center;
     color: #59b69e;
@@ -21,6 +20,11 @@ $sub_weight: 900;
     text-align: center;
     font-weight: bold;
     font-size: $title_size;
+  }
+  .order_purchase_sub {
+    text-align: center;
+    font-size: 16px;
+    color: #78797a;
   }
 
   .order_purchase_back {

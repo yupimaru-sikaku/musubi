@@ -5,6 +5,15 @@
   </div>
 
   <div class="header_menus">
+    <% if user_signed_in? %>
+      <div class="header_menu">
+          <%= link_to "#{current_user.human_name}さん", user_path(current_user) %>
+      </div>
+    <% else %>
+      <div class="header_menu">
+          <%= link_to "ログイン", new_user_session_path %>
+      </div>
+    <% end %>
     <div class="header_menu">
         <%= link_to carts_show_path do %>
           <i class="fas fa-shopping-cart"></i>

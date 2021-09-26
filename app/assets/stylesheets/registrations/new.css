@@ -17,6 +17,7 @@
   margin: 0 auto;
   border-radius: 8px;
   padding: 50px 0px;
+  text-align: center;
 }
 
 .registration_new_content .registration_new_fields .registration_new_title {
@@ -92,9 +93,33 @@
   cursor: pointer;
 }
 
-.registration_new_content a {
-  display: block;
+.registration_new_content .registration_new_fields .registration_new_field_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field_card a {
+  display: block;
+  width: 200px;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  padding: 15px 0px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field_card a:nth-child(1) {
+  background-color: #59b69e;
+  color: white;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field_card a:nth-child(2) {
+  background-color: #ffd814;
 }
 
 @media screen and (max-width: 750px) {
@@ -110,6 +135,7 @@
     width: 90%;
     text-align: left;
     margin: 0 auto;
+    font-size: 14px;
   }
   .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_title span {
     background-color: #59b69e;
@@ -158,6 +184,37 @@
     font-size: 14px;
     display: block;
     text-align: center;
+  }
+  .registration_new_content .registration_new_field_card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .registration_new_content .registration_new_field_card a {
+    display: block;
+    width: 200px;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 0px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .registration_new_content .registration_new_field_card a:nth-child(1) {
+    background-color: #59b69e;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .registration_new_content .registration_new_field_card a:nth-child(2) {
+    background-color: #ffd814;
+    margin-bottom: 10px;
   }
 }
 /*# sourceMappingURL=new.css.map */

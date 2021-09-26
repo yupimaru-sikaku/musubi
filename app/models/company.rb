@@ -70,10 +70,13 @@ class Company < ApplicationRecord
   end
 
   def add_point
-    unless invitation_code.blank?
+    if invitation_code.present?
       company = Company.find_by(agency_code: invitation_code)
-      company[:invited_person_number] += 1
-      company.update(invited_person_number: company[:invited_person_number])
+      if company.present?
+        company[:invited_person_number] += 1
+        company.update(invited_person_number: company[:invited_person_number])
+      else
+      end
     end
   end
 

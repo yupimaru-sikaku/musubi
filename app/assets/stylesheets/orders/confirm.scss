@@ -10,7 +10,6 @@ $sub_weight: 900;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
 
-
   .order_confirm_title {
     text-align: center;
     color: #59b69e;
@@ -32,6 +31,31 @@ $sub_weight: 900;
 
       .order_confirm_item_context {
         width: 70%;
+
+        p.annotation {
+          font-size: 14px;
+          color: #78797a;
+        }
+
+        .order_confirm_item_context_pay_type_1,
+        .order_confirm_item_context_pay_type_2 {
+          p {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #78797a;
+          }
+          input[type="radio"] {
+            -webkit-appearance: auto;
+          }
+          label {
+            cursor: pointer;
+          }
+        }
+
+        a {
+          color: blue;
+          border-bottom: 1px solid blue;
+        }
 
         .order_confirm_item_context_sub {
           display: flex;
@@ -56,7 +80,7 @@ $sub_weight: 900;
     flex-direction: column;
     align-items: center;
 
-    a:nth-child(1) {
+    input {
       width: 250px;
       background-color: #ffd814;
       box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
@@ -81,11 +105,12 @@ $sub_weight: 900;
     margin: 50px 20px 0px;
     font-family: "游ゴシック体", YuGothic;
     text-align: center;
+    font-size: 14px;
 
     .order_confirm_title {
       color: #59b69e;
       font-weight: bold;
-      font-size: $title_size_sm;
+      font-size: 20px;
     }
 
     .order_confirm_items {
@@ -96,9 +121,9 @@ $sub_weight: 900;
         border-bottom: 1px solid #ddd;
 
         .order_confirm_item_title {
-          font-size: $sub_title_size;
+          font-size: 16px;
           width: 100%;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
         }
 
         .order_confirm_item_context {
@@ -116,6 +141,13 @@ $sub_weight: 900;
             font-size: $sub_title_size;
             font-weight: bold;
             color: #b12704;
+          }
+
+          .order_confirm_item_context_pay_type_1{
+            text-align: start;
+          }
+          .order_confirm_item_context_pay_type_2{
+            text-align: start;
           }
         }
       }

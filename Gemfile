@@ -80,3 +80,6 @@ gem 'prawn-table'
 
 # .envを使用する
 gem 'dotenv-rails'
+
+# PAY.JPを使用
+gem 'payjp'

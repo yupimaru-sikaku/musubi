@@ -6,7 +6,7 @@
 <nav class="home_container">
     <%#画像%>
     <div class="home_index_img">
-        <img src="https://source.unsplash.com/random" alt="トップ画像">
+        <%= image_tag('musubi.png') %>
     </div>
 
     <div class="module-spacer--large"></div>
@@ -20,27 +20,30 @@
        <div class="module-spacer--medium"></div>
 
         <div class="home_index_about_contents">
-            <div class="home_index_about_content">
-                <span>法人名</span>        
-                <p>株式会社 むすび</p>        
-            </div>
-            <div class="home_index_about_content">
-                <span>代表者氏名</span>        
-                <p>宮里　康和</p>        
-            </div>
-            <div class="home_index_about_content">
-                <span>所在地</span>        
-                <p>大阪府東大阪市稲田新町二丁目14番7号</p>        
-            </div>
-            <div class="home_index_about_content">
-                <span>事業内容</span>        
-                <p>インターネット販売関連事業</br>インターネットメディア事業</br>物品の仕入れ販売業務</p>        
-            </div>
+            <table>
+            <tr>
+                <th>法人名</th>
+                <td>株式会社 むすび</td>
+            </tr>
+            <tr>
+                <th>代表者氏名</th>
+                <td>宮里　康和</td>
+            </tr>
+            <tr>
+                <th>設立年</th>
+                <td>2021年3月16日</td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>大阪府東大阪市稲田新町二丁目14番7号</td>
+            </tr>
+            <tr>
+                <th>事業内容</th>
+                <td>化粧品製造業<br>化粧品製造販売業<br>物品の仕入れ販売業務<br>就労継続支援連携</td>
+            </tr>
+            </table>
         </div>
     </div>
-
-    <div class="module-spacer--large"></div>
-
 
     <div class="module-spacer--large"></div>
 
@@ -177,7 +180,7 @@
                     </div>
                 </section>
             </a>
-            <a href="/">
+            <%= link_to products_path do %>
                 <section class="home_index_activity_card">
                     <%= image_tag "vacteria.jpg", class: "card-img" %>
                     <div class="card-content">
@@ -185,8 +188,8 @@
                         <p class="card-text">高い除菌率と長時間の除菌を実現する除菌液を販売しています</p>
                     </div>
                 </section>
-            </a>
-            <a href="/">
+            <% end %>
+            <%= link_to products_path do %>
                 <section class="home_index_activity_card">
                     <%= image_tag "cosmetics.png", class: "card-img" %>
                     <div class="card-content">
@@ -194,7 +197,7 @@
                         <p class="card-text">酵素水、CBDを使用した商品を販売しています</p>
                     </div>
                 </section>
-            </a>
+            <% end %>
             <a href="/">
                 <section class="home_index_activity_card">
                     <%= image_tag "disability.jpg", class: "card-img" %>

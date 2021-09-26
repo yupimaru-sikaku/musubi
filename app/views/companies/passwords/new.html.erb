@@ -1,16 +1,52 @@
-<h2>Forgot your password?</h2>
+<%= render partial: 'shared/header' %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "companies/shared/error_messages", resource: resource %>
+<div class="registration_new_content">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'registration_new_fields', method: :post }) do |f| %>
+
+  <h2 class="registration_new_title">パスワードをお忘れですか？</h2>
+
+  <div class="module-spacer--small"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:email) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:email).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :email, "ご登録済みのメールアドレス" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+        <p>お客様が登録したメールアドレスへ</br>再設定のご案内をお送りします。</p>
+      </div>
+    </div>
+
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+  <div class="module-spacer--medium"></div>
 
-<%= render "companies/shared/links" %>
+  <div class="registration_new_field_button">
+    <%= f.submit "送信" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= link_to "新規登録はこちら", new_company_registration_path %>
+
+  <div class="module-spacer--small"></div>
+
+  <%= link_to "既に登録している方はこちら（ログイン）", new_company_session_path %>
+
+  <% end %>
+
+</div>
+
+<%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag "shared/address" %>

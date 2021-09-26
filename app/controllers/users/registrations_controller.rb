@@ -44,6 +44,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.update_without_current_password(params)
   end
 
+  # company情報編集後に会社情報詳細に遷移
+  def after_update_path_for(resource)
+    if session[:previous_url].empty?
+      user_path(current_user) and return
+    else
+      session[:previous_url] and return
+      session[:previous_url] = ""
+    end
+end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

@@ -11,7 +11,7 @@
     
     <div class="module-spacer--medium"></div>
 
-    <div class="order_confirm_items">
+    <%= form_with model: @order, url: orders_path, class:"order_confirm_items", local: true do |f| %>
 
         <div class="order_confirm_item">
             <div class="order_confirm_item_title">
@@ -38,9 +38,15 @@
                 <p>２.　お届け先</p>
             </div>
             <div class="order_confirm_item_context">
-                <p>下記から選択してください</p>
-                <p><%= current_user.address %></p>
-                <%= hidden_field_tag :address, current_user.address %>
+
+                <p>お届け先を変更する場合は<%= link_to "お客様情報", user_path(current_user) %>を変更下さい</p>
+
+                <div class="module-spacer--small"></div>
+
+                <p><%= current_user.human_name %> 様</p>
+                <p>TEL：<%= current_user.phone_number %></p>
+                <p>〒 <%= current_user.postal_code %></p>
+                <p>住所：<%= current_user.address %></p>
             </div>
         </div>
 
@@ -50,19 +56,40 @@
             </div>
 
             <div class="order_confirm_item_context">
-                <p>銀行振込</p><span></span>
-                <p>近日、クレジットカード決済対応の予定です</p><span></span>
+                <div class="order_confirm_item_context_pay_type_1">
+                    <%= f.radio_button :pay_type, "クレジットカード払い", checked: "checked" %>
+                    <%= f.label :pay_type, "クレジットカード払い ※1", for: "pay_type_クレジットカード払い" %>
+                    <% if @card %>
+                        <p>カード情報</p>
+                        <p><%= "**** **** **** " + @card[:last4] %></p>
+                        <p><%= @card[:exp_month] %>/<%= @card[:exp_year] %></p>
+                    <% else %>
+                        <p>カード情報が未登録です。</p>
+                    <% end %>
+                </div>
+
+                <div class="module-spacer--small"></div>
+                
+                <div class="order_confirm_item_context_pay_type_2">
+                    <%= f.radio_button :pay_type, "銀行振込" %>
+                    <%= f.label :pay_type, "銀行振込 ※2", for: "pay_type_銀行振込" %>
+                </div>
+                <div class="module-spacer--small"></div>
+                <p class="annotation">※1 カード情報の登録、変更は<%=link_to "こちらから", user_path(current_user) %></p>
+                <p class="annotation">※2 注文確定後、受信メールに記載の口座にお振込下さい。確認後、商品を発送致します。</p>
             </div>
         </div>
 
-    </div>
+        <div class="module-spacer--medium"></div>
+
+        <div class="order_confirm_register">
+            <%= f.submit '注文を確定する' %>
+            <%= link_to "カートに戻る", carts_show_path, method: :get %>
+        </div>
+
+    <% end %>
 
     <div class="module-spacer--large"></div>
-
-    <div class="order_confirm_register">
-        <%= link_to "注文を確定する", orders_path, method: :post %>
-        <%= link_to "カートに戻る", carts_show_path, method: :get %>
-    </div>
 
 </nav>
 

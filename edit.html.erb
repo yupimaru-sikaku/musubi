@@ -1,0 +1,77 @@
+<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/flash' %>
+
+<div class="module-spacer--large"></div>
+
+<div class="password-new-content">
+  <div class="password-new-title">
+    <p>パスワード再発行画面</p>
+    <span> - 病院・相談所 -</span>
+    <div class="module-spacer--small"></div>
+
+    <span>
+      新しいパスワードを入力下さい
+    </span>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'password-new-fields', method: :put }) do |f| %>
+  <%= f.hidden_field :reset_password_token %>
+
+
+  <div class="password-new-field">
+
+    <% if @user.errors.include?(:password) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @user.errors.full_messages_for(:password).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="password-new-field-1">
+      <%= f.label :password, "新規パスワード" %>
+      <span>（必須）</span>
+    </div>
+    <div class="password-new-field-2">
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", autofocus: true %>
+    </div>
+  </div>
+
+  <div class="module-spacer--large"></div>
+
+
+  <div class="password-new-field">
+
+    <% if @user.errors.include?(:password_confirmation) %>
+    <p class="alert_danger" style=" color: red;">
+      <%= @user.errors.full_messages_for(:password_confirmation).first %>
+    <div class="module-spacer--small"></div>
+    <% end %>
+
+    <div class="password-new-field-1">
+      <%= f.label :password_confirmation, "新規パスワード（確認用）" %>
+      <span>（必須）</span>
+    </div>
+    <div class="password-new-field-2">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+  </div>
+
+  <div class="module-spacer--large"></div>
+
+  <div class="password-new-field-button">
+    <%= f.submit "送信", class: "edit_btn" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <%= link_to "新規登録はこちら", new_user_registration_path %>
+
+  <div class="module-spacer--small"></div>
+
+  <%= link_to "ログイン画面はこちら", new_user_session_path %>
+  <% end %>
+</div>
+
+<%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag "users/password" %>

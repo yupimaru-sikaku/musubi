@@ -18,6 +18,12 @@
   font-size: 32px;
 }
 
+.order_purchase_content .order_purchase_sub {
+  text-align: center;
+  font-size: 16px;
+  color: #78797a;
+}
+
 .order_purchase_content .order_purchase_back {
   text-align: center;
 }

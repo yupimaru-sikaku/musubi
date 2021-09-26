@@ -1,19 +1,39 @@
 <%= render partial: 'shared/header' %>
 
-<div class="module-spacer--large"></div>
-<div class="module-spacer--large"></div>
+<div class="module-spacer--medium"></div>
 
-<nav class="home_invitation_container">
+<nav class="registration_new_content">
 
-    <%= form_with url: homes_send_invitation_email_path, method: :post, local: true do |f| %>
-        <%= f.label :email, "招待する方のメールアドレスを入力下さい" %>
-        <%= f.email_field :email, autofocus: true %>
-        <%= f.button :type => "submit" do %>
-            <i class="fas fa-shopping-cart"></i>
-            <span>招待する</span>
-        <% end %>
+    <%= form_with url: homes_send_invitation_email_path, class: 'registration_new_fields', method: :post, local: true do |f| %>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <%= f.label :email, "招待する方のメールアドレスを入力下さい" %>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <%= f.email_field :email, autofocus: true %>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field_button">
+            <%= f.button :type => "submit" do %>
+                <i class="fas fa-child"></i>
+                <span>招待する</span>
+            <% end %>
+        </div>
+
     <% end %>
+    
+    <div class="module-spacer--large"></div>
 
 </nav>
 
+
 <%= render partial: 'shared/footer' %>
+

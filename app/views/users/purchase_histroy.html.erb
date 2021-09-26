@@ -1,0 +1,61 @@
+<%= render partial: 'shared/product_header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="user_purchase_history_content">
+
+    <div class="user_purchase_history_title">
+        <p>購入履歴</p>
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <% if @orders.present? %>
+        <div class="user_purchase_history_items">
+            <% @orders.each do |order| %>
+                <div class="user_purchase_history_item">
+                    <div class="user_purchase_history_item_header">
+                        <div class="user_purchase_history_item_date">
+                            <p>注文日</p>
+                            <p><%= order.created_at.strftime('%Y/%m/%d') %></p>
+                        </div>
+                        <div class="user_purchase_history_item_price">
+                            <p>金額</p>
+                            <p>¥<%= order.billing_amount.to_s(:delimited) %></p>
+                        </div>
+                        <div class="user_purchase_history_item_number">
+                            <p>注文番号</p>
+                            <p><%= order.order_number %></p>
+                        </div>
+                    </div>
+                    <% OrderDetail.where(order_id: order.id).each do |product| %>
+                    <div class="user_purchase_history_item_footer">
+                        <div class="user_purchase_history_item_context">
+                        <div class="user_purchase_history_item_img">
+                            <%=link_to product_path(product.product_id) do %>
+                                <%= image_tag Product.find_by(id: product.product_id).images[0].variant(resize_to_fit: [100,100]).processed, class: 'img' %>
+                            <% end %>
+                        </div>
+                        <div class="user_purchase_history_item_title">
+                            <%=link_to product_path(product.product_id) do %>
+                                <p><%= Product.find_by(id: product.product_id).product_name %></p>
+                            <% end %>
+                        </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    <% else %>
+        <div class="user_purchase_history_title">
+            <p>購入履歴はありません</p>
+        </div>
+    <% end %>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

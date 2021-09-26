@@ -125,7 +125,7 @@ $sub_weight: 900;
       text-align: center;
       color: #59b69e;
       font-weight: bold;
-      font-size: $title_size_sm;
+      font-size: 20px
     }
 
     .cart_show_items {
@@ -213,7 +213,7 @@ $sub_weight: 900;
         width: 210px;
         background-color: #ffd814;
         box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-        padding: 15px 50px;
+        padding: 15px 0px;
         border-radius: 8px;
         cursor: pointer;
         margin-bottom: 50px;

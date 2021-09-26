@@ -20,5 +20,7 @@ module Musubi
     config.eager_load_paths += %W(#{Rails.root}/lib/pdf)
     # deviseエラーメッセージの日本語化
     config.i18n.default_locale = :ja
+    # 時間を日本に設定
+    config.time_zone = 'Tokyo' 
   end
 end

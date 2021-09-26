@@ -1,2 +1,2 @@
-class Cart < ApplicationRecord
+class Cart < ApplicationRecord    
 end

@@ -17,6 +17,7 @@
     margin: 0 auto;
     border-radius: 8px;
     padding: 50px 0px;
+    text-align: center;
 
     .registration_new_title {
       font-size: 20px;
@@ -93,10 +94,28 @@
         }
       }
     }
-  }
-  a {
-    display: block;
-    text-align: center;
+
+    .registration_new_field_card {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      a {
+        display: block;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 0px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      a:nth-child(1) {
+        background-color: #59b69e;
+        color: white;
+      }
+      a:nth-child(2) {
+        background-color: #ffd814;
+      }
+    }
   }
 }
 
@@ -119,6 +138,7 @@
         width: 90%;
         text-align: left;
         margin: 0 auto;
+        font-size: 14px;
 
         .registration_new_field_main {
           .registration_new_field_main_title {
@@ -182,6 +202,29 @@
       font-size: 14px;
       display: block;
       text-align: center;
+    }
+    .registration_new_field_card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a {
+        display: block;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 0px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      a:nth-child(1) {
+        background-color: #59b69e;
+        color: white;
+        margin-bottom: 10px;
+      }
+      a:nth-child(2) {
+        background-color: #ffd814;
+        margin-bottom: 10px;
+      }
     }
   }
 }

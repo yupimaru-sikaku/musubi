@@ -1,0 +1,40 @@
+<%= render partial: 'shared/header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="home_point_container">
+
+    <div class="home_point_title">
+        <p><%= current_company.agency_name %> 様</p>
+        <p>獲得ポイント一覧</p>
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <% if @points.present? %>
+        <div class="home_point_items">
+            <% @points.each do |point| %>
+                <div class="home_point_item">
+                    <p><%= point.point_type %></p>
+                    <p><%= point.count %>pt</p>
+                </div>
+            <% end %>
+        </div>
+    <% else %>
+        <div class="home_point_title">
+            <p>まだポイントを獲得しておりません</p>
+        </div>
+    <% end %>
+    </div>
+
+    <div class="module-spacer--medium"></div>
+    
+    <div class="home_point_annotation">
+        <p>※ポイントは代理店登録日から一年毎にリセットされます</p>
+    </div>
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

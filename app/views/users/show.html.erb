@@ -1,0 +1,168 @@
+<%= render partial: 'shared/header' %>
+
+<div class="registration_new_content">
+
+    <div class= "registration_new_fields">
+
+        <h2 class="registration_new_title">お客様情報</h2>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>お名前</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @user.human_name %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代理店コード</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @user.agency_code %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>商品お届け先郵便番号</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @user.postal_code %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>商品お届け先住所</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @user.address %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>電話番号</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @user.phone_number %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>メールアドレス</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @user.email %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <% if @card %>
+
+            <div class="registration_new_field">
+
+                <div class="registration_new_field_main">
+                    <div class="registration_new_field_main_title">
+                        <label>カード番号</label>
+                    </div>
+                    <div class="registration_new_field_main_enter">
+                        <p><%= "**** **** **** " + @card[:last4] %></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="module-spacer--small"></div>
+
+            <div class="registration_new_field">
+    
+                <div class="registration_new_field_main">
+                    <div class="registration_new_field_main_title">
+                        <label>カード有効期限</label>
+                    </div>
+                    <div class="registration_new_field_main_enter">
+                        <p><%= @card[:exp_month] %>/<%= @card[:exp_year] %></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="module-spacer--small"></div>
+
+        <% else %>
+
+            <div class="registration_new_field">
+    
+                <div class="registration_new_field_main">
+                    <div class="registration_new_field_main_title">
+                        <label>クレジットカード情報</label>
+                    </div>
+                    <div class="registration_new_field_main_enter">
+                        <p>登録されていません</p>
+                    </div>
+                </div>
+
+            </div>
+            
+        <% end %>
+
+        <div class="module-spacer--medium"></div>
+
+        <div class="registration_new_field_card">
+            <%= link_to "情報編集", edit_user_registration_path %>
+            <% if @card %>
+                <%= link_to "カード情報削除", card_path(@card), method: :delete, data: { confirm: '本当に削除しますか？'} %>
+            <% else %>
+                <%= link_to "カード情報を登録する", new_card_path %>
+            <% end %>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<%= render partial: 'shared/footer' %>

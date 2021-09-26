@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
+  resources :cards
+  
   # エンドユーザー
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+  resources :users, only: [:show] do
+    collection do
+      get 'purchase_histroy'
+    end
+  end
+  
   # 代理店
   devise_for :companies, controllers: {
     sessions:      'companies/sessions',
@@ -13,6 +21,12 @@ Rails.application.routes.draw do
     registrations: 'companies/registrations',
     invitations: 'companies/invitations'
   }
+  resources :companies, only: [:show] do
+    collection do
+      get 'point_index'
+    end
+  end
+
   # HPの画面
   root to: 'homes#index'
   resources :homes, only: [:index] do
@@ -35,6 +49,9 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
+
+  # カード情報作成
+  resources :cards, only: [:new, :create]
 
   # pdfの作成
   resources :post_pdf, only: :index

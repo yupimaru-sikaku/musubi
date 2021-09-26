@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :orders;
+  has_one :card, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
