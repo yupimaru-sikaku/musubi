@@ -86,3 +86,8 @@ gem 'payjp'
 
 # S3を使用するために必要なGem
 gem "aws-sdk-s3", require: false
+
+# ユニコーンを使用するため
+group :production do
+  gem 'unicorn', '5.4.1'
+end
