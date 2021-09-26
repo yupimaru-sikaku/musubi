@@ -53,8 +53,6 @@ Rails.application.routes.draw do
   # カード情報作成
   resources :cards, only: [:new, :create]
 
-  # pdfの作成
-  resources :post_pdf, only: :index
   
   get 'carts/show', to: 'carts#show', as: 'carts_show'
   get 'carts/session_reset', to: 'carts#session_reset'

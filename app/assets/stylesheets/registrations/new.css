@@ -32,6 +32,10 @@
   margin: 0 auto;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main {
+  margin-bottom: 10px;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_title span {
   background-color: #59b69e;
   padding: 4px;

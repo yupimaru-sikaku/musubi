@@ -83,3 +83,6 @@ gem 'dotenv-rails'
 
 # PAY.JPを使用
 gem 'payjp'
+
+# S3を使用するために必要なGem
+gem "aws-sdk-s3", require: false
