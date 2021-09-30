@@ -27,6 +27,11 @@ $sub_weight: 900;
       .cart_show_img {
         width: 30%;
         text-align: center;
+
+        .no_image{
+          width: 180px;
+          height: 180px;
+        }
       }
 
       .cart_show_context {

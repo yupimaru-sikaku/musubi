@@ -16,6 +16,11 @@
   text-align: center;
 }
 
+.product_show_content .product_show_img .no_image {
+  width: 500px;
+  height: 500px;
+}
+
 .product_show_content .slider {
   width: 350px;
 }

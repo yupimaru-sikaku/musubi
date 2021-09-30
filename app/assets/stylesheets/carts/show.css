@@ -26,6 +26,11 @@
   text-align: center;
 }
 
+.cart_show_content .cart_show_items .cart_show_item .cart_show_img .no_image {
+  width: 180px;
+  height: 180px;
+}
+
 .cart_show_content .cart_show_items .cart_show_item .cart_show_context {
   width: 50%;
   font-size: 20px;

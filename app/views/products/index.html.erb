@@ -13,7 +13,7 @@
                         <% if product.images.attached? %>
                             <%= image_tag product.images[0].variant(resize_to_fit: [300,280]), class: 'card-img' %>
                         <% else %>
-                            <%= image_tag "no_image.jpg", class: "card-img" %>
+                            <%= image_tag "no_image.jpg", class: "no_image" %>
                         <% end %>
                         <div class="card-content">
                             <h1 class="card-title"><%= product.product_name.truncate(30) %></h1>

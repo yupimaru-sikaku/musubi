@@ -9,7 +9,7 @@
         <% if @product.images.attached? %>
             <%= image_tag @product.images[0].variant(resize_to_fit: [500,500]).processed, class: 'img' %>
         <% else %>
-            <%= image_tag "no_image.jpg", class: "card-img" %>
+            <%= image_tag "no_image.jpg", class: "no_image" %>
         <% end %>
     </div>
 

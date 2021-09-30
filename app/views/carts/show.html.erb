@@ -29,7 +29,7 @@
                             <% if cart[:images].attached? %>
                                 <%= image_tag cart[:images][0].variant(resize_to_fit: [180,180]) %>
                             <% else %>
-                                <%= image_tag "no_image.jpg", class: "card-img" %>
+                                <%= image_tag "no_image.jpg", class: "no_image" %>
                             <% end%>
                         <% end%>
                     </div>

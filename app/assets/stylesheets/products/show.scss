@@ -17,7 +17,13 @@ $sub_weight: 900;
   .product_show_img {
     width: 50vw;
     text-align: center;
+    
+    .no_image{
+      width: 500px;
+      height: 500px;
+    }
   }
+
 
   .slider{
     width:350px;

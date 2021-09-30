@@ -31,6 +31,11 @@
   border-radius: 5px 5px 0 0;
 }
 
+.product_index_content .product_index_items .product_index_item .product_index_item_card .no_image {
+  width: 300px;
+  height: 280px;
+}
+
 .product_index_content .product_index_items .product_index_item .product_index_item_card .card-content {
   padding: 10px;
 }
