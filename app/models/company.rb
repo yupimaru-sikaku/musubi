@@ -19,6 +19,10 @@ class Company < ApplicationRecord
     validates :bank_account_holder
   end
   
+  # invitation_code
+  # 招待コードの代理店コードがあるか
+  validate :check_invitation_code
+
   # postal_code
   # 半角数字のみ
   validates :postal_code, numericality: { only_integer: true, message: 'は半角数字（ハイフン無し）で入力して下さい' }
@@ -44,6 +48,8 @@ class Company < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, invite_for: 24.hours
 
+  private
+
   def update_without_current_password(params, *options)
     params.delete(:current_password)
     
@@ -57,8 +63,8 @@ class Company < ApplicationRecord
     result
   end
 
+  # ランダムな8桁を生成
   def make_agency_code
-    # ランダムな8桁を生成
     require 'securerandom'
     agency_code = p SecureRandom.alphanumeric(8)
     if Company.exists?(agency_code: agency_code)
@@ -69,13 +75,22 @@ class Company < ApplicationRecord
     end
   end
 
+  # 招待した会社のコードが存在するか判断
+  def check_invitation_code
+    if self.invitation_code != ""
+      if !Company.find_by(agency_code: self.invitation_code).present?
+        errors.add(:invitation_code, "は存在しません。再度招待コードを確認下さい。")
+      end
+    end
+  end
+  
+  # 招待した代理店のカラム（招待者数）に＋１する
   def add_point
-    if invitation_code.present?
-      company = Company.find_by(agency_code: invitation_code)
+    if self.invitation_code.present?
+      company = Company.find_by(agency_code: self.invitation_code)
       if company.present?
         company[:invited_person_number] += 1
         company.update(invited_person_number: company[:invited_person_number])
-      else
       end
     end
   end

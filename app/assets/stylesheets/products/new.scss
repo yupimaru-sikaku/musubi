@@ -1,0 +1,30 @@
+.image-lists {
+  display: flex;
+  flex-wrap: wrap;
+
+  .image-list {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+
+    p {
+      color: blue;
+      border-bottom: 1px solid;
+      width: 50px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.fa-camera{
+    cursor: pointer;
+}
+
+#product_image {
+  display: none;
+}

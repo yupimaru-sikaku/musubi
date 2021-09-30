@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     )
     if card.save
       if session[:previous_url].empty?
-        redirect_to user_path(current_user)
+        redirect_to user_path(current_user) and return
       else
         redirect_to session[:previous_url]
         session[:previous_url] = ""

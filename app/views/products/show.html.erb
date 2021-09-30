@@ -6,7 +6,11 @@
 <nav class="product_show_content">
 
     <div class="product_show_img">
-        <%= image_tag @product.images[0].variant(resize_to_fit: [500,500]).processed, class: 'img' %>
+        <% if @product.images.attached? %>
+            <%= image_tag @product.images[0].variant(resize_to_fit: [500,500]).processed, class: 'img' %>
+        <% else %>
+            <%= image_tag "no_image.jpg", class: "card-img" %>
+        <% end %>
     </div>
 
     <div class="product_show_context">

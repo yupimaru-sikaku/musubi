@@ -14,6 +14,10 @@ class User < ApplicationRecord
     validates :email
   end
 
+  # agency_code
+  # Companyモデルに存在するか
+  validate :check_agency_code
+
   # postal_code
   # 半角数字のみ
   validates :postal_code, numericality: { only_integer: true, message: 'は半角数字（ハイフン無し）で入力して下さい' }
@@ -21,7 +25,7 @@ class User < ApplicationRecord
   # phone_numner
   # 半角数字のみ
   validates :phone_number, format: { with: /\A[0-9]+\z/, message: 'は半角数字で入力して下さい' }
-  
+
   # email
   # 一意性
   validates :email, uniqueness: { case_sensitive: true }
@@ -44,6 +48,17 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  private
+
+  def check_agency_code
+    if self.agency_code != ""
+      if !Company.find_by(agency_code: self.agency_code).present?
+        errors.add(:agency_code, "は存在しません。再度代理店コードを確認下さい。")
+      end
+    end
+  end
+
       
 end
 

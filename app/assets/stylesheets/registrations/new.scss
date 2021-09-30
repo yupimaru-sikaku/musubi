@@ -64,6 +64,23 @@
             margin-left: 15px;
           }
         }
+        .select {
+          display: flex;
+          align-items: center;
+          select {
+            border: 1px solid #ccc8c8;
+            background-color: #f3f3f3;
+            border-radius: 4px;
+            line-height: 35px;
+            width: 100px;
+            margin-top: 5px;
+            text-align: center;
+          }
+          p{
+            font-size: 16px;
+            padding: 0px 10px;
+          }
+        }
       }
 
       p {

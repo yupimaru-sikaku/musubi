@@ -34,6 +34,13 @@
 
   <div class="registration_new_field">
 
+    <div class="registration_new_field_alert">
+      <% if @company.errors.include?(:invitation_code) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @company.errors.full_messages_for(:invitation_code).first %>
+      <% end %>
+    </div>
+
     <div class="registration_new_field_main">
       <div class="registration_new_field_main_title">
         <%= f.label :invitation_code, "招待コード" %>

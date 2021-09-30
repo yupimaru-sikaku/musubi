@@ -34,6 +34,13 @@
 
   <div class="registration_new_field">
 
+    <div class="registration_new_field_alert">
+      <% if @user.errors.include?(:agency_code) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @user.errors.full_messages_for(:agency_code).first %>
+      <% end %>
+    </div>
+
     <div class="registration_new_field_main">
       <div class="registration_new_field_main_title">
         <%= f.label :agency_code, "代理店コード" %>

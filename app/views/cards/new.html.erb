@@ -1,26 +1,77 @@
-<%= form_with  url: cards_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
-  <div class="Cardpage">
-    <h1>カード登録</h1>
-  </div><br>
-  <div class='form-wrap'>
-    <%= f.label :number, "【カード番号】" %>
-    <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
-  </div>
-  <div class='form-wrap'>
-    <%= f.label :cvc ,"【ＣＶＣ】" %>
-    <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面にある3桁の番号", maxlength:"4" %>
-  </div>
-  <div class='form-wrap'>
-  <br>
-    <p>【有効期限】</p>
-    <div class='input-expiration-date-wrap'>
-      <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "exp_month" %>
-      <p>月</p>
-      <%= f.select :exp_year, 20..25, {include_blank: "---"}, class: "exp_year" %>
-      <p>年</p>
+<%= render partial: 'shared/product_header' %>
+
+<div class="registration_new_content">
+
+  <%= form_with  url: cards_path, id: 'charge-form', class: 'registration_new_fields',local: true do |f| %>
+
+  <h2 class="registration_new_title">カード登録</h2>
+
+  <div class="module-spacer--small"></div>
+
+    <div class='registration_new_field'>
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <%= f.label :number, "【カード番号】" %>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= f.text_field :number, class:"number", maxlength:"16" %>
+          <p>カード番号(半角英数字)</p>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <%= f.submit "登録する" , class:"button" , id:"button" %>
-<% end %>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class='registration_new_field'>
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <%= f.label :number, "【ＣＶＣ】" %>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= f.text_field :cvc, class:"cvc", maxlength:"4" %>
+          <p>カード背面にある3桁の番号</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class='registration_new_field'>
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <%= f.label :number, "【有効期限】" %>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter select">
+          <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "exp_month" %>
+          <p>月</p>
+          <%= f.select :exp_year, 20..25, {include_blank: "---"}, class: "exp_year" %>
+          <p>年</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field_button">
+      <%= f.submit "登録する" , class:"button" , id:"button" %>
+    </div>
+
+    <div class="module-spacer--small"></div>
+
+  <% end %>
+
+</div>
+
+
+<%= render partial: 'shared/footer' %>
 
 <%= javascript_pack_tag 'cards/new' %>

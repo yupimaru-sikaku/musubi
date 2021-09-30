@@ -26,7 +26,11 @@
 
                     <div class="cart_show_img">
                         <%= link_to product_path(cart[:product_id]) do %>
-                        <%= image_tag cart[:images][0].variant(resize_to_fit: [180,180]) %>
+                            <% if cart[:images].attached? %>
+                                <%= image_tag cart[:images][0].variant(resize_to_fit: [180,180]) %>
+                            <% else %>
+                                <%= image_tag "no_image.jpg", class: "card-img" %>
+                            <% end%>
                         <% end%>
                     </div>
                     <div class="cart_show_context">
