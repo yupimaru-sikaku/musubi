@@ -227,11 +227,11 @@
   }
   .registration_new_content .registration_new_field_card a {
     display: block;
-    width: 200px;
+    width: 180px;
     text-align: center;
     -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
             box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-    padding: 15px 0px;
+    padding: 10px 0px;
     border-radius: 8px;
     cursor: pointer;
   }

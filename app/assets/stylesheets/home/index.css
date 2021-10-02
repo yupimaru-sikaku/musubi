@@ -240,7 +240,7 @@
 
 @media screen and (max-width: 750px) {
   .home_container {
-    margin: 0px 20px;
+    margin: 0px 5px;
     margin-top: 50px;
   }
   .home_container .home_index_img img {
@@ -392,45 +392,47 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card {
-    width: 300px;
+    width: 135px;
+    height: 200px;
     background: #fff;
     border-radius: 5px;
     -webkit-box-shadow: 0 2px 5px #ccc;
             box-shadow: 0 2px 5px #ccc;
-    margin: 30px 10px;
+    margin: 10px;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-img {
-    width: 300px;
-    height: 200px;
+    width: 135px;
+    height: 90px;
     border-radius: 5px 5px 0 0;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content {
-    padding: 20px;
+    padding: 5px;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-title {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 14px;
+    margin-bottom: 5px;
     text-align: center;
     color: #333;
     font-family: "游ゴシック体", YuGothic;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-text {
     color: #777;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 12px;
     text-align: center;
     font-family: "游ゴシック体", YuGothic;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-link {
     text-align: center;
     border-top: 1px solid #eee;
-    padding: 20px;
+    padding: 0px;
+    height: auto;
   }
 }
 /*# sourceMappingURL=index.css.map */
