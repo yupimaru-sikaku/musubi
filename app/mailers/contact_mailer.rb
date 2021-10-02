@@ -14,13 +14,15 @@ class ContactMailer < ApplicationMailer
       @order = order
       @order_details
       @billing_amount = billing_amount
-      mail(subject: "商品のご購入ありがとうございます【㈱むすび】", to: current_user.email)
+      mail(subject: "商品のご購入ありがとうございます【むすび】", to: current_user.email)
     end
     
-    # def iryo_gh_mail(gh, registered_address)
-    #   @registered_address = registered_address
-    #   @gh = gh
-    #   mail(subject: "事業所をお探しの方がいらっしゃいます", to: @gh.pluck(:human_email))
-    # end
+    def contact_thanks_mail(human_name, email, contact_detail)
+      @human_name = human_name
+      @email = email
+      @contact_detail = contact_detail
+      mail(subject: "お問い合わせありがとうございます【むすび】", to: @email)
+    end
+    
   
   end

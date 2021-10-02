@@ -8,6 +8,11 @@ class ContactsController < ApplicationController
         @contact = Contact.new(contact_params)
         
         if @contact.save
+            # サンクスメールを送信
+            human_name = params[:contact][:human_name]
+            email = params[:contact][:email]
+            contact_detail = params[:contact][:contact_detail]
+            ContactMailer.contact_thanks_mail(human_name, email, contact_detail).deliver
             redirect_to root_path
         else
             render :new
