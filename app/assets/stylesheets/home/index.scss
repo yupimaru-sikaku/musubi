@@ -401,41 +401,44 @@ $sub_weight: 900;
         justify-content: space-between;
         flex-wrap: wrap;
 
-        .home_index_activity_card {
-          width: 135px;
-          height: 200px;
-          background: #fff;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px #ccc;
-          margin: 10px;
-
-          .card-img {
+        a {
+          width: 50%;
+          .home_index_activity_card {
             width: 135px;
-            height: 90px;
-            border-radius: 5px 5px 0 0;
-          }
-          .card-content {
-            padding: 5px;
+            height: 200px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px #ccc;
+            margin: 10px;
 
-            .card-title {
-              font-size: 14px;
-              margin-bottom: 5px;
-              text-align: center;
-              color: #333;
-              font-family: $font_family;
+            .card-img {
+              width: 135px;
+              height: 90px;
+              border-radius: 5px 5px 0 0;
             }
-            .card-text {
-              color: #777;
-              font-size: 12px;
-              text-align: center;
-              font-family: $font_family;
+            .card-content {
+              padding: 5px;
+
+              .card-title {
+                font-size: 14px;
+                margin-bottom: 5px;
+                text-align: center;
+                color: #333;
+                font-family: $font_family;
+              }
+              .card-text {
+                color: #777;
+                font-size: 12px;
+                text-align: center;
+                font-family: $font_family;
+              }
             }
-          }
-          .card-link {
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding: 0px;
-            height: auto;
+            .card-link {
+              text-align: center;
+              border-top: 1px solid #eee;
+              padding: 0px;
+              height: auto;
+            }
           }
         }
       }
