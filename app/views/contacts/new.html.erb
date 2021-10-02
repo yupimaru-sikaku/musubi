@@ -1,0 +1,133 @@
+<%= render partial: 'shared/header' %>
+
+<div class="registration_new_content">
+
+  <%= form_with model: @contact, class: 'registration_new_fields', local: true do |f| %>
+
+  <h2 class="registration_new_title">お問い合わせフォーム</h2>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @contact.errors.include?(:human_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @contact.errors.full_messages_for(:human_name).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :human_name, "お名前" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :human_name, autofocus: true %>
+        <p>例）むすび 太郎</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @contact.errors.include?(:furigana) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @contact.errors.full_messages_for(:furigana).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :furigana, "ふりがな" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :furigana %>
+        <p>例）むすび たろう</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @contact.errors.include?(:email) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @contact.errors.full_messages_for(:email).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :email, "メールアドレス" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.email_field :email %>
+        <p>例）musubi@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :phone_number, "電話番号" %>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :phone_number, maxlength: 11 %>
+        <p>半角数字でハイフン無し</p>
+        <p>例）09012345678</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @contact.errors.include?(:contact_detail) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @contact.errors.full_messages_for(:contact_detail).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :contact_detail, "お問い合わせ内容" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_area :contact_detail %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field_button">
+    <%= f.submit "送信" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <% end %>
+
+</div>
+
+<%= render partial: 'shared/footer' %>

@@ -52,7 +52,9 @@ Rails.application.routes.draw do
 
   # カード情報作成
   resources :cards, only: [:new, :create]
-
+  
+  # お問い合わせ
+  resources :contacts, only: [:new, :create]
   
   get 'carts/show', to: 'carts#show', as: 'carts_show'
   get 'carts/session_reset', to: 'carts#session_reset'

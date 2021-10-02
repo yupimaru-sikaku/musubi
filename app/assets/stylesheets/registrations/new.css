@@ -69,6 +69,17 @@
   margin-left: 15px;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter textarea {
+  border: 1px solid #ccc8c8;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  padding-left: 15px;
+  height: 200px;
+  text-align: left;
+  width: 100%;
+  margin-top: 5px;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,6 +195,16 @@
   }
   .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input#postal_code {
     width: 150px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter textarea {
+    border: 1px solid #ccc8c8;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    padding-left: 15px;
+    height: 200px;
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
   }
   .registration_new_content .registration_new_fields .registration_new_field p {
     font-size: 14px;

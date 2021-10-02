@@ -243,3 +243,9 @@ ja:
         stock: 在庫
         model_number: 型番
         product_type: 商品の種別
+      contact:
+        human_name: お名前
+        furigana: ふりがな
+        email: メールアドレス
+        phone_number: 電話番号
+        contact_detail: お問い合わせ内容
