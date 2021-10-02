@@ -190,13 +190,13 @@
   }
   .cart_show_content .cart_show_items .cart_show_item .cart_show_context .cart_show_context_buy input.cart_show_context_buy_quantity {
     border: 1px solid #eee;
-    width: 40px;
+    width: 70px;
     height: 40px;
     text-align: center;
     -webkit-box-shadow: 0 2px 5px #ccc;
             box-shadow: 0 2px 5px #ccc;
     border-radius: 8px;
-    padding-left: 15px;
+    text-align: center;
   }
   .cart_show_content .cart_show_items .cart_show_item .cart_show_context .cart_show_context_buy input.cart_show_context_buy_update {
     color: #0066c0;
