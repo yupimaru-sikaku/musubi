@@ -1,6 +1,7 @@
 .product_index_content {
-  padding: 0px 150px;
+  padding: 150px 150px;
   letter-spacing: 2px;
+  background-color: #f3f3f3;
 }
 
 .product_index_content .product_index_items {
@@ -77,7 +78,7 @@
 
 @media screen and (max-width: 750px) {
   .product_index_content {
-    padding: 0px 5px;
+    padding: 60px 5px;
     margin-top: 50px;
   }
   .product_index_content .product_index_items {
@@ -90,7 +91,7 @@
         flex-wrap: wrap;
   }
   .product_index_content .product_index_items .product_index_item {
-    width: 170px;
+    width: 45%;
     height: 200px;
     margin-bottom: 20px;
   }

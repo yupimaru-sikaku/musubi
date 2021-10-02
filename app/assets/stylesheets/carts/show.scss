@@ -6,9 +6,11 @@ $sub_title_size_sm: 16px;
 $sub_weight: 900;
 
 .cart_show_content {
-  margin: 0px 300px;
+  padding: 150px 300px;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
+  background-color: #f3f3f3;
+
 
   .cart_show_title {
     text-align: center;
@@ -23,6 +25,9 @@ $sub_weight: 900;
       margin: 10px 0px;
       padding: 20px;
       border-bottom: 1px solid #ddd;
+      background-color: white;
+      border-radius: 8px;
+  
 
       .cart_show_img {
         width: 30%;
@@ -124,7 +129,7 @@ $sub_weight: 900;
 
 @media screen and (max-width: 750px) {
   .cart_show_content {
-    margin: 50px 5px 0px;
+    padding: 100px 10px 55px;
     font-family: "游ゴシック体", YuGothic;
     .cart_show_title {
       text-align: center;
