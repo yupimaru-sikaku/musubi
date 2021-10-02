@@ -114,21 +114,20 @@
     margin: 50px 20px 0px;
     font-family: "游ゴシック体", YuGothic;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
   }
   .order_confirm_content .order_confirm_title {
     color: #59b69e;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item {
     display: block;
-    margin: 10px 0px;
-    padding: 20px;
+    padding: 20px 0px;
     border-bottom: 1px solid #ddd;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_title {
-    font-size: 16px;
+    font-size: 12px;
     width: 100%;
     margin-bottom: 20px;
   }
@@ -143,6 +142,10 @@
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(1) {
     width: 200px;
+    font-size: 12px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(2) {
+    font-size: 12px;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub:nth-child(3) {
     font-size: 20px;
@@ -152,8 +155,20 @@
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_1 {
     text-align: start;
   }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_1 p {
+    font-size: 12px;
+  }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 {
     text-align: start;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 p {
+    font-size: 12px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 input[type="radio"] {
+    -webkit-appearance: auto;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context p.annotation {
+    font-size: 12px;
   }
   .order_confirm_content .order_confirm_register {
     text-align: center;
@@ -168,22 +183,22 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .order_confirm_content .order_confirm_register a:nth-child(1) {
-    width: 250px;
+  .order_confirm_content .order_confirm_register input {
+    width: 180px;
     background-color: #ffd814;
     -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
             box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-    padding: 15px 50px;
+    padding: 10px 0px;
     border-radius: 8px;
     cursor: pointer;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   .order_confirm_content .order_confirm_register a:nth-child(2) {
-    width: 250px;
+    width: 180px;
     background-color: #bdbdbd;
     -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
             box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-    padding: 15px 40px;
+    padding: 10px 0px;
     border-radius: 8px;
     cursor: pointer;
   }

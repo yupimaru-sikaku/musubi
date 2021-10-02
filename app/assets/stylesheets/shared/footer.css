@@ -63,10 +63,13 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     color: white;
   }
   .footer .footer_menus .footer_menu {
-    padding: 0px 25px;
+    padding: 0px 0px;
     font-family: "M PLUS Rounded 1c";
   }
   .footer .footer_menus .footer_menu p {

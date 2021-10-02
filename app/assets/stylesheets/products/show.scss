@@ -13,20 +13,18 @@ $sub_weight: 900;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
 
-
   .product_show_img {
     width: 50vw;
     text-align: center;
-    
-    .no_image{
+
+    .no_image {
       width: 500px;
       height: 500px;
     }
   }
 
-
-  .slider{
-    width:350px;
+  .slider {
+    width: 350px;
   }
 
   .product_show_context {
@@ -77,40 +75,46 @@ $sub_weight: 900;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    font-size: 12px;
+    
     .product_show_img {
-      width: 150px;
-      margin-bottom: 50px;
+      width: 50%;
+      margin-bottom: 10px;
+      
+      .no_image {
+        height: 140px;
+      }
     }
-
+    
     .product_show_context {
       width: 100%;
+      font-size: 16px;
       .product_show_title {
         color: #59b69e;
         font-weight: bold;
-        font-size: $title_size_sm;
         text-align: center;
+        font-size: 16px;
       }
       .product_show_price {
-        font-size: $title_size_sm;
         text-align: center;
+        font-size: 16px;
       }
       .product_show_buy {
-        font-size: $sub_size;
         text-align: center;
-
+        font-size: 14px;
+        
         input {
           border: 1px solid #eee;
           width: 75px;
-          margin-left:25px;
-          margin-bottom:25px;
+          margin-left: 25px;
+          margin-bottom: 25px;
           height: 40px;
           text-align: center;
           box-shadow: 0 2px 5px #ccc;
           border-radius: 8px;
           padding-left: 10px;
         }
-
+        
         button {
           background-color: #ffd814;
           box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
@@ -121,9 +125,9 @@ $sub_weight: 900;
         }
       }
     }
-
+    
     .product_show_description {
-      font-size: $sub_size_sm;
+      font-size: 14px;
     }
   }
 }

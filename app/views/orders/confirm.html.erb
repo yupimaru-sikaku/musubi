@@ -41,12 +41,12 @@
 
                 <p>お届け先を変更する場合は<%= link_to "お客様情報", user_path(current_user) %>を変更下さい</p>
 
-                <div class="module-spacer--small"></div>
+                <div class="module-spacer--medium"></div>
 
-                <p><%= current_user.human_name %> 様</p>
+                <p>宛名：<%= current_user.human_name %> 様</p>
                 <p>TEL：<%= current_user.phone_number %></p>
                 <p>〒 <%= current_user.postal_code %></p>
-                <p>住所：<%= current_user.address %></p>
+                <p><%= current_user.address %></p>
             </div>
         </div>
 
@@ -68,7 +68,7 @@
                     <% end %>
                 </div>
 
-                <div class="module-spacer--small"></div>
+                <div class="module-spacer--medium"></div>
                 
                 <div class="order_confirm_item_context_pay_type_2">
                     <%= f.radio_button :pay_type, "銀行振込" %>

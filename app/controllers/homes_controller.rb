@@ -11,8 +11,12 @@ class HomesController < ApplicationController
       #登録した事業所のアドレスにメール
       email = params[:email]
       current_company
-      ContactMailer.invitation_mail(email, current_company).deliver
-      redirect_to root_path
+      if email != ""
+        ContactMailer.invitation_mail(email, current_company).deliver
+        redirect_to root_path
+      else
+        redirect_to invitation_homes_path
+      end
     end
 
 end

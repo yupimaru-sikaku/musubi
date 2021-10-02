@@ -35,7 +35,7 @@
                     </div>
                     <div class="cart_show_context">
                         <div class="cart_show_context_title">
-                            <p><%= cart[:product_name].truncate(30) %></p>
+                            <p><%= cart[:product_name].truncate(20) %></p>
                        </div>      
                         <div class="cart_show_context_buy">
                             <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>

@@ -51,8 +51,7 @@
     .footer_logo {
       font-size: 32px;
       color: white;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       border-bottom: 0.5px solid #ababab;
   
       p {
@@ -62,10 +61,11 @@
   
     .footer_menus {
       display: flex;
+      justify-content: space-between;
       color: white;
   
       .footer_menu {
-        padding: 0px 25px;
+        padding: 0px 0px;
         font-family: "M PLUS Rounded 1c";
         p {
           font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
