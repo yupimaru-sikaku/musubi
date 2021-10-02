@@ -32,6 +32,8 @@ class DeviseCreateCompanies < ActiveRecord::Migration[6.0]
       t.string :bank_account_holder, null: false
       # 招待して登録した人の数
       t.integer :invited_person_number, null: false, default: 0
+      # 承認
+      t.boolean :admin, null: false, default: false
 
       # パスワード
       t.string :encrypted_password, null: false, default: ""
