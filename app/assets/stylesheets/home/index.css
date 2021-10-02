@@ -366,10 +366,10 @@
   }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_title {
     font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-    font-size: 20px;
+    font-size: 12px;
     padding-left: 0px;
     border-left: 5px solid #59b69e;
-    line-height: 50px;
+    line-height: 36px;
   }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_main {
     line-height: 2em;
