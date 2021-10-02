@@ -392,26 +392,26 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   .home_container .home_index_activity .home_index_activity_contents a {
-    width: 50%;
+    width: 45%;
   }
   .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card {
-    width: 135px;
+    width: 100%;
     height: 200px;
     background: #fff;
     border-radius: 5px;
     -webkit-box-shadow: 0 2px 5px #ccc;
             box-shadow: 0 2px 5px #ccc;
-    margin: 10px;
+    margin: 0px;
+    margin-bottom: 10px;
   }
   .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card .card-img {
-    width: 135px;
+    width: 100%;
     height: 90px;
     border-radius: 5px 5px 0 0;
   }
