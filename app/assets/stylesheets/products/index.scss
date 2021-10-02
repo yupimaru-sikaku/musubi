@@ -86,9 +86,10 @@ $sub_weight: 900;
       flex-wrap: wrap;
 
       .product_index_item {
-        width: 140px;
-        height: 170px;
+        width: 170px;
+        height: 200px;
         margin-bottom: 20px;
+
         .product_index_item_card {
           width: 100%;
           height: 100%;
@@ -103,15 +104,15 @@ $sub_weight: 900;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          
-          .no_image{
-            width: 60px;
-            height: 60px;
+
+          .no_image {
+            width: 90px;
+            height: 90px;
           }
 
           .card-img {
             border-radius: 5px 5px 0 0;
-            height: 60px;
+            height: 90px;
           }
           .card-content {
             margin-top: 5px;

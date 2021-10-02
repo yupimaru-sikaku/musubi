@@ -90,8 +90,8 @@
         flex-wrap: wrap;
   }
   .product_index_content .product_index_items .product_index_item {
-    width: 140px;
-    height: 170px;
+    width: 170px;
+    height: 200px;
     margin-bottom: 20px;
   }
   .product_index_content .product_index_items .product_index_item .product_index_item_card {
@@ -121,12 +121,12 @@
             justify-content: center;
   }
   .product_index_content .product_index_items .product_index_item .product_index_item_card .no_image {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
   }
   .product_index_content .product_index_items .product_index_item .product_index_item_card .card-img {
     border-radius: 5px 5px 0 0;
-    height: 60px;
+    height: 90px;
   }
   .product_index_content .product_index_items .product_index_item .product_index_item_card .card-content {
     margin-top: 5px;
