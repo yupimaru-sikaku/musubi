@@ -1,3 +1,16 @@
+@charset "UTF-8";
+.product_header_sm {
+  display: none;
+}
+
+.product_hamburger {
+  display: none;
+}
+
+.product_globalMenuSp {
+  display: none;
+}
+
 .product_header {
   position: fixed;
   top: 0;
@@ -62,32 +75,37 @@
 
 @media screen and (max-width: 750px) {
   .product_header {
+    display: none;
+  }
+  .product_header_sm {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     line-height: 50px;
-    padding: 8px 20px;
+    padding: 8px 0px;
     -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    z-index: 1;
+  }
+  .product_header_sm .product_header_sm_content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: white;
-    z-index: 1000;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
-  .product_header .header_logo {
+  .product_header_sm .product_header_sm_content .header_dummy {
+    width: 40px;
+  }
+  .product_header_sm .product_header_sm_content .header_logo {
     font-size: 32px;
     color: #000000e6;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
   }
-  .product_header .header_menus {
+  .product_header_sm .product_header_sm_content .header_menus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -95,16 +113,16 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .product_header .header_menus .header_menu {
+  .product_header_sm .product_header_sm_content .header_menus .header_menu {
     font-family: "M PLUS Rounded 1c";
     position: relative;
   }
-  .product_header .header_menus .header_menu .fa-shopping-cart {
+  .product_header_sm .product_header_sm_content .header_menus .header_menu .fa-shopping-cart {
     font-size: 20px;
     display: block;
     padding: 10px;
   }
-  .product_header .header_menus .header_menu .cart_quantity_count {
+  .product_header_sm .product_header_sm_content .header_menus .header_menu .cart_quantity_count {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -116,6 +134,100 @@
     font-weight: bold;
     background-color: blue;
     color: white;
+  }
+  /*　ハンバーガーボタン　*/
+  .product_hamburger {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    left: 13px;
+    top: 12px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 3;
+  }
+  .product_hamburger span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 6px;
+    background: #555;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .product_hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .product_hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  .product_hamburger span:nth-child(3) {
+    top: 30px;
+  }
+  /* ナビ開いてる時のボタン */
+  .product_hamburger.active span:nth-child(1) {
+    top: 16px;
+    left: 6px;
+    background: #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .product_hamburger.active span:nth-child(2),
+  .product_hamburger.active span:nth-child(3) {
+    top: 16px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  nav.product_globalMenuSp {
+    position: fixed;
+    padding-top: 56px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  nav.product_globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+  nav.product_globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    -webkit-transition: 0.4s all;
+    transition: 0.4s all;
+  }
+  nav.product_globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+  }
+  nav.product_globalMenuSp ul li:hover {
+    background: #ddd;
+  }
+  nav.product_globalMenuSp ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration: none;
+    margin-left: 10px;
+    width: 150px;
+    letter-spacing: 2px;
+  }
+  /* このクラスを、jQueryで付与・削除する */
+  nav.product_globalMenuSp.active {
+    opacity: 100;
+    display: block;
   }
 }
 /*# sourceMappingURL=product_header.css.map */

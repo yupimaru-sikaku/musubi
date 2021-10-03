@@ -3,7 +3,7 @@
 <nav class="product_index_content">
 
     <div class="product_index_items">
-        <%@products.each do |product|%>
+        <% @products.each do |product| %>
             <div class="product_index_item">
                 <%= link_to product_path(product) do %>
                     <section class="product_index_item_card">

@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+    before_action :is_admin, only: [:new, :create]
+
     def index
         @products = Product.all
     end
@@ -36,6 +38,14 @@ class ProductsController < ApplicationController
             :product_type,
             images: [],
         )
-    end    
+    end
+
+    def is_admin
+        if company_signed_in? && current_company.admin == true
+            return
+        else
+            redirect_to root_path
+        end
+    end
 
 end

@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
     t.integer "bank_account_number", null: false
     t.string "bank_account_holder", null: false
     t.integer "invited_person_number", default: 0, null: false
+    t.boolean "admin", default: false, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

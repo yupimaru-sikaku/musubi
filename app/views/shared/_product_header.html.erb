@@ -29,3 +29,54 @@
   </div>
 
 </nav>
+
+<%##レスポンス（スマホ）%>
+<div class="product_hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="product_header_sm">
+
+  <div class="product_header_sm_content">
+
+    <div class="header_dummy">
+    </div>
+
+    <div class="header_logo">
+      <a href="/">MUSUBI</a>
+    </div>
+    
+    <div class="header_menus">
+      <div class="header_menu">
+          <%= link_to carts_show_path do %>
+            <i class="fas fa-shopping-cart"></i>
+            <% unless session[:cart].blank? %>
+              <% if session[:cart].sum { |arr| arr["quantity"] } >= 100 %>
+                <p class="cart_quantity_count">99+</p>
+              <% elsif session[:cart].sum { |arr| arr["quantity"] } != 0 %>
+                <p class="cart_quantity_count"><%= session[:cart].sum { |arr| arr["quantity"] } %></p>
+              <% end %>
+            <% end %> 
+          <% end %>
+      </div>
+    </div>
+  </div>
+  
+
+</nav>
+
+<nav class="product_globalMenuSp">
+    <ul>
+        <% if user_signed_in? %>
+          <li><i class="fas fa-user-alt"></i><%= link_to "#{current_user.human_name}さん", user_path(current_user) %></li>
+        <% else %>
+          <li><i class="fas fa-sign-in-alt"></i></i><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
+        <li><i class="fas fa-gifts"></i><%= link_to "商品一覧", products_path %></li>
+        <li><i class="fas fa-headset"></i><%= link_to "お問い合わせ", new_contact_path %></li>
+    </ul>
+</nav>
+
+<%= javascript_pack_tag "shared/productHeader" %>
