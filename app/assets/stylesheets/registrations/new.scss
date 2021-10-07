@@ -7,7 +7,7 @@
 .registration_new_content {
   font-family: "游ゴシック体", YuGothic;
   background-color: #f3f3f3;
-  padding: 150px 0px;
+  padding: 150px 0px 80px;
   letter-spacing: 2px;
 
   .registration_new_fields {
@@ -73,6 +73,24 @@
             width: 100%;
             margin-top: 5px;
           }
+          .musubi_company_terms {
+            margin: 20px 0px;
+            color: blue;
+            display: block;
+          } 
+          #is_agree {
+            width: 15px;
+            height: 15px;
+            border-radius: 4px;
+            margin: 0;
+          }
+          input[type="checkbox"] {
+            -webkit-appearance: auto;
+          }
+
+          .musubi_company_terms_label {
+            cursor: pointer;
+          }
         }
         .select {
           display: flex;
@@ -103,6 +121,16 @@
         color: red;
         font-weight: bold;
         font-size: 14px;
+      }
+    }
+
+    .registration_card_field{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        display: block;
+        
       }
     }
 
@@ -153,12 +181,13 @@
 @media screen and (max-width: 750px) {
   // 新規登録画面
   .registration_new_content {
-    padding: 100px 0px;
+    padding: 100px 0px 40px;
     .registration_new_fields {
       width: 90%;
-      padding: 10px 0px;
+      padding: 20px 0px;
 
       .registration_new_title {
+        font-size: 16px;
       }
 
       .registration_new_field {
@@ -204,7 +233,7 @@
               text-align: left;
               width: 100%;
               margin-top: 5px;
-              }
+            }
           }
         }
 

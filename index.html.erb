@@ -1,0 +1,64 @@
+<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/flash' %>
+<div class="module-spacer--large"></div>
+
+<%#大枠%>
+<section class="service-container">
+
+  <%#サービスの選択（クラセル or サガセル）%>
+  <main class="select-service">
+
+    <div class="service-iryo">
+      <%= link_to contact_iryos_path do %>
+      <div class="service-iryo-img">
+        <%= image_tag "iryo.svg" %>
+      </div>
+      <div class="service-iryo-text">
+        <span>病院・相談所</span>
+        <span>の方はこちら</span>
+        <span><br>障がい福祉事業所の<span style='color: blue'>ご紹介・ご入居</span>のお手続きをサポートします</span>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <div class="service-fukushi">
+      <%= link_to contact_fukushis_path do %>
+      <div class="service-fukushi-img">
+        <%= image_tag "fukushi.svg", :width => "400", :height => "400" %>
+      </div>
+      <div class="service-fukushi-text">
+        <span>障害福祉事業所の</span>
+        <span>経営者</span>
+        <span>の方はこちら</span>
+      </div>
+      <% end %>
+    </div>
+  </main>
+  <%#//サービスの選択（クラセル or サガセル）%>
+
+  <div class="module-spacer--large"></div>
+
+  <%#イリョフクについて%>
+  <aside class="about-us">
+    <h2 class="about-us-title">About Us</h2>
+    <div class="about-us-main">
+      <%= image_tag "5 SCENE.svg" %>
+      <p>医療者、障がい福祉事業所の皆さん。<br><br>イリョフクは、入院している利用者（患者）、<br>障害福祉サービスを利用したい方が求めている<br>障害福祉事業所が見つかる場所です。<br><br>イリョフクなら利用者（患者）にピッタリの<br>事業所が見つかります。<br>イリョフクはすべての素敵な出会いを応援しています。<br><br>さあ、医療と福祉の垣根を飛び越えよう！</p>
+    </div>
+    <div class="circle"></div>
+    <div class="square"></div>
+    <div class="triangle"></div>
+  </aside>
+  <%#//イリョフクについて%>
+
+  <div class="module-spacer--large"></div>
+
+
+</section>
+<%#//大枠%>
+
+<%= render partial: 'shared/footer' %>
+
+<%= javascript_pack_tag 'shared/reveal' %>

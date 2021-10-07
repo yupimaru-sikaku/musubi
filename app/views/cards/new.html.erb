@@ -2,11 +2,20 @@
 
 <div class="registration_new_content">
 
+
   <%= form_with  url: cards_path, id: 'charge-form', class: 'registration_new_fields',local: true do |f| %>
 
   <h2 class="registration_new_title">カード登録</h2>
 
   <div class="module-spacer--small"></div>
+
+    <div class='registration_card_field'>
+      <%= image_tag "card_5brand.png", :width => "250" %>
+      <div class="module-spacer--small"></div>
+      <%= image_tag "payjplogo.svg", :width => "250" %>
+    </div>
+    
+    <div class="module-spacer--small"></div>
 
     <div class='registration_new_field'>
 
@@ -16,7 +25,7 @@
           <span>必須</span>
         </div>
         <div class="registration_new_field_main_enter">
-          <%= f.text_field :number, class:"number", maxlength:"16" %>
+          <%= f.text_field :number, class:"number", maxlength:"16", autofocus: true %>
           <p>カード番号(半角英数字)</p>
         </div>
       </div>

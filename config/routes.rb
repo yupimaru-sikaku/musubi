@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :companies, only: [:show] do
     collection do
       get 'point_index'
+      get 'terms'
     end
   end
 

@@ -17,11 +17,11 @@ class CardsController < ApplicationController
       user_id: current_user.id # ログインしているユーザー
     )
     if card.save
-      if session[:previous_url].empty?
-        redirect_to user_path(current_user) and return
-      else
+      if session[:previous_url].present?
         redirect_to session[:previous_url]
         session[:previous_url] = ""
+      else
+        redirect_to user_path(current_user) and return
       end
     else
       redirect_to action: "new" # カード登録画面へリダイレクト

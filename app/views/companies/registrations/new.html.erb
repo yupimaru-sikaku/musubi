@@ -6,7 +6,7 @@
 
   <h2 class="registration_new_title">新規登録画面</h2>
 
-  <div class="module-spacer--small"></div>
+  <div class="module-spacer--medium"></div>
 
   <div class="registration_new_field">
 
@@ -368,10 +368,30 @@
 
   </div>
 
-  <div class="module-spacer--large"></div>
+  <div class="module-spacer--medium"></div>
+  
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label "会員規約の同意" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <p>下記のリンク先から利用規約を必ずご一読のうえ、内容をご了解ください。</p>
+        <p>登録の際には、「会員規約」ご確認のうえ、「同意する」を押してください。</p>
+        <%= link_to "むすび会員規約", terms_companies_path, class: "musubi_company_terms", target: :_blank %>
+        <%= check_box_tag :is_agree, class: "musubi_company_terms_check" %>
+        <%= label_tag :is_agree, "規約に同意する", class: "musubi_company_terms_label" %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
 
   <div class="registration_new_field_button">
-    <%= f.submit "新規登録" %>
+    <%= f.submit "新規登録", class: "company_registration" %>
   </div>
 
   <div class="module-spacer--medium"></div>
@@ -384,3 +404,4 @@
 
 <%= render partial: 'shared/footer' %>
 <%= javascript_pack_tag "shared/address" %>
+<%= javascript_pack_tag "companies/new" %>

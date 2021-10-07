@@ -108,12 +108,12 @@ $sub_weight: 900;
     padding: 100px 10px 55px;
     font-family: "游ゴシック体", YuGothic;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
 
     .order_confirm_title {
       color: #59b69e;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     .order_confirm_items {
@@ -137,16 +137,13 @@ $sub_weight: 900;
 
             p:nth-child(1) {
               width: 200px;
-              font-size: 12px;
             }
             p:nth-child(2) {
-              font-size: 12px;
             }
           }
           .order_confirm_item_context_sub:nth-child(3) {
-            font-size: $sub_title_size;
-            font-weight: bold;
             color: #b12704;
+            font-size: 14px;
           }
 
           .order_confirm_item_context_pay_type_1 {
@@ -161,9 +158,6 @@ $sub_weight: 900;
             margin-left: 30px;
             p {
               font-size: 12px;
-            }
-            input[type="radio"] {
-              -webkit-appearance: auto;
             }
           }
           p.annotation {
@@ -200,4 +194,8 @@ $sub_weight: 900;
       }
     }
   }
+}
+
+input[type="radio"] {
+  -webkit-appearance: auto;
 }

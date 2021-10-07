@@ -135,7 +135,7 @@ $sub_weight: 900;
       text-align: center;
       color: #59b69e;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     .cart_show_items {
@@ -154,21 +154,21 @@ $sub_weight: 900;
 
         .cart_show_context {
           width: 45%;
-          font-size: 12px;
+          font-size: 14px;
           flex-direction: column;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
 
           .cart_show_context_title {
-            font-size: 12px;
+            font-size: 14px;
             width: 150px;
           }
 
           .cart_show_context_buy {
             display: flex;
             align-items: center;
-            width: 200px;
+            width: 210px;
 
             // 数量選択
             input.cart_show_context_buy_quantity {
@@ -198,7 +198,7 @@ $sub_weight: 900;
 
         .cart_show_price {
           width: 15%;
-          font-size: 12px;
+          font-size: 14px;
           text-align: right;
         }
       }
@@ -207,7 +207,7 @@ $sub_weight: 900;
     .cart_show_total_price {
       display: flex;
       justify-content: flex-end;
-      font-size: 12px;
+      font-size: 14px;
 
       p:nth-child(3) {
         font-weight: bold;

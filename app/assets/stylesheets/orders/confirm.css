@@ -117,12 +117,12 @@
     padding: 100px 10px 55px;
     font-family: "游ゴシック体", YuGothic;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
   }
   .order_confirm_content .order_confirm_title {
     color: #59b69e;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item {
     display: block;
@@ -145,15 +145,10 @@
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(1) {
     width: 200px;
-    font-size: 12px;
-  }
-  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(2) {
-    font-size: 12px;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub:nth-child(3) {
-    font-size: 20px;
-    font-weight: bold;
     color: #b12704;
+    font-size: 14px;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_1 {
     text-align: start;
@@ -168,9 +163,6 @@
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 p {
     font-size: 12px;
-  }
-  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 input[type="radio"] {
-    -webkit-appearance: auto;
   }
   .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context p.annotation {
     font-size: 12px;
@@ -209,5 +201,9 @@
     border-radius: 8px;
     cursor: pointer;
   }
+}
+
+input[type="radio"] {
+  -webkit-appearance: auto;
 }
 /*# sourceMappingURL=confirm.css.map */

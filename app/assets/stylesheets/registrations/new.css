@@ -6,7 +6,7 @@
 .registration_new_content {
   font-family: "游ゴシック体", YuGothic;
   background-color: #f3f3f3;
-  padding: 150px 0px;
+  padding: 150px 0px 80px;
   letter-spacing: 2px;
 }
 
@@ -80,6 +80,27 @@
   margin-top: 5px;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter .musubi_company_terms {
+  margin: 20px 0px;
+  color: blue;
+  display: block;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter #is_agree {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input[type="checkbox"] {
+  -webkit-appearance: auto;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter .musubi_company_terms_label {
+  cursor: pointer;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,6 +136,23 @@
   color: red;
   font-weight: bold;
   font-size: 14px;
+}
+
+.registration_new_content .registration_new_fields .registration_card_field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration_new_content .registration_new_fields .registration_card_field img {
+  display: block;
 }
 
 .registration_new_content .registration_new_fields .registration_new_field_button input {
@@ -163,11 +201,14 @@
 
 @media screen and (max-width: 750px) {
   .registration_new_content {
-    padding: 100px 0px;
+    padding: 100px 0px 40px;
   }
   .registration_new_content .registration_new_fields {
     width: 90%;
-    padding: 10px 0px;
+    padding: 20px 0px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_title {
+    font-size: 16px;
   }
   .registration_new_content .registration_new_fields .registration_new_field {
     text-align: center;

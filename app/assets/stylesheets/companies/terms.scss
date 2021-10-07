@@ -1,0 +1,50 @@
+.home_terms_container {
+  font-family: "游ゴシック体", YuGothic;
+  background-color: #f3f3f3;
+  padding: 150px 150px 100px;
+  letter-spacing: 2px;
+
+  .home_terms_title {
+    font-size: 20px;
+    text-align: center;
+    color: #59b69e;
+  }
+  .home_terms_sub_title {
+    font-size: 16px;
+    text-align: center;
+  }
+  .home_terms_item {
+    font-size: 14px;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+  .home_terms_info {
+    font-size: 14px;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .home_terms_container {
+    padding: 100px 10px 40px;
+
+    .home_terms_title {
+      font-size: 14px;
+      text-align: center;
+      color: #59b69e;
+    }
+    .home_terms_sub_title {
+      font-size: 12px;
+      text-align: center;
+    }
+    .home_terms_item {
+      font-size: 12px;
+      text-align: start;
+      margin-bottom: 20px;
+    }
+    .home_terms_info {
+      font-size: 12px;
+      text-align: start;
+    }
+  }
+}
