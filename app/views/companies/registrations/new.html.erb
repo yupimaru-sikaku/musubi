@@ -381,8 +381,9 @@
         <p>下記のリンク先から利用規約を必ずご一読のうえ、内容をご了解ください。</p>
         <p>登録の際には、「会員規約」ご確認のうえ、「同意する」を押してください。</p>
         <%= link_to "むすび会員規約", terms_companies_path, class: "musubi_company_terms", target: :_blank %>
+
         <%= check_box_tag :is_agree, class: "musubi_company_terms_check" %>
-        <%= label_tag :is_agree, "規約に同意する", class: "musubi_company_terms_label" %>
+        <%= label_tag :is_agree, "規約に同意する", class: "checkbox" %>
       </div>
     </div>
 

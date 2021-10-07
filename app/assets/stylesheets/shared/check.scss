@@ -1,0 +1,53 @@
+// チェックボックスをチェックしたときのアニメーション
+input[type="checkbox"] {
+  display: none;
+
+  &:checked + .checkbox::before {
+    border-color: #666;
+  }
+
+  &:checked + .checkbox::after {
+    opacity: 1;
+    transform: rotate(45deg) scale3d(1, 1, 1);
+  }
+}
+
+.checkbox {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 30px;
+  position: relative;
+  width: auto;
+
+  &::before {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    content: "";
+    display: block;
+    height: 16px;
+    width: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+  }
+
+  &::after {
+    border-right: 6px solid #ff5100;
+    border-bottom: 3px solid #ff0202;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 7px;
+    margin-top: -16px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg) translate3d(0, 2px, 0) scale3d(0.7, 0.7, 1);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    width: 9px;
+  }
+}
+// //チェックボックスをチェックしたときのアニメーション

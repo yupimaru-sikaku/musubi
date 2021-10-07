@@ -1,0 +1,53 @@
+// ラジオボタンをチェックしたときのアニメーション
+input[type="radio"] {
+  display: none;
+
+  &:checked + .radio::before {
+    border-color: #666;
+  }
+
+  &:checked + .radio::after {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.radio {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 30px;
+  position: relative;
+  width: auto;
+
+  &::before {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+  }
+
+  &::after {
+    background: #59b69e;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 9px;
+    margin-top: -5px;
+    margin-left: -1px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: scale3d(0.3, 0.3, 1);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    width: 10px;
+  }
+}

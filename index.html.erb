@@ -1,64 +1,145 @@
-<%= render partial: 'shared/header' %>
-<%= render partial: 'shared/flash' %>
-<div class="module-spacer--large"></div>
+<%#ヘッダー%>
+<%= render partial: "shared/header" %>
+<%#//ヘッダー%>
 
-<%#大枠%>
-<section class="service-container">
+<div class="gh-index-content">
 
-  <%#サービスの選択（クラセル or サガセル）%>
-  <main class="select-service">
+  <div class="gh-index-title">
+    <p>共同生活援助サービス検索</p>
+    <p>ご希望の欄にチェックをして下さい</p>
+  </div>
 
-    <div class="service-iryo">
-      <%= link_to contact_iryos_path do %>
-      <div class="service-iryo-img">
-        <%= image_tag "iryo.svg" %>
+
+  <%# 検索フォーム %>
+  <%= search_form_for @p, url: search_ghs_path, class: "gh-search-forms" do |f|  %>
+
+    <%#検索項目%>
+
+    <div class="gh-search-form-activehash">
+      <div class="gh-new-form-activehash-1">
+        <%= f.label :prefecutre_id_eq, '都道府県' %>
       </div>
-      <div class="service-iryo-text">
-        <span>病院・相談所</span>
-        <span>の方はこちら</span>
-        <span><br>障がい福祉事業所の<span style='color: blue'>ご紹介・ご入居</span>のお手続きをサポートします</span>
-      </div>
-      <% end %>
+      <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, include_blank: '指定なし', selected: 27 %>
     </div>
 
-    <div class="module-spacer--large"></div>
-
-    <div class="service-fukushi">
-      <%= link_to contact_fukushis_path do %>
-      <div class="service-fukushi-img">
-        <%= image_tag "fukushi.svg", :width => "400", :height => "400" %>
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :osaka_city_id, '市町村' %>
+        <span>"指定なし"で全地域検索</span>
       </div>
-      <div class="service-fukushi-text">
-        <span>障害福祉事業所の</span>
-        <span>経営者</span>
-        <span>の方はこちら</span>
+      <%= f.collection_select :osaka_city_id, OsakaCity.all, :id, :name, include_blank: '指定なし' %>
+    </div>
+
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :gender_id_eq_any, '同居される方の性別' %>
+        <span>複数選択可</span>
       </div>
-      <% end %>
+      <div class="gh-search-form-activehash-2">
+        <% Gender.all.each do |gender| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.check_box :gender_id_eq_any, {multiple: true, id: "gender_id#{gender.id}"}, gender.id, nil %>
+            <%= f.label :gender_id_eq_any, gender.name, for: "gender_id#{gender.id}", class: "checkbox" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </main>
-  <%#//サービスの選択（クラセル or サガセル）%>
-
-  <div class="module-spacer--large"></div>
-
-  <%#イリョフクについて%>
-  <aside class="about-us">
-    <h2 class="about-us-title">About Us</h2>
-    <div class="about-us-main">
-      <%= image_tag "5 SCENE.svg" %>
-      <p>医療者、障がい福祉事業所の皆さん。<br><br>イリョフクは、入院している利用者（患者）、<br>障害福祉サービスを利用したい方が求めている<br>障害福祉事業所が見つかる場所です。<br><br>イリョフクなら利用者（患者）にピッタリの<br>事業所が見つかります。<br>イリョフクはすべての素敵な出会いを応援しています。<br><br>さあ、医療と福祉の垣根を飛び越えよう！</p>
+    
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :residential_style_id_eq_any, 'ご希望の住居タイプ' %>
+        <span>複数選択可</span>
+      </div>
+      <div class="gh-search-form-activehash-2">
+        <% ResidentialStyle.all.each do |residential_style| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.check_box :residential_style_id_eq_any, {multiple: true, id: "residential_style#{residential_style.id}"}, residential_style.id, nil %>
+            <%= f.label :residential_style_id_eq_any, residential_style.name, for: "residential_style#{residential_style.id}", class: "checkbox" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="circle"></div>
-    <div class="square"></div>
-    <div class="triangle"></div>
-  </aside>
-  <%#//イリョフクについて%>
 
-  <div class="module-spacer--large"></div>
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :barrier_free_id_eq_any, 'バリアフリーの希望' %>
+      </div>
+      <div class="gh-search-form-activehash-2">
+        <% BarrierFree.all.each do |barrier_free| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.radio_button :barrier_free_id_eq, barrier_free.id, id: "barrier_free#{barrier_free.id}" %>
+            <%= f.label :barrier_free_id_eq, barrier_free.name, for: "barrier_free#{barrier_free.id}", class: "radio" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :use_holiday_id_eq_any, '土日祝の利用' %>
+      </div>
+      <div class="gh-search-form-activehash-2">
+        <% UseHoliday.all.each do |use_holiday| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.radio_button :use_holiday_id_eq, use_holiday.id, id: "use_holiday#{use_holiday.id}" %>
+            <%= f.label :use_holiday_id_eq, use_holiday.name, for: "use_holiday#{use_holiday.id}", class: "radio" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-</section>
-<%#//大枠%>
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :gh_service_id_eq_any, 'サービスの種類' %>
+        <span>複数選択可</span>
+      </div>
+      <div class="gh-search-form-activehash-2">
+        <% GhService.all.each do |gh_service| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.check_box :gh_service_id_eq_any, {multiple: true, id: "gh_service#{gh_service.id}"}, gh_service.id, nil %>
+            <%= f.label :gh_service_id_eq_any, gh_service.name, for: "gh_service#{gh_service.id}", class: "checkbox" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-<%= render partial: 'shared/footer' %>
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :staff_time_id_eq_any, 'スタッフの配置時間帯' %>
+        <span>複数選択可</span>
+      </div>
+      <div class="gh-search-form-activehash-2">
+        <% StaffTime.all.each do |staff_time| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.check_box :staff_time_id_eq_any, {multiple: true, id: "staff_time#{staff_time.id}"}, staff_time.id, nil %>
+            <%= f.label :staff_time_id_eq_any, staff_time.name, for: "staff_time#{staff_time.id}", class: "checkbox" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-<%= javascript_pack_tag 'shared/reveal' %>
+    <div class="gh-search-form-activehash">
+      <div class="gh-search-form-activehash-1">
+        <%= f.label :from_station_id_eq_any, '最寄り駅から徒歩何分' %>
+        <span>複数選択可</span>
+      </div>
+      <div class="gh-search-form-activehash-2">
+        <% FromStation.all.each do |from_station| %>
+          <div class="gh-search-form-activehash-2-content">
+            <%= f.check_box :from_station_id_eq_any, {multiple: true, id: "from_station#{from_station.id}"}, from_station.id, nil %>
+            <%= f.label :from_station_id_eq_any, from_station.name, for: "from_station#{from_station.id}", class: "checkbox" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="gh-search-form-submit">
+      <%= f.submit '検索' %>
+    </div>
+    <%#//検索項目%>
+
+  <% end %>
+  <%#// 検索フォーム %>
+  
+  
+</div>
