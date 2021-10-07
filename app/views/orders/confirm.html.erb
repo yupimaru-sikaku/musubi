@@ -53,6 +53,9 @@
             </div>
 
             <div class="order_confirm_item_context">
+                <table>
+                <tr>
+                <td>
                 <div class="order_confirm_item_context_pay_type_1">
                     <%= f.radio_button :pay_type, "クレジットカード払い", checked: "checked" %>
                     <%= f.label :pay_type, "クレジットカード払い ※1", for: "pay_type_クレジットカード払い" %>
@@ -64,13 +67,18 @@
                         <p>カード情報が未登録です。</p>
                     <% end %>
                 </div>
+                </td>
 
                 <div class="module-spacer--medium"></div>
                 
+                <td>
                 <div class="order_confirm_item_context_pay_type_2">
                     <%= f.radio_button :pay_type, "銀行振込" %>
                     <%= f.label :pay_type, "銀行振込 ※2", for: "pay_type_銀行振込" %>
                 </div>
+                </td>
+                </tr>
+                </table>
                 <div class="module-spacer--medium"></div>
                 <p class="annotation">※1 カード情報の登録、変更は<%=link_to "こちらから", user_path(current_user) %></p>
                 <p class="annotation">※2 注文確定後、受信メールに記載の口座にお振込下さい。確認後、商品を発送致します。</p>
