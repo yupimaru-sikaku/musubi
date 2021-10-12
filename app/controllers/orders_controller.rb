@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user! , only: [:confirm]
-  before_action :push_cart, only: [:create, :confirm]
-  before_action :decide_ship_fee, only: [:confirm]
+  before_action :add_info, only: [:create, :confirm]
   
   def create
     return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
@@ -9,12 +8,7 @@ class OrdersController < ApplicationController
       session[:previous_url] = request.referer
       return redirect_to new_card_path, flash: {success: "カード情報をご登録下さい"}
     end
-    
-    @cart_total_price = cart_total_price(@cart)
-    @ship_fee = 620
-    @billing_amount = @cart_total_price + @ship_fee
-    @cart_total_quantity = cart_total_quantity(@cart)
-    
+        
     # ランダムな16桁を生成
     require 'securerandom'
     order_detail_number = p SecureRandom.alphanumeric(16)
@@ -22,11 +16,9 @@ class OrdersController < ApplicationController
     order = Order.create!(
       order_number: order_detail_number,
       human_name: current_user.human_name,
-      order_date: Time.current,
       address: current_user.address,
       billing_amount: @billing_amount,
       pay_type: params[:pay_type],
-      user_id: current_user.id
     )
     
     # OrderDetailテーブルを作成
@@ -36,7 +28,6 @@ class OrdersController < ApplicationController
         model_number: Product.find_by(id: cart["product_id"]).model_number,
         product_name: Product.find_by(id: cart["product_id"]).product_name,
         quantity: cart["quantity"],
-        product_id: cart["product_id"].to_i,
       )
     end
 
@@ -96,7 +87,11 @@ class OrdersController < ApplicationController
 
     ContactMailer.product_buy_thanks_mail(current_user, order, billing_amount).deliver
     
+    # 保持しているURLを解放
+    session[:previous_url] = ""
+    # 保持しているカート情報を解放
     session[:cart].clear
+    # 購入サンクス画面に移動
     redirect_to perchase_completed_path(order.id)
 
   end
@@ -108,7 +103,7 @@ class OrdersController < ApplicationController
   def confirm
     return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
 
-    session[:previous_url] = request.referer
+    session[:previous_url] = request.url
 
     @user = current_user
     # カード情報
@@ -119,13 +114,12 @@ class OrdersController < ApplicationController
         @card = customer.cards.first
     end
 
-    @cart_total_price = cart_total_price(@cart)
-    @ship_fee = 620
-    @billing_amount = @cart_total_price + @ship_fee
-    @cart_total_quantity = cart_total_quantity(@cart)
   end
 
-  def push_cart
+  private
+
+  def add_info
+
     @cart = []
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])
@@ -141,21 +135,34 @@ class OrdersController < ApplicationController
         images: product.images
       })
     end
-  end
-
-
-  # カート内商品の合計金額の計算
-  def cart_total_price(cart)
-    cart.sum { |hash| hash[:sub_total] }
-  end
-  # カート内商品の合計個数
-  def cart_total_quantity(cart)
-    cart.sum { |hash| hash[:quantity] }
-  end
-
-  # 送料を決める
-  def decide_ship_fee
-    address = current_user.address
-  end
     
+    # カート内商品の合計金額の計算
+    @cart_total_price = @cart.sum { |hash| hash[:sub_total] }
+    # カート内商品の合計個数
+    @cart_total_quantity = @cart.sum { |hash| hash[:quantity] }
+    
+    # 住所から送料を決める
+    address = current_user.address
+    if ["北海道"].any? { |t| address.include?(t) }
+      @ship_fee = 2840 * @cart_total_quantity
+    elsif ["青森県", "秋田県", "岩手県"].any? { |t| address.include?(t) }
+      @ship_fee = 2400 * @cart_total_quantity
+    elsif ["宮城県", "山形県", "福島県"].any? { |t| address.include?(t) }
+      @ship_fee = 2290 * @cart_total_quantity
+    elsif ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県"].any? { |t| address.include?(t) }
+      @ship_fee = 2180 * @cart_total_quantity
+    elsif ["富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県"].any? { |t| address.include?(t) }
+      @ship_fee = 2070 * @cart_total_quantity
+    elsif ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"].any? { |t| address.include?(t) }
+      @ship_fee = 2180 * @cart_total_quantity
+    elsif ["沖縄県"].any? { |t| address.include?(t) }
+      @ship_fee = 4160 * @cart_total_quantity
+    end
+
+    # 請求金額
+    @billing_amount = @cart_total_price + @ship_fee
+
+
+  end
+
 end

@@ -170,6 +170,24 @@
   cursor: pointer;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field_button a.registration_new_field_button_sub {
+  display: block;
+  margin: 0 auto;
+  width: 175px;
+  background-color: #ffd814;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  padding: 15px 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.registration_new_content .registration_new_fields .registration_new_field_button a.registration_new_field_button_sub:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field_card {
   display: -webkit-box;
   display: -ms-flexbox;

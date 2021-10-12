@@ -7,14 +7,14 @@ $sub_size_sm: 16px;
 $sub_weight: 900;
 
 .product_show_content {
-  padding: 0px 150px;
+  padding: 0px 50px;
   display: flex;
   justify-content: space-between;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
 
   .product_show_img {
-    width: 50vw;
+    width: 40vw;
     text-align: center;
 
     .no_image {
@@ -22,10 +22,60 @@ $sub_weight: 900;
       height: 500px;
     }
   }
-
-  .slider {
-    width: 350px;
-  }
+  .sliderArea {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+.sliderArea.w300 {
+  max-width: 300px;
+}
+.slick-slide {
+  margin: 0 5px;
+}
+.slick-slide img {
+  width: 100%;
+  height: auto;
+}
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+.slick-prev:before, .slick-next:before {
+  color: #000;
+}
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+.slick-active {
+  opacity: 1;
+}
+.slick-current {
+  opacity: 1;
+}
+.thumb {
+  margin: 20px 0 0;
+}
+.thumb .slick-slide {
+  cursor: pointer;
+}
+.thumb .slick-slide:hover {
+  opacity: .7;
+}
+.slick-dots li button:before{
+  font-size: 50px;
+}
+.slick-prev:before{
+  content: "＜";
+  color: #78797a;
+  font-weight: bold;
+  z-index: 0;
+}
+.slick-next:before{
+  content: "＞";
+  color: #78797a;
+  font-weight: bold;
+}
 
   .product_show_context {
     width: 50%;
@@ -76,16 +126,16 @@ $sub_weight: 900;
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    
+
     .product_show_img {
-      width: 50%;
+      width: 90%;
       margin-bottom: 10px;
-      
+
       .no_image {
         height: 140px;
       }
     }
-    
+
     .product_show_context {
       width: 100%;
       font-size: 16px;
@@ -102,7 +152,7 @@ $sub_weight: 900;
       .product_show_buy {
         text-align: center;
         font-size: 14px;
-        
+
         input {
           border: 1px solid #eee;
           width: 75px;
@@ -114,7 +164,7 @@ $sub_weight: 900;
           border-radius: 8px;
           padding-left: 10px;
         }
-        
+
         button {
           background-color: #ffd814;
           box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
@@ -125,7 +175,7 @@ $sub_weight: 900;
         }
       }
     }
-    
+
     .product_show_description {
       font-size: 14px;
     }

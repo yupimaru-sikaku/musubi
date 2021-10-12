@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
 
     has_many_attached :images
-    has_many :order_details
 
     with_options presence: true do
         validates :product_name

@@ -23,6 +23,7 @@
                     <p>配送料・手数料：</p>
                     <p>¥<%= @ship_fee.to_s(:delimited) %></p>
                 </div>
+                <p class="order_confirm_imte_context_sub_description">内、¥100は障害系就労福祉団体へ<br>振り込まれます</p>
                 <div class="order_confirm_item_context_sub">
                     <p>ご請求金額：</p>
                     <p>¥<%= @billing_amount.to_s(:delimited) %></p>
@@ -88,4 +89,8 @@
 
 </nav>
 
+<div class="hidden" id="postal_code"><%= current_user.address %></div>
+<div class="hidden" id="address"></div>
+
 <%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag "shared/address" %>

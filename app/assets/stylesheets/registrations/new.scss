@@ -77,7 +77,7 @@
             margin: 20px 0px;
             color: blue;
             display: block;
-          } 
+          }
           #is_agree {
             width: 15px;
             height: 15px;
@@ -124,13 +124,12 @@
       }
     }
 
-    .registration_card_field{
+    .registration_card_field {
       display: flex;
       flex-direction: column;
       align-items: center;
-      img{
+      img {
         display: block;
-        
       }
     }
 
@@ -144,6 +143,22 @@
         border-radius: 5px;
         color: white;
 
+        &:hover {
+          opacity: 0.5;
+          cursor: pointer;
+        }
+      }
+      a.registration_new_field_button_sub {
+        display: block;
+        margin: 0 auto;
+        width: 175px;
+        background-color: #ffd814;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 50px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 50px;
+  
         &:hover {
           opacity: 0.5;
           cursor: pointer;

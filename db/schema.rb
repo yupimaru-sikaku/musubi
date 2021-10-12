@@ -104,25 +104,20 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
     t.string "model_number", null: false
     t.string "product_name", null: false
     t.integer "quantity", null: false
-    t.bigint "product_id"
     t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "order_number", null: false
     t.string "human_name", null: false
-    t.string "order_date", null: false
     t.string "address", null: false
     t.integer "billing_amount", null: false
     t.string "pay_type", null: false
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -141,6 +136,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
     t.integer "stock", default: 0, null: false
     t.string "model_number", null: false
     t.string "product_type", null: false
+    t.boolean "display", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -165,7 +161,5 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cards", "users"
   add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "products"
-  add_foreign_key "orders", "users"
   add_foreign_key "points", "companies"
 end

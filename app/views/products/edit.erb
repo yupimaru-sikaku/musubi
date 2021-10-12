@@ -1,0 +1,180 @@
+<%= render partial: 'shared/header' %>
+
+<div class="registration_new_content">
+
+  <%= form_with model: @product, class: 'registration_new_fields', local: true do |f| %>
+
+  <h2 class="registration_new_title">商品情報編集</h2>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:product_name) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:product_name).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :product_name, "商品名" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :product_name, autofocus: true %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:price) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:price).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :price, "価格" %>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.number_field :price %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:description) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:description).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :description, "商品説明" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :description %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:stock) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:stock).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :stock, "在庫" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.number_field :stock %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:model_number) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:model_number).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :model_number, "型番" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :model_number %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:product_type) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:product_type).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :product_type, "商品の種別（ポイント名と同じに）" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.text_field :product_type %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--small"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :images, "商品の写真(最大6枚)" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <div class="image-lists">
+        </div>
+        <%= f.label :images, name: 'product[images][]', class: "product_image_label", for: "product_image" do %>
+        <%= f.file_field :images, name: 'product[images][]', id: "product_image" %>
+        <i class="fas fa-camera">クリック！！</i>
+        <% end%>
+        </div>
+      </div>
+    </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field_button">
+    <%= f.submit "情報編集" %>
+    <%= link_to '削除', product_path(@product), method: :delete, class: "registration_new_field_button_sub" %>
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <% end %>
+
+</div>
+
+<%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag "products/new" %>

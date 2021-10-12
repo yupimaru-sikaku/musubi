@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   post 'homes/send_invitation_email', to: 'homes#send_invitation_email'
 
   resources :products
+  
   resource :services, only: [:index] do
     collection do
       get 'contact_done'

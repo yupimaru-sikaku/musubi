@@ -5,12 +5,16 @@
 
 <nav class="product_show_content">
 
-    <div class="product_show_img">
-        <% if @product.images.attached? %>
-            <%= image_tag @product.images[0].variant(resize_to_fit: [500,500]).processed, class: 'img' %>
-        <% else %>
-            <%= image_tag "no_image.jpg", class: "no_image" %>
-        <% end %>
+    <div class="product_show_img sliderArea">
+        <div class="regular slider">
+            <% if @product.images.attached? %>
+                <% @product.images.each do |image| %>
+                    <div><%= image_tag image, alt: "商品の画像" %></div>
+                <% end %>
+            <% else %>
+                <div><%= image_tag "no_image.jpg", class: "no_image", alt: "ノーイメージ" %><</div>>
+            <% end %>
+        </div>
     </div>
 
     <div class="product_show_context">
@@ -25,7 +29,7 @@
             <p>¥<%=@product.price.to_s(:delimited) %></p>
         </div>
 
-        <div class="module-spacer--medium"></div>
+        <div class="module-spacer--small"></div>
 
         <div class="product_show_buy">
 

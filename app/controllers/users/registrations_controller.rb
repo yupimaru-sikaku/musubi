@@ -45,9 +45,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # user情報更新後にsessionのURLがあればそこに飛ぶ
   def after_update_path_for(resource)
-    if session[:previous_url].present?
-      session[:previous_url] and return
-      session[:previous_url] = ""
+    if session[:previous_url].present? 
+      session[:previous_url]
     else
       user_path(current_user) and return
     end

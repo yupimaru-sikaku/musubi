@@ -12,21 +12,24 @@ $sub_weight: 900;
   background-color: #f3f3f3;
 
   .product_index_items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 50px;
+    justify-content: center;
 
     .product_index_item {
       .product_index_item_card {
-        width: 300px;
         height: 400px;
         background: #fff;
         border-radius: 5px;
         box-shadow: 0 2px 5px #ccc;
-        margin: 0px 10px 40px;
         transition: all 0.3s;
         overflow: hidden;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .card-img {
           border-radius: 5px 5px 0 0;
@@ -67,29 +70,20 @@ $sub_weight: 900;
   }
 }
 
-// カードが左揃えになるように
-.cell.is-empty {
-  height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 @media screen and (max-width: 750px) {
   .product_index_content {
     padding: 60px 5px;
     margin-top: 50px;
 
     .product_index_items {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-
+      display: grid;
+      grid-template-columns: repeat(2, 45%);
+      gap: 10px;
+      justify-content: center;
+    
       .product_index_item {
-        width: 45%;
+        width: 100%;
         height: 200px;
-        margin-bottom: 20px;
 
         .product_index_item_card {
           width: 100%;
@@ -97,7 +91,7 @@ $sub_weight: 900;
           background: #fff;
           border-radius: 5px;
           box-shadow: 0 2px 5px #ccc;
-          margin: 0px 5px 10px;
+          margin: 0px;
           transition: all 0.3s;
           overflow: hidden;
           text-align: center;

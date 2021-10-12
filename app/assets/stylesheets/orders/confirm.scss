@@ -68,6 +68,11 @@ $sub_weight: 900;
             width: 200px;
           }
         }
+        .order_confirm_imte_context_sub_description{
+          font-size: 12px;
+          color: #78797a;
+          margin-left: 10px;
+        }
         .order_confirm_item_context_sub:nth-child(3) {
           font-size: $sub_title_size;
           font-weight: bold;
@@ -198,4 +203,8 @@ $sub_weight: 900;
 
 input[type="radio"] {
   -webkit-appearance: auto;
+}
+
+.hidden{
+  display: none;
 }

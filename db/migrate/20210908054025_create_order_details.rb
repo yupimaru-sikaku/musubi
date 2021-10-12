@@ -10,8 +10,6 @@ class CreateOrderDetails < ActiveRecord::Migration[6.0]
       t.string :product_name, null: false
       # 個数
       t.integer :quantity, null: false
-      # 商品番号（FK)
-      t.references :product, foreign_key: true
       # オーダー番号（FK)
       t.references :order, foreign_key: true
 
