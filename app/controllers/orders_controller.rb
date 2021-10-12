@@ -80,12 +80,7 @@ class OrdersController < ApplicationController
     end
 
     # 最後にメールを送信
-    cart_total_price = cart_total_price(@cart)
-    ship_fee = 620
-    billing_amount = cart_total_price + ship_fee
-    cart_total_quantity = cart_total_quantity(@cart)
-
-    ContactMailer.product_buy_thanks_mail(current_user, order, billing_amount).deliver
+    ContactMailer.product_buy_thanks_mail(current_user, order, @billing_amount).deliver
     
     # 保持しているURLを解放
     session[:previous_url] = ""
