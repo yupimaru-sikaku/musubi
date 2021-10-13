@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       # 価格
       t.integer :price, null: false, default: 0
       # 説明
-      t.string :description, null: false
+      t.text :description, null: false
       # 在庫
       t.integer :stock, null: false, default: 0
       # 型番

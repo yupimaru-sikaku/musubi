@@ -117,7 +117,7 @@
   line-height: 35px;
   width: 100px;
   margin-top: 5px;
-  text-align: center;
+  padding-left: 35px;
 }
 
 .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select p {
@@ -264,6 +264,27 @@
     text-align: left;
     width: 100%;
     margin-top: 5px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select select {
+    border: 1px solid #ccc8c8;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    line-height: 35px;
+    width: 100px;
+    margin-top: 5px;
+    padding-left: 35px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select p {
+    font-size: 16px;
+    padding: 0px 10px;
   }
   .registration_new_content .registration_new_fields .registration_new_field p {
     font-size: 14px;

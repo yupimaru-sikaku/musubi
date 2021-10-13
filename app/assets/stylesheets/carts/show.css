@@ -199,8 +199,8 @@
     -webkit-box-shadow: 0 2px 5px #ccc;
             box-shadow: 0 2px 5px #ccc;
     border-radius: 8px;
-    text-align: center;
     margin-left: 10px;
+    padding: 0px;
   }
   .cart_show_content .cart_show_items .cart_show_item .cart_show_context .cart_show_context_buy input.cart_show_context_buy_update {
     color: #0066c0;

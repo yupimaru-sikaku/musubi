@@ -12,7 +12,7 @@
                     <div><%= image_tag image, alt: "商品の画像" %></div>
                 <% end %>
             <% else %>
-                <div><%= image_tag "no_image.jpg", class: "no_image", alt: "ノーイメージ" %><</div>>
+                <div><%= image_tag "no_image.jpg", class: "no_image", alt: "ノーイメージ" %></div>
             <% end %>
         </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="module-spacer--large"></div>
 
         <div class="product_show_description">
-            <p><%=@product.description %></p>
+            <p><%=safe_join(@product.description.split("\n"),tag(:br))%></p>
         </div>
     
     </div>
