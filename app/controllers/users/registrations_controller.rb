@@ -9,9 +9,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+
+    # 登録したユーザーのアドレスにメール
+    # 登録したことをメールとSlackで通知
+    if @user.save
+
+      # 登録した事業所のアドレスにメール
+      ContactMailer.user_signup_thanks_mail(current_user).deliver
+      ContactMailer.user_signup_mail(current_user).deliver
+
+      # slackへ通知を送る
+      notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+      notifier.ping "むすびHPです。\n ユーザー会員登録がありました。"
+    end
+
+  end
 
   # GET /resource/edit
   # def edit

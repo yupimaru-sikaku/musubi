@@ -23,6 +23,11 @@
       font-size: 20px;
       text-align: center;
     }
+    .registration_new_title_sub {
+      font-size: 14px;
+      text-align: center;
+      color: #78797a;
+    }
 
     .registration_new_field {
       text-align: center;
@@ -165,6 +170,10 @@
         }
       }
     }
+    .musubi_company_terms {
+      color: blue;
+      display: block;
+    }
 
     .registration_new_field_card {
       display: flex;
@@ -203,6 +212,11 @@
 
       .registration_new_title {
         font-size: 16px;
+      }
+      .registration_new_title_sub {
+        font-size: 12px;
+        text-align: center;
+        color: #78797a;
       }
 
       .registration_new_field {

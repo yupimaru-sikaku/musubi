@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_02_090040) do
+ActiveRecord::Schema.define(version: 2021_10_18_030143) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -59,10 +59,11 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
     t.string "financial_facility_name", null: false
     t.string "bank_branch_name", null: false
     t.string "bank_account_type", null: false
-    t.integer "bank_account_number", null: false
+    t.string "bank_account_number", null: false
     t.string "bank_account_holder", null: false
     t.integer "invited_person_number", default: 0, null: false
     t.boolean "admin", default: false, null: false
+    t.boolean "is_buy", default: false, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -103,6 +104,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
     t.string "order_number", null: false
     t.string "model_number", null: false
     t.string "product_name", null: false
+    t.integer "price", null: false
     t.integer "quantity", null: false
     t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
@@ -113,9 +115,19 @@ ActiveRecord::Schema.define(version: 2021_10_02_090040) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "order_number", null: false
     t.string "human_name", null: false
+    t.string "postal_code", null: false
     t.string "address", null: false
+    t.string "phone_number", null: false
+    t.string "email", null: false
+    t.integer "shipping_fee", null: false
     t.integer "billing_amount", null: false
     t.string "pay_type", null: false
+    t.boolean "is_finished", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pdfs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

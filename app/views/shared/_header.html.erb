@@ -12,7 +12,7 @@
       </div>
     <% else %>
       <div class="header_menu">
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "お客様ログイン", new_user_session_path %>
       </div>
     <% end %>
 
@@ -49,7 +49,7 @@
         <% if user_signed_in? %>
           <li><i class="fas fa-user-alt"></i><%= link_to "#{current_user.human_name}さん", user_path(current_user) %></li>
         <% else %>
-          <li><i class="fas fa-sign-in-alt"></i></i><%= link_to "ログイン", new_user_session_path %></li>
+          <li><i class="fas fa-sign-in-alt"></i></i><%= link_to "お客様ログイン", new_user_session_path %></li>
         <% end %>
         <li><i class="fas fa-gifts"></i><%= link_to "商品一覧", products_path %></li>
         <li><i class="fas fa-headset"></i><%= link_to "お問い合わせ", new_contact_path %></li>

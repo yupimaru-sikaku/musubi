@@ -14,7 +14,11 @@ class UsersController < ApplicationController
     end
 
     def purchase_histroy
-        @orders = current_user.orders
+        @orders = Order.where(human_name: current_user.human_name)
+    end
+
+    # カード情報登録の規約
+    def card_terms
     end
 
 end

@@ -23,6 +23,10 @@ class Company < ApplicationRecord
   # 招待コードの代理店コードがあるか
   validate :check_invitation_code
 
+  # address
+  # 都道府県から入力されているか
+  validate :is_valid_prefectures
+
   # postal_code
   # 半角数字のみ
   validates :postal_code, numericality: { only_integer: true, message: 'は半角数字（ハイフン無し）で入力して下さい' }
@@ -92,6 +96,12 @@ class Company < ApplicationRecord
         company[:invited_person_number] += 1
         company.update(invited_person_number: company[:invited_person_number])
       end
+    end
+  end
+
+  def is_valid_prefectures
+    unless ["北海道", "青森県", "秋田県", "岩手県", "宮城県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県", "富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"].any? { |t| address.include?(t) }
+      errors.add(:address, "は都道府県から入力して下さい。")
     end
   end
 

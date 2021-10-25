@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.iryo_favorite_content {
+  margin-left: 260px;
+  background-color: #eee;
+  height: 100vh;
+  overflow: auto;
+}
+
+.iryo_favorite_content .iryo_favorite_title {
+  font-size: 28px;
+  text-align: center;
+}
+
+.iryo_favorite_content .iryo_indexes {
+  width: 95%;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.iryo_favorite_content .iryo_indexes table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-bottom: 1px solid #b7b7b7;
+}
+
+.iryo_favorite_content .iryo_indexes table th {
+  border-bottom: 1px solid #b7b7b7;
+  /**/
+  padding: 10px;
+}
+
+.iryo_favorite_content .iryo_indexes table td {
+  padding: 20px;
+  text-align: center;
+  /*破線 1px オレンジ*/
+}
+
+.iryo_favorite_content .iryo_indexes table a {
+  text-decoration: none;
+  margin: 0 auto;
+  color: blue;
+}
+
+.iryo_favorite_content .iryo_indexes table a :hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+  .iryo_favorite_content {
+    margin-left: 260px;
+  }
+  .iryo_favorite_content .iryo_favorite_title {
+    width: 800px;
+    font-size: 24px;
+  }
+  .iryo_favorite_content .iryo_indexes {
+    width: 800px;
+    margin: 0px 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .iryo_favorite_content {
+    margin-left: 0px;
+  }
+  .iryo_favorite_content .iryo_favorite_title {
+    width: 800px;
+    font-size: 24px;
+  }
+  .iryo_favorite_content .iryo_indexes {
+    width: 800px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

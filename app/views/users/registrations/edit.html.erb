@@ -97,6 +97,7 @@
       </div>
       <div class="registration_new_field_main_enter">
         <%= f.text_field :address, id: "address"  %>
+        <p>都道府県から入力下さい</p>
         <p>例）大阪府大阪市北区〇〇町〇〇丁目〇〇番地〇〇号</p>
       </div>
     </div>
@@ -213,4 +214,5 @@
 
 <%= render partial: 'shared/footer' %>
 
+<%= javascript_pack_tag "shared/address" %>
 <%= javascript_pack_tag "users/password" %>

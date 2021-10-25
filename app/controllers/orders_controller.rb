@@ -1,7 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user! , only: [:confirm]
   before_action :add_info, only: [:create, :confirm]
+  before_action :is_admin, only: [:index]
   
+  def index
+    @orders = Order.all
+  end
+
   def create
     return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
     if params[:pay_type] == "クレジットカード払い" && !current_user.card
@@ -16,7 +21,11 @@ class OrdersController < ApplicationController
     order = Order.create!(
       order_number: order_detail_number,
       human_name: current_user.human_name,
+      postal_code: current_user.postal_code,
       address: current_user.address,
+      phone_number: current_user.phone_number,
+      email: current_user.email,
+      shipping_fee: @shipping_fee,
       billing_amount: @billing_amount,
       pay_type: params[:pay_type],
     )
@@ -27,6 +36,7 @@ class OrdersController < ApplicationController
         order_number: order_detail_number,
         model_number: Product.find_by(id: cart["product_id"]).model_number,
         product_name: Product.find_by(id: cart["product_id"]).product_name,
+        price: Product.find_by(id: cart["product_id"]).price,
         quantity: cart["quantity"],
       )
     end
@@ -61,7 +71,7 @@ class OrdersController < ApplicationController
           Point.create(
             point_type: "消毒液",
             count: syodoku_point,
-            company_id: company_id
+            company_id: company_id,
           )
         end
       end
@@ -79,8 +89,15 @@ class OrdersController < ApplicationController
       )
     end
 
-    # 最後にメールを送信
-    ContactMailer.product_buy_thanks_mail(current_user, order, @billing_amount).deliver
+
+    # 最後にお客様と自身にメールを送信
+    order_details = OrderDetail.where(order_id: order.id)
+    ContactMailer.product_buy_thanks_mail(current_user, order).deliver
+    ContactMailer.product_buy_mail(current_user, order, order_details).deliver
+    # slackへ通知を送る
+    notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+    notifier.ping "むすびHPです。\n商品購入がありました。"
+
     
     # 保持しているURLを解放
     session[:previous_url] = ""
@@ -113,6 +130,7 @@ class OrdersController < ApplicationController
 
   private
 
+  # カート内の商品情報を追加
   def add_info
 
     @cart = []
@@ -137,27 +155,25 @@ class OrdersController < ApplicationController
     @cart_total_quantity = @cart.sum { |hash| hash[:quantity] }
     
     # 住所から送料を決める
+    # ActionController
     address = current_user.address
-    if ["北海道"].any? { |t| address.include?(t) }
-      @ship_fee = 2840 * @cart_total_quantity
-    elsif ["青森県", "秋田県", "岩手県"].any? { |t| address.include?(t) }
-      @ship_fee = 2400 * @cart_total_quantity
-    elsif ["宮城県", "山形県", "福島県"].any? { |t| address.include?(t) }
-      @ship_fee = 2290 * @cart_total_quantity
-    elsif ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県"].any? { |t| address.include?(t) }
-      @ship_fee = 2180 * @cart_total_quantity
-    elsif ["富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県"].any? { |t| address.include?(t) }
-      @ship_fee = 2070 * @cart_total_quantity
-    elsif ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"].any? { |t| address.include?(t) }
-      @ship_fee = 2180 * @cart_total_quantity
-    elsif ["沖縄県"].any? { |t| address.include?(t) }
-      @ship_fee = 4160 * @cart_total_quantity
+    decide_shipping_fee(address)
+
+    if @shipping_fee == nil
+      return redirect_to user_path(current_user), flash: {success: "住所を都道府県から入力下さい"}
     end
 
     # 請求金額
-    @billing_amount = @cart_total_price + @ship_fee
+    @billing_amount = @cart_total_price + @shipping_fee
 
+  end
 
+  def is_admin
+    if company_signed_in? && current_company.admin == true
+        return
+    else
+        redirect_to root_path
+    end
   end
 
 end

@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   def new
     return redirect_to root_path, flash: {success: "既にカード情報が登録されています"} if current_user.card.present?
   end
-  
+
   def create
     return redirect_to root_path, flash: {success: "既にカード情報が登録されています"} if current_user.card.present?
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
@@ -28,13 +28,6 @@ class CardsController < ApplicationController
     end
   end  
 
-  def edit
-    @card = current_user.card
-  end
-
-  def update
-  end
-  
   def destroy
     card = current_user.card
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
@@ -42,6 +35,9 @@ class CardsController < ApplicationController
     customer.delete
     card.delete
     redirect_to user_path
+  end
+
+  def terms
   end
 
 end

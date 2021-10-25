@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :cards
+  root to: 'homes#index'
   
   # エンドユーザー
   devise_for :users, controllers: {
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get 'purchase_histroy'
+      get 'card_terms'
     end
   end
   
@@ -29,22 +31,16 @@ Rails.application.routes.draw do
   end
 
   # HPの画面
-  root to: 'homes#index'
   resources :homes, only: [:index] do
     collection do
       get 'invitation'
+      get 'invitation_complete'
+      get 'sdgs'
     end
   end
   post 'homes/send_invitation_email', to: 'homes#send_invitation_email'
 
   resources :products
-  
-  resource :services, only: [:index] do
-    collection do
-      get 'contact_done'
-      get 'index_test'
-    end
-  end
   
   resources :orders do
     collection do
@@ -56,7 +52,17 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :create]
   
   # お問い合わせ
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create] do
+    collection do
+      get 'contanct_complete'
+    end
+  end
+
+  resources :pdfs do
+    collection do
+      get 'toggle_is_finished'
+    end
+  end
   
   get 'carts/show', to: 'carts#show', as: 'carts_show'
   get 'carts/session_reset', to: 'carts#session_reset'

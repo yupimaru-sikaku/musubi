@@ -8,17 +8,21 @@ class ContactsController < ApplicationController
         @contact = Contact.new(contact_params)
         
         if @contact.save
+            contact = @contact
             # サンクスメールを送信
-            human_name = params[:contact][:human_name]
-            email = params[:contact][:email]
-            contact_detail = params[:contact][:contact_detail]
-            ContactMailer.contact_thanks_mail(human_name, email, contact_detail).deliver
-            redirect_to root_path
+            ContactMailer.contact_thanks_mail(contact).deliver
+            ContactMailer.contact_mail(contact).deliver
+            # slackへ通知を送る
+            notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+            notifier.ping "むすびHPです。\n問い合わせがありました。"
+            return redirect_to contanct_complete_contacts_path
         else
             render :new
         end
     end
 
+    def contanct_complete
+    end
 
     private
 

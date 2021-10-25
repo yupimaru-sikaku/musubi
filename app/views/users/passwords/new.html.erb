@@ -5,6 +5,7 @@
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'registration_new_fields', method: :post }) do |f| %>
 
   <h2 class="registration_new_title">パスワードをお忘れですか？</h2>
+  <p class= "registration_new_title_sub">- お客様専用 -</p>
 
   <div class="module-spacer--medium"></div>
 
@@ -24,7 +25,7 @@
       </div>
       <div class="registration_new_field_main_enter">
         <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
-        <p>お客様が登録したメールアドレスへ</br>再設定のご案内をお送りします。</p>
+        <p>お客様が登録したメールアドレスへ再設定のご案内をお送りします。</p>
       </div>
     </div>
 

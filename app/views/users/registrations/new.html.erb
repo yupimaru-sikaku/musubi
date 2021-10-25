@@ -5,6 +5,8 @@
   <%= form_with model: @user, url: user_registration_path, class: 'registration_new_fields', local: true do |f| %>
 
   <h2 class="registration_new_title">新規登録画面</h2>
+  <p class= "registration_new_title_sub">- お客様専用 -</p>
+
 
   <div class="module-spacer--medium"></div>
 
@@ -96,6 +98,7 @@
       </div>
       <div class="registration_new_field_main_enter">
         <%= f.text_field :address, id: "address" %>
+        <p>都道府県から入力下さい</p>
         <p>例）大阪府大阪市北区〇〇町〇〇丁目〇〇番地〇〇号</p>
       </div>
     </div>

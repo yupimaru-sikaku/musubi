@@ -1,85 +1,59 @@
-//登録されたメールアドレスへ送信
-function onFormSubmit(e) {
+      # slackへ通知を送（ユーザー）
+      notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+      notifier.ping "むすびHPです。\n\n 
+      ユーザー会員登録がありました。\n\n
+      ★お名前\n
+      #{current_user.human_name}\n\n
+      ★郵便番号\n
+      #{current_user.postal_code}\n\n
+      ★住所\n
+      #{current_user.address}\n\n
+      ★電話番号\n
+      #{current_user.phone_number}\n\n
+      ★メールアドレス\n
+      #{current_user.email}\n\n" +
+      if current_user.agency_code.present?
+        "\n\n      ★代理店コード\n#{current_user.agency_code}"
+      else
+        "\n\n      ★代理店コード\n無し"
+      end
 
-  // フォームの回答を取得
-  //質問項目を変えたらここの名前も変えるように
-  //代表取締役名または代表社員名（代表者）
-  var name = e.namedValues['代表取締役名または代表社員名（代表者）'][0];
-  //質問項目を変えたらここの名前も変えるように
-  //代理店のメールアドレス
-  var email = e.namedValues['代理店のメールアドレス'][0];
-  //質問項目を変えたらここの名前も変えるように
-  //代理店の郵便番号
-  var postalCode = e.namedValues['代理店の郵便番号'][0];
-  //質問項目を変えたらここの名前も変えるように
-  //商品の届け先
-  var destination = e.namedValues['商品の届け先'][0];
-  //質問項目を変えたらここの名前も変えるように
-  //代理店の電話番号
-  var telephoneNumber = e.namedValues['代理店の電話番号'][0];
-  
-  
-  // 自動返信メール件名
-  var subject = '代理店登録の申請/お振込のご案内【むすび】';
-      
-  // 自動返信メール本文
-  var body = name + '　様\n' +
-    '\n' +
-    'ご利用いただきまして誠にありがとうございます。\n' +
-    '株式会社むすび カスタマーサポートセンターでございます。\n' +
-    '\n' +
-      'この度は代理店登録にご申請いただきありがとうございます。' +
-    '\n' +
-    '登録に伴い、本メールに記載の口座番号・請求金額をご確認のうえ、お振込をお願い致します。\n' +
-    '\n' +
-    'お振込を確認後、代理店の登録が完了致します。\n' +
-    '何卒、よろしくお願い申し上げます。\n' +
-    '\n' +
-    '------------------------------------------------------------\n' +
-    '\n' +  
-    'ご請求金額\n' +
-    '¥ 39,490\n' +
-    '\n' +
-    'ご請求金額内訳\n' + 
-    '・ 登録手数料（¥1,000 + tax）\n' + 
-    '・ 銀イオン詰替え用（6ppm）2L✗10（¥33,500 + tax）\n' + 
-    '・ 送料（¥1,400 + tax）\n' + 
-    '\n'+
-    '------------------------------------------------------------\n' +
-    '\n'+
-    '------------------------------------------------------------\n' +
-    '＜振込先＞\n' +
-    '\n' +  
-    '銀行名：大阪シティ信用金庫\n' + 
-    '支店名：高井田支店\n' + 
-    '口座種別：普通\n' + 
-    '口座番号：８０８８９６７\n' + 
-    '口座名義：カ)ムスビ\n' + 
-    '\n'+
-    '※振込名義は、【' + name + '】様にてお願い致します。\n' +
-    '※口座番号は必ず0を含めた7桁をご入力下さい。\n' +
-    '※振込手数料はお客にてご負担下さい。\n'+
-    '------------------------------------------------------------\n' +
-    '\n'+
-    '＜お届け先＞\n' +
-    '\n' +  
-    name+' 様\n' + 
-    postalCode + '\n' +
-    destination + '\n' +
-    telephoneNumber + '\n' +
-    '\n' +  
-    '\n' +  
-    '◆◆◆ご注意下さい◆◆◆\n' + 
-    'ご入金の内容変更、キャンセル、返金は承ることができません。\n' +
-    '\n' + 
-    '株式会社むすび\n'
-    ;
-  
-  // メール送信
-  MailApp.sendEmail({
-    to: email,
-    subject: subject,
-    body: body
-  });
+      # slackへ通知を送る（代理店）
+      notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+      notifier.ping "むすびHPです。\n\n 
+      代理店申請がありました。\n\n
+      ★代理店名\n
+      #{current_company.agency_name}\n\n
+      ★郵便番号\n
+      #{current_company.postal_code}\n\n
+      ★代理店コード\n
+      #{current_company.agency_code}\n\n
+      ★代表者名\n
+      #{current_company.human_name}\n\n
+      ★代表者の生年月日\n
+      #{current_company.birth_day}\n\n
+      ★代理店の郵便番号\n
+      #{current_company.postal_code}\n\n
+      ★代理店の住所\n
+      #{current_company.address}\n\n
+      ★代理店の電話番号\n
+      #{current_company.phone_number}\n\n
+      ★代理店のメールアドレス\n
+      #{current_company.email}\n\n
+      ★金融機関\n
+      #{current_company.financial_facility_name}\n\n
+      ★支店名\n
+      #{current_company.bank_branch_name}\n\n
+      ★口座種別\n
+      #{current_company.bank_account_type}\n\n
+      ★口座番号\n
+      #{current_company.bank_account_number}\n\n
+      ★口座名義人（カナ）\n
+      #{current_company.bank_account_holder}\n\n" +
+      if current_company.invitation_code.present?
+        "\n\n      ★招待コード\n#{current_company.invitation_code}\n\n"
+      else
+        "\n\n      ★招待コード\n無し\n\n"
+      end
 
-}
+

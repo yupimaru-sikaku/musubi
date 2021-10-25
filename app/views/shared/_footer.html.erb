@@ -4,27 +4,20 @@
     <p>MUSUBI</p>
   </div>
 
-  <div class="module-spacer--medium"></div>
+  <div class="footer_menu_1">
+    <p>Login</p>
+    <%= link_to "ユーザーログイン", user_session_path %>
+    <%= link_to "ユーザーログアウト", destroy_user_session_path, method: :delete %>
+    <div class="module-spacer--small"></div>
+    <%= link_to "代理店ログイン", company_session_path %>
+    <%= link_to "代理店ログアウト", destroy_company_session_path, method: :delete %>
+  </div>
 
-  <div class="footer_menus">
-
-    <div class="footer_menu">
-      <p>Login</p>
-      <%= link_to "ユーザーログイン", user_session_path %>
-      <%= link_to "ユーザーログアウト", destroy_user_session_path, method: :delete %>
-      <div class="module-spacer--small"></div>
-      <%= link_to "代理店ログイン", company_session_path %>
-      <%= link_to "代理店ログアウト", destroy_company_session_path, method: :delete %>
-    </div>
-
-    <div class="footer_menu">
-      <p>SERVICE</p>
-      <a href="/">サービス概要</a>
-      <a href="/">代理店契約</a>
-      <a href="/">消毒液販売</a>
-    </div>
-
-
+  <div class="footer_menu_2">
+    <p>SERVICE</p>
+    <a href="/">サービス概要</a>
+    <a href="/">代理店契約</a>
+    <a href="/">消毒液販売</a>
   </div>
 
   <div class="module-spacer--medium"></div>
@@ -32,7 +25,5 @@
   <div class="footer_copyright">
     <p>Copyright ©2021 MUSUBI</p>
   </div>
-
-  <div class="module-spacer--small"></div>
 
 </nav>

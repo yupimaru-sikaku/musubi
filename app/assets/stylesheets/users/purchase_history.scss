@@ -48,7 +48,7 @@
 
 @media screen and (max-width: 750px) {
   .user_purchase_history_content {
-    margin: 50px 20px 0px;
+    margin: 50px 10px 0px;
     font-family: "游ゴシック体", YuGothic;
     letter-spacing: 2px;
 
@@ -65,8 +65,8 @@
         margin-bottom: 20px;
 
         .user_purchase_history_item_header {
-          display: flex;
-          justify-content: space-around;
+          display: grid;
+          row-gap: 5px;
           background-color: #eee;
           border-radius: 8px 8px 0px 0px;
           padding: 5px;

@@ -7,6 +7,26 @@ class ApplicationController < ActionController::Base
     # 自分の日記や掲示板に意図しない書き込みがされたりといった被害を受ける可能性がある。
     protect_from_forgery with: :exception
 
+    # 住所から送料を決める
+    def decide_shipping_fee(address)
+      if ["北海道"].any? { |t| address.include?(t) }
+        @shipping_fee = 2840 * @cart_total_quantity
+      elsif ["青森県", "秋田県", "岩手県"].any? { |t| address.include?(t) }
+        @shipping_fee = 2400 * @cart_total_quantity
+      elsif ["宮城県", "山形県", "福島県"].any? { |t| address.include?(t) }
+        @shipping_fee = 2290 * @cart_total_quantity
+      elsif ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県"].any? { |t| address.include?(t) }
+        @shipping_fee = 2180 * @cart_total_quantity
+      elsif ["富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県"].any? { |t| address.include?(t) }
+        @shipping_fee = 2070 * @cart_total_quantity
+      elsif ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"].any? { |t| address.include?(t) }
+        @shipping_fee = 2180 * @cart_total_quantity
+      elsif ["沖縄県"].any? { |t| address.include?(t) }
+        @shipping_fee = 4160 * @cart_total_quantity
+      end
+      return @shipping_fee
+    end
+
     private
 
     def configure_permitted_parameters

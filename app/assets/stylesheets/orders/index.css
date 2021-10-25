@@ -1,0 +1,104 @@
+@charset "UTF-8";
+.order_index_content {
+  padding: 150px 150px;
+  letter-spacing: 2px;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+
+.order_index_content .order_index_title {
+  color: #59b69e;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.order_index_content .order_index_items {
+  background-color: white;
+  border-radius: 8px;
+  padding: 50px 0px;
+}
+
+.order_index_content .order_index_items table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-bottom: 1px solid #b7b7b7;
+}
+
+.order_index_content .order_index_items table th {
+  border-bottom: 1px solid #b7b7b7;
+  /**/
+  padding: 10px;
+}
+
+.order_index_content .order_index_items table td {
+  padding: 20px;
+  text-align: center;
+  /*破線 1px オレンジ*/
+}
+
+.order_index_content .order_index_items table a {
+  text-decoration: none;
+  margin: 0 auto;
+  color: blue;
+}
+
+.order_index_content .order_index_items table a :hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 750px) {
+  .order_index_content {
+    padding: 100px 10px 55px;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+    text-align: center;
+  }
+  .order_index_content .order_index_title {
+    color: #59b69e;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .order_index_content .order_index_items {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 0px;
+  }
+  .order_index_content .order_index_items table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-bottom: none;
+    font-size: 12px;
+  }
+  .order_index_content .order_index_items table th {
+    border-bottom: none;
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: none;
+  }
+  .order_index_content .order_index_items table td {
+    padding: 5px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .order_index_content .order_index_items table a {
+    text-decoration: none;
+    margin: 0 auto;
+    color: blue;
+  }
+  .order_index_content .order_index_items table a :hover {
+    opacity: 0.5;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,41 +1,51 @@
+@import "../font";
+
 .footer {
   background-color: #212529;
   font-family: "M PLUS Rounded 1c", sans-serif;
   border-top: 5px solid #59b69e;
   padding: 0px 205px;
-
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: grid;
+  grid-template:
+    " logo logo "
+    " .... .... " 30px
+    " menu_1 menu_2 "
+    " .... .... " 30px
+    " copyright copyright "
+    " .... .... " 30px;
   .footer_logo {
+    grid-area: logo;
     font-size: 40px;
-    color: white;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
     border-bottom: 0.5px solid #ababab;
-
-    p {
-      padding: 30px 0px;
-    }
+    padding: 30px 0px;
   }
 
-  .footer_menus {
-    display: flex;
-    color: white;
-
-    .footer_menu {
-      padding: 0px 25px;
-      font-family: "M PLUS Rounded 1c";
-      p {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        font-size: 20px;
-        padding: 0px 0px 10px 0px;
-      }
-      a {
-        display: block;
-      }
+  .footer_menu_1 {
+    grid-area: menu_1;
+    font-size: 20px;
+    p {
+      padding: 0px 0px 10px 0px;
+    }
+    a {
+      display: block;
+    }
+  }
+  .footer_menu_2 {
+    grid-area: menu_2;
+    padding: 0px 25px;
+    font-size: 20px;
+    p {
+      padding: 0px 0px 10px 0px;
+    }
+    a {
+      display: block;
     }
   }
 
   .footer_copyright {
+    grid-area: copyright;
     color: white;
     text-align: right;
   }
@@ -43,47 +53,49 @@
 
 @media screen and (max-width: 750px) {
   .footer {
-    background-color: #212529;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    border-top: 5px solid #59b69e;
     padding: 0px 20px;
-  
+    display: grid;
+    grid-template:
+      " logo logo "
+      " .... .... " 15px
+      " menu_1 menu_2 "
+      " .... .... " 15px
+      " copyright copyright "
+      " .... .... " 15px;
     .footer_logo {
+      grid-area: logo;
       font-size: 32px;
-      color: white;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       border-bottom: 0.5px solid #ababab;
-  
+      padding: 15px 0px;
+    }
+
+    .footer_menu_1 {
+      grid-area: menu_1;
+      font-size: $sm_subsub;
       p {
-        padding: 15px 0px;
+        padding: 0px 0px 10px 0px;
+      }
+      a {
+        display: block;
       }
     }
-  
-    .footer_menus {
-      display: flex;
-      justify-content: space-between;
-      color: white;
-  
-      .footer_menu {
-        padding: 0px 0px;
-        font-family: "M PLUS Rounded 1c";
-        p {
-          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-            sans-serif;
-          font-size: 20px;
-          padding: 0px 0px 10px 0px;
-        }
-        a {
-          display: block;
-          font-size: 14px;
-        }
+    .footer_menu_2 {
+      grid-area: menu_2;
+      padding: 0px 25px;
+      font-size: $sm_subsub;
+      p {
+        padding: 0px 0px 10px 0px;
+      }
+      a {
+        display: block;
       }
     }
-  
+    
     .footer_copyright {
+      font-size: $sm_subsub;
+      grid-area: copyright;
       color: white;
       text-align: right;
-      font-size: 12px;
     }
   }
 }

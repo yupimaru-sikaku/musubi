@@ -14,14 +14,16 @@
 }
 
 .home_container .home_index_about {
-  font-family: "游ゴシック体", YuGothic;
   text-align: center;
 }
 
 .home_container .home_index_about .home_index_about_title {
-  font-size: 30px;
-  font-weight: normal;
+  font-size: 32px;
   border-left: none;
+}
+
+.home_container .home_index_about .home_index_about_contents {
+  font-size: 16px;
 }
 
 .home_container .home_index_about .home_index_about_contents table {
@@ -74,17 +76,15 @@
 }
 
 .home_container .home_index_biography .home_index_biography_title {
-  font-size: 30px;
-  font-weight: normal;
-  font-family: "游ゴシック体", YuGothic;
+  font-size: 32px;
 }
 
 .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_name {
-  font-size: 28px;
+  font-size: 24px;
   text-align: start;
   border-left: 5px solid #59b69e;
   padding-left: 20px;
-  line-height: 100px;
+  line-height: 50px;
 }
 
 .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail {
@@ -108,7 +108,7 @@
 }
 
 .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item {
-  font-size: 14px;
+  font-size: 16px;
   text-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,9 +141,7 @@
 }
 
 .home_container .home_index_president .home_index_president_title {
-  font-size: 30px;
-  font-weight: normal;
-  font-family: "游ゴシック体", YuGothic;
+  font-size: 32px;
 }
 
 .home_container .home_index_president .home_index_president_img img {
@@ -153,7 +151,7 @@
 
 .home_container .home_index_president .home_index_president_message .home_index_president_message_title {
   font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-  font-size: 30px;
+  font-size: 24px;
   padding-left: 20px;
   border-left: 5px solid #59b69e;
   line-height: 50px;
@@ -166,7 +164,6 @@
 
 .home_container .home_index_president .home_index_president_message .home_index_president_message_end {
   text-align: end;
-  font-size: 16px;
 }
 
 .home_container .home_index_activity {
@@ -174,19 +171,18 @@
 }
 
 .home_container .home_index_activity .home_index_activity_title {
-  font-size: 30px;
-  font-weight: normal;
-  font-family: "游ゴシック体", YuGothic;
+  font-size: 32px;
 }
 
 .home_container .home_index_activity .home_index_activity_contents {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (350px)[3];
+      grid-template-columns: repeat(3, 350px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
 }
 
 .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card:hover .card-img {
@@ -197,17 +193,15 @@
 }
 
 .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card {
-  width: 350px;
   background: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 5px #ccc;
           box-shadow: 0 2px 5px #ccc;
-  margin: 30px 10px;
   overflow: hidden;
 }
 
 .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-img {
-  width: 350px;
+  width: 100%;
   height: 200px;
   border-radius: 5px 5px 0 0;
   -webkit-transition: 1s all;
@@ -219,7 +213,7 @@
 }
 
 .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-title {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
   color: #333;
@@ -247,64 +241,21 @@
     width: 80vw;
   }
   .home_container .home_index_about {
-    font-family: "游ゴシック体", YuGothic;
     text-align: center;
   }
   .home_container .home_index_about .home_index_about_title {
     font-size: 20px;
   }
   .home_container .home_index_about .home_index_about_contents table {
+    font-size: 12px;
     width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    font-size: 14px;
-  }
-  .home_container .home_index_about .home_index_about_contents table tr {
-    border-bottom: solid 2px white;
-  }
-  .home_container .home_index_about .home_index_about_contents table tr:last-child {
-    border-bottom: none;
-  }
-  .home_container .home_index_about .home_index_about_contents table th {
-    position: relative;
-    text-align: left;
-    width: 30%;
-    background-color: #59b69e;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .home_container .home_index_about .home_index_about_contents table th:after {
-    display: block;
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: calc(50% - 10px);
-    right: -10px;
-    border-left: 10px solid #59b69e;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  }
-  .home_container .home_index_about .home_index_about_contents table td {
-    text-align: left;
-    width: 70%;
-    text-align: center;
-    background-color: #eee;
-    padding: 10px 0;
-  }
-  .home_container .home_index_biography {
-    text-align: center;
   }
   .home_container .home_index_biography .home_index_biography_title {
     font-size: 20px;
   }
   .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_name {
-    font-size: 20px;
-    border-left: 5px solid #59b69e;
-    text-align: start;
+    font-size: 14px;
     padding-left: 10px;
-    line-height: 50px;
   }
   .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail {
     display: -webkit-box;
@@ -331,7 +282,7 @@
     width: 90%;
   }
   .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item {
-    font-size: 14px;
+    font-size: 12px;
     text-align: start;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -366,7 +317,7 @@
   }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_title {
     font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 0px;
     border-left: 5px solid #59b69e;
     line-height: 36px;
@@ -374,33 +325,29 @@
   .home_container .home_index_president .home_index_president_message .home_index_president_message_main {
     line-height: 2em;
     text-align: start;
-    font-size: 14px;
+    font-size: 12px;
   }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_end {
     text-align: end;
-    font-size: 16px;
   }
   .home_container .home_index_activity {
     text-align: center;
   }
   .home_container .home_index_activity .home_index_activity_title {
     font-size: 20px;
-    font-weight: normal;
-    font-family: "游ゴシック体", YuGothic;
   }
   .home_container .home_index_activity .home_index_activity_contents {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (45%)[2];
+        grid-template-columns: repeat(2, 45%);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 10px;
   }
-  .home_container .home_index_activity .home_index_activity_contents a {
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card {
     width: 45%;
-  }
-  .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card {
     width: 100%;
     height: 200px;
     background: #fff;
@@ -410,28 +357,28 @@
     margin: 0px;
     margin-bottom: 10px;
   }
-  .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card .card-img {
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-img {
     width: 100%;
     height: 90px;
     border-radius: 5px 5px 0 0;
   }
-  .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card .card-content {
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content {
     padding: 5px;
   }
-  .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card .card-content .card-title {
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-title {
     font-size: 14px;
     margin-bottom: 5px;
     text-align: center;
     color: #333;
     font-family: "游ゴシック体", YuGothic;
   }
-  .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card .card-content .card-text {
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-content .card-text {
     color: #777;
     font-size: 12px;
     text-align: center;
     font-family: "游ゴシック体", YuGothic;
   }
-  .home_container .home_index_activity .home_index_activity_contents a .home_index_activity_card .card-link {
+  .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card .card-link {
     text-align: center;
     border-top: 1px solid #eee;
     padding: 0px;

@@ -74,12 +74,17 @@
       <%= f.submit "登録する" , class:"button" , id:"button" %>
     </div>
 
+    <div class="module-spacer--medium"></div>
+
+    <div class="musubi_company_terms">
+        <%= link_to "利用規約、プライバシーポリシー", card_terms_users_path, class: "musubi_company_terms", target: :_blank %>
+    </div>
+
     <div class="module-spacer--small"></div>
 
   <% end %>
 
 </div>
-
 
 <%= render partial: 'shared/footer' %>
 

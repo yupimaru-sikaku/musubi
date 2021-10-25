@@ -1,0 +1,60 @@
+むすびHPです。
+
+代理店申請がありました。
+
+★代理店名
+<%= @current_company.agency_name %>
+
+<%if @current_company.invitation_code.present?%>
+★招待コード
+<%= @current_company.invitation_code %>
+<%else%>
+★招待コード
+無し
+<%end%>
+
+★代理店コード
+<%= @current_company.agency_code %>
+
+★代表者名
+<%= @current_company.human_name %>
+
+★代表者の生年月日
+<%= @current_company.birth_day %>
+
+★代理店の郵便番号
+<%= @current_company.postal_code %>
+
+★代理店の住所
+<%= @current_company.address %>
+
+★代理店の電話番号
+<%= @current_company.phone_number %>
+
+★代理店のメールアドレス
+<%= @current_company.email %>
+
+★金融機関
+<%= @current_company.financial_facility_name %>
+
+★支店名
+<%= @current_company.bank_branch_name %>
+
+★口座種別
+<%= @current_company.bank_account_type %>
+
+★口座番号
+<%= @current_company.bank_account_number %>
+
+★口座名義人（カナ）
+<%= @current_company.bank_account_holder %>
+
+---------------------------------------------
+株式会社むすび
+住所：〒577-0004 大阪府東大阪市稲田新町二丁目14番7号
+電話番号：072-814-9830
+携帯：090-4360-9483
+FAX：072-814-9831
+メール：musubi.0316@gmail.com
+HP: https://www.musubimusubi.com
+---------------------------------------------

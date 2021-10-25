@@ -4,16 +4,22 @@ class HomesController < ApplicationController
     def index
     end
 
+    # 招待画面
     def invitation
     end
 
+    # SDGs画面
+    def sdgs
+    end
+    
+    # メールを送るメソッド
     def send_invitation_email
       #登録した事業所のアドレスにメール
       email = params[:email]
       current_company
       if email != ""
         ContactMailer.invitation_mail(email, current_company).deliver
-        redirect_to root_path
+        return redirect_to invitation_complete_homes_path
       else
         redirect_to invitation_homes_path
       end

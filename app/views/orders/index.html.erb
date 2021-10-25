@@ -1,0 +1,54 @@
+<%= render partial: 'shared/product_header' %>
+
+<nav class="order_index_content">
+
+    <% if @orders.present? %>
+        <div class="order_index_title">
+            <h1>オーダー状況管理画面</h1>
+        </div>
+        <div class="module-spacer--medium"></div>
+        <div class="order_index_items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>注文日</th>
+                        <th>注文番号</th>
+                        <th>お名前</th>
+                        <th>請求書</th>
+                        <th>納品書</th>
+                        <th>依頼書</th>
+                        <th>決済</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @orders.each do |order| %>
+                        <tr>
+                            <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+                            <td><%= order.order_number %></td>
+                            <td><%= order.human_name %></td>
+                            <td><%= link_to "請求書PDF", controller: "pdfs", action: "index", id: order.id, type: "請求書" %></td>
+                            <td><%= link_to "納品書PDF", controller: "pdfs", action: "index", id: order.id, type: "納品書" %></td>
+                            <td><%= link_to "依頼書PDF", controller: "pdfs", action: "index", id: order.id, type: "依頼書" %></td>
+                            <td>
+                                <% if order.is_finished == true %>
+                                    <%= link_to "完了", controller: "pdfs", action: "toggle_is_finished", id: order.id, data: { confirm: "処理を完了にしますか？"} %>
+                                <% else %>
+                                    <%= link_to "未完了", controller: "pdfs", action: "toggle_is_finished", id: order.id, data: { confirm: "処理を未完了にしますか？"} %>
+                                <% end %>
+                            </td>
+
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    <% else %>
+        <div class="order_index_title">
+            <h1>オーダー状況管理画面</h1>
+            <p>オーダーはありません</p>
+        </div>
+    <% end %>
+
+</nav>
+
+<%= render partial: 'shared/footer' %>

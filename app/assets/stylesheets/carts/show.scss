@@ -1,22 +1,16 @@
-$title_size: 32px;
-$sub_title_size: 20px;
-$title_size_sm: 24px;
-$title_weight: 900;
-$sub_title_size_sm: 16px;
-$sub_weight: 900;
+@import "../font";
 
 .cart_show_content {
-  padding: 150px 300px;
-  font-family: "游ゴシック体", YuGothic;
-  letter-spacing: 2px;
+  padding: 150px 300px 50px;
+  font-family: $font_family;
+  letter-spacing: $letter_spacing;
   background-color: #f3f3f3;
-
 
   .cart_show_title {
     text-align: center;
     color: #59b69e;
     font-weight: bold;
-    font-size: $title_size;
+    font-size: $pc_main;
   }
 
   .cart_show_items {
@@ -41,13 +35,14 @@ $sub_weight: 900;
 
       .cart_show_context {
         width: 50%;
-        font-size: $sub_title_size;
+        font-size: $pc_subsub;
         flex-direction: column;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         .cart_show_context_title {
+          font-size: $pc_sub;
         }
 
         .cart_show_context_buy {
@@ -60,7 +55,7 @@ $sub_weight: 900;
             // height: 31px;
             // padding: 3px 7px;
             border: 1px solid #eee;
-            width: 100px;
+            width: 50px;
             height: 50px;
             text-align: center;
             box-shadow: 0 2px 5px #ccc;
@@ -85,7 +80,7 @@ $sub_weight: 900;
 
       .cart_show_price {
         width: 20%;
-        font-size: $sub_title_size;
+        font-size: $sm_sub;
         text-align: right;
       }
     }
@@ -93,7 +88,7 @@ $sub_weight: 900;
 
   .cart_show_total_price {
     display: flex;
-    font-size: $sub_title_size;
+    font-size: $sm_sub;
     justify-content: flex-end;
 
     p:nth-child(3) {
@@ -135,7 +130,7 @@ $sub_weight: 900;
       text-align: center;
       color: #59b69e;
       font-weight: bold;
-      font-size: 20px;
+      font-size: $sm_main;
     }
 
     .cart_show_items {
@@ -154,14 +149,13 @@ $sub_weight: 900;
 
         .cart_show_context {
           width: 45%;
-          font-size: 14px;
+          font-size: $sm_subsub;
           flex-direction: column;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
 
           .cart_show_context_title {
-            font-size: 14px;
             width: 150px;
           }
 
@@ -199,7 +193,7 @@ $sub_weight: 900;
 
         .cart_show_price {
           width: 15%;
-          font-size: 14px;
+          font-size: $sm_sub;
           text-align: right;
         }
       }
