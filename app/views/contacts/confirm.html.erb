@@ -1,0 +1,109 @@
+<%= render partial: 'shared/header' %>
+
+<div class="registration_new_content">
+
+  <div class="registration_new_fields">
+
+    <h2 class="registration_new_title">確認画面</h2>
+    <p class= "registration_new_title_sub">- 内容をご確認下さい -</p>
+
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>お名前</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= @contact.human_name %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>ふりがな</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= @contact.furigana %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>メールアドレス</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= @contact.email %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>電話番号</label>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= @contact.phone_number %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>お問い合わせ内容</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <%= @contact.contact_detail %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <%= form_with model: @contact, class: 'registration_new_fields', local: true do |f| %>
+      <%= f.hidden_field :human_name %>
+      <%= f.hidden_field :furigana %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :contact_detail %>
+      <div class="registration_new_field_button">
+        <%= f.submit "送信" %>
+        <div class="module-spacer--medium"></div>
+        <%= f.submit "入力画面に戻る", name: :back, class:"registration_new_field_button_back" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<%= render partial: 'shared/footer' %>

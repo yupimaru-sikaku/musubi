@@ -1,3 +1,5 @@
+@import "../font";
+
 // 登録エラー時のスタイル崩れを防ぐ
 .field_with_errors {
   display: contents;
@@ -47,6 +49,10 @@
           }
         }
         .registration_new_field_main_enter {
+          p.registration_new_field_main_enter_confirm {
+            margin: 5px 0 0 15px;
+            font-size: $pc_subsub;
+          }
           input {
             border: 1px solid #ccc8c8;
             background-color: #f3f3f3;
@@ -153,6 +159,9 @@
           cursor: pointer;
         }
       }
+      input.registration_new_field_button_back {
+        background-color: #bdbdbd;
+      }
       a.registration_new_field_button_sub {
         display: block;
         margin: 0 auto;
@@ -237,6 +246,10 @@
             }
           }
           .registration_new_field_main_enter {
+            p.registration_new_field_main_enter_confirm {
+              margin: 5px 0 0 15px;
+              font-size: $sm_subsub;
+            }
             input {
               border: 1px solid #ccc8c8;
               background-color: #f3f3f3;
@@ -309,6 +322,9 @@
             opacity: 0.5;
             cursor: pointer;
           }
+        }
+        input.registration_new_field_button_back {
+          background-color: #bdbdbd;
         }
       }
     }

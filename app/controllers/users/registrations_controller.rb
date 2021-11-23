@@ -10,8 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   # POST /resource
   def create
-    super
+    @user = User.new(sign_up_params)
+    #戻るボタンを押したときまたは、@userが保存されなかったらnewアクションを実行
+    render :new and return if params[:back]
 
+    
+    super
+    
     # 登録したユーザーのアドレスにメール
     # 登録したことをメールとSlackで通知
     if @user.save
@@ -21,10 +26,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
       ContactMailer.user_signup_mail(current_user).deliver
 
       # slackへ通知を送る
-      notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
-      notifier.ping "むすびHPです。\n ユーザー会員登録がありました。"
+      # notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+      # notifier.ping "むすびHPです。\n ユーザー会員登録がありました。"
     end
 
+  end
+
+  def confirm
+    
+    @user = User.new(sign_up_params)
+    if @user.invalid?
+      render :new
+    end
+
+    i = 0
+    @password = ""
+    while i < @user.password.length
+      @password += "*"
+      i += 1
+    end
+  end
+
+  def complete
   end
 
   # GET /resource/edit
@@ -53,6 +76,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  # user情報登録後に登録完了画面に飛ぶ
+  def after_sign_up_path_for(resource)
+    users_sign_up_complete_path(resource)
+  end
+  
   def update_resource(resource, params)
     resource.update_without_current_password(params)
   end

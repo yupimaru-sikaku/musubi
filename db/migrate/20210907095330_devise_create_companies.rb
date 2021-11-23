@@ -32,6 +32,8 @@ class DeviseCreateCompanies < ActiveRecord::Migration[6.0]
       t.string :bank_account_holder, null: false
       # 招待して登録した人の数
       t.integer :invited_person_number, null: false, default: 0
+      # 何の商品を最初に購入したか
+      t.string :product_name, null: false
       # 承認
       t.boolean :admin, null: false, default: false
       # 会費と商品を購入したか

@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_030143) do
     t.string "bank_account_number", null: false
     t.string "bank_account_holder", null: false
     t.integer "invited_person_number", default: 0, null: false
+    t.string "product_name", null: false
     t.boolean "admin", default: false, null: false
     t.boolean "is_buy", default: false, null: false
     t.string "encrypted_password", default: "", null: false

@@ -1,3 +1,4 @@
+@import "../font";
 $title_size: 32px;
 $sub_title_size: 20px;
 $title_size_sm: 24px;
@@ -68,7 +69,7 @@ $sub_weight: 900;
             width: 200px;
           }
         }
-        .order_confirm_imte_context_sub_description{
+        .order_confirm_imte_context_sub_description {
           font-size: 12px;
           color: #78797a;
           margin-left: 10px;
@@ -205,6 +206,6 @@ input[type="radio"] {
   -webkit-appearance: auto;
 }
 
-.hidden{
+.hidden {
   display: none;
 }

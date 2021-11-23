@@ -95,8 +95,8 @@ class OrdersController < ApplicationController
     ContactMailer.product_buy_thanks_mail(current_user, order).deliver
     ContactMailer.product_buy_mail(current_user, order, order_details).deliver
     # slackへ通知を送る
-    notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
-    notifier.ping "むすびHPです。\n商品購入がありました。"
+    # notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+    # notifier.ping "むすびHPです。\n商品購入がありました。"
 
     
     # 保持しているURLを解放
@@ -114,7 +114,7 @@ class OrdersController < ApplicationController
 
   def confirm
     return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
-
+    
     session[:previous_url] = request.url
 
     @user = current_user
@@ -135,13 +135,16 @@ class OrdersController < ApplicationController
 
     @cart = []
     session[:cart].each do |cart|
+      # 商品情報を取得
       product = Product.find_by(id: cart["product_id"])
+      # 商品の値段×単価
       sub_total = product.price * cart["quantity"].to_i
       next unless product
 
       @cart.push({ 
         product_id: product.id,
         product_name: product.product_name,
+        model_number: product.model_number,
         price: product.price,
         quantity: cart["quantity"].to_i,
         sub_total: sub_total,
@@ -157,7 +160,7 @@ class OrdersController < ApplicationController
     # 住所から送料を決める
     # ActionController
     address = current_user.address
-    decide_shipping_fee(address)
+    decide_shipping_fee(address, @cart_total_quantity, @cart)
 
     if @shipping_fee == nil
       return redirect_to user_path(current_user), flash: {success: "住所を都道府県から入力下さい"}
@@ -168,6 +171,7 @@ class OrdersController < ApplicationController
 
   end
 
+  # 代理店モデルで承認された人のみオーダーの一覧を確認できる
   def is_admin
     if company_signed_in? && current_company.admin == true
         return

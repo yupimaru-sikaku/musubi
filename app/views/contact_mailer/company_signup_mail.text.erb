@@ -49,6 +49,18 @@
 ★口座名義人（カナ）
 <%= @current_company.bank_account_holder %>
 
+★購入商品
+<%= @product.product_name %>
+
+★請求金額
+¥ <%= @billing_amount.to_s(:delimited) %>
+
+★ご請求金額内訳
+・ 登録手数料（¥<%= @registration_fee.to_s(:delimited) %>） 
+・ <%= @product.product_name %>（¥<%= @product.price.to_s(:delimited) %>）
+・ 送料（¥<%= @ship_fee.to_s(:delimited) %>）
+
+
 ---------------------------------------------
 株式会社むすび
 住所：〒577-0004 大阪府東大阪市稲田新町二丁目14番7号

@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+.order_purchase_content .order_purchase_back a.order_purchase_back_yellow {
+  background-color: #ffd814;
+}
+
 @media screen and (max-width: 750px) {
   .order_purchase_content {
     margin: 50px 20px 50px;

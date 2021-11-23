@@ -2,7 +2,7 @@
 
 <div class="registration_new_content">
 
-  <%= form_with model: @contact, class: 'registration_new_fields', local: true do |f| %>
+  <%= form_with(model: @contact, url: confirm_contacts_path(@contact), local: true, class: 'registration_new_fields') do |f| %>
 
   <h2 class="registration_new_title">お問い合わせフォーム</h2>
 
@@ -121,7 +121,7 @@
   <div class="module-spacer--medium"></div>
 
   <div class="registration_new_field_button">
-    <%= f.submit "送信" %>
+    <%= f.submit "確認画面へ" %>
   </div>
 
   <div class="module-spacer--medium"></div>

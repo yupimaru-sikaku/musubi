@@ -2,7 +2,7 @@
 
 <div class="registration_new_content">
 
-  <%= form_with model: @company, url: company_registration_path, class: 'registration_new_fields', local: true do |f| %>
+  <%= form_with(model: @company, url: companies_sign_up_confirm_path(@company), class: 'registration_new_fields', local: true) do |f| %>
 
   <h2 class="registration_new_title">代理店申請画面</h2>
   <p class= "registration_new_title_sub">- 代理店様専用 -</p>

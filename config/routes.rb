@@ -9,6 +9,12 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+
+  devise_scope :user do
+    post 'users/sign_up/confirm', to: 'users/registrations#confirm'
+    get 'users/sign_up/complete', to: 'users/registrations#complete'
+  end
+  
   resources :users, only: [:show] do
     collection do
       get 'purchase_histroy'
@@ -23,6 +29,12 @@ Rails.application.routes.draw do
     registrations: 'companies/registrations',
     invitations: 'companies/invitations'
   }
+
+  devise_scope :company do
+    post 'companies/sign_up/confirm', to: 'companies/registrations#confirm'
+    get 'companies/sign_up/complete', to: 'companies/registrations#complete'
+  end
+
   resources :companies, only: [:show] do
     collection do
       get 'point_index'
@@ -54,6 +66,7 @@ Rails.application.routes.draw do
   # お問い合わせ
   resources :contacts, only: [:new, :create] do
     collection do
+      post 'confirm'
       get 'contanct_complete'
     end
   end

@@ -1,0 +1,28 @@
+<%= render partial: 'shared/product_header' %>
+
+<div class="module-spacer--large"></div>
+<div class="module-spacer--small"></div>
+
+<nav class="order_purchase_content">
+    
+    <div class="order_purchase_title">
+        <p>登録が完了しました</p>
+    </div>
+    
+    <div class="module-spacer--medium"></div>
+
+    <div class="order_purchase_sub">
+        <p>引き続き、お買い物をお楽しみ下さい</p>
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <div class="order_purchase_back">
+      <%= link_to "商品一覧へ", products_path, class: "order_purchase_back_yellow" %>
+    </div>
+
+</nav>
+
+<div class="module-spacer--large"></div>
+
+<%= render partial: 'shared/footer' %>

@@ -21,7 +21,6 @@
       border-bottom: 1px solid #ddd;
       background-color: white;
       border-radius: 8px;
-  
 
       .cart_show_img {
         width: 30%;
@@ -30,6 +29,9 @@
         .no_image {
           width: 180px;
           height: 180px;
+        }
+        img {
+          border-radius: 5px;
         }
       }
 
@@ -136,7 +138,7 @@
     .cart_show_items {
       .cart_show_item {
         display: flex;
-        padding: 20px 0px;
+        padding: 20px 5px;
         border-bottom: 1px solid #ddd;
 
         .cart_show_img {
@@ -157,6 +159,8 @@
 
           .cart_show_context_title {
             width: 150px;
+            font-size: $sm_subsub;
+            padding: 5px;
           }
 
           .cart_show_context_buy {
@@ -174,6 +178,7 @@
               border-radius: 8px;
               margin-left: 10px;
               padding: 0px;
+              padding-left: 15px;
             }
             // 更新ボタン
             input.cart_show_context_buy_update {

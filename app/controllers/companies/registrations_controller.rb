@@ -11,20 +11,97 @@ class Companies::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+
+    @company = Company.new(sign_up_params)
+    #戻るボタンを押したときまたは、@userが保存されなかったらnewアクションを実行
+    render :new and return if params[:back]
+
+    
+    ##### orderとorder_details情報を入力
+    
+    # 購入した商品情報を取得
+    product = Product.find(sign_up_params[:product_name])
+    
+    # ランダムな16桁を生成
+    require 'securerandom'
+    order_detail_number = p SecureRandom.alphanumeric(16)
+    
+    # 送料を決定
+    @cart_total_quantity = 1
+    shipping_fee = decide_shipping_fee(sign_up_params[:address])
+    
+    # 登録料を決定
+    registration_fee = registration_fee()
+    
+    # トータル料金を決定
+    billing_amount = shipping_fee + product.price + registration_fee
+    
+    # Orderテーブルを作成
+    order = Order.create!(
+      order_number: order_detail_number,
+      human_name: sign_up_params[:human_name],
+      postal_code: sign_up_params[:postal_code],
+      address: sign_up_params[:address],
+      phone_number: sign_up_params[:phone_number],
+      email: sign_up_params[:email],
+      shipping_fee: shipping_fee,
+      billing_amount: billing_amount,
+      pay_type: "銀行振込",
+    )
+    
+    # OrderDetailテーブルを作成（商品）
+    order.order_details.create(
+      order_number: order_detail_number,
+      model_number: product.model_number,
+      product_name: product.product_name,
+      price: product.price,
+      quantity: 1,
+    )
+    # OrderDetailテーブルを作成（登録手数料）
+    order.order_details.create(
+      order_number: order_detail_number,
+      model_number: "---",
+      product_name: "登録手数料",
+      price: registration_fee,
+      quantity: 1,
+    )
+    
+    # 購入された商品の在庫を減らす
+    product.stock -= 1
+    product.update(stock: product.stock)
+    
+    ###### 登録した事業所のアドレスにメール
     super
-
-    # 登録した事業所のアドレスにメール
-    # 登録したことをメールとSlackで通知
     if @company.save
-
-      ContactMailer.company_signup_thanks_mail(current_company).deliver
-      ContactMailer.company_signup_mail(current_company).deliver
-
+      
+      ContactMailer.company_signup_thanks_mail(current_company, product, registration_fee).deliver
+      ContactMailer.company_signup_mail(current_company, product, registration_fee).deliver
+      
       # slackへ通知を送る
-      notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
-      notifier.ping "むすびHPです。\n代理店申請がありました。"
+      # notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
+      # notifier.ping "むすびHPです。\n代理店申請がありました。"
+    end
+    
+  end
+  
+  def confirm
+    
+    @products = Product.where(price: 30000..)
+    
+    @company = Company.new(sign_up_params)
+    if @company.invalid?
+      render :new
     end
 
+    i = 0
+    @password = ""
+    while i < @company.password.length
+      @password += "*"
+      i += 1
+    end
+  end
+
+  def complete
   end
 
   # GET /resource/edit
@@ -52,6 +129,11 @@ class Companies::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
+
+  # user情報登録後に登録完了画面に飛ぶ
+  def after_sign_up_path_for(resource)
+    companies_sign_up_complete_path(resource)
+  end
   
   def update_resource(resource, params)
     resource.update_without_current_password(params)

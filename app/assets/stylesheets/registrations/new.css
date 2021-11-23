@@ -50,6 +50,11 @@
   color: white;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter p.registration_new_field_main_enter_confirm {
+  margin: 5px 0 0 15px;
+  font-size: 16px;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input {
   border: 1px solid #ccc8c8;
   background-color: #f3f3f3;
@@ -176,6 +181,10 @@
   cursor: pointer;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field_button input.registration_new_field_button_back {
+  background-color: #bdbdbd;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field_button a.registration_new_field_button_sub {
   display: block;
   margin: 0 auto;
@@ -258,6 +267,10 @@
     border-radius: 4px;
     color: white;
   }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter p.registration_new_field_main_enter_confirm {
+    margin: 5px 0 0 15px;
+    font-size: 12px;
+  }
   .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input {
     border: 1px solid #ccc8c8;
     background-color: #f3f3f3;
@@ -324,6 +337,9 @@
   .registration_new_content .registration_new_fields .registration_new_field_button input:hover {
     opacity: 0.5;
     cursor: pointer;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_button input.registration_new_field_button_back {
+    background-color: #bdbdbd;
   }
   .registration_new_content a {
     font-size: 14px;

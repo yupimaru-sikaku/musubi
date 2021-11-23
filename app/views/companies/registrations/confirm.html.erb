@@ -1,0 +1,280 @@
+<%= render partial: 'shared/header' %>
+
+<div class="registration_new_content">
+
+  <div class="registration_new_fields">
+
+    <h2 class="registration_new_title">確認画面</h2>
+    <p class= "registration_new_title_sub">- ページ下部に商品購入欄があります -</p>
+
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代理店名</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.agency_name %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>招待コード</label>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.invitation_code %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代表取締役名または代表社員名（代表者）</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.human_name %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代表者の生年月日</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.birth_day %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代理店の郵便番号</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.postal_code %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代理店の住所</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.address %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代表者の電話番号</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.phone_number %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>代表者のメールアドレス</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.email %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>金融機関名</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.financial_facility_name %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>支店名（店番）</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.bank_branch_name %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>口座種別</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.bank_account_type %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>口座番号</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.bank_account_number %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>口座名義人（カナ）</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @company.bank_account_holder %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+      <div class="registration_new_field_main">
+        <div class="registration_new_field_main_title">
+          <label>パスワード</label>
+          <span>必須</span>
+        </div>
+        <div class="registration_new_field_main_enter">
+          <p class="registration_new_field_main_enter_confirm"><%= @password %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="module-spacer--medium"></div>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'registration_new_fields') do |f| %>
+      <%= f.hidden_field :agency_name %>
+      <%= f.hidden_field :invitation_code %>
+      <%= f.hidden_field :human_name %>
+      <%= f.hidden_field :birth_day %>
+      <%= f.hidden_field :postal_code %>
+      <%= f.hidden_field :address %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :financial_facility_name %>
+      <%= f.hidden_field :bank_branch_name %>
+      <%= f.hidden_field :bank_account_type %>
+      <%= f.hidden_field :bank_account_number %>
+      <%= f.hidden_field :bank_account_holder %>
+      <%= f.hidden_field :password %>
+      <%= f.hidden_field :password_confirmation %>
+      <div class="registration_new_field">
+        <div class="registration_new_field_main">
+          <div class="registration_new_field_main_title">
+            <label>購入する商品を選択して下さい</label>
+            <span>必須</span>
+          </div>
+          <div class="registration_new_field_main_enter">
+            <% if @products.present? %>
+              <% @products.each do |product| %>
+                  <%= f.radio_button :product_name, product.id %>
+                  <%= f.label :product_name, product.product_name, for: "company_product_name_"+product.id.to_s, class: "radio" %><span>¥<%= product.price.to_s(:delimited) %></span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="module-spacer--medium"></div>
+      <div class="registration_new_field_button">
+        <%= f.submit "登録する" %>
+        <div class="module-spacer--medium"></div>
+        <%= f.submit "入力画面に戻る", name: :back, class:"registration_new_field_button_back" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<%= render partial: 'shared/footer' %>
