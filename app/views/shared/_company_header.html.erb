@@ -1,0 +1,83 @@
+<%#メニュー全体%>
+<div class="menu_content">
+
+  <%#ハンバーガーメニュークリック後に表示されるコンテンツ%>
+  <div class="menu">
+
+    <% if company_signed_in? %>
+      <%= link_to company_path(current_company), class:'menu_icon' do %>
+        <%= image_tag "musubi_square.png", alt: "ロゴ画像", width: "50px", height: "50px" %>
+        <span>管理画面</span>
+      <% end %>
+    <% else %>
+      <%= link_to "#", class:'menu_icon' do %>
+        <%= image_tag "musubi_square.png", alt: "ロゴ画像", width: "50px", height: "50px" %>
+        <span>管理画面</span>
+      <% end %>
+    <% end %>
+
+    <ul class="menu_lists">
+
+      <% if company_signed_in? %>
+        <li class="<%= 'selected_menu' if current_page?(point_index_companies_path) %>">
+          <%= link_to point_index_companies_path, class: "registration-img" do %>
+          <i class="fas fa-gifts"></i>
+          <span>ポイント一覧</span>
+          <% end %>
+        </li>
+        <li class="<%= 'selected_menu' if current_page?(invitation_homes_path) %>">
+          <%= link_to invitation_homes_path, class: "registration-img" do %>
+          <i class="far fa-share-square"></i>
+          <span>招待する</span>
+          <% end %>
+        </li>
+        <li class="<%= 'selected_menu' if current_page?(company_path(current_company)) %>">
+          <%= link_to company_path(current_company), class: "registration-img" do %>
+          <i class="fas fa-user"></i>
+          <span>管理者情報</span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <li class="<%= 'selected_menu' if current_page?(explain_agency_companies_path) %>">
+        <%= link_to explain_agency_companies_path, class: "registration-img" do %>
+        <i class="fas fa-user"></i>
+        <span>代理店契約概要</span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <%#//ハンバーガーメニュークリック後に表示されるコンテンツ%>
+
+</div>
+
+<%##レスポンス（スマホ）%>
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="company_header_sm">
+  <div class="header_logo">
+    <% if company_signed_in? %>
+      <%= link_to "MUSUBI", company_path(current_company) %><span>管理画面</span>
+    <% else %>
+      <%= link_to "MUSUBI", "#" %><span>管理画面</span>
+    <% end %>
+  </div>
+</nav>
+
+<nav class="globalMenuSp">
+    <ul>
+        <% if company_signed_in? %>
+          <li><i class="fas fa-gifts"></i></i><%= link_to "ポイント一覧", point_index_companies_path %></li>
+          <li><i class="far fa-share-square"></i></i></i><%= link_to "招待する", invitation_homes_path %></li>
+          <li><i class="fas fa-users"></i><%= link_to "管理者情報", company_path(current_company) %></li>
+        <% end %>
+        <li><i class="fas fa-users"></i><%= link_to "代理店契約概要", explain_agency_companies_path %></li>
+    </ul>
+</nav>
+
+
+<%= javascript_pack_tag "shared/header" %>

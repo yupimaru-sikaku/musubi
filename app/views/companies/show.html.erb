@@ -1,0 +1,210 @@
+<%= render partial: 'shared/company_header' %>
+
+<div class="company_show_content">
+
+    <div class= "registration_new_fields">
+
+        <h2 class="registration_new_title">代理店様情報</h2>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代理店名</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.agency_name %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代理店コード</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.agency_code %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代表取締役名または代表社員名（代表者）</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.human_name %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代表者の生年月日</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.birth_day %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代理店の郵便番号</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.postal_code %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>代理店の住所</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.address %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>電話番号</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.phone_number %></p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>メールアドレス</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.email %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>金融機関名（ゆうちょ）</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.financial_facility_name %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>支店名（店番）</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.bank_branch_name %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>口座種別</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.bank_account_type %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>口座番号</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.bank_account_number %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--small"></div>
+
+        <div class="registration_new_field">
+
+            <div class="registration_new_field_main">
+                <div class="registration_new_field_main_title">
+                    <label>口座名義人（カナ）</label>
+                </div>
+                <div class="registration_new_field_main_enter">
+                    <p><%= @company.bank_account_holder %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="module-spacer--medium"></div>
+
+        <div class="registration_new_field_card">
+            <%= link_to "情報編集", edit_company_registration_path %>
+        </div>
+
+    </div>
+
+</div>

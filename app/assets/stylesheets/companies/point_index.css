@@ -1,14 +1,18 @@
 @charset "UTF-8";
 .home_point_container {
   margin: 0px 150px;
+  margin: 0 auto;
+  padding: 50px 0px;
   letter-spacing: 2px;
   font-family: "游ゴシック体", YuGothic;
   text-align: center;
+  width: 80%;
+  background-color: white;
+  border-radius: 8px;
 }
 
 .home_point_container .home_point_title {
-  font-size: 20px;
-  color: #59b69e;
+  font-size: 24px;
 }
 
 .home_point_container .home_point_items .home_point_item {
@@ -38,11 +42,17 @@
 
 @media screen and (max-width: 750px) {
   .home_point_container {
-    margin: 20px 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0px;
+    letter-spacing: 2px;
+    font-family: "游ゴシック体", YuGothic;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
   }
   .home_point_container .home_point_title {
-    font-size: 20px;
-    color: #59b69e;
+    font-size: 14px;
   }
   .home_point_container .home_point_items {
     font-size: 14px;
@@ -69,7 +79,8 @@
     border-top: 1px solid #ddd;
   }
   .home_point_container .home_point_annotation {
-    font-size: 14px;
+    font-size: 12px;
+    padding: 5px;
   }
 }
 /*# sourceMappingURL=point_index.css.map */

@@ -28,7 +28,7 @@ class Companies::RegistrationsController < Devise::RegistrationsController
     
     # 送料を決定
     @cart_total_quantity = 1
-    shipping_fee = decide_shipping_fee(sign_up_params[:address])
+    shipping_fee = 2180 * 1.1
     
     # 登録料を決定
     registration_fee = registration_fee()
@@ -130,14 +130,20 @@ class Companies::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  # user情報登録後に登録完了画面に飛ぶ
+  # company情報登録後に登録完了画面に飛ぶ
   def after_sign_up_path_for(resource)
     companies_sign_up_complete_path(resource)
   end
-  
+
   def update_resource(resource, params)
-    resource.update_without_current_password(params)
+    resource.update_without_password(params)
   end
+
+  # company情報更新後はcompany情報詳細に飛ぶ
+  def after_update_path_for(resource)
+      company_path(current_company) and return
+  end
+  
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

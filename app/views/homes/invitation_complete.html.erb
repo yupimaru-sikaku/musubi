@@ -1,29 +1,25 @@
-<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/company_header' %>
 
-<div class="module-spacer--large"></div>
-<div class="module-spacer--small"></div>
+<nav class="company_show_content">
 
-<nav class="home_invitation_complete_content">
-    
-    <div class="home_invitation_complete_title">
-        <p>メールが送信されました</p>
-    </div>
-    
-    <div class="module-spacer--medium"></div>
+    <nav class="home_invitation_complete_content">
+        
+        <div class="home_invitation_complete_title">
+            <p>メールが送信されました</p>
+        </div>
+        
+        <div class="module-spacer--medium"></div>
 
-    <div class="home_invitation_complete_sub">
-        <p>メールが届いていない場合はお手数ですが、再度送信下さい</p>
-    </div>
+        <div class="home_invitation_complete_sub">
+            <p>メールが届いていない場合はお手数ですが、再度送信下さい</p>
+        </div>
 
-    <div class="module-spacer--large"></div>
+        <div class="module-spacer--large"></div>
 
-    <div class="home_invitation_complete_back">
-      <%= link_to "招待メールを送る", invitation_homes_path %>
-      <%= link_to "トップ画面に戻る", root_path %>
-    </div>
+        <div class="home_invitation_complete_back">
+        <%= link_to "招待メールを送る", invitation_homes_path %>
+        <%= link_to "トップ画面に戻る", company_path(current_company) %>
+        </div>
 
+    </nav>
 </nav>
-
-<div class="module-spacer--medium"></div>
-
-<%= render partial: 'shared/footer' %>

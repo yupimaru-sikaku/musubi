@@ -11,6 +11,14 @@ class ContactMailer < ApplicationMailer
       @current_company = current_company
       mail(subject: "招待メールが届いております【むすび】", to: @email)
     end
+    
+    # (ユーザー）招待メールの内容
+    def user_invitation_mail(email, current_company)
+      @url = ENV['production_url']
+      @email = email
+      @current_company = current_company
+      mail(subject: "代理店コードが届いております【むすび】", to: @email)
+    end
 
     # 商品購入時のサンクスメール
     def product_buy_thanks_mail(current_user, order, billing_amount)
@@ -42,19 +50,19 @@ class ContactMailer < ApplicationMailer
 
       # 住所から送料を決める
       if ["北海道"].any? { |t| @address.include?(t) }
-        @ship_fee = 2840 * tax
+        @shipping_fee = 2840 * tax
       elsif ["青森県", "秋田県", "岩手県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2400 * tax
+        @shipping_fee = 2400 * tax
       elsif ["宮城県", "山形県", "福島県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2290 * tax
+        @shipping_fee = 2290 * tax
       elsif ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2180 * tax
+        @shipping_fee = 2180 * tax
       elsif ["富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2070 * tax
+        @shipping_fee = 2070 * tax
       elsif ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2180 * tax
+        @shipping_fee = 2180 * tax
       elsif ["沖縄県"].any? { |t| @address.include?(t) }
-        @ship_fee = 4160 * tax
+        @shipping_fee = 4160 * tax
       end
       @shipping_fee = @shipping_fee.round
 
@@ -95,19 +103,19 @@ class ContactMailer < ApplicationMailer
       @address = current_company.address
       # 住所から送料を決める
       if ["北海道"].any? { |t| @address.include?(t) }
-        @ship_fee = 2840 * tax
+        @shipping_fee = 2840 * tax
       elsif ["青森県", "秋田県", "岩手県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2400 * tax
+        @shipping_fee = 2400 * tax
       elsif ["宮城県", "山形県", "福島県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2290 * tax
+        @shipping_fee = 2290 * tax
       elsif ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2180 * tax
+        @shipping_fee = 2180 * tax
       elsif ["富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2070 * tax
+        @shipping_fee = 2070 * tax
       elsif ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"].any? { |t| @address.include?(t) }
-        @ship_fee = 2180 * tax
+        @shipping_fee = 2180 * tax
       elsif ["沖縄県"].any? { |t| @address.include?(t) }
-        @ship_fee = 4160 * tax
+        @shipping_fee = 4160 * tax
       end
       @shipping_fee = @shipping_fee.round
 

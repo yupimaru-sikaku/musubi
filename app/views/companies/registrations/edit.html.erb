@@ -1,6 +1,6 @@
-<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/company_header' %>
 
-<div class="registration_new_content">
+<div class="company_show_content">
 
   <%= form_with model: @company, url: company_registration_path, class: 'registration_new_fields', local: true do |f| %>
 
@@ -379,8 +379,6 @@
   <% end %>
 
 </div>
-
-<%= render partial: 'shared/footer' %>
 
 <%= javascript_pack_tag "companies/password" %>
 <%= javascript_pack_tag "shared/address" %>

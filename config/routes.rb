@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     collection do
       get 'point_index'
       get 'terms'
+      get 'explain_agency'
     end
   end
 
@@ -50,7 +51,10 @@ Rails.application.routes.draw do
       get 'sdgs'
     end
   end
+  # 代理店招待（代理店を設立したい方へ招待コードを送る）
   post 'homes/send_invitation_email', to: 'homes#send_invitation_email'
+  # ユーザー招待（商品を購入したい方へ代理店コードを発行する）
+  post 'homes/send_user_invitation_email', to: 'homes#send_user_invitation_email'
 
   resources :products
   
