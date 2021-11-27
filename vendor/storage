@@ -1,0 +1,308 @@
+<%##レスポンス（PC）%>
+<nav class="header">
+
+  <div class="header_logo">
+    <a href="/">MUSUBI</a>
+  </div>
+
+  <div class="header_menus">
+
+    <% if user_signed_in? %>
+    
+      <div class="menu">
+          <label for="menu_bar02"><%= current_user.human_name%>さん</label>
+          <input type="checkbox" id="menu_bar02" />
+          <ul id="links02">
+              <li><%= link_to "ユーザー情報", user_path(current_user) %></li>
+              <li><%= link_to "購入履歴", purchase_histroy_users_path %></li>
+          </ul>
+    <% else %>
+      <div class="header_menu">
+          <%= link_to "お客様ログイン", new_user_session_path %>
+      </div>
+    <% end %>
+      </div>
+
+    <div class="header_menu">
+        <%= link_to "商品一覧", products_path %>
+    </div>
+
+    <div class="menu">
+        <label for="menu_bar01">社会課題への取組み</label>
+        <input type="checkbox" id="menu_bar01" />
+        <ul id="links01">
+            <li><%= link_to "SDGs", sdgs_homes_path %></li>
+            <li><%= link_to "障がい者の取組み", "#" %></li>
+        </ul>
+    </div>
+    
+    <div class="header_menu">
+          <i class="far fa-envelope"></i>
+        <%= link_to "お問い合わせ", new_contact_path %>
+        </a>
+    </div>
+
+
+  </div>
+
+</nav>
+
+<%##レスポンス（スマホ）%>
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="header_sm">
+  <div class="header_logo">
+    <a href="/">MUSUBI</a>
+  </div>
+</nav>
+
+<nav class="globalMenuSp">
+    <ul>
+        <% if user_signed_in? %>
+          <li><i class="fas fa-user-alt"></i><%= link_to "ユーザー情報", user_path(current_user) %></li>
+          <li><i class="fas fa-history"></i></i><%= link_to "購入履歴", purchase_histroy_users_path %></li>
+        <% else %>
+          <li><i class="fas fa-sign-in-alt"></i></i><%= link_to "お客様ログイン", new_user_session_path %></li>
+        <% end %>
+        <li><i class="fas fa-globe"></i><%= link_to "SDGsへの取組み", sdgs_homes_path %></li>
+        <li><i class="fas fa-gifts"></i><%= link_to "商品一覧", products_path %></li>
+        <li><i class="fas fa-headset"></i><%= link_to "お問い合わせ", new_contact_path %></li>
+    </ul>
+</nav>
+
+
+<%= javascript_pack_tag "shared/header" %>
+
+
+
+
+
+
+.header_sm {
+  display: none;
+}
+.hamburger {
+  display: none;
+}
+.globalMenuSp {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  line-height: 65px;
+  padding: 8px 205px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 1;
+
+  .header_logo {
+    font-size: 40px;
+    color: #000000e6;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+
+  .header_menus {
+    display: flex;
+    align-items: center;
+
+    .header_menu {
+      padding: 0px 25px;
+      font-family: "M PLUS Rounded 1c";
+    }
+  }
+  // アコーディオン
+  .menu {
+    font-family: "M PLUS Rounded 1c";
+  }
+
+  label {
+    display: block;
+    margin: 0 0 4px 0;
+    padding: 15px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+
+  .menu ul {
+    position: absolute;
+    top: 80px;
+    width: 158px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+    background-color: white;
+  }
+
+  .menu li {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    :hover {
+      background-color: #eee;
+    }
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+  }
+
+  #menu_bar01:checked ~ #links01 li,
+  #menu_bar02:checked ~ #links02 li {
+    height: 54px;
+    opacity: 1;
+  }
+  // アコーディオン終了
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    display: none;
+  }
+
+  .header_sm {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    line-height: 50px;
+    padding: 8px 0px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    z-index: 1;
+
+    .header_logo {
+      text-align: center;
+      font-size: 32px;
+      color: #000000e6;
+      font-family: "Noto Sans JP", sans-serif;
+    }
+  }
+
+  /*　ハンバーガーボタン　*/
+  .hamburger {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    left: 13px;
+    top: 12px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 3;
+  }
+  .hamburger span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 6px;
+    background: #555;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 30px;
+  }
+
+  /* ナビ開いてる時のボタン */
+  .hamburger.active span:nth-child(1) {
+    top: 16px;
+    left: 6px;
+    background: #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 16px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  nav.globalMenuSp {
+    position: fixed;
+    padding-top: 56px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+
+  nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    transition: 0.4s all;
+  }
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+  }
+  nav.globalMenuSp ul li:hover {
+    background: #ddd;
+  }
+
+  nav.globalMenuSp ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration: none;
+    margin-left: 10px;
+    width: 150px;
+    letter-spacing: 2px;
+  }
+
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    opacity: 100;
+    display: block;
+  }
+}

@@ -37,14 +37,72 @@
 }
 
 .header .header_menus {
+  padding: 0px;
+  font-family: "M PLUS Rounded 1c";
+}
+
+.header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.header .header_menus .header_menu {
-  padding: 0px 25px;
-  font-family: "M PLUS Rounded 1c";
+.header .menu li {
+  margin: 0px 10px;
+}
+
+.header .menu li a {
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.header .menu li ul {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -10px;
+}
+
+.header .menu li li a {
+  display: block;
+  margin-top: 0;
+  padding: 0 10px;
+  height: 0;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.header .menu > li:hover li a {
+  display: table;
+  margin-top: 1px;
+  padding: 10px;
+  width: 100%;
+  height: 1em;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.header .menu > li:hover li a:hover {
+  background-color: #eee;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.header a.accordion {
+  position: relative;
+}
+
+.header a.accordion::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 45%;
+  border: 6px solid transparent;
+  border-top: 7px solid #59B69E;
 }
 
 @media screen and (max-width: 750px) {

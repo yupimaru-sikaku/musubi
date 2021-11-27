@@ -1,0 +1,10 @@
+.sm_br {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .sm_br {
+    display: block;
+  }
+}
+/*# sourceMappingURL=br.css.map */

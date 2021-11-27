@@ -103,3 +103,114 @@
     }
   }
 }
+
+@media screen and (max-width: 750px) {
+  .home_sdgs_container {
+    padding: 100px 20px 40px;
+    font-family: "游ゴシック体", YuGothic;
+    letter-spacing: 2px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template:
+      " title       title      title     "
+      " ..........  .......... .........." 30px
+      " img         img        img       "
+      " ..........  .......... .........." 10px
+      " philosophy  philosophy philosophy"
+      " ..........  .......... .........." 100px
+      " about       about      about     "
+      " ..........  .......... .........." 100px
+      " certified   certified  certified "
+      " ..........  .......... .........." 100px
+      " actions     actions    actions   "
+      / auto 20px auto;
+
+    // タイトル
+    .home_sdgs_title {
+      grid-area: title;
+      text-align: center;
+      font-size: $sm_main;
+      color: #59b69e;
+    }
+    //   SDGsのロゴ
+    .home_sdgs_img {
+      grid-area: img;
+    }
+    //   SDGsの理念紹介
+    .home_sdgs_philosophy {
+      grid-area: philosophy;
+      font-size: $sm_sub;
+    }
+    //   SDGsについて説明
+    .home_sdgs_about {
+      grid-area: about;
+      font-size: $sm_sub;
+      p:nth-child(1) {
+        font-size: $sm_sub;
+        padding-left: 10px;
+        border-left: 5px solid #59b69e;
+      }
+    }
+    //   SDGsの理念
+    .home_sdgs_certified {
+      grid-area: certified;
+      font-size: $sm_sub;
+      p:nth-child(1) {
+        font-size: $sm_sub;
+        padding-left: 10px;
+        border-left: 5px solid #59b69e;
+      }
+      img {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    //   具体的なアクション
+    .home_sdgs_actions {
+      grid-area: actions;
+      p:nth-child(1) {
+        font-size: $sm_sub;
+        padding-left: 10px;
+        border-left: 5px solid #59b69e;
+      }
+      p:nth-child(2) {
+        font-size: $sm_sub;
+      }
+      .home_sdgs_action {
+        display: grid;
+        grid-template:
+          " action_title    action_title    ............... ............... "
+          " ............... ............... ............... ............... " 20px
+          " ............... action_img      ............... ............... "
+          " ............... ............... ............... ............... " 20px
+          " action_describe action_describe action_describe action_describe "
+          " ............... ............... ............... ............... " 30px
+          / 0px auto 10px 1fr;
+
+        .home_sdgs_action_title {
+          grid-area: action_title;
+          p {
+            border: none;
+            color: #59b69e;
+          }
+        }
+        .home_sdgs_action_describe {
+          grid-area: action_describe;
+          p {
+            border: none;
+            font-size: $sm_sub;
+          }
+        }
+        .home_sdgs_action_img {
+          grid-area: action_img;
+          img {
+            width: 100px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

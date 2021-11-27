@@ -3,6 +3,7 @@
   margin: 0px 150px;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
+  min-height: 50vh;
 }
 
 .user_purchase_history_content .user_purchase_history_title {

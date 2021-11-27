@@ -14,10 +14,6 @@
   background-color: #eee;
 }
 
-.company_show_content .sm_br {
-  display: none;
-}
-
 .company_show_content .registration_new_fields {
   margin: 0 auto;
   width: 80%;
@@ -253,9 +249,6 @@
     padding: 100px 0px 80px;
     margin-left: 0px;
     background-color: #eee;
-  }
-  .company_show_content .sm_br {
-    display: block;
   }
   .company_show_content .registration_new_fields {
     width: 90%;

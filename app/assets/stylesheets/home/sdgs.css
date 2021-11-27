@@ -98,4 +98,92 @@
   width: 100px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 750px) {
+  .home_sdgs_container {
+    padding: 100px 20px 40px;
+    font-family: "游ゴシック体", YuGothic;
+    letter-spacing: 2px;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-template: " title       title      title     " " ..........  .......... .........." 30px " img         img        img       " " ..........  .......... .........." 10px " philosophy  philosophy philosophy" " ..........  .......... .........." 100px " about       about      about     " " ..........  .......... .........." 100px " certified   certified  certified " " ..........  .......... .........." 100px " actions     actions    actions   " / auto 20px auto;
+  }
+  .home_sdgs_container .home_sdgs_title {
+    grid-area: title;
+    text-align: center;
+    font-size: 20px;
+    color: #59b69e;
+  }
+  .home_sdgs_container .home_sdgs_img {
+    grid-area: img;
+  }
+  .home_sdgs_container .home_sdgs_philosophy {
+    grid-area: philosophy;
+    font-size: 14px;
+  }
+  .home_sdgs_container .home_sdgs_about {
+    grid-area: about;
+    font-size: 14px;
+  }
+  .home_sdgs_container .home_sdgs_about p:nth-child(1) {
+    font-size: 14px;
+    padding-left: 10px;
+    border-left: 5px solid #59b69e;
+  }
+  .home_sdgs_container .home_sdgs_certified {
+    grid-area: certified;
+    font-size: 14px;
+  }
+  .home_sdgs_container .home_sdgs_certified p:nth-child(1) {
+    font-size: 14px;
+    padding-left: 10px;
+    border-left: 5px solid #59b69e;
+  }
+  .home_sdgs_container .home_sdgs_certified img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  .home_sdgs_container .home_sdgs_actions {
+    grid-area: actions;
+  }
+  .home_sdgs_container .home_sdgs_actions p:nth-child(1) {
+    font-size: 14px;
+    padding-left: 10px;
+    border-left: 5px solid #59b69e;
+  }
+  .home_sdgs_container .home_sdgs_actions p:nth-child(2) {
+    font-size: 14px;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action {
+    display: -ms-grid;
+    display: grid;
+    grid-template: " action_title    action_title    ............... ............... " " ............... ............... ............... ............... " 20px " ............... action_img      ............... ............... " " ............... ............... ............... ............... " 20px " action_describe action_describe action_describe action_describe " " ............... ............... ............... ............... " 30px / 0px auto 10px 1fr;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action .home_sdgs_action_title {
+    grid-area: action_title;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action .home_sdgs_action_title p {
+    border: none;
+    color: #59b69e;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action .home_sdgs_action_describe {
+    grid-area: action_describe;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action .home_sdgs_action_describe p {
+    border: none;
+    font-size: 14px;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action .home_sdgs_action_img {
+    grid-area: action_img;
+  }
+  .home_sdgs_container .home_sdgs_actions .home_sdgs_action .home_sdgs_action_img img {
+    width: 100px;
+    margin: 0 auto;
+  }
+}
 /*# sourceMappingURL=sdgs.css.map */

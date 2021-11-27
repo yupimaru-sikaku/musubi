@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
 
     before_action :authenticate_company!, only: [:show, :point_index]
+    before_action :authenticate_company!, only: [:show, :point_index]
 
     def show
         @company = current_company

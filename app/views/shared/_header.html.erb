@@ -1,31 +1,38 @@
 <%##レスポンス（PC）%>
 <nav class="header">
+
   <div class="header_logo">
     <a href="/">MUSUBI</a>
   </div>
 
   <div class="header_menus">
 
-    <% if user_signed_in? %>
-      <div class="header_menu">
-          <%= link_to "#{current_user.human_name}さん", user_path(current_user) %>
-      </div>
-    <% else %>
-      <div class="header_menu">
-          <%= link_to "お客様ログイン", new_user_session_path %>
-      </div>
-    <% end %>
-
-
-    <div class="header_menu">
+    <ul class="menu">
+      <% if user_signed_in? %>
+        <li>
+          <a href="#" class="accordion"><%= current_user.human_name%>さん</a>
+          <ul>
+            <li><%= link_to "ユーザー情報", user_path(current_user) %></li>
+            <li><%= link_to "購入履歴", purchase_histroy_users_path %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "お客様ログイン", new_user_session_path %></li>
+      <% end %>
+      <li>
         <%= link_to "商品一覧", products_path %>
-    </div>
-
-    <div class="header_menu">
-          <i class="far fa-envelope"></i>
+      </li>
+      <li>
+        <a href="#" class="accordion">社会課題への取組み</a>
+        <ul>
+            <li><%= link_to "SDGs", sdgs_homes_path %></li>
+            <li><%= link_to "障がい者の取組み", "#" %></li>
+        </ul>
+      </li>
+      <li>
         <%= link_to "お問い合わせ", new_contact_path %>
-        </a>
-    </div>
+      </li>
+    </ul>
 
   </div>
 
@@ -47,10 +54,12 @@
 <nav class="globalMenuSp">
     <ul>
         <% if user_signed_in? %>
-          <li><i class="fas fa-user-alt"></i><%= link_to "#{current_user.human_name}さん", user_path(current_user) %></li>
+          <li><i class="fas fa-user-alt"></i><%= link_to "ユーザー情報", user_path(current_user) %></li>
+          <li><i class="fas fa-history"></i></i><%= link_to "購入履歴", purchase_histroy_users_path %></li>
         <% else %>
           <li><i class="fas fa-sign-in-alt"></i></i><%= link_to "お客様ログイン", new_user_session_path %></li>
         <% end %>
+        <li><i class="fas fa-globe"></i><%= link_to "SDGsへの取組み", sdgs_homes_path %></li>
         <li><i class="fas fa-gifts"></i><%= link_to "商品一覧", products_path %></li>
         <li><i class="fas fa-headset"></i><%= link_to "お問い合わせ", new_contact_path %></li>
     </ul>
