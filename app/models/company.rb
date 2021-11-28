@@ -50,7 +50,7 @@ class Company < ApplicationRecord
   validates :password, confirmation: { message: 'がパスワードと一致していません'}
   
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, invite_for: 24.hours
+         :recoverable, :rememberable
 
   private
 

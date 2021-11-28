@@ -27,7 +27,6 @@ Rails.application.routes.draw do
     sessions:      'companies/sessions',
     passwords:     'companies/passwords',
     registrations: 'companies/registrations',
-    invitations: 'companies/invitations'
   }
 
   devise_scope :company do
