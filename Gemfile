@@ -98,8 +98,5 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-# Slack
-# gem 'slack-notifier'
-
 # envファイルを使う
 gem 'dotenv'
