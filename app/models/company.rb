@@ -49,7 +49,7 @@ class Company < ApplicationRecord
   # # password_comfirmationと同じか
   validates :password, confirmation: { message: 'がパスワードと一致していません'}
   
-  devise :invitable, :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
 
   private
