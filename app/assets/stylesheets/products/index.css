@@ -2,6 +2,7 @@
   padding: 150px 150px;
   letter-spacing: 2px;
   background-color: #f3f3f3;
+  min-height: 75vh;
 }
 
 .product_index_content .product_index_items {
