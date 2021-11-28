@@ -112,6 +112,10 @@
   cursor: pointer;
 }
 
+.registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter #company_birth_day {
+  padding-top: 5px;
+}
+
 .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,6 +239,213 @@
 
 .registration_new_content .registration_new_fields .registration_new_field_card a:nth-child(2) {
   background-color: #ffd814;
+}
+
+@media screen and (max-width: 1024px) {
+  .registration_new_content {
+    font-family: "游ゴシック体", YuGothic;
+    background-color: #f3f3f3;
+    padding: 150px 0px 80px;
+    letter-spacing: 2px;
+  }
+  .registration_new_content .registration_new_fields {
+    margin: 0 auto;
+    width: 75%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 50px 0px;
+    text-align: center;
+  }
+  .registration_new_content .registration_new_fields .registration_new_title {
+    font-size: 20px;
+    text-align: center;
+  }
+  .registration_new_content .registration_new_fields .registration_new_title_sub {
+    font-size: 14px;
+    text-align: center;
+    color: #78797a;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field {
+    text-align: center;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main {
+    margin-bottom: 10px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_title span {
+    background-color: #59b69e;
+    padding: 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: white;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter p.registration_new_field_main_enter_confirm {
+    margin: 5px 0 0 15px;
+    font-size: 16px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input {
+    border: 1px solid #ccc8c8;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    padding-left: 15px;
+    height: 35px;
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input#postal_code {
+    width: 150px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter #address_btn {
+    font-size: 14px;
+    background-color: #ffd814;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    border-radius: 4px;
+    padding: 5px 5px;
+    margin-left: 15px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter textarea {
+    border: 1px solid #ccc8c8;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    padding-left: 15px;
+    height: 200px;
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter .musubi_company_terms {
+    margin: 20px 0px;
+    color: blue;
+    display: block;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter #is_agree {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    margin: 0;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter input[type="checkbox"] {
+    -webkit-appearance: auto;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter .musubi_company_terms_label {
+    cursor: pointer;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .registration_new_field_main_enter #company_birth_day {
+    padding-top: 5px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select select {
+    border: 1px solid #ccc8c8;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    line-height: 35px;
+    width: 100px;
+    margin-top: 5px;
+    padding-left: 35px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field .registration_new_field_main .select p {
+    font-size: 16px;
+    padding: 0px 10px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field p {
+    font-size: 14px;
+    color: #78797a;
+    margin-top: 5px;
+    text-align: left;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field p.registration_important {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .registration_new_content .registration_new_fields .registration_card_field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .registration_new_content .registration_new_fields .registration_card_field img {
+    display: block;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_button input {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #59b69e;
+    padding: 15px 50px;
+    border-radius: 5px;
+    color: white;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_button input:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_button input.registration_new_field_button_back {
+    background-color: #bdbdbd;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_button a.registration_new_field_button_sub {
+    display: block;
+    margin: 0 auto;
+    width: 175px;
+    background-color: #ffd814;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 50px;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_button a.registration_new_field_button_sub:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  .registration_new_content .registration_new_fields .musubi_company_terms {
+    color: blue;
+    display: block;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    text-align: center;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_card a {
+    display: block;
+    width: 200px;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 0px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_card a:nth-child(1) {
+    background-color: #59b69e;
+    color: white;
+  }
+  .registration_new_content .registration_new_fields .registration_new_field_card a:nth-child(2) {
+    background-color: #ffd814;
+  }
 }
 
 @media screen and (max-width: 750px) {

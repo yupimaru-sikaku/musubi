@@ -257,15 +257,18 @@ class Pdf < Prawn::Document
             
             count_row = 0
             @order_details.each do |product|
-                # 各商品の金額（税込み）の計算
-                price_per_product = product.quantity * product.price 
-                
-                # 品番・品名
-                draw_text "#{product.product_name}", at: [20, 432 - count_row], size: 10
-                # 数量
-                draw_text "#{product.quantity}", at: [335, 432 - count_row], size: 10
-                
-                count_row += 30
+                # オーダー詳細には登録手数料も入っているので省略
+                if product.product_name != "登録手数料"
+                    # 各商品の金額（税込み）の計算
+                    price_per_product = product.quantity * product.price 
+                    
+                    # 品番・品名
+                    draw_text "#{product.product_name}", at: [20, 432 - count_row], size: 10
+                    # 数量
+                    draw_text "#{product.quantity}", at: [335, 432 - count_row], size: 10
+                    
+                    count_row += 30
+                end
             end
             
             stroke_color "d3d3d3"

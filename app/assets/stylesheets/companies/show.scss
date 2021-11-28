@@ -16,6 +16,14 @@
   margin-left: 260px;
   background-color: #eee;
 
+  // 代理店概要説明の画像
+  .explain_agency_img {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+  }
+
   .registration_new_fields {
     margin: 0 auto;
     width: 80%;
@@ -214,6 +222,225 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .field_with_errors {
+    display: contents;
+  }
+
+  // 新規登録画面
+  .company_show_content {
+    font-family: "游ゴシック体", YuGothic;
+    background-color: #f3f3f3;
+    padding: 70px 0px 80px;
+    letter-spacing: 2px;
+    overflow: auto;
+    height: 100vh;
+    margin-left: 260px;
+    background-color: #eee;
+
+    // 代理店概要説明の画像
+    .explain_agency_img {
+      width: 70%;
+      margin: 0 auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .registration_new_fields {
+      margin: 0 auto;
+      width: 90%;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      padding: 50px 0px;
+      text-align: center;
+
+      .registration_new_title {
+        font-size: 20px;
+        text-align: center;
+      }
+      .registration_new_title_sub {
+        font-size: 14px;
+        text-align: center;
+        color: #78797a;
+      }
+
+      .registration_new_field {
+        text-align: center;
+        width: 90%;
+        text-align: left;
+        margin: 0 auto;
+
+        .registration_new_field_main {
+          margin-bottom: 10px;
+          .registration_new_field_main_title {
+            span {
+              background-color: #59b69e;
+              padding: 4px;
+              font-size: 12px;
+              border-radius: 4px;
+              color: white;
+            }
+          }
+          .registration_new_field_main_enter {
+            p.registration_new_field_main_enter_confirm {
+              margin: 5px 0 0 15px;
+              font-size: $pc_subsub;
+            }
+            input {
+              border: 1px solid #ccc8c8;
+              background-color: #f3f3f3;
+              border-radius: 4px;
+              padding-left: 15px;
+              height: 35px;
+              text-align: left;
+              width: 100%;
+              margin-top: 5px;
+            }
+            input#postal_code {
+              width: 150px;
+            }
+            #address_btn {
+              font-size: 14px;
+              background-color: #ffd814;
+              box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+              border-radius: 4px;
+              padding: 5px 5px;
+              margin-left: 15px;
+            }
+            textarea {
+              border: 1px solid #ccc8c8;
+              background-color: #f3f3f3;
+              border-radius: 4px;
+              padding-left: 15px;
+              height: 200px;
+              text-align: left;
+              width: 100%;
+              margin-top: 5px;
+            }
+            .musubi_company_terms {
+              margin: 20px 0px;
+              color: blue;
+              display: block;
+            }
+            #is_agree {
+              width: 15px;
+              height: 15px;
+              border-radius: 4px;
+              margin: 0;
+            }
+            input[type="checkbox"] {
+              -webkit-appearance: auto;
+            }
+
+            .musubi_company_terms_label {
+              cursor: pointer;
+            }
+          }
+          .select {
+            display: flex;
+            align-items: center;
+            select {
+              border: 1px solid #ccc8c8;
+              background-color: #f3f3f3;
+              border-radius: 4px;
+              line-height: 35px;
+              width: 100px;
+              margin-top: 5px;
+              padding-left: 35px;
+            }
+            p {
+              font-size: 16px;
+              padding: 0px 10px;
+            }
+          }
+        }
+
+        p {
+          font-size: 14px;
+          color: #78797a;
+          margin-top: 5px;
+          text-align: left;
+        }
+        p.registration_important {
+          color: red;
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+
+      .registration_card_field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          display: block;
+        }
+      }
+
+      .registration_new_field_button {
+        input {
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+          background-color: #59b69e;
+          padding: 15px 50px;
+          border-radius: 5px;
+          color: white;
+        }
+        &:hover {
+          opacity: 0.5;
+          cursor: pointer;
+        }
+        input.registration_new_field_button_back {
+          background-color: #bdbdbd;
+        }
+        a.registration_new_field_button_sub {
+          display: block;
+          margin: 0 auto;
+          width: 175px;
+          background-color: #ffd814;
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          padding: 15px 50px;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 50px;
+        }
+      }
+      .invitation_button {
+        width: 175px;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: #ffd814;
+        border-radius: 8px;
+      }
+      .musubi_company_terms {
+        color: blue;
+        display: block;
+      }
+
+      .registration_new_field_card {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        a {
+          display: block;
+          width: 200px;
+          text-align: center;
+          box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+          padding: 15px 0px;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+        a:nth-child(1) {
+          background-color: #59b69e;
+          color: white;
+        }
+        a:nth-child(2) {
+          background-color: #ffd814;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -222,6 +449,13 @@
     padding: 100px 0px 80px;
     margin-left: 0px;
     background-color: #eee;
+
+    // 代理店概要説明の画像
+    .explain_agency_img {
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
 
     .registration_new_fields {
       width: 90%;

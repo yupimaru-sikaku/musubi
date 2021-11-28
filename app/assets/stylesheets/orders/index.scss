@@ -1,12 +1,7 @@
-$pc_main: 20px;
-$pc_sub: 16px;
-$pc_subsub: 14px;
-$sm_main: 16px;
-$sm_sub: 14px;
-$sm_subsub: 12px;
+@import "../font";
 
 .order_index_content {
-  padding: 150px 150px;
+  padding: 150px 20px;
   letter-spacing: 2px;
   background-color: #f3f3f3;
   text-align: center;
@@ -28,11 +23,11 @@ $sm_subsub: 12px;
 
       th {
         border-bottom: 1px solid#b7b7b7; /**/
-        padding: 10px;
+        padding: 5px;
       }
 
       td {
-        padding: 20px;
+        padding: 10px;
         text-align: center;
         /*破線 1px オレンジ*/
       }
@@ -43,6 +38,53 @@ $sm_subsub: 12px;
 
         :hover {
           opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .order_index_content {
+    padding: 150px 10px;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+    text-align: center;
+
+    .order_index_title {
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $pc_main;
+    }
+    .order_index_items {
+      background-color: white;
+      border-radius: 8px;
+      padding: 50px 0px;
+      font-size: $tb_subsub;
+
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-bottom: 1px solid #b7b7b7;
+
+        th {
+          border-bottom: 1px solid#b7b7b7; /**/
+          padding: 2px;
+        }
+
+        td {
+          padding: 5px;
+          text-align: center;
+          /*破線 1px オレンジ*/
+        }
+        a {
+          text-decoration: none;
+          margin: 0 auto;
+          color: blue;
+
+          :hover {
+            opacity: 0.5;
+          }
         }
       }
     }

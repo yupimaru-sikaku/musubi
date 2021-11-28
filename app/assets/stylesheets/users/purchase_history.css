@@ -52,6 +52,60 @@
   text-align: center;
 }
 
+.user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_footer .user_purchase_history_item_context .user_purchase_history_item_img img {
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  .user_purchase_history_content {
+    margin: 0px 50px;
+    font-family: "游ゴシック体", YuGothic;
+    letter-spacing: 2px;
+    min-height: 50vh;
+  }
+  .user_purchase_history_content .user_purchase_history_title {
+    text-align: center;
+    color: #59b69e;
+    font-size: 20px;
+  }
+  .user_purchase_history_content .user_purchase_history_items {
+    font-size: 14px;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #eee;
+    border-radius: 8px 8px 0px 0px;
+    padding: 10px;
+    padding-left: 20px;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_header .user_purchase_history_item_date {
+    width: 150px;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_header .user_purchase_history_item_price {
+    width: 150px;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_footer .user_purchase_history_item_context {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_footer .user_purchase_history_item_context .user_purchase_history_item_img {
+    width: 150px;
+    text-align: center;
+  }
+  .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_footer .user_purchase_history_item_context .user_purchase_history_item_img img {
+    border-radius: 8px;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .user_purchase_history_content {
     margin: 50px 10px 0px;

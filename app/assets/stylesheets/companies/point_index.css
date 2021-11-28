@@ -40,6 +40,44 @@
   border-top: 1px solid #ddd;
 }
 
+@media screen and (max-width: 1024px) {
+  .home_point_container {
+    margin: 0px 150px;
+    margin: 0 auto;
+    padding: 50px 0px;
+    letter-spacing: 2px;
+    font-family: "游ゴシック体", YuGothic;
+    text-align: center;
+    width: 90%;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .home_point_container .home_point_title {
+    font-size: 24px;
+  }
+  .home_point_container .home_point_items .home_point_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom: 1px solid #ddd;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .home_point_container .home_point_items .home_point_item p:nth-child(1) {
+    width: 100px;
+  }
+  .home_point_container .home_point_items .home_point_item p:nth-child(2) {
+    width: 100px;
+  }
+  .home_point_container .home_point_items .home_point_item:nth-child(1) {
+    border-top: 1px solid #ddd;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .home_point_container {
     width: 90%;

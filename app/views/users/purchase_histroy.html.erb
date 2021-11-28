@@ -30,20 +30,22 @@
                         </div>
                     </div>
                     <% OrderDetail.where(order_id: order.id).each do |product| %>
-                    <div class="user_purchase_history_item_footer">
-                        <div class="user_purchase_history_item_context">
-                        <div class="user_purchase_history_item_img">
-                            <%= link_to product_path(Product.find_by(product_name: product.product_name).id) do %>
-                                <%= image_tag Product.find_by(id: Product.find_by(product_name: product.product_name).id).images[0].variant(resize_to_fit: [100,100]).processed, class: 'img' %>
-                            <% end %>
-                        </div>
-                        <div class="user_purchase_history_item_title">
-                            <%=link_to product_path(Product.find_by(product_name: product.product_name).id) do %>
-                                <p><%= Product.find_by(id: Product.find_by(product_name: product.product_name).id).product_name %></p>
-                            <% end %>
-                        </div>
-                        </div>
-                    </div>
+                        <% if product.product_name != "登録手数料" %>
+                            <div class="user_purchase_history_item_footer">
+                                <div class="user_purchase_history_item_context">
+                                <div class="user_purchase_history_item_img">
+                                    <%= link_to product_path(Product.find_by(product_name: product.product_name).id) do %>
+                                        <%= image_tag Product.find_by(id: Product.find_by(product_name: product.product_name).id).images[0].variant(resize_to_fit: [100,100]).processed, class: 'img' %>
+                                    <% end %>
+                                </div>
+                                <div class="user_purchase_history_item_title">
+                                    <%=link_to product_path(Product.find_by(product_name: product.product_name).id) do %>
+                                        <p><%= Product.find_by(id: Product.find_by(product_name: product.product_name).id).product_name %></p>
+                                    <% end %>
+                                </div>
+                                </div>
+                            </div>
+                        <% end %>
                     <% end %>
                 </div>
             <% end %>

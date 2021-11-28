@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user! , only: [:confirm]
   before_action :add_info, only: [:create, :confirm]
-  before_action :is_admin, only: [:index]
+  before_action :is_master_admin!, only: [:index]
   
   def index
     @orders = Order.all
@@ -172,7 +172,7 @@ class OrdersController < ApplicationController
   end
 
   # 代理店モデルで承認された人のみオーダーの一覧を確認できる
-  def is_admin
+  def is_master_admin!
     if company_signed_in? && current_company.admin == true
         return
     else

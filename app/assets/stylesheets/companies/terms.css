@@ -28,6 +28,30 @@
   text-align: start;
 }
 
+@media screen and (max-width: 1024px) {
+  .home_terms_container {
+    padding: 150px 50px 100px;
+  }
+  .home_terms_container .home_terms_title {
+    font-size: 20px;
+    text-align: center;
+    color: #59b69e;
+  }
+  .home_terms_container .home_terms_sub_title {
+    font-size: 16px;
+    text-align: center;
+  }
+  .home_terms_container .home_terms_item {
+    font-size: 14px;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+  .home_terms_container .home_terms_info {
+    font-size: 14px;
+    text-align: start;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .home_terms_container {
     padding: 100px 10px 40px;

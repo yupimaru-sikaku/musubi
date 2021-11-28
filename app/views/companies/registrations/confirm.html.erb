@@ -258,7 +258,7 @@
           <div class="registration_new_field_main_enter">
             <% if @products.present? %>
               <% @products.each do |product| %>
-                  <%= f.radio_button :product_name, product.id %>
+                  <%= f.radio_button :product_name, product.id, class: "company_product" %>
                   <%= f.label :product_name, product.product_name, for: "company_product_name_"+product.id.to_s, class: "radio" %><span>¥<%= product.price.to_s(:delimited) %></span>
               <% end %>
             <% end %>
@@ -267,7 +267,7 @@
       </div>
       <div class="module-spacer--medium"></div>
       <div class="registration_new_field_button">
-        <%= f.submit "登録する" %>
+        <%= f.submit "登録する", class: "company_registration" %>
         <div class="module-spacer--medium"></div>
         <%= f.submit "入力画面に戻る", name: :back, class:"registration_new_field_button_back" %>
       </div>
@@ -278,3 +278,4 @@
 </div>
 
 <%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag "companies/confirm" %>

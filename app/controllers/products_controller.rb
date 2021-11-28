@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-    before_action :is_admin, only: [:new, :create, :edit, :destroy]
+    before_action :is_master_admin!, only: [:new, :create, :edit, :destroy]
 
     def index
         @products = Product.where(display: true)
@@ -59,7 +59,8 @@ class ProductsController < ApplicationController
         )
     end
 
-    def is_admin
+    # 代理店モデルで承認された人のみオーダーの一覧を確認できる
+    def is_master_admin!
         if company_signed_in? && current_company.admin == true
             return
         else

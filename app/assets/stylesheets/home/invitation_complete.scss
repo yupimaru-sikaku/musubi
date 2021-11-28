@@ -6,7 +6,7 @@ $sub_title_size_sm: 16px;
 $sub_weight: 900;
 
 .home_invitation_complete_content {
-  margin: 0px 150px;
+  margin: 0px 100px;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
 
@@ -42,6 +42,49 @@ $sub_weight: 900;
     }
     a:nth-child(1) {
       background-color: #59b69e;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home_invitation_complete_content {
+    margin: 0px 50px;
+    font-family: "游ゴシック体", YuGothic;
+    letter-spacing: 2px;
+
+    .home_invitation_complete_title {
+      text-align: center;
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $title_size;
+    }
+    .home_invitation_complete_number {
+      text-align: center;
+      font-weight: bold;
+      font-size: $title_size;
+    }
+    .home_invitation_complete_sub {
+      text-align: center;
+      font-size: 16px;
+      color: #78797a;
+    }
+
+    .home_invitation_complete_back {
+      display: grid;
+      justify-content: center;
+      gap: 20px;
+
+      a {
+        width: 250px;
+        background-color: #bdbdbd;
+        box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+        padding: 15px 50px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      a:nth-child(1) {
+        background-color: #59b69e;
+      }
     }
   }
 }

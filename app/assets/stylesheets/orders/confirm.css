@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .order_confirm_content {
-  padding: 150px 300px;
+  padding: 150px 150px;
   font-family: "游ゴシック体", YuGothic;
   letter-spacing: 2px;
   background-color: #f3f3f3;
@@ -116,6 +116,111 @@
   padding: 15px 40px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .order_confirm_content {
+    padding: 150px 50px;
+    font-family: "游ゴシック体", YuGothic;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+  }
+  .order_confirm_content .order_confirm_title {
+    text-align: center;
+    color: #59b69e;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px 0px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_title {
+    font-size: 20px;
+    width: 30%;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context {
+    width: 70%;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context p.annotation {
+    font-size: 14px;
+    color: #78797a;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_1 p,
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 p {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #78797a;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_1 input[type="radio"],
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 input[type="radio"] {
+    -webkit-appearance: auto;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_1 label,
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_pay_type_2 label {
+    cursor: pointer;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context a {
+    color: blue;
+    border-bottom: 1px solid blue;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub p:nth-child(1) {
+    width: 200px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_imte_context_sub_description {
+    font-size: 12px;
+    color: #78797a;
+    margin-left: 10px;
+  }
+  .order_confirm_content .order_confirm_items .order_confirm_item .order_confirm_item_context .order_confirm_item_context_sub:nth-child(3) {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b12704;
+  }
+  .order_confirm_content .order_confirm_register {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .order_confirm_content .order_confirm_register input {
+    width: 250px;
+    background-color: #ffd814;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 50px;
+  }
+  .order_confirm_content .order_confirm_register a:nth-child(2) {
+    width: 250px;
+    background-color: #bdbdbd;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+            box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+    padding: 15px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 750px) {

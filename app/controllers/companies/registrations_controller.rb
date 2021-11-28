@@ -15,7 +15,6 @@ class Companies::RegistrationsController < Devise::RegistrationsController
     @company = Company.new(sign_up_params)
     #戻るボタンを押したときまたは、@userが保存されなかったらnewアクションを実行
     render :new and return if params[:back]
-
     
     ##### orderとorder_details情報を入力
     
@@ -28,7 +27,7 @@ class Companies::RegistrationsController < Devise::RegistrationsController
     
     # 送料を決定
     @cart_total_quantity = 1
-    shipping_fee = 2180 * 1.1
+    shipping_fee = 2070 * 1.1
     
     # 登録料を決定
     registration_fee = registration_fee()
@@ -57,6 +56,7 @@ class Companies::RegistrationsController < Devise::RegistrationsController
       price: product.price,
       quantity: 1,
     )
+
     # OrderDetailテーブルを作成（登録手数料）
     order.order_details.create(
       order_number: order_detail_number,
@@ -74,7 +74,7 @@ class Companies::RegistrationsController < Devise::RegistrationsController
     super
     if @company.save
       
-      ContactMailer.company_signup_thanks_mail(current_company, product, registration_fee).deliver
+      ContactMailer.company_signup_thanks_mail(current_company, product, registration_fee, shipping_fee).deliver
       ContactMailer.company_signup_mail(current_company, product, registration_fee).deliver
       
       # slackへ通知を送る

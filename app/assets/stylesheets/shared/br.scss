@@ -1,8 +1,20 @@
 .sm_br {
   display: none;
 }
+.tb_br {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .tb_br {
+    display: block;
+  }
+}
 
 @media screen and (max-width: 750px) {
+  .tb_br {
+    display: none;
+  }
   .sm_br {
     display: block;
   }

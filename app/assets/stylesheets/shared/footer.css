@@ -2,7 +2,7 @@
   background-color: #212529;
   font-family: "M PLUS Rounded 1c", sans-serif;
   border-top: 5px solid #59b69e;
-  padding: 0px 205px;
+  padding: 0px 150px;
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: -ms-grid;
@@ -48,6 +48,12 @@
   grid-area: copyright;
   color: white;
   text-align: right;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 0px 50px;
+  }
 }
 
 @media screen and (max-width: 750px) {

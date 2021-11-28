@@ -42,6 +42,12 @@
   background-color: #ffd814;
 }
 
+@media screen and (max-width: 1024px) {
+  .order_purchase_content {
+    margin-top: 50px;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .order_purchase_content {
     margin: 50px 20px 50px;

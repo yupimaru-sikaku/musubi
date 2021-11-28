@@ -94,8 +94,8 @@
         <span>必須</span>
       </div>
       <div class="registration_new_field_main_enter">
-        <%= f.text_field :birth_day %>
-        <p>例）2000年3月14日</p>
+        <%= f.text_field :birth_day, maxlength: 10 %>
+        <p>例）2000/03/14</p>
       </div>
     </div>
 

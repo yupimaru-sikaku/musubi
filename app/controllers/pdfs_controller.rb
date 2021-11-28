@@ -1,5 +1,7 @@
 class PdfsController < ApplicationController
     
+    before_action :is_master_admin!, only: [:index]
+
     def index
 
         @order = Order.find(params[:id])
@@ -26,5 +28,15 @@ class PdfsController < ApplicationController
         redirect_to orders_path
     end
 
+    private
+
+    # 代理店モデルで承認された人のみオーダーの一覧を確認できる
+    def is_master_admin!
+        if company_signed_in? && current_company.admin == true
+            return
+        else
+            redirect_to root_path
+        end
+    end
 
 end

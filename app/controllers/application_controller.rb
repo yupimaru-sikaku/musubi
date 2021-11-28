@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
           elsif product[:model_number] == "AG014"
             ag_spray_quantity = 1
           end
-        @shipping_fee = ((2180 * ag_box_quantity + 930 * ag_spray_quantity) * tax).round
+        @shipping_fee = ((2070 * ag_box_quantity + 930 * ag_spray_quantity) * tax).round
         end
       end
       
