@@ -18,7 +18,7 @@
 
     <ul class="menu_lists">
 
-      <% if company_signed_in? %>
+      <% if company_signed_in? && current_company.is_buy == true %>
         <li class="<%= 'selected_menu' if current_page?(point_index_companies_path) %>">
           <%= link_to point_index_companies_path, class: "registration-img" do %>
           <i class="fas fa-gifts"></i>
@@ -31,14 +31,14 @@
           <span>招待する</span>
           <% end %>
         </li>
+      <% end %>
+
         <li class="<%= 'selected_menu' if current_page?(company_path(current_company)) %>">
           <%= link_to company_path(current_company), class: "registration-img" do %>
           <i class="fas fa-user"></i>
           <span>管理者情報</span>
           <% end %>
         </li>
-      <% end %>
-
       <li class="<%= 'selected_menu' if current_page?(explain_agency_companies_path) %>">
         <%= link_to explain_agency_companies_path, class: "registration-img" do %>
         <i class="fas fa-user"></i>
