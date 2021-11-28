@@ -99,5 +99,7 @@ group :production do
 end
 
 # Slack
-gem 'slack-notifier'
+# gem 'slack-notifier'
+
+# envファイルを使う
 gem 'dotenv'
