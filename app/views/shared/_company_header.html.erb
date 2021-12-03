@@ -31,20 +31,21 @@
           <span>招待する</span>
           <% end %>
         </li>
+      <li class="<%= 'selected_menu' if current_page?(company_path(current_company)) %>">
+        <%= link_to company_path(current_company), class: "registration-img" do %>
+        <i class="fas fa-user"></i>
+        <span>管理者情報</span>
+        <% end %>
+      </li>
       <% end %>
 
-        <li class="<%= 'selected_menu' if current_page?(company_path(current_company)) %>">
-          <%= link_to company_path(current_company), class: "registration-img" do %>
-          <i class="fas fa-user"></i>
-          <span>管理者情報</span>
-          <% end %>
-        </li>
       <li class="<%= 'selected_menu' if current_page?(explain_agency_companies_path) %>">
         <%= link_to explain_agency_companies_path, class: "registration-img" do %>
         <i class="fas fa-user"></i>
         <span>代理店契約概要</span>
         <% end %>
       </li>
+      
     </ul>
   </div>
   <%#//ハンバーガーメニュークリック後に表示されるコンテンツ%>

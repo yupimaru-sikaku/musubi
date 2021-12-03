@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-    before_action :is_admin!, only: [:point_index, :explain_agency]
+    before_action :is_admin!, only: [:show, :point_index]
 
     def show
         @company = current_company
