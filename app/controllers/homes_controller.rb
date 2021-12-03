@@ -45,7 +45,7 @@ class HomesController < ApplicationController
       if company_signed_in? && current_company.is_buy == true
           return
       else
-          return redirect_to company_path(current_company), flash: {success: "代理店申請承認されるまでお待ち下さい"}
+          return redirect_to new_company_session_path, flash: {success: "代理店申請承認されるまでお待ち下さい"}
       end
   end
 

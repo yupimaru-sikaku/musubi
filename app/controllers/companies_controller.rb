@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-    before_action :is_admin!, only: [:point_index]
+    before_action :is_admin!, only: [:point_index, :explain_agency]
 
     def show
         @company = current_company
@@ -22,8 +22,8 @@ class CompaniesController < ApplicationController
         if company_signed_in? && current_company.is_buy == true
             return
         else
-            return redirect_to company_path(current_company), flash: {success: "代理店申請承認されるまでお待ち下さい"}
+            return redirect_to new_company_session_path, flash: {success: "代理店申請承認されるまでお待ち下さい"}
         end
     end
-
+  
 end
