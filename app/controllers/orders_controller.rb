@@ -56,7 +56,8 @@ class OrdersController < ApplicationController
       syodoku_point = 0
       # 各商品ごとのポイントを加算していく
       session[:cart].each do |cart|
-        if Product.find_by(id: cart["product_id"]).product_type == "消毒液"
+        # 消毒液に分類されている商品であり、かつスプレーでなければ加点
+        if Product.find_by(id: cart["product_id"]).product_type == "消毒液" && Product.find_by(id: cart["product_id"]).model_number != "AG014"
           quantity = cart["quantity"]
           syodoku_point += quantity
         end
