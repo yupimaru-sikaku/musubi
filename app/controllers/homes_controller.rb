@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
 
+    before_action :authenticate_company!, only: [:invitation]
     before_action :is_admin! , only: [:invitation]
 
     def index
@@ -42,12 +43,12 @@ class HomesController < ApplicationController
 
     # 代理店モデルで承認された人のみオーダーの一覧を確認できる
     def is_admin!
-      if company_signed_in? && current_company.is_buy == true
-          return
+      if current_company.is_buy == true
+          return 
       else
-          return redirect_to new_company_session_path, flash: {success: "代理店申請承認されるまでお待ち下さい"}
+          return company_path(current_company), flash: {success: "代理店申請承認されるまでお待ち下さい"}
       end
-  end
+    end
 
 
 end
