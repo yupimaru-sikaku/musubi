@@ -172,11 +172,11 @@
 
         <div class="home_index_activity_contents">
             <section class="home_index_activity_card">
-                <%= link_to new_company_registration_path do %>
+                <%= link_to new_contact_path do %>
                     <%= image_tag "agency.png", class: "card-img", alt: "代理店事業" %>
                     <div class="card-content">
                         <h1 class="card-title">代理店事業</h1>
-                        <p class="card-text">商品の拡販について代理店事業をおこなっております</p>
+                        <p class="card-text">代理店事業をおこなっております。ご興味ある方はお問合せ下さい</p>
                     </div>
                 <% end %>
             </section>
@@ -199,13 +199,13 @@
                 <% end %>
             </section>
             <section class="home_index_activity_card">
-                <a href="/">
+                <%= link_to sdgs_homes_path do %>
                     <%= image_tag "disability.jpg", class: "card-img", alt: "バリアフリー画像" %>
                     <div class="card-content">
                         <h1 class="card-title">就労継続支援</h1>
                         <p class="card-text">ユニバーサルな社会の実現に向け活動をしています</p>
                     </div>
-                </a>
+                <% end %>
             </section>
             <section class="home_index_activity_card">
                 <a href="https://www.youtube.com/channel/UCtq-1hszppYGhRH3sEwDiVQ">

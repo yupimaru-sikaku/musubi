@@ -36,29 +36,6 @@
   <div class="registration_new_field">
 
     <div class="registration_new_field_alert">
-      <% if @company.errors.include?(:invitation_code) %>
-      <p class="alert_danger" style=" color: red;">
-        <%= @company.errors.full_messages_for(:invitation_code).first %>
-      <% end %>
-    </div>
-
-    <div class="registration_new_field_main">
-      <div class="registration_new_field_main_title">
-        <%= f.label :invitation_code, "招待コード" %>
-      </div>
-      <div class="registration_new_field_main_enter">
-        <%= f.text_field :invitation_code %>
-        <p>招待された方は招待メールに記載の招待コードを入力下さい</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="module-spacer--medium"></div>
-
-  <div class="registration_new_field">
-
-    <div class="registration_new_field_alert">
       <% if @company.errors.include?(:human_name) %>
       <p class="alert_danger" style=" color: red;">
         <%= @company.errors.full_messages_for(:human_name).first %>

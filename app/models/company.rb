@@ -2,7 +2,7 @@ class Company < ApplicationRecord
 
   has_many :points
   
-  before_create :make_agency_code, :add_point
+  before_create :make_agency_code
   
   with_options presence: true do
     validates :agency_name
@@ -21,7 +21,7 @@ class Company < ApplicationRecord
   
   # invitation_code
   # 招待コードの代理店コードがあるか
-  validate :check_invitation_code
+  # validate :check_invitation_code
 
   # address
   # 都道府県から入力されているか
@@ -80,24 +80,24 @@ class Company < ApplicationRecord
   end
 
   # 招待した会社のコードが存在するか判断
-  def check_invitation_code
-    if self.invitation_code != ""
-      if !Company.find_by(agency_code: self.invitation_code).present?
-        errors.add(:invitation_code, "は存在しません。再度招待コードを確認下さい。")
-      end
-    end
-  end
+  # def check_invitation_code
+  #   if self.invitation_code != ""
+  #     if !Company.find_by(agency_code: self.invitation_code).present?
+  #       errors.add(:invitation_code, "は存在しません。再度招待コードを確認下さい。")
+  #     end
+  #   end
+  # end
   
   # 招待した代理店のカラム（招待者数）に＋１する
-  def add_point
-    if self.invitation_code.present?
-      company = Company.find_by(agency_code: self.invitation_code)
-      if company.present?
-        company[:invited_person_number] += 1
-        company.update(invited_person_number: company[:invited_person_number])
-      end
-    end
-  end
+  # def add_point
+  #   if self.invitation_code.present?
+  #     company = Company.find_by(agency_code: self.invitation_code)
+  #     if company.present?
+  #       company[:invited_person_number] += 1
+  #       company.update(invited_person_number: company[:invited_person_number])
+  #     end
+  #   end
+  # end
 
   def is_valid_prefectures
     unless ["北海道", "青森県", "秋田県", "岩手県", "宮城県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県", "富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"].any? { |t| address.include?(t) }

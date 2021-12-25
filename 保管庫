@@ -1,0 +1,31 @@
+; 代理店が代理店を招待したい時に使う
+<%= form_with url: homes_send_invitation_email_path, class: 'registration_new_fields', method: :post, local: true do |f| %>
+
+    <h2 class="registration_new_title">代理店招待画面</h2>
+    <p class= "registration_new_title_sub">代理店を設立したい方へ<br class="sm_br">招待コードを発行します</p>
+
+    <div class="module-spacer--medium"></div>
+
+    <div class="registration_new_field">
+
+        <div class="registration_new_field_main">
+            <div class="registration_new_field_main_title">
+                <%= f.label :email, "メールアドレス" %>
+            </div>
+            <div class="registration_new_field_main_enter">
+                <%= f.email_field :email, autofocus: true %>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="module-spacer--small"></div>
+
+    <div class="registration_new_field_button invitation_button">
+        <%= f.button :type => "submit" do %>
+            <i class="fas fa-child"></i>
+            <span>招待する</span>
+        <% end %>
+    </div>
+
+<% end %>
