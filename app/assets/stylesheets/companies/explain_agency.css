@@ -8,6 +8,7 @@
   height: 100vh;
   margin-left: 260px;
   background-color: #eee;
+  height: -webkit-fill-available;
 }
 
 .company_explain_content .explain_agency_img {
