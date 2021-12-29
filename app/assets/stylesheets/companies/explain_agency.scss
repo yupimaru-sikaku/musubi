@@ -1,0 +1,58 @@
+// 新規登録画面
+.company_explain_content {
+  font-family: "游ゴシック体", YuGothic;
+  background-color: #f3f3f3;
+  padding: 70px 0px 80px;
+  letter-spacing: 2px;
+  overflow: auto;
+  height: 100vh;
+  margin-left: 260px;
+  background-color: #eee;
+  // 代理店概要説明の画像
+  .explain_agency_img {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .field_with_errors {
+    display: contents;
+  }
+
+  // 新規登録画面
+  .company_explain_content {
+    font-family: "游ゴシック体", YuGothic;
+    background-color: #f3f3f3;
+    padding: 70px 0px 80px;
+    letter-spacing: 2px;
+    overflow: auto;
+    height: 100vh;
+    margin-left: 260px;
+    background-color: #eee;
+  }
+  // 代理店概要説明の画像
+  .explain_agency_img {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  // 新規登録画面
+  .company_explain_content {
+    padding: 100px 0px 80px;
+    margin-left: 0px;
+    background-color: #eee;
+  }
+  // 代理店概要説明の画像
+  .explain_agency_img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
