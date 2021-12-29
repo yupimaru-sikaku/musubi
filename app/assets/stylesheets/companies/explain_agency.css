@@ -1,1 +1,50 @@
-/* No CSS *//*# sourceMappingURL=explain_agency.css.map */
+@charset "UTF-8";
+.company_explain_content {
+  font-family: "游ゴシック体", YuGothic;
+  background-color: #f3f3f3;
+  padding: 70px 0px 80px;
+  letter-spacing: 2px;
+  overflow: auto;
+  height: 100vh;
+  margin-left: 260px;
+  background-color: #eee;
+}
+
+.company_explain_content .explain_agency_img {
+  width: 85%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  .field_with_errors {
+    display: contents;
+  }
+  .company_explain_content {
+    font-family: "游ゴシック体", YuGothic;
+    background-color: #f3f3f3;
+    padding: 70px 0px 80px;
+    letter-spacing: 2px;
+    overflow: auto;
+    margin-left: 260px;
+    background-color: #eee;
+    height: 100vh;
+  }
+  .explain_agency_img {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .company_explain_content {
+    padding: 100px 0px 80px;
+    margin-left: 0px;
+    background-color: #eee;
+    height: 100vh;
+  }
+  .explain_agency_img {
+    width: 85%;
+  }
+}
+/*# sourceMappingURL=explain_agency.css.map */
