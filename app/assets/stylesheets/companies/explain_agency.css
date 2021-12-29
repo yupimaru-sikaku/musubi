@@ -6,9 +6,9 @@
   letter-spacing: 2px;
   overflow: auto;
   height: 100vh;
+  height: -webkit-fill-available;
   margin-left: 260px;
   background-color: #eee;
-  height: -webkit-fill-available;
 }
 
 .company_explain_content .explain_agency_img {
@@ -29,6 +29,7 @@
     letter-spacing: 2px;
     overflow: auto;
     height: 100vh;
+    height: -webkit-fill-available;
     margin-left: 260px;
     background-color: #eee;
   }
@@ -42,6 +43,8 @@
     padding: 100px 0px 80px;
     margin-left: 0px;
     background-color: #eee;
+    height: 100vh;
+    height: -webkit-fill-available;
   }
   .explain_agency_img {
     width: 85%;
