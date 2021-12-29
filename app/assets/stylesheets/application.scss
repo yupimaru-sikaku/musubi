@@ -27,3 +27,10 @@
     "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo,
     sans-serif;
 }
+html {
+  height: -webkit-fill-available;
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
