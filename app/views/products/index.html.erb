@@ -8,7 +8,7 @@
                 <%= link_to product_path(product) do %>
                     <section class="product_index_item_card">
                         <% if product.images.attached? %>
-                            <%= image_tag product.images[0].variant(resize_to_fit: [300,280]), class: 'card-img' %>
+                            <%= image_tag product.images[0].variant(resize_to_fit: [300,300]), class: 'card-img' %>
                         <% else %>
                             <%= image_tag "no_image.jpg", class: "no_image" %>
                         <% end %>

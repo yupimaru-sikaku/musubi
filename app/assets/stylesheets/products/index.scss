@@ -34,6 +34,8 @@ $sub_weight: 900;
 
         .card-img {
           border-radius: 5px 5px 0 0;
+          width: 300px;
+          height: 300px;
         }
         .no_image {
           width: 300px;
@@ -99,9 +101,9 @@ $sub_weight: 900;
 
           .card-img {
             border-radius: 5px 5px 0 0;
-            height: 180px;
             overflow: hidden;
-            width: 100%;
+            width: 230px;
+            height: 230px;
           }
           .no_image {
             width: 300px;

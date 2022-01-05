@@ -43,6 +43,8 @@
 
 .product_index_content .product_index_items .product_index_item .product_index_item_card .card-img {
   border-radius: 5px 5px 0 0;
+  width: 300px;
+  height: 300px;
 }
 
 .product_index_content .product_index_items .product_index_item .product_index_item_card .no_image {
@@ -123,9 +125,9 @@
   }
   .product_index_content .product_index_items .product_index_item .product_index_item_card .card-img {
     border-radius: 5px 5px 0 0;
-    height: 180px;
     overflow: hidden;
-    width: 100%;
+    width: 230px;
+    height: 230px;
   }
   .product_index_content .product_index_items .product_index_item .product_index_item_card .no_image {
     width: 300px;

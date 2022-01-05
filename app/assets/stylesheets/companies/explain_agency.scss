@@ -1,3 +1,5 @@
+@import "../font";
+
 // 新規登録画面
 .company_explain_content {
   font-family: "游ゴシック体", YuGothic;
@@ -10,10 +12,37 @@
   background-color: #eee;
   // 代理店概要説明の画像
   .explain_agency_img {
-    width: 85%;
+    width: 60%;
     margin: 0 auto;
     display: block;
     border-radius: 8px;
+  }
+  .company_explain_title {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: $pc_main;
+    text-align: center;
+  }
+  .company_explain_title::before {
+    content: attr(data-en);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 80px;
+    font-style: italic;
+  }
+  .company_explain_title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%) rotate(30deg);
+    width: 1px;
+    height: 40px;
+    background-color: #59b69e;
   }
 }
 
@@ -35,7 +64,10 @@
   }
   // 代理店概要説明の画像
   .explain_agency_img {
-    width: 85%;
+    width: 85% !important;
+  }
+  .company_explain_title {
+    font-size: $tb_main !important;
   }
 }
 
@@ -49,6 +81,24 @@
   }
   // 代理店概要説明の画像
   .explain_agency_img {
-    width: 85%;
+    width: 85% !important;
+  }
+  .company_explain_title {
+    font-size: $sm_main !important;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+  .company_explain_title::before {
+    font-size: 45px !important;
+    top: -10px !important;
+  }
+  .company_explain_title::after {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%) rotate(30deg);
+    width: 1px;
+    height: 40px;
+    background-color: #59b69e;
+    height: 25px !important;
   }
 }
