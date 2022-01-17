@@ -1,5 +1,1 @@
-User.create(agency_name: "代理店名", human_name: "代表者名", phone_number: "090-0000-1111", email: "yukiharu.nagao@icloud.com", postal_code: 1234567, address: "静岡県富士市青葉町", password: "1234aaaa", password_confirmation: "1234aaaa")
-
-# 写真を入れるとき
-# gh = Gh.find(1)
-# gh.images.attach([io: File.open('app/assets/images/sazanka.png'), filename: 'sazanka.png'], [io: File.open('app/assets/images/koki.png'), filename: 'koki.png'])
+User.create(human_name: "管理者", postal_code: "5610824", address: "大阪府豊中市大島町", phone_number: "09080647280", email: "yukiharu.nagao@icloud.com", agency_code: "master", encrypted_password: "$2a$12$pwh5AeosxDXyuTPbWvs8XeQr.KuaWZUaP46BkSsAF7491y/RBWV..", reset_password_token: "", reset_password_sent_at: "", remember_created_at: "")
