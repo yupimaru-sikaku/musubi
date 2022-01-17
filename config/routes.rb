@@ -82,7 +82,11 @@ Rails.application.routes.draw do
   end
 
   # 報酬一覧
-  resources :commitions, only: [:index]
+  resources :commitions, only: [:index] do
+    collection do
+      get "commition_company"
+    end
+  end
   
   get 'carts/show', to: 'carts#show', as: 'carts_show'
   get 'carts/session_reset', to: 'carts#session_reset'

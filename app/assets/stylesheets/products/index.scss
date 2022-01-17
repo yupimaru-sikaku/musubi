@@ -36,6 +36,7 @@ $sub_weight: 900;
           border-radius: 5px 5px 0 0;
           width: 300px;
           height: 300px;
+          transition: 1s all;
         }
         .no_image {
           width: 300px;
@@ -68,6 +69,10 @@ $sub_weight: 900;
       .product_index_item_card:hover {
         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4),
           0 0 50px rgba(128, 128, 128, 0.1);
+
+        .card-img {
+          transform: scale(1.05, 1.05);
+        }
       }
     }
   }

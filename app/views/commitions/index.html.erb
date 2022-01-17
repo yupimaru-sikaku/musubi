@@ -1,0 +1,41 @@
+<%= render partial: 'shared/product_header' %>
+
+<nav class="commition_index_content">
+
+    <% if @companies.present? %>
+        <div class="commition_index_title">
+            <h1>報酬状況管理画面</h1>
+        </div>
+        <div class="module-spacer--medium"></div>
+        <div class="commition_index_items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>代理店名</th>
+                        <th>保有ポイント</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @companies.each do |company| %>
+                        <tr>
+                            <td><%= company.id %></td>
+                            <td><%= company.agency_name %></td>
+                            <td><%= company.point %>pt</td>
+                            <td><%= link_to "詳細", commition_company_commitions_path(id: company.id) %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    <% else %>
+        <div class="commition_index_title">
+            <h1>オーダー状況管理画面</h1>
+            <p>オーダーはありません</p>
+        </div>
+    <% end %>
+
+</nav>
+
+<%= render partial: 'shared/footer' %>

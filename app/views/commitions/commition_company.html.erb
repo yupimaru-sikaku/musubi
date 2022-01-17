@@ -1,21 +1,21 @@
-<%= render partial: 'shared/company_header' %>
+<%= render partial: 'shared/header' %>
 
-<nav class="company_show_content">
-    <nav class="home_commition_container">
+<nav class="commition_company_content">
+    <nav class="commition_company_container">
 
-        <div class="home_commition_title">
+        <div class="commition_company_title">
             <h2 class="heading06" data-en="Point"><%= current_company.agency_name %> 様保有ポイント</h2>
         </div>
 
         <div class="module-spacer--medium"></div>
 
-        <div class="home_commition_point">
+        <div class="commition_company_point">
             <p><%= current_company.point %>pt</p>
         </div>
 
         <div class="module-spacer--large"></div>
     
-        <div class="home_commition_title">
+        <div class="commition_company_title">
             <h2 class="heading06" data-en="Histroy">履歴</h2>
         </div>
 
@@ -23,27 +23,27 @@
 
         <% if @commitions.present? %>
             <% @commitions.each do |commition| %>
-                <div class="home_commition_items">
-                    <div class="home_commition_item">
+                <div class="commition_company_items">
+                    <div class="commition_company_item">
                         <span>日付：</span>
                         <span><%= commition.created_at.strftime('%Y/%m/%d') %></span>
                     </div>
-                    <div class="home_commition_item">
+                    <div class="commition_company_item">
                         <span>購入者：</span>
                         <span><%= Order.find(commition.order_id).human_name %>様</span>
                     </div>
-                    <div class="home_commition_item">
+                    <div class="commition_company_item">
                         <span>ポイント推移：</span>
                         <span><br class="sm_br"><%= commition.company_has_point.round(2) %> → <%= (commition.company_has_point + commition.add_point).round(2) %>pt (<%= commition.add_point.round(2) %>pt)</span>
                     </div>
-                    <div class="home_commition_item">
+                    <div class="commition_company_item">
                         <span>報酬額：</span>
                         <span>¥<%= commition.reward_amount.to_s(:delimited) %></span>
                     </div>
                 </div>
             <% end %>
         <% else %>
-            <p class="home_commition_nothing">まだポイントを獲得しておりません</p>
+            <p class="commition_company_nothing">まだポイントを獲得しておりません</p>
         <% end %>
 
         <div class="module-spacer--medium"></div>

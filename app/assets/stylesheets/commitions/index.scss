@@ -1,0 +1,144 @@
+@import "../font";
+
+.commition_index_content {
+  padding: 150px 20px;
+  letter-spacing: 2px;
+  background-color: #f3f3f3;
+  text-align: center;
+
+  .commition_index_title {
+    color: #59b69e;
+    font-weight: bold;
+    font-size: $pc_main;
+  }
+  .commition_index_items {
+    background-color: white;
+    border-radius: 8px;
+    padding: 50px 0px;
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      border-bottom: 1px solid #b7b7b7;
+
+      th {
+        border-bottom: 1px solid#b7b7b7; /**/
+        padding: 5px;
+      }
+
+      td {
+        padding: 10px;
+        text-align: center;
+        /*破線 1px オレンジ*/
+      }
+      a {
+        text-decoration: none;
+        margin: 0 auto;
+        color: blue;
+
+        :hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .commition_index_content {
+    padding: 150px 10px;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+    text-align: center;
+    min-height: 70vh;
+
+    .commition_index_title {
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $pc_main;
+    }
+    .commition_index_items {
+      background-color: white;
+      border-radius: 8px;
+      padding: 50px 0px;
+      font-size: $tb_subsub;
+
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-bottom: 1px solid #b7b7b7;
+
+        th {
+          border-bottom: 1px solid#b7b7b7; /**/
+          padding: 2px;
+        }
+
+        td {
+          padding: 5px;
+          text-align: center;
+          /*破線 1px オレンジ*/
+        }
+        a {
+          text-decoration: none;
+          margin: 0 auto;
+          color: blue;
+
+          :hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .commition_index_content {
+    padding: 100px 10px 55px;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+    text-align: center;
+
+    .commition_index_title {
+      color: #59b69e;
+      font-weight: bold;
+      font-size: $sm_main;
+    }
+    .commition_index_items {
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px 0px;
+
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-bottom: none;
+        font-size: $sm_subsub;
+
+        th {
+          border-bottom: none;
+          padding: 5px;
+          display: flex;
+          flex-direction: column;
+          display: none;
+        }
+
+        td {
+          padding: 5px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+        }
+        a {
+          text-decoration: none;
+          margin: 0 auto;
+          color: blue;
+
+          :hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

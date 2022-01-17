@@ -1,0 +1,148 @@
+@charset "UTF-8";
+.commition_index_content {
+  padding: 150px 20px;
+  letter-spacing: 2px;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+
+.commition_index_content .commition_index_title {
+  color: #59b69e;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.commition_index_content .commition_index_items {
+  background-color: white;
+  border-radius: 8px;
+  padding: 50px 0px;
+}
+
+.commition_index_content .commition_index_items table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-bottom: 1px solid #b7b7b7;
+}
+
+.commition_index_content .commition_index_items table th {
+  border-bottom: 1px solid #b7b7b7;
+  /**/
+  padding: 5px;
+}
+
+.commition_index_content .commition_index_items table td {
+  padding: 10px;
+  text-align: center;
+  /*破線 1px オレンジ*/
+}
+
+.commition_index_content .commition_index_items table a {
+  text-decoration: none;
+  margin: 0 auto;
+  color: blue;
+}
+
+.commition_index_content .commition_index_items table a :hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+  .commition_index_content {
+    padding: 150px 10px;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+    text-align: center;
+    min-height: 70vh;
+  }
+  .commition_index_content .commition_index_title {
+    color: #59b69e;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  .commition_index_content .commition_index_items {
+    background-color: white;
+    border-radius: 8px;
+    padding: 50px 0px;
+    font-size: 14px;
+  }
+  .commition_index_content .commition_index_items table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-bottom: 1px solid #b7b7b7;
+  }
+  .commition_index_content .commition_index_items table th {
+    border-bottom: 1px solid #b7b7b7;
+    /**/
+    padding: 2px;
+  }
+  .commition_index_content .commition_index_items table td {
+    padding: 5px;
+    text-align: center;
+    /*破線 1px オレンジ*/
+  }
+  .commition_index_content .commition_index_items table a {
+    text-decoration: none;
+    margin: 0 auto;
+    color: blue;
+  }
+  .commition_index_content .commition_index_items table a :hover {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .commition_index_content {
+    padding: 100px 10px 55px;
+    letter-spacing: 2px;
+    background-color: #f3f3f3;
+    text-align: center;
+  }
+  .commition_index_content .commition_index_title {
+    color: #59b69e;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .commition_index_content .commition_index_items {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 0px;
+  }
+  .commition_index_content .commition_index_items table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-bottom: none;
+    font-size: 12px;
+  }
+  .commition_index_content .commition_index_items table th {
+    border-bottom: none;
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: none;
+  }
+  .commition_index_content .commition_index_items table td {
+    padding: 5px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .commition_index_content .commition_index_items table a {
+    text-decoration: none;
+    margin: 0 auto;
+    color: blue;
+  }
+  .commition_index_content .commition_index_items table a :hover {
+    opacity: 0.5;
+  }
+}
+/*# sourceMappingURL=index.css.map */

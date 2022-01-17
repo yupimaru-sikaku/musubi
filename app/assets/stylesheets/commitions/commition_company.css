@@ -1,0 +1,146 @@
+@charset "UTF-8";
+.commition_company_content {
+  font-family: "游ゴシック体", YuGothic;
+  background-color: #f3f3f3;
+  padding: 70px 0px 80px;
+  margin-top: 50px;
+  letter-spacing: 2px;
+  overflow: auto;
+  height: 100vh;
+  background-color: #eee;
+}
+
+.commition_company_content .commition_company_container {
+  margin: 0px 150px;
+  margin: 0 auto;
+  padding: 50px 0px;
+  letter-spacing: 2px;
+  font-family: "游ゴシック体", YuGothic;
+  text-align: center;
+  width: 80%;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.commition_company_content .commition_company_container .commition_company_title h2 {
+  font-size: 32px;
+}
+
+.commition_company_content .commition_company_container .commition_company_point {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ffa41c;
+}
+
+.commition_company_content .commition_company_container .commition_company_items {
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 10px;
+  -webkit-box-shadow: 0 2px 5px 0 #d5d9d9;
+          box-shadow: 0 2px 5px 0 #d5d9d9;
+}
+
+.commition_company_content .commition_company_container .heading06 {
+  position: relative;
+  padding-top: 50px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.commition_company_content .commition_company_container .heading06 span {
+  position: relative;
+  z-index: 2;
+}
+
+.commition_company_content .commition_company_container .heading06::before {
+  content: attr(data-en);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: rgba(89, 182, 158, 0.2);
+  font-size: 80px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1024px) {
+  .commition_company_container {
+    margin: 0px 150px;
+    margin: 0 auto;
+    padding: 50px 0px;
+    letter-spacing: 2px;
+    font-family: "游ゴシック体", YuGothic;
+    text-align: center;
+    width: 90%;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .commition_company_container .commition_company_title {
+    font-size: 24px;
+  }
+  .commition_company_container .commition_company_point {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ffa41c;
+  }
+  .commition_company_container .commition_company_items {
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+    -webkit-box-shadow: 0 2px 5px 0 #d5d9d9;
+            box-shadow: 0 2px 5px 0 #d5d9d9;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .commition_company_container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0px;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .commition_company_container .commition_company_title h2 {
+    font-size: 20px;
+  }
+  .commition_company_container .commition_company_point {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffa41c;
+  }
+  .commition_company_container .commition_company_items {
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+    -webkit-box-shadow: 0 2px 5px 0 #d5d9d9;
+            box-shadow: 0 2px 5px 0 #d5d9d9;
+  }
+  .heading06 {
+    position: relative;
+    padding-top: 50px;
+    font-size: 26px;
+    text-align: center;
+  }
+  .heading06 span {
+    position: relative;
+    z-index: 2;
+  }
+  .heading06::before {
+    content: attr(data-en);
+    position: absolute;
+    top: 10px !important;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 55px !important;
+    font-style: italic;
+  }
+}
+/*# sourceMappingURL=commition_company.css.map */

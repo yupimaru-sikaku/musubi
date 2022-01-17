@@ -45,6 +45,8 @@
   border-radius: 5px 5px 0 0;
   width: 300px;
   height: 300px;
+  -webkit-transition: 1s all;
+  transition: 1s all;
 }
 
 .product_index_content .product_index_items .product_index_item .product_index_item_card .no_image {
@@ -81,6 +83,11 @@
 .product_index_content .product_index_items .product_index_item .product_index_item_card:hover {
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1);
           box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1);
+}
+
+.product_index_content .product_index_items .product_index_item .product_index_item_card:hover .card-img {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
 }
 
 @media screen and (max-width: 1024px) {
