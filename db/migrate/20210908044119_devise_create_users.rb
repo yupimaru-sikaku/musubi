@@ -5,13 +5,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :human_name, null: false
       # お届け先郵便番号
       t.string :postal_code, null: false
-      # お届け先住所
+      # 商品お届け先住所
       t.string :address, null: false
       # 電話番号
       t.string :phone_number, null: false
       # メールアドレス
       t.string :email, null: false, default: ""
-      # 代理店コード
+      # 招待された代理店コード
       t.string :agency_code
       # パスワード
       t.string :encrypted_password, null: false, default: ""

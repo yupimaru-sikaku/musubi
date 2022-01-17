@@ -4,8 +4,6 @@ class DeviseCreateCompanies < ActiveRecord::Migration[6.0]
 
       # 代理店名
       t.string :agency_name, null: false, unique: true
-      # 招待コード
-      t.string :invitation_code
       # 代理店コード
       t.string :agency_code, unique: true
       # 代表取締役名または代表社員名（代表者）
@@ -19,7 +17,7 @@ class DeviseCreateCompanies < ActiveRecord::Migration[6.0]
       # 代理店の電話番号
       t.string :phone_number, null: false
       # 代理店のメールアドレス
-      t.string :email, null: false, default: ""
+      t.string :email, null: false
       # 金融機関名（ゆうちょ）
       t.string :financial_facility_name, null: false
       # 支店名（店番）
@@ -30,14 +28,14 @@ class DeviseCreateCompanies < ActiveRecord::Migration[6.0]
       t.string :bank_account_number, null: false
       # 口座名義人（カナ）
       t.string :bank_account_holder, null: false
-      # 招待して登録した人の数
-      t.integer :invited_person_number, null: false, default: 0
       # 何の商品を最初に購入したか
       t.string :product_name, null: false
-      # 承認
+      # 承認（管理者か）
       t.boolean :admin, null: false, default: false
-      # 会費と商品を購入したか
+      # 会費を払ったか商品を購入したか（申請承認されたか）
       t.boolean :is_buy, null: false, default: false
+      # 現在の所有ポイント
+      t.float :point, null: false, default: 0
 
       # パスワード
       t.string :encrypted_password, null: false, default: ""

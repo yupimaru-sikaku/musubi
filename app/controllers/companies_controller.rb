@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
     
     # 代理店が獲得したポイントの確認
     def point_index
-        @points = current_company.points
+        @commitions = current_company.commitions
     end
 
     # 代理店契約の説明

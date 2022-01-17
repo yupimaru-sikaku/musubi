@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_030143) do
+ActiveRecord::Schema.define(version: 2022_01_10_025523) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,9 +46,21 @@ ActiveRecord::Schema.define(version: 2021_10_18_030143) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "commitions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "add_point", default: 0.0, null: false
+    t.float "company_has_point", null: false
+    t.integer "reward_amount", null: false
+    t.boolean "is_finished", default: false, null: false
+    t.bigint "company_id"
+    t.bigint "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_commitions_on_company_id"
+    t.index ["order_id"], name: "index_commitions_on_order_id"
+  end
+
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "agency_name", null: false
-    t.string "invitation_code"
     t.string "agency_code"
     t.string "human_name", null: false
     t.string "birth_day", null: false
@@ -65,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_030143) do
     t.string "product_name", null: false
     t.boolean "admin", default: false, null: false
     t.boolean "is_buy", default: false, null: false
+    t.float "point", default: 0.0, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -122,15 +135,6 @@ ActiveRecord::Schema.define(version: 2021_10_18_030143) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "point_type", null: false
-    t.integer "count", default: 0, null: false
-    t.bigint "company_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_points_on_company_id"
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "product_name", null: false
     t.integer "price", default: 0, null: false
@@ -138,6 +142,8 @@ ActiveRecord::Schema.define(version: 2021_10_18_030143) do
     t.integer "stock", default: 0, null: false
     t.string "model_number", null: false
     t.string "product_type", null: false
+    t.float "point", null: false
+    t.integer "sales_profit", null: false
     t.boolean "display", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -162,6 +168,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_030143) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cards", "users"
+  add_foreign_key "commitions", "companies"
+  add_foreign_key "commitions", "orders"
   add_foreign_key "order_details", "orders"
-  add_foreign_key "points", "companies"
 end

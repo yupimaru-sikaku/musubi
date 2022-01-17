@@ -39,11 +39,36 @@ class ApplicationController < ActionController::Base
       return @shipping_fee
     end
 
+    # 登録手数料の決定
     def registration_fee
       tax = 1.1
       @registration_fee = 1000 * tax
       @registration_fee = @registration_fee.round
       return @registration_fee
+    end
+
+    # ユーザーに紐付いている代理店のポイントによって報酬の分配比率を決定
+    def decide_reward_distribution_ratio(current_user)
+      @tax = 1.1
+
+      company = Company.find_by(agency_code: current_user.agency_code)
+      company_point = company.point
+      
+      @reward_distribution_ratio = 0
+      if company_point >= 0 && company_point <= 50
+        @reward_distribution_ratio = 0.3
+      elsif company_point >= 51 && company_point <= 100
+        @reward_distribution_ratio = 0.4
+      elsif company_point >= 101 && company_point <= 500
+        @reward_distribution_ratio = 0.5
+      elsif company_point >= 501 && company_point <= 1000
+        @reward_distribution_ratio = 0.6
+      elsif company_point >= 1001
+        @reward_distribution_ratio = 0.7
+      end
+
+      return @reward_distribution_ratio
+      return @tax
     end
     
     private

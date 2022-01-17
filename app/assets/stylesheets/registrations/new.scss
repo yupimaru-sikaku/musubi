@@ -210,6 +210,29 @@
       }
     }
   }
+  // 背景に文字入れ
+  .heading06 {
+    position: relative;
+    padding-top: 50px;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .heading06 span {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heading06::before {
+    content: attr(data-en);
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 80px;
+    font-style: italic;
+  }
 }
 
 @media screen and (max-width: 1024px) {

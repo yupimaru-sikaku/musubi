@@ -74,9 +74,9 @@ $sub_weight: 900;
           color: #78797a;
           margin-left: 10px;
         }
-        .order_confirm_item_context_sub:nth-child(3) {
-          font-size: $sub_title_size;
-          font-weight: bold;
+        // 獲得ポイント
+        .order_confirm_item_context_sub:nth-child(5) {
+          font-size: $pc_subsub;
           color: #b12704;
         }
       }
@@ -178,10 +178,9 @@ $sub_weight: 900;
             color: #78797a;
             margin-left: 10px;
           }
-          .order_confirm_item_context_sub:nth-child(3) {
-            font-size: $sub_title_size;
-            font-weight: bold;
-            color: #b12704;
+          // 獲得ポイント
+          .order_confirm_item_context_sub:nth-child(5) {
+            font-size: $tb_subsub + 2;
           }
         }
       }
@@ -255,6 +254,10 @@ $sub_weight: 900;
           .order_confirm_item_context_sub:nth-child(3) {
             color: #b12704;
             font-size: 14px;
+          }
+          // 獲得ポイント
+          .order_confirm_item_context_sub:nth-child(5) {
+            font-size: $sm_sub !important;
           }
 
           .order_confirm_item_context_pay_type_1 {

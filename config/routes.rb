@@ -74,11 +74,15 @@ Rails.application.routes.draw do
     end
   end
 
+  # 納品書・請求書のPDF
   resources :pdfs do
     collection do
       get 'toggle_is_finished'
     end
   end
+
+  # 報酬一覧
+  resources :commitions, only: [:index]
   
   get 'carts/show', to: 'carts#show', as: 'carts_show'
   get 'carts/session_reset', to: 'carts#session_reset'

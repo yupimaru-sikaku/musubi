@@ -8,15 +8,18 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # カート内が空ならカート画面にリダイレクト
     return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
+    # クレジットカード払いを選択しているが、カード情報がない場合は確認画面のURLを保持してカード情報入力画面へ
     if params[:pay_type] == "クレジットカード払い" && !current_user.card
       session[:previous_url] = request.referer
       return redirect_to new_card_path, flash: {success: "カード情報をご登録下さい"}
     end
         
-    # ランダムな16桁を生成
+    # オーダー情報作成のため、ランダムな16桁を生成
     require 'securerandom'
     order_detail_number = p SecureRandom.alphanumeric(16)
+
     # Orderテーブルを作成
     order = Order.create!(
       order_number: order_detail_number,
@@ -50,32 +53,33 @@ class OrdersController < ApplicationController
 
     # ポイントを入れる
     unless current_user.agency_code.blank?
-      # ユーザーに紐付いている代理店を特定
-      company_id = Company.find_by(agency_code: current_user.agency_code).id
-      # 加算するポイントの初期化
-      syodoku_point = 0
-      # 各商品ごとのポイントを加算していく
+      # ユーザーに紐付いている代理店を特定してポイント加点と報酬入力
+      company = Company.find_by(agency_code: current_user.agency_code)
+      # 購入前に代理店が持っているポイントを元に報酬額の分配比率を決定
+      # ActionController
+      decide_reward_distribution_ratio(current_user)
+      @total_reward = 0
       session[:cart].each do |cart|
-        # 消毒液に分類されている商品であり、かつスプレーでなければ加点
-        if Product.find_by(id: cart["product_id"]).product_type == "消毒液" && Product.find_by(id: cart["product_id"]).model_number != "AG014"
-          quantity = cart["quantity"]
-          syodoku_point += quantity
-        end
+        product = Product.find_by(id: cart["product_id"])
+        @total_reward += ((product.sales_profit * @tax * cart["quantity"].to_i) * @reward_distribution_ratio).round(0)
       end
-      # 購入手続きで各ポイントが1以上付与の予定なら各ポイントに加算していく
-      if syodoku_point >= 1 
-        if Point.find_by(point_type: "消毒液", company_id: company_id)
-          point = Point.find_by(point_type: "消毒液", company_id: company_id)
-          syodoku_point += point.count
-          point.update(count: syodoku_point)
-        else
-          Point.create(
-            point_type: "消毒液",
-            count: syodoku_point,
-            company_id: company_id,
-          )
-        end
-      end
+
+      # ポイント加点の履歴を入力
+      Commition.create(
+        # 今回加点されるポイント
+        add_point: @total_points,
+        # 今までに代理店が持っていたポイント
+        company_has_point: company.point,
+        # 今回の報酬額
+        reward_amount: @total_reward,
+        is_finished: false,
+        company_id: company.id,
+        order_id: order.id
+      )
+      
+      company.point +=  @total_points
+      company.update(point: company.point)
+
     end
 
     # クレジットカード決済の場合、購入情報を送信
@@ -90,7 +94,6 @@ class OrdersController < ApplicationController
       )
     end
 
-
     # 最後にお客様と自身にメールを送信
     order_details = OrderDetail.where(order_id: order.id)
     ContactMailer.product_buy_thanks_mail(current_user, order).deliver
@@ -99,7 +102,6 @@ class OrdersController < ApplicationController
     # notifier = Slack::Notifier.new(ENV['WEBHOOK_URL'])
     # notifier.ping "むすびHPです。\n商品購入がありました。"
 
-    
     # 保持しているURLを解放
     session[:previous_url] = ""
     # 保持しているカート情報を解放
@@ -114,12 +116,14 @@ class OrdersController < ApplicationController
   end
 
   def confirm
+    # カート内に商品が無ければカート内詳細画面へ
     return redirect_to carts_show_path, flash: {success: "カート内に商品がありません"} if session[:cart].blank?
-    
+
+    # 住所変更・カード情報作成・カード情報変更の場合に確認画面に戻ってこられるように
     session[:previous_url] = request.url
 
+    # カード情報を取得
     @user = current_user
-    # カード情報
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     unless Card.find_by(user_id: current_user.id).blank?
         card = Card.find_by(user_id: current_user.id)
@@ -133,13 +137,22 @@ class OrdersController < ApplicationController
 
   # カート内の商品情報を追加
   def add_info
+    
+    # ユーザーに紐付いている代理店のポイントによって報酬の分配比率を決定
+    # ActionController
+    if current_user.agency_code.present?
+      decide_reward_distribution_ratio(current_user)
+    end
 
     @cart = []
     session[:cart].each do |cart|
       # 商品情報を取得
       product = Product.find_by(id: cart["product_id"])
-      # 商品の値段×単価
+      # その商品の合計価格 ＝ 商品の値段×単価
       sub_total = product.price * cart["quantity"].to_i
+      # 各商品毎のポイント
+      points_per_product = (product.point * cart["quantity"].to_i).round(2)
+
       next unless product
 
       @cart.push({ 
@@ -149,7 +162,8 @@ class OrdersController < ApplicationController
         price: product.price,
         quantity: cart["quantity"].to_i,
         sub_total: sub_total,
-        images: product.images
+        images: product.images,
+        points_per_product: points_per_product
       })
     end
     
@@ -157,12 +171,15 @@ class OrdersController < ApplicationController
     @cart_total_price = @cart.sum { |hash| hash[:sub_total] }
     # カート内商品の合計個数
     @cart_total_quantity = @cart.sum { |hash| hash[:quantity] }
+    # カート内商品の合計ポイント
+    @total_points = (@cart.sum { |hash| hash[:points_per_product] }).round(2)
     
     # 住所から送料を決める
     # ActionController
     address = current_user.address
     decide_shipping_fee(address, @cart_total_quantity, @cart)
 
+    # 住所によって郵送料が決定できなかった場合
     if @shipping_fee == nil
       return redirect_to user_path(current_user), flash: {success: "住所を都道府県から入力下さい"}
     end

@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
 
-  has_many :points
-  
+  has_many :commitions
+
   before_create :make_agency_code
   
   with_options presence: true do

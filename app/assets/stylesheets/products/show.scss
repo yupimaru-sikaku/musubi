@@ -1,13 +1,5 @@
 @import "../font";
 
-$font_family: "Noto Sans JP", sans-serif;
-$title_size: 32px;
-$title_size_sm: 24px;
-$title_weight: 900;
-$sub_size: 20px;
-$sub_size_sm: 16px;
-$sub_weight: 900;
-
 .product_show_content {
   padding: 0px 20px;
   display: flex;
@@ -86,13 +78,17 @@ $sub_weight: 900;
     .product_show_title {
       color: #59b69e;
       font-weight: bold;
-      font-size: $title_size;
+      font-size: $pc_main;
     }
     .product_show_price {
-      font-size: $title_size;
+      font-size: $pc_main;
+    }
+    .product_show_point {
+      font-size: $pc_sub;
+      color: #b12704;
     }
     .product_show_buy {
-      font-size: $sub_size;
+      font-size: $sm_main;
 
       input {
         border: 1px solid #eee;
@@ -117,7 +113,7 @@ $sub_weight: 900;
   }
 
   .product_show_description {
-    font-size: $sub_size;
+    font-size: $sm_main;
   }
 }
 
@@ -206,8 +202,11 @@ $sub_weight: 900;
       .product_show_price {
         font-size: $tb_main;
       }
+      .product_show_point {
+        font-size: $tb_sub;
+      }
       .product_show_buy {
-        font-size: $sub_size;
+        font-size: $sm_main;
 
         input {
           border: 1px solid #eee;
@@ -234,7 +233,7 @@ $sub_weight: 900;
     }
 
     .product_show_description {
-      font-size: $sub_size;
+      font-size: $sm_main;
     }
   }
 }
@@ -270,6 +269,10 @@ $sub_weight: 900;
       .product_show_price {
         text-align: center;
         font-size: 16px;
+      }
+      .product_show_point {
+        text-align: center;
+        font-size: $sm_sub;
       }
       .product_show_buy {
         text-align: center;

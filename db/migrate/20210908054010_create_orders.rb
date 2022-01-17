@@ -1,9 +1,8 @@
 class CreateOrders < ActiveRecord::Migration[6.0]
   def change
     create_table :orders do |t|
-
       # 注文番号
-      t.string :order_number, null: false
+      t.string :order_number, null: false, unique: true
       # 代表者名
       t.string :human_name, null: false
       # 届け先郵便番号

@@ -241,6 +241,30 @@
   background-color: #ffd814;
 }
 
+.registration_new_content .heading06 {
+  position: relative;
+  padding-top: 50px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.registration_new_content .heading06 span {
+  position: relative;
+  z-index: 2;
+}
+
+.registration_new_content .heading06::before {
+  content: attr(data-en);
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: rgba(89, 182, 158, 0.2);
+  font-size: 80px;
+  font-style: italic;
+}
+
 @media screen and (max-width: 1024px) {
   .registration_new_content {
     font-family: "游ゴシック体", YuGothic;

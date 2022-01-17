@@ -14,6 +14,10 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :model_number, null: false
       # 商品種別
       t.string :product_type, null: false
+      # 購入した時に獲得できるポイント
+      t.float :point, null: false, default: 0.0
+      # 販売利益
+      t.integer :sales_profit, null: false, default: 0
       # 表示するか
       t.boolean :display, null: false, default: true
 

@@ -1,0 +1,2 @@
+class CommitionsController < ApplicationController
+end
