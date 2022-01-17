@@ -156,11 +156,11 @@
 
     <div class="registration_new_field_main">
       <div class="registration_new_field_main_title">
-        <%= f.number_field :point, "購入した時に獲得できるポイント" %>
+        <%= f.label :point, "購入した時に獲得できるポイント" %>
         <span>必須</span>
       </div>
       <div class="registration_new_field_main_enter">
-        <%= f.text_field :point %>
+        <%= f.number_field :point, step: "0.01" %>
       </div>
     </div>
 
@@ -179,11 +179,11 @@
 
     <div class="registration_new_field_main">
       <div class="registration_new_field_main_title">
-        <%= f.number_field :sales_profit, "販売利益" %>
+        <%= f.label :sales_profit, "販売利益" %>
         <span>必須</span>
       </div>
       <div class="registration_new_field_main_enter">
-        <%= f.text_field :sales_profit %>
+        <%= f.number_field :sales_profit %>
       </div>
     </div>
 

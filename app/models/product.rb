@@ -9,6 +9,8 @@ class Product < ApplicationRecord
         validates :stock
         validates :model_number
         validates :product_type
+        validates :point
+        validates :sales_profit
       end
 
     def was_attached?

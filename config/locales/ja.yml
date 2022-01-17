@@ -243,6 +243,8 @@ ja:
         stock: 在庫
         model_number: 型番
         product_type: 商品の種別
+        point: 購入した時に獲得できるポイント
+        sales_profit: 販売利益
       contact:
         human_name: お名前
         furigana: ふりがな
