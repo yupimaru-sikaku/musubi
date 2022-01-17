@@ -55,6 +55,8 @@ class ProductsController < ApplicationController
             :stock,
             :model_number,
             :product_type,
+            :point,
+            :sales_profit,
             images: [],
         )
     end
