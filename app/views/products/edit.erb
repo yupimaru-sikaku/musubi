@@ -143,6 +143,52 @@
 
   </div>
 
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:point) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:point).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :point, "購入した時に獲得できるポイント" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.number_field :point, step: "0.01" %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="module-spacer--medium"></div>
+
+  <div class="registration_new_field">
+
+    <div class="registration_new_field_alert">
+      <% if @product.errors.include?(:sales_profit) %>
+      <p class="alert_danger" style=" color: red;">
+        <%= @product.errors.full_messages_for(:sales_profit).first %>
+      <% end %>
+    </div>
+
+    <div class="registration_new_field_main">
+      <div class="registration_new_field_main_title">
+        <%= f.label :sales_profit, "販売利益" %>
+        <span>必須</span>
+      </div>
+      <div class="registration_new_field_main_enter">
+        <%= f.number_field :sales_profit %>
+      </div>
+    </div>
+
+  </div>
+
   <div class="module-spacer--small"></div>
 
   <div class="registration_new_field">
