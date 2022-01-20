@@ -36,6 +36,10 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.header .header_logo img {
+  width: 40px;
+}
+
 .header .header_menus {
   padding: 0px;
   font-family: "M PLUS Rounded 1c";

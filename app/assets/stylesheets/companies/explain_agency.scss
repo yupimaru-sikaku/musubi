@@ -34,16 +34,16 @@
     font-size: 80px;
     font-style: italic;
   }
-  .company_explain_title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%) rotate(30deg);
-    width: 1px;
-    height: 40px;
-    background-color: #59b69e;
-  }
+  // .company_explain_title::after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 50%;
+  //   transform: translate(-50%) rotate(30deg);
+  //   width: 1px;
+  //   height: 40px;
+  //   background-color: #59b69e;
+  // }
 }
 
 @media screen and (max-width: 1024px) {
