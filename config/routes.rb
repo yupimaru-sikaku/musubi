@@ -55,7 +55,11 @@ Rails.application.routes.draw do
   # ユーザー招待（商品を購入したい方へ代理店コードを発行する）
   post 'homes/send_user_invitation_email', to: 'homes#send_user_invitation_email'
 
-  resources :products
+  resources :products do
+    collection do
+      get "introduction"
+    end
+  end
   
   resources :orders do
     collection do

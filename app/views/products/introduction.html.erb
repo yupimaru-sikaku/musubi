@@ -1,0 +1,58 @@
+<%= render partial: 'shared/header' %>
+ 
+<nav class="product_introduction_container">
+
+    <div class="product_introduction_title">
+        <h1 class="registration_new_title heading06" data-en="Introduction">商品のご紹介</h1>
+    </div>
+
+    <div class="module-spacer--large"></div>
+
+    <div class="product_introduction_items">
+        <%= link_to "#", class:"product_introduction_item" do %>
+            <div class="product_introduction_item_img">
+                <%= image_tag "6ppm×2L_1", alt: "商品画像" %>
+            </div>
+            <div class="product_introduction_item_title">
+                <p>銀イオン水</p>
+            </div>
+        <% end %>
+        <%= link_to "#", class:"product_introduction_item" do %>
+            <div class="product_introduction_item_img">
+                <%= image_tag "DHA・EPAサプリ.png", alt: "商品画像" %>
+            </div>
+            <div class="product_introduction_item_title">
+                <p>高濃度</br>DHA・EPAサプリ</p>
+            </div>
+        <% end %>
+        <%= link_to "#", class:"product_introduction_item" do %>
+            <div class="product_introduction_item_img">
+                <%= image_tag "ItoiX.png", alt: "商品画像" %>
+            </div>
+            <div class="product_introduction_item_title">
+                <p>ItoiX<br>和紙の靴下</p>
+            </div>
+        <% end %>
+        <%= link_to "#", class:"product_introduction_item" do %>
+            <div class="product_introduction_item_img">
+                <%= image_tag "Trim.png", alt: "商品画像" %>
+            </div>
+            <div class="product_introduction_item_title">
+                <p>電解水素水整水器</p>
+            </div>
+        <% end %>
+        <%= link_to "#", class:"product_introduction_item" do %>
+            <div class="product_introduction_item_img">
+                <%= image_tag "CBDオイル.png", alt: "商品画像" %>
+            </div>
+            <div class="product_introduction_item_title">
+                <p>CBDオイル</p>
+            </div>
+        <% end %>
+    </div>
+
+
+
+</nav>
+
+<%= render partial: 'shared/footer' %>

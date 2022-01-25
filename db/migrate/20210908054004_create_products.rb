@@ -20,6 +20,8 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer :sales_profit, null: false, default: 0
       # 表示するか
       t.boolean :display, null: false, default: true
+      # 商品のリンク
+      t.string :product_link
 
       t.timestamps
     end

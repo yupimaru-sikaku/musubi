@@ -44,6 +44,9 @@ class ProductsController < ApplicationController
         @product.destroy
         redirect_to products_path
     end
+    
+    def introduction
+    end
 
     private
     
@@ -57,6 +60,7 @@ class ProductsController < ApplicationController
             :product_type,
             :point,
             :sales_profit,
+            :product_link,
             images: [],
         )
     end
