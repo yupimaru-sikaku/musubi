@@ -45,7 +45,18 @@ class ProductsController < ApplicationController
         redirect_to products_path
     end
     
+    # 商品紹介
     def introduction
+    end
+    def introduction_silver_ion_water
+    end
+    def introduction_dha_epa_supplement
+    end
+    def introduction_itoix
+    end
+    def introduction_electrolytic_hydrogen_water
+    end
+    def introduction_cell_drop
     end
 
     private

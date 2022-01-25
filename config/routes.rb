@@ -58,6 +58,11 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get "introduction"
+      get "introduction_silver_ion_water"
+      get "introduction_dha_epa_supplement"
+      get "introduction_itoix"
+      get "introduction_electrolytic_hydrogen_water"
+      get "introduction_cell_drop"
     end
   end
   
