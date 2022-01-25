@@ -5,6 +5,10 @@
   font-family: "游ゴシック体", YuGothic;
 }
 
+.home_container .video-content {
+  width: 75vw;
+}
+
 .home_container .home_index_img {
   text-align: center;
 }
