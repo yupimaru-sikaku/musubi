@@ -70,7 +70,7 @@
         color: white;
         box-shadow: 5px 5px 0px 0 rgba(213, 217, 217, 0.5);
       }
-      input:hover{
+      input:hover {
         cursor: pointer;
         opacity: 0.5;
       }
@@ -85,7 +85,7 @@
         color: white;
         box-shadow: 5px 5px 0px 0 rgba(213, 217, 217, 0.5);
       }
-      a:hover{
+      a:hover {
         cursor: pointer;
         opacity: 0.5;
       }
@@ -160,17 +160,13 @@
         font-size: $sm_main;
       }
 
-      .home_commition_point {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #ffa41c;
-      }
       .home_commition_items {
         margin: 0 auto;
         width: 90%;
         margin-bottom: 20px;
         padding: 10px;
         box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 1);
+        font-size: $sm_subsub;
       }
     }
     // 背景に文字入れ
@@ -196,5 +192,11 @@
       font-size: 55px !important;
       font-style: italic;
     }
+  }
+  .home_commition_point p {
+    font-size: 2rem;
+  }
+  .home_commition_items{
+    font-size: $sm_subsub;
   }
 }

@@ -176,11 +176,6 @@
   .home_commition_container .home_commition_container .home_commition_title h2 {
     font-size: 20px;
   }
-  .home_commition_container .home_commition_container .home_commition_point {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffa41c;
-  }
   .home_commition_container .home_commition_container .home_commition_items {
     margin: 0 auto;
     width: 90%;
@@ -188,6 +183,7 @@
     padding: 10px;
     -webkit-box-shadow: 0 2px 5px 0 #d5d9d9;
             box-shadow: 0 2px 5px 0 #d5d9d9;
+    font-size: 12px;
   }
   .home_commition_container .heading06 {
     position: relative;
@@ -210,5 +206,13 @@
     font-size: 55px !important;
     font-style: italic;
   }
+}
+
+.home_commition_container .home_commition_point p {
+  font-size: 2rem;
+}
+
+.home_commition_container .home_commition_items {
+  font-size: 12px;
 }
 /*# sourceMappingURL=point_index.css.map */
