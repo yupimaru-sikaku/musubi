@@ -5,7 +5,7 @@
   letter-spacing: $letter_spacing;
   font-family: $font_family;
 
-  .video-content{
+  .video-content {
     width: 60vw;
   }
   //   画像
@@ -438,11 +438,8 @@
     margin: 0px 5px;
     margin-top: 50px;
 
-    //   画像
-    .home_index_img {
-      img {
-        width: 80vw;
-      }
+    .video-content {
+      width: 80vw;
     }
 
     //   会社概要

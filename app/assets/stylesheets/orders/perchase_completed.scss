@@ -1,9 +1,4 @@
-$title_size: 32px;
-$sub_title_size: 20px;
-$title_size_sm: 24px;
-$title_weight: 900;
-$sub_title_size_sm: 16px;
-$sub_weight: 900;
+@import "../font";
 
 .order_purchase_content {
   margin: 0px 150px;
@@ -14,17 +9,39 @@ $sub_weight: 900;
     text-align: center;
     color: #59b69e;
     font-weight: bold;
-    font-size: $title_size;
+    font-size: $pc_main;
   }
   .order_purchase_number {
     text-align: center;
     font-weight: bold;
-    font-size: $title_size;
+    font-size: $pc_sub;
   }
   .order_purchase_sub {
     text-align: center;
-    font-size: 16px;
+    font-size: $pc_subsub;
     color: #78797a;
+  }
+  .order_purchase_line_title {
+    text-align: center;
+    color: #03c755;
+    font-weight: bold;
+    font-size: $pc_main;
+  }
+  .order_purchase_line_sub {
+    text-align: center;
+    font-size: $pc_subsub;
+    color: #78797a;
+  }
+
+  a.line_account {
+    display: block;
+    text-align: center;
+    img {
+      height: 50px;
+    }
+    :hover {
+      opacity: 0.5;
+    }
   }
 
   .order_purchase_back {
@@ -46,6 +63,7 @@ $sub_weight: 900;
 
 @media screen and (max-width: 1024px) {
   .order_purchase_content {
+    margin: 0px 30px;
     margin-top: 50px;
   }
 }
@@ -59,12 +77,32 @@ $sub_weight: 900;
       text-align: center;
       color: #59b69e;
       font-weight: bold;
-      font-size: 16px;
+      font-size: $sm_main;
     }
     .order_purchase_number {
       text-align: center;
       font-weight: bold;
-      font-size: 16px;
+      font-size: $sm_main;
+    }
+    .order_purchase_sub {
+      font-size: $sm_sub;
+    }
+    .order_purchase_line_title {
+      font-size: $sm_main;
+    }
+    .order_purchase_line_sub {
+      font-size: $sm_sub;
+    }
+
+    a.line_account {
+      display: block;
+      text-align: center;
+      img {
+        height: 50px;
+      }
+      :hover {
+        opacity: 0.5;
+      }
     }
 
     .order_purchase_back {

@@ -15,13 +15,39 @@
 .order_purchase_content .order_purchase_number {
   text-align: center;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .order_purchase_content .order_purchase_sub {
   text-align: center;
   font-size: 16px;
   color: #78797a;
+}
+
+.order_purchase_content .order_purchase_line_title {
+  text-align: center;
+  color: #03c755;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.order_purchase_content .order_purchase_line_sub {
+  text-align: center;
+  font-size: 16px;
+  color: #78797a;
+}
+
+.order_purchase_content a.line_account {
+  display: block;
+  text-align: center;
+}
+
+.order_purchase_content a.line_account img {
+  height: 50px;
+}
+
+.order_purchase_content a.line_account :hover {
+  opacity: 0.5;
 }
 
 .order_purchase_content .order_purchase_back {
@@ -44,6 +70,7 @@
 
 @media screen and (max-width: 1024px) {
   .order_purchase_content {
+    margin: 0px 30px;
     margin-top: 50px;
   }
 }
@@ -57,12 +84,31 @@
     text-align: center;
     color: #59b69e;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
   }
   .order_purchase_content .order_purchase_number {
     text-align: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
+  }
+  .order_purchase_content .order_purchase_sub {
+    font-size: 14px;
+  }
+  .order_purchase_content .order_purchase_line_title {
+    font-size: 20px;
+  }
+  .order_purchase_content .order_purchase_line_sub {
+    font-size: 14px;
+  }
+  .order_purchase_content a.line_account {
+    display: block;
+    text-align: center;
+  }
+  .order_purchase_content a.line_account img {
+    height: 50px;
+  }
+  .order_purchase_content a.line_account :hover {
+    opacity: 0.5;
   }
   .order_purchase_content .order_purchase_back {
     text-align: center;
