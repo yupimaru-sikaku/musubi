@@ -1,0 +1,129 @@
+<%= render partial: 'shared/company_menu' %>
+
+<%#大枠%>
+<section class="iryo-index-content">
+
+  <div class="module-spacer--large"></div>
+  <%#タイトル%>
+  <p class="iryo-index-title">ご入居希望者様を探す</p>
+  <%#//タイトル%>
+
+  <div class="module-spacer--medium"></div>
+
+  <%#検索項目%>
+
+  <div class="iryo_search_forms">
+    <%= form_with(scope: :search, url: iryos_path, method: :get, local: true) do |f| %>
+
+    <div class="iryo_search_form">
+      <%= f.label :prefecture_id, '都道府県' %>
+      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, selected: @search_params[:prefecture_id], include_blank: '指定なし' %>
+    </div>
+
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'osaka_city', cities: @osaka_city} %>
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'hyogo_city', cities: @hyogo_city} %>
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'kyoto_city', cities: @kyoto_city} %>
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'shiga_city', cities: @shiga_city} %>
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'nara_city', cities: @nara_city} %>
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'wakayama_city', cities: @wakayama_city} %>
+    <%= render partial: 'shared/select_city', locals: {f: f, class_name: 'mie_city', cities: @mie_city} %>
+
+    <div class="iryo_search_form">
+      <%= f.label :service_type_id, 'サービスの種別' %>
+      <%= f.collection_select :service_type_id, ServiceType.all, :id, :name, selected: @search_params[:service_type_id], include_blank: '指定なし' %>
+    </div>
+
+    <div class="iryo_search_form">
+      <%= f.label :disability_type_id, '障害の種別' %>
+      <%= f.collection_select :disability_type_id, DisabilityType.all, :id, :name, selected: @search_params[:disability_type_id], include_blank: '指定なし' %>
+    </div>
+
+    <div class="iryo_search_form">
+      <%= f.label :sex_id, '性別' %>
+      <%= f.collection_select :sex_id, Sex.all, :id, :name, selected: @search_params[:sex_id], include_blank: '指定なし' %>
+    </div>
+
+    <div class="iryo_search_form">
+      <%= f.label :age, 'ご年齢' %>
+      <%= f.number_field :age_from, value: @search_params[:age_from] %>歳 ~ <%= f.number_field :age_to, value: @search_params[:age_to] %>歳
+    </div>
+
+    <div class="module-spacer--small"></div>
+
+    <div class="iryo_search_reset_btn">
+      <div class="iryo_search_btn">
+        <%= f.submit '検索' %>
+      </div>
+
+      <div class="iryo_reset_btn">
+        <%= link_to 'リセット', iryos_path %>
+      </div>
+    </div>
+
+
+    <% end %>
+
+    <%#検索初期化%>
+
+    <%#//検索初期化%>
+
+  </div>
+  <%#//検索項目%>
+
+  <div class="module-spacer--medium"></div>
+
+  <%#登録者一覧%>
+  <div class="iryo-indexes">
+    <table>
+      <thead>
+        <tr>
+          <th>都道府県</th>
+          <th>ご希望のサービス種別</th>
+          <th>障がいの種別</th>
+          <th>性別</th>
+          <th>ご年齢</th>
+          <th>更新日</th>
+          <th>申請ボタン</th>
+          <th>商談状況</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @iryos_search.each do |iryo| %>
+        <tr>
+          <td><%= iryo.prefecture.name %></td>
+          <td><%= iryo.service_type.name %></td>
+          <td><%= iryo.disability_type.name %></td>
+          <td><%= iryo.sex.name %></td>
+          <td><%= iryo.age %></td>
+          <td><%= iryo.updated_at.strftime("%Y.%m.%d ") %></td>
+          <td>
+            <% if iryo.is_contracted == "未" %>
+            <div id="favorites_button-<%= iryo.id %>">
+              <%= render partial: "favorites/favorites", locals: { iryo: iryo } %>
+            </div>
+            <% elsif iryo.is_contracted == "商談中" %>
+            <% if Favorite.find_by(iryo_id: iryo.id, company_id: current_company.id) %>
+            <p>-------</p>
+            <% else %>
+            <div id="favorites_button-<%= iryo.id %>">
+              <%= render partial: "favorites/favorites", locals: { iryo: iryo } %>
+            </div>
+            <% end %>
+            <% elsif iryo.is_contracted == "成約済" %>
+            <p>-------</p>
+            <% end %>
+          </td>
+          <td><%= iryo.is_contracted %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%#//登録者一覧%>
+
+  <div class="module-spacer--large"></div>
+
+</section>
+<%#//大枠%>
+
+<%= javascript_pack_tag "iryos/index" %>

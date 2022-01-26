@@ -19,10 +19,6 @@ class Company < ApplicationRecord
     validates :bank_account_holder
   end
   
-  # invitation_code
-  # 招待コードの代理店コードがあるか
-  # validate :check_invitation_code
-
   # address
   # 都道府県から入力されているか
   validate :is_valid_prefectures
@@ -49,6 +45,17 @@ class Company < ApplicationRecord
   # # password_comfirmationと同じか
   validates :password, confirmation: { message: 'がパスワードと一致していません'}
   
+  # scope :search, -> (search_params) do
+  #   return if search_params.blank?
+  #   year(search_params[:year])
+  #   month(search_params[:month])
+  # end
+  # # # 参考
+  # # # モデル名.where('カラム名 like ?','%検索したい文字列%')文字列のどの部分にでも検索したい文字列が含まれていればOK
+  # # # モデル名.where('カラム名 like ?','_検索したい文字列_')先頭と後方に一文字だけ何か文字が付いていて、検索したい文字列が中間にある場合。
+  # scope :year, -> (from) { where('? <= created_at', from) if from.present? }
+  # scope :month, -> (to) { where('created_at <= ?', to) if to.present? }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
 
@@ -78,26 +85,6 @@ class Company < ApplicationRecord
       self.agency_code = agency_code
     end
   end
-
-  # 招待した会社のコードが存在するか判断
-  # def check_invitation_code
-  #   if self.invitation_code != ""
-  #     if !Company.find_by(agency_code: self.invitation_code).present?
-  #       errors.add(:invitation_code, "は存在しません。再度招待コードを確認下さい。")
-  #     end
-  #   end
-  # end
-  
-  # 招待した代理店のカラム（招待者数）に＋１する
-  # def add_point
-  #   if self.invitation_code.present?
-  #     company = Company.find_by(agency_code: self.invitation_code)
-  #     if company.present?
-  #       company[:invited_person_number] += 1
-  #       company.update(invited_person_number: company[:invited_person_number])
-  #     end
-  #   end
-  # end
 
   def is_valid_prefectures
     unless ["北海道", "青森県", "秋田県", "岩手県", "宮城県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "神奈川県", "東京都", "山梨県", "新潟県", "長野県", "富山県", "石川県", "福井県", "静岡県", "愛知県", "三重県", "岐阜県", "大阪府", "京都府", "滋賀県", "奈良県", "和歌山県", "兵庫県", "岡山県", "広島県", "山口県", "鳥取県", "島根県", "香川県", "徳島県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"].any? { |t| address.include?(t) }

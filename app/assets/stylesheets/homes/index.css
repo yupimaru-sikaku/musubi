@@ -1,20 +1,26 @@
 @charset "UTF-8";
 .home_container {
-  margin: 0px 50px;
+  margin: 80px 0px 80px;
   letter-spacing: 2px;
   font-family: "游ゴシック体", YuGothic;
 }
 
-.home_container .video-content {
-  width: 60vw;
-}
-
 .home_container .home_index_img {
+  height: 100vh;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .home_container .home_index_img img {
-  width: 50vw;
+  display: block;
 }
 
 .home_container .home_index_about {
@@ -37,7 +43,7 @@
 }
 
 .home_container .home_index_about .home_index_about_contents table tr {
-  border-bottom: solid 2px white;
+  border-bottom: solid 20px white;
 }
 
 .home_container .home_index_about .home_index_about_contents table tr:last-child {
@@ -52,6 +58,7 @@
   color: white;
   text-align: center;
   padding: 10px 0;
+  border-radius: 8px 0px 0px 8px;
 }
 
 .home_container .home_index_about .home_index_about_contents table th:after {
@@ -73,11 +80,13 @@
   text-align: center;
   background-color: #eee;
   padding: 10px 0;
+  border-radius: 0px 8px 8px 0px;
 }
 
 .home_container .home_index_biography {
   text-align: center;
-  margin: 0 50px;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .home_container .home_index_biography .home_index_biography_title {
@@ -151,19 +160,15 @@
 
 .home_container .home_index_president .home_index_president_img img {
   height: 450px;
-}
-
-.home_container .home_index_president .home_index_president_message .home_index_president_message_title {
-  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-  font-size: 24px;
-  padding-left: 20px;
-  border-left: 5px solid #59b69e;
-  line-height: 50px;
+  border-radius: 8px;
+  -webkit-box-shadow: 10px 10px 0px 0 rgba(104, 141, 83, 0.5);
+          box-shadow: 10px 10px 0px 0 rgba(104, 141, 83, 0.5);
 }
 
 .home_container .home_index_president .home_index_president_message .home_index_president_message_main {
   line-height: 2em;
   text-align: start;
+  font-size: 18px;
 }
 
 .home_container .home_index_president .home_index_president_message .home_index_president_message_end {
@@ -236,147 +241,47 @@
   padding: 20px;
 }
 
+.home_container .heading06 {
+  position: relative;
+  padding-top: 50px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.home_container .heading06 span {
+  position: relative;
+  z-index: 2;
+}
+
+.home_container .heading06::before {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  content: attr(data-en);
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: rgba(89, 182, 158, 0.2);
+  font-size: 80px;
+  font-style: italic;
+}
+
 @media screen and (max-width: 1024px) {
-  .home_container {
-    margin: 0px 25px;
-    letter-spacing: 2px;
-    font-family: "游ゴシック体", YuGothic;
-  }
-  .home_container .home_index_img {
-    text-align: center;
-  }
-  .home_container .home_index_img img {
-    width: 50vw;
-  }
-  .home_container .home_index_about {
-    text-align: center;
-  }
-  .home_container .home_index_about .home_index_about_title {
-    font-size: 32px;
-    border-left: none;
-  }
-  .home_container .home_index_about .home_index_about_contents {
-    font-size: 16px;
-  }
-  .home_container .home_index_about .home_index_about_contents table {
-    width: 70%;
-    border-collapse: collapse;
-    margin: 0 auto;
-  }
-  .home_container .home_index_about .home_index_about_contents table tr {
-    border-bottom: solid 2px white;
-  }
-  .home_container .home_index_about .home_index_about_contents table tr:last-child {
-    border-bottom: none;
-  }
-  .home_container .home_index_about .home_index_about_contents table th {
-    position: relative;
-    text-align: left;
-    width: 30%;
-    background-color: #59b69e;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .home_container .home_index_about .home_index_about_contents table th:after {
-    display: block;
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: calc(50% - 10px);
-    right: -10px;
-    border-left: 10px solid #59b69e;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  }
-  .home_container .home_index_about .home_index_about_contents table td {
-    text-align: left;
-    width: 70%;
-    text-align: center;
-    background-color: #eee;
-    padding: 10px 0;
-  }
   .home_container .home_index_biography {
-    text-align: center;
-    margin: 0 50px;
-  }
-  .home_container .home_index_biography .home_index_biography_title {
-    font-size: 32px;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_name {
-    font-size: 24px;
-    text-align: start;
-    border-left: 5px solid #59b69e;
-    padding-left: 20px;
-    line-height: 50px;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_img {
-    width: 50%;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_img img {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items {
-    width: 50%;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item {
-    font-size: 16px;
-    text-align: start;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    text-align: end;
-    padding: 15px 0px;
-    border-bottom: 1px solid #ddd;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item span {
-    display: block;
-    font-weight: bold;
-    width: 150px;
-    text-align: start;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item p {
-    width: 100%;
-    text-align: start;
-  }
-  .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item:first-child {
-    border-top: 1px solid #ddd;
+    width: 90%;
   }
   .home_container .home_index_president {
-    text-align: center;
-    margin: 0 auto;
-    width: 70%;
-  }
-  .home_container .home_index_president .home_index_president_title {
-    font-size: 32px;
+    width: 80%;
   }
   .home_container .home_index_president .home_index_president_img img {
     height: 300px;
   }
-  .home_container .home_index_president .home_index_president_message .home_index_president_message_title {
-    font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-    font-size: 24px;
-    padding-left: 20px;
-    border-left: 5px solid #59b69e;
-    line-height: 50px;
-  }
-  .home_container .home_index_president .home_index_president_message .home_index_president_message_main {
-    line-height: 2em;
-    text-align: start;
-  }
-  .home_container .home_index_president .home_index_president_message .home_index_president_message_end {
-    text-align: end;
-  }
   .home_container .home_index_activity {
+    width: 95%;
     text-align: center;
+    margin: 0 auto;
   }
   .home_container .home_index_activity .home_index_activity_title {
     font-size: 32px;
@@ -384,12 +289,12 @@
   .home_container .home_index_activity .home_index_activity_contents {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (230px)[3];
-        grid-template-columns: repeat(3, 230px);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 10px;
+    gap: 20px;
   }
   .home_container .home_index_activity .home_index_activity_contents .home_index_activity_card:hover .card-img {
     -webkit-transform: scale(1.2, 1.2);
@@ -431,6 +336,27 @@
     border-top: 1px solid #eee;
     padding: 20px;
   }
+  .home_container .heading06 {
+    position: relative;
+    padding-top: 50px;
+    font-size: 32px;
+    text-align: center;
+  }
+  .home_container .heading06 span {
+    position: relative;
+    z-index: 2;
+  }
+  .home_container .heading06::before {
+    content: attr(data-en);
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 55px;
+    font-style: italic;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -438,14 +364,8 @@
     margin: 0px 5px;
     margin-top: 50px;
   }
-  .home_container .video-content {
-    width: 80vw;
-  }
   .home_container .home_index_about {
     text-align: center;
-  }
-  .home_container .home_index_about .home_index_about_title {
-    font-size: 20px;
   }
   .home_container .home_index_about .home_index_about_contents table {
     font-size: 12px;
@@ -516,20 +436,14 @@
   .home_container .home_index_president .home_index_president_img img {
     height: 200px;
   }
-  .home_container .home_index_president .home_index_president_message .home_index_president_message_title {
-    font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-    font-size: 14px;
-    padding-left: 0px;
-    border-left: 5px solid #59b69e;
-    line-height: 36px;
-  }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_main {
     line-height: 2em;
     text-align: start;
-    font-size: 12px;
+    font-size: 14px;
   }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_end {
     text-align: end;
+    font-size: 12px;
   }
   .home_container .home_index_activity {
     text-align: center;
@@ -540,8 +454,8 @@
   .home_container .home_index_activity .home_index_activity_contents {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (45%)[2];
-        grid-template-columns: repeat(2, 45%);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -584,6 +498,30 @@
     border-top: 1px solid #eee;
     padding: 0px;
     height: auto;
+  }
+  .heading06 {
+    position: relative;
+    padding-top: 50px;
+    font-size: 20px !important;
+    text-align: center;
+  }
+  .heading06 span {
+    position: relative;
+    z-index: 2;
+  }
+  .heading06::before {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    content: attr(data-en);
+    position: absolute;
+    top: 30px !important;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 32px !important;
+    font-style: italic;
   }
 }
 /*# sourceMappingURL=index.css.map */

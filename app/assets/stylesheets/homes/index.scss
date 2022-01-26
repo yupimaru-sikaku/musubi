@@ -1,18 +1,19 @@
 @import "../font";
 
 .home_container {
-  margin: 0px 50px;
+  margin: 80px 0px 80px;
   letter-spacing: $letter_spacing;
   font-family: $font_family;
 
-  .video-content {
-    width: 60vw;
-  }
-  //   画像
+  // 最初のロゴ
   .home_index_img {
+    height: 100vh;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img {
-      width: 50vw;
+      display: block;
     }
   }
 
@@ -33,7 +34,7 @@
       }
 
       table tr {
-        border-bottom: solid 2px white;
+        border-bottom: solid 20px white;
       }
 
       table tr:last-child {
@@ -48,6 +49,7 @@
         color: white;
         text-align: center;
         padding: 10px 0;
+        border-radius: 8px 0px 0px 8px;
       }
 
       table th:after {
@@ -69,13 +71,15 @@
         text-align: center;
         background-color: #eee;
         padding: 10px 0;
+        border-radius: 0px 8px 8px 0px;
       }
     }
   }
   // 経営陣略歴
   .home_index_biography {
     text-align: center;
-    margin: 0 50px;
+    margin: 0 auto;
+    width: 70%;
 
     .home_index_biography_title {
       font-size: $pc_main;
@@ -140,19 +144,15 @@
     .home_index_president_img {
       img {
         height: 450px;
+        border-radius: 8px;
+        box-shadow: 10px 10px 0px 0 rgba(104, 141, 83, 0.5);
       }
     }
     .home_index_president_message {
-      .home_index_president_message_title {
-        font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-        font-size: $pc_sub;
-        padding-left: 20px;
-        border-left: 5px solid #59b69e;
-        line-height: 50px;
-      }
       .home_index_president_message_main {
         line-height: 2em;
         text-align: start;
+        font-size: $pc_subsub + 2;
       }
       .home_index_president_message_end {
         text-align: end;
@@ -215,177 +215,62 @@
       }
     }
   }
+  // 背景に文字入れ
+  .heading06 {
+    position: relative;
+    padding-top: 50px;
+    font-size: $pc_main;
+    text-align: center;
+  }
+
+  .heading06 span {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heading06::before {
+    width: fit-content;
+    content: attr(data-en);
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 80px;
+    font-style: italic;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .home_container {
-    margin: 0px 25px;
-    letter-spacing: $letter_spacing;
-    font-family: $font_family;
-
-    //   画像
-    .home_index_img {
-      text-align: center;
-      img {
-        width: 50vw;
-      }
-    }
-
-    //   会社概要
-    .home_index_about {
-      text-align: center;
-      .home_index_about_title {
-        font-size: $pc_main;
-        border-left: none;
-      }
-
-      .home_index_about_contents {
-        font-size: $pc_subsub;
-        table {
-          width: 70%;
-          border-collapse: collapse;
-          margin: 0 auto;
-        }
-
-        table tr {
-          border-bottom: solid 2px white;
-        }
-
-        table tr:last-child {
-          border-bottom: none;
-        }
-
-        table th {
-          position: relative;
-          text-align: left;
-          width: 30%;
-          background-color: #59b69e;
-          color: white;
-          text-align: center;
-          padding: 10px 0;
-        }
-
-        table th:after {
-          display: block;
-          content: "";
-          width: 0px;
-          height: 0px;
-          position: absolute;
-          top: calc(50% - 10px);
-          right: -10px;
-          border-left: 10px solid #59b69e;
-          border-top: 10px solid transparent;
-          border-bottom: 10px solid transparent;
-        }
-
-        table td {
-          text-align: left;
-          width: 70%;
-          text-align: center;
-          background-color: #eee;
-          padding: 10px 0;
-        }
-      }
-    }
     // 経営陣略歴
     .home_index_biography {
-      text-align: center;
-      margin: 0 50px;
-
-      .home_index_biography_title {
-        font-size: $pc_main;
-      }
-
-      .home_index_biography_context {
-        .home_index_biography_context_name {
-          font-size: $pc_sub;
-          text-align: start;
-          border-left: 5px solid #59b69e;
-          padding-left: 20px;
-          line-height: 50px;
-        }
-        .home_index_biography_context_detail {
-          display: flex;
-          .home_index_biography_img {
-            width: 50%;
-            img {
-              width: 250px;
-              height: 250px;
-              border-radius: 100%;
-            }
-          }
-          .home_index_biography_items {
-            width: 50%;
-            .home_index_biography_item {
-              font-size: $pc_subsub;
-              text-align: start;
-              display: flex;
-              text-align: end;
-              padding: 15px 0px;
-              border-bottom: 1px solid #ddd;
-
-              span {
-                display: block;
-                font-weight: bold;
-                width: 150px;
-                text-align: start;
-              }
-              p {
-                width: 100%;
-                text-align: start;
-              }
-            }
-            .home_index_biography_item:first-child {
-              border-top: 1px solid #ddd;
-            }
-          }
-        }
-      }
+      width: 90%;
     }
 
     // 社長あいさつ
     .home_index_president {
-      text-align: center;
-      margin: 0 auto;
-      width: 70%;
-
-      .home_index_president_title {
-        font-size: $pc_main;
-      }
+      width: 80%;
       .home_index_president_img {
         img {
           height: 300px;
-        }
-      }
-      .home_index_president_message {
-        .home_index_president_message_title {
-          font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-          font-size: $pc_sub;
-          padding-left: 20px;
-          border-left: 5px solid #59b69e;
-          line-height: 50px;
-        }
-        .home_index_president_message_main {
-          line-height: 2em;
-          text-align: start;
-        }
-        .home_index_president_message_end {
-          text-align: end;
         }
       }
     }
 
     //   事業紹介
     .home_index_activity {
+      width: 95%;
       text-align: center;
+      margin: 0 auto;
       .home_index_activity_title {
         font-size: $pc_main;
       }
       .home_index_activity_contents {
         display: grid;
-        grid-template-columns: repeat(3, 230px);
+        grid-template-columns: repeat(3, 1fr);
         justify-content: center;
-        gap: 10px;
+        gap: 20px;
 
         .home_index_activity_card:hover {
           .card-img {
@@ -430,6 +315,29 @@
         }
       }
     }
+    // 背景に文字入れ
+    .heading06 {
+      position: relative;
+      padding-top: 50px;
+      font-size: $pc_main;
+      text-align: center;
+    }
+
+    .heading06 span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading06::before {
+      content: attr(data-en);
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(89, 182, 158, 0.2);
+      font-size: 55px;
+      font-style: italic;
+    }
   }
 }
 
@@ -438,16 +346,9 @@
     margin: 0px 5px;
     margin-top: 50px;
 
-    .video-content {
-      width: 80vw;
-    }
-
     //   会社概要
     .home_index_about {
       text-align: center;
-      .home_index_about_title {
-        font-size: $sm_main;
-      }
 
       .home_index_about_contents {
         table {
@@ -524,20 +425,15 @@
         }
       }
       .home_index_president_message {
-        .home_index_president_message_title {
-          font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
-          font-size: $sm_sub;
-          padding-left: 0px;
-          border-left: 5px solid #59b69e;
-          line-height: 36px;
-        }
         .home_index_president_message_main {
           line-height: 2em;
           text-align: start;
-          font-size: $sm_subsub;
+          font-size: $sm_sub;
         }
         .home_index_president_message_end {
           text-align: end;
+          font-size: $sm_subsub;
+          
         }
       }
     }
@@ -549,7 +445,7 @@
       }
       .home_index_activity_contents {
         display: grid;
-        grid-template-columns: repeat(2, 45%);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         gap: 10px;
 
@@ -594,5 +490,29 @@
         }
       }
     }
+  }
+  // 背景に文字入れ
+  .heading06 {
+    position: relative;
+    padding-top: 50px;
+    font-size: $sm_main !important;
+    text-align: center;
+  }
+
+  .heading06 span {
+    position: relative;
+    z-index: 2;
+  }
+
+  .heading06::before {
+    width: fit-content;
+    content: attr(data-en);
+    position: absolute;
+    top: 30px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(89, 182, 158, 0.2);
+    font-size: 32px !important;
+    font-style: italic;
   }
 }
