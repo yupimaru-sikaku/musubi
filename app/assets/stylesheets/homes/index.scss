@@ -239,6 +239,34 @@
     font-size: 80px;
     font-style: italic;
   }
+  .triple_border {
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 2px solid #212529;
+    position: relative;
+    padding-bottom: 30px;
+  }
+  .triple_border::before {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #59b69e;
+    width: 45%;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+  }
+  .triple_border::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #59b69e;
+    width: 45%;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+  }
+  .service {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -351,9 +379,14 @@
       text-align: center;
 
       .home_index_about_contents {
+        width: 95%;
+        margin: 0 auto;
         table {
           font-size: $sm_subsub;
           width: 100%;
+        }
+        table tr {
+          border-bottom: solid 5px white;
         }
       }
     }
@@ -421,7 +454,8 @@
       }
       .home_index_president_img {
         img {
-          height: 200px;
+          height: 140px;
+          box-shadow: 5px 5px 0px 0 rgba(104, 141, 83, 0.5);
         }
       }
       .home_index_president_message {
@@ -433,7 +467,6 @@
         .home_index_president_message_end {
           text-align: end;
           font-size: $sm_subsub;
-          
         }
       }
     }
