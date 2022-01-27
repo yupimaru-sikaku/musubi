@@ -3,6 +3,9 @@ class HomesController < ApplicationController
     before_action :authenticate_company!, only: [:invitation]
     before_action :is_admin! , only: [:invitation]
 
+    def test
+    end
+
     def index
     end
 
@@ -46,7 +49,7 @@ class HomesController < ApplicationController
       if current_company.is_buy == true
           return 
       else
-          return company_path(current_company), flash: {success: "代理店申請承認されるまでお待ち下さい"}
+          return redirect_to company_path(current_company), flash: {success: "代理店申請承認されるまでお待ち下さい"}
       end
     end
 

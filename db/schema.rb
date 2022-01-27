@@ -67,13 +67,12 @@ ActiveRecord::Schema.define(version: 2022_01_10_025523) do
     t.integer "postal_code", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
-    t.string "email", default: "", null: false
+    t.string "email", null: false
     t.string "financial_facility_name", null: false
     t.string "bank_branch_name", null: false
     t.string "bank_account_type", null: false
     t.string "bank_account_number", null: false
     t.string "bank_account_holder", null: false
-    t.integer "invited_person_number", default: 0, null: false
     t.string "product_name", null: false
     t.boolean "admin", default: false, null: false
     t.boolean "is_buy", default: false, null: false
@@ -142,9 +141,10 @@ ActiveRecord::Schema.define(version: 2022_01_10_025523) do
     t.integer "stock", default: 0, null: false
     t.string "model_number", null: false
     t.string "product_type", null: false
-    t.float "point", null: false
-    t.integer "sales_profit", null: false
+    t.float "point", default: 0.0, null: false
+    t.integer "sales_profit", default: 0, null: false
     t.boolean "display", default: true, null: false
+    t.string "product_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

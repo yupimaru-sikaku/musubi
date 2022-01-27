@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <div class="user_signup_container" style=" text-align: center; font-size: 14px; background-color: #eee; padding: 50px 5px; border-radius: 8px;">
+            
+            <div class="user_signup_username" style="font-size: 18px;">
+                <p><%= @email %>様</p>
+            </div>
+
+            <br>
+
+            <div class="user_signup_text">
+                <p>
+                    いつもご利用いただきありがとうございます。<br>
+                    株式会社 むすびです。<br>
+                    <br>
+                    <%= @current_company.agency_name %>様から、<br>
+                    お客様登録のご依頼がありました。<br>
+                    <br>
+                    【★招待コード★】をコピーし、<br>
+                    入力フォームから<br>
+                    代理店コードをペーストして下さい。<br>
+                    その他、お客様情報の入力をお願い致します。<br>
+                    <br>
+                    お客様情報登録後、商品をご購入下さい。<br>
+                </p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_invitation" style="margin: 0 auto; border-radius: 8px; width: 250px; padding: 10px; background-color: white; box-shadow: 5px 5px 0px 0 #59b69e;">
+                <p class="user_signup_invittion_title" style="font-size: 16px;">【★招待コード★】</p>
+                <p class="user_signup_invittion_code" style="font-size: 20px; color: #ffa41c; font-weight: bold;"><%= @current_company.agency_code %></p>
+                <p class="user_signup_invittion_annotation" style="font-size: 12px; color: #78797a;">※抜け漏れの無いよう、コピー下さい。</p>
+                <p class="user_signup_invittion_link" style="font-size: 16px; color: #1a0dab"><a href="https://www.musubimusubi.com/users/sign_up">入力フォームはこちら</a></p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_template">
+                <p>
+                    ---------------------------------------------<br>
+                    株式会社むすび<br>
+                    住所：〒577-0004 大阪府東大阪市稲田新町二丁目14番7号<br>
+                    電話番号：072-814-9830<br>
+                    携帯：090-4360-9483<br>
+                    FAX：072-814-9831<br>
+                    メール：musubi.0316@gmail.com<br>
+                    HP: https://www.musubimusubi.com<br>
+                    ---------------------------------------------<br>
+                </p>
+            </div>
+        </div>
+
+    </body>
+
+</html>

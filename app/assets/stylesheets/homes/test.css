@@ -1,0 +1,50 @@
+.user_signup_container {
+  text-align: center;
+  font-size: 14px;
+  background-color: #eee;
+  padding: 50px 5px;
+  border-radius: 8px;
+}
+
+.user_signup_container .user_signup_username {
+  font-size: 18px;
+}
+
+.user_signup_container .user_signup_line {
+  color: #00b900;
+}
+
+.user_signup_container .user_signup_line img {
+  height: 50px;
+}
+
+.user_signup_container .user_signup_invitation {
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 280px;
+  padding: 10px;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 0px 0 #59b69e;
+          box-shadow: 5px 5px 0px 0 #59b69e;
+}
+
+.user_signup_container .user_signup_invitation .user_signup_invittion_title {
+  font-size: 16px;
+}
+
+.user_signup_container .user_signup_invitation .user_signup_invittion_code {
+  font-size: 20px;
+  color: #ffa41c;
+  font-weight: bold;
+}
+
+.user_signup_container .user_signup_invitation .user_signup_invittion_annotation {
+  font-size: 12px;
+  color: #78797a;
+}
+
+.user_signup_container .user_signup_invitation .user_signup_invittion_link {
+  font-size: 16px;
+  color: #1a0dab;
+}
+/*# sourceMappingURL=test.css.map */

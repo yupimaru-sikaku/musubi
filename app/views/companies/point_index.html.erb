@@ -24,7 +24,7 @@
         <div class="home_commition_search">
             <%= form_with(scope: :search, url: point_index_companies_path, method: :get, local: true) do |f| %>
                 <div class="home_commition_search_form">
-                    <%= f.select :year, {"2021":2021,"2022":2022,"2023":2023,"2024":2024,"2025":2025,"2026":2026,"2027":2027,"2028":2028,"2029":2029,"2030":2030}, selected: @search_params[:year], value: @search_params[:year] %>年
+                    <%= f.select :year, {"2022":2022,"2023":2023,"2024":2024,"2025":2025,"2026":2026,"2027":2027,"2028":2028,"2029":2029,"2030":2030}, selected: @search_params[:year], value: @search_params[:year] %>年
                     <%= f.select :month,  {"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"10":10, "11":11, "12":12}, selected: @search_params[:year], value: @search_params[:month] %>月
                 </div>
                 <div class="module-spacer--medium"></div>

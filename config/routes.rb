@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       get 'invitation'
       get 'invitation_complete'
       get 'sdgs'
+      get 'test'
     end
   end
   # 代理店招待（代理店を設立したい方へ招待コードを送る）

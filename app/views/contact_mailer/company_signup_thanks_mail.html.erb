@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <div class="user_signup_container" style="text-align: center; font-size: 14px; background-color: #eee; padding: 50px 5px; border-radius: 8px;">
+            
+            <div class="user_signup_username" style="font-size: 18px">
+                <p><%= @agency_name %></p>
+                <p><%= @human_name %>様</p>
+            </div>
+
+            <div class="module-spacer--medium"></div>
+
+            <div class="user_signup_text">
+                <p>
+                    いつもご利用いただきありがとうございます。<br>
+                    株式会社 むすびです。<br>
+                    <br>
+                    この度は代理店申請をして頂き<br>
+                    誠にありがとうございます。<br>
+                    <br>
+                    代理店登録に伴い、<br>
+                    本メールに記載の口座情報・請求金額を<br>
+                    ご確認のうえ、お振込をお願いしております。<br>
+                    <br>
+                    お振込を確認後、代理店の登録が完了します。<br>
+                    <br>
+                    その後、代理店コードも含め、<br>
+                    改めて<%= @human_name %>様にご連絡致します。<br>
+                    <br>
+                    何卒、よろしくお願い申し上げます。<br>
+                    <br>
+                    また、代理店専用LINEのご案内もありますので、<br>
+                    ぜひご登録をお願い致します。<br>
+                </p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_line" style="color: #00b900;">
+                <a href="https://lin.ee/idR0GsA" class="line_account"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" style="height: 50px;"></a>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_text_account" style="margin: 0 auto; border-radius: 8px; width: 230px; padding: 10px; background-color: white; box-shadow: 5px 5px 0px 0 #59b69e; font-size: 12px;">
+                <p class="user_signup_text_account_maintitle" style="font-size: 16px;">金額</p>
+                <p class="user_signup_text_account_title" style="font-size: 14px;">★ご請求金額</p>
+                <p class="user_signup_text_account_price" style="font-size: 14px; color: #b12704">¥<%= @billing_amount.to_s(:delimited) %></p>
+                <p class="user_signup_text_account_sub_title" style="font-size: 14px;">★ご請求金額内訳</p>
+                <p class="user_signup_text_account_sub_price" style="color: #78797a; font-size: 12px;">◆登録手数料：¥<%= @registration_fee.to_s(:delimited) %></p>
+                <p class="user_signup_text_account_sub_price" style="color: #78797a; font-size: 12px;">◆<%= @product.product_name %>：<br>¥<%= @product.price.to_s(:delimited) %></p>
+                <p class="user_signup_text_account_sub_price" style="color: #78797a; font-size: 12px;">◆送料：¥<%= @shipping_fee.to_s(:delimited) %></p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_text_bank" style="margin: 0 auto; border-radius: 8px; width: 230px; padding: 10px; background-color: white; box-shadow: 5px 5px 0px 0 #59b69e;">
+                <p class="user_signup_text_bank_title" style="font-size: 16px;">お振込先</p>
+                <p class="user_signup_text_bank_item" style="font-size: 12px;">銀行名：大阪シティ信用金庫</p>
+                <p class="user_signup_text_bank_item" style="font-size: 12px;">支店名：高井田支店</p>
+                <p class="user_signup_text_bank_item" style="font-size: 12px;">口座種別：普通</p>
+                <p class="user_signup_text_bank_item" style="font-size: 12px;">口座名義：カ)ムスビ</p>
+                <p class="user_signup_text_bank_item_sub" style="font-size: 10px; color: #78797a">※振込名義は<%= @agency_name %>様にてお願いいたします。</p>
+                <p class="user_signup_text_bank_item_sub" style="font-size: 10px; color: #78797a">※口座番号は必ず0を含めた7桁をご入力下さい。</p>
+                <p class="user_signup_text_bank_item_sub" style="font-size: 10px; color: #78797a">※振込手数料はお客様にてご負担下さい。</p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_text_address"  style="margin: 0 auto; border-radius: 8px; width: 230px; padding: 10px; background-color: white; box-shadow: 5px 5px 0px 0 #59b69e;">
+                <p class="user_signup_text_address_title" style="font-size: 16px;">お届け先</p>
+                <p class="user_signup_text_address_item" style="font-size: 12px;"><%= @human_name %>様</p>
+                <p class="user_signup_text_address_item" style="font-size: 12px;">〒<%= @postal_code %></p>
+                <p class="user_signup_text_address_item" style="font-size: 12px;"><%= @address %></p>
+                <p class="user_signup_text_address_item" style="font-size: 12px;"><%= @phone_number %></p>
+            </div>
+
+            <br>
+
+            <div class="user_signup_text_annotation" style="font-size: 12px; color: #78797a">
+                <p class="user_signup_text_address_title">ご注意下さい</p>
+                <p class="user_signup_text_address_item">ご入金後の内容変更、キャンセル、<br>返金は承ることができません。</p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_line" style="color: #00b900;">
+                <a href="https://lin.ee/idR0GsA" class="line_account"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" style="height: 50px;"></a>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="user_signup_template">
+                <p>
+                    ---------------------------------------------<br>
+                    株式会社むすび<br>
+                    住所：〒577-0004 大阪府東大阪市稲田新町二丁目14番7号<br>
+                    電話番号：072-814-9830<br>
+                    携帯：090-4360-9483<br>
+                    FAX：072-814-9831<br>
+                    メール：musubi.0316@gmail.com<br>
+                    HP: https://www.musubimusubi.com<br>
+                    ---------------------------------------------<br>
+                </p>
+            </div>
+        </div>
+
+    </body>
+
+</html>
