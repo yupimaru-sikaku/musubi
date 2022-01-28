@@ -56,6 +56,7 @@
 
 .product_index_content .product_index_items .product_index_item .product_index_item_card .card-content {
   padding: 10px;
+  width: 100%;
 }
 
 .product_index_content .product_index_items .product_index_item .product_index_item_card .card-content .card-title {

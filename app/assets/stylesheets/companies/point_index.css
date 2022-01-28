@@ -134,7 +134,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .home_commition_container .home_commition_container {
+  .home_commition_container {
     margin: 0px 150px;
     margin: 0 auto;
     padding: 50px 0px;
@@ -145,15 +145,15 @@
     background-color: white;
     border-radius: 8px;
   }
-  .home_commition_container .home_commition_container .home_commition_title {
+  .home_commition_container .home_commition_title {
     font-size: 24px;
   }
-  .home_commition_container .home_commition_container .home_commition_point {
+  .home_commition_container .home_commition_point {
     font-size: 5rem;
     font-weight: bold;
     color: #ffa41c;
   }
-  .home_commition_container .home_commition_container .home_commition_items {
+  .home_commition_container .home_commition_items {
     margin: 0 auto;
     width: 90%;
     margin-bottom: 20px;
@@ -164,7 +164,7 @@
 }
 
 @media screen and (max-width: 750px) {
-  .home_commition_container .home_commition_container {
+  .home_commition_container {
     width: 90%;
     margin: 0 auto;
     padding: 20px 0px;
@@ -173,10 +173,10 @@
     background-color: white;
     border-radius: 8px;
   }
-  .home_commition_container .home_commition_container .home_commition_title h2 {
+  .home_commition_container .home_commition_title h2 {
     font-size: 20px;
   }
-  .home_commition_container .home_commition_container .home_commition_items {
+  .home_commition_container .home_commition_items {
     margin: 0 auto;
     width: 90%;
     margin-bottom: 20px;
@@ -185,17 +185,17 @@
             box-shadow: 0 2px 5px 0 #d5d9d9;
     font-size: 12px;
   }
-  .home_commition_container .heading06 {
+  .heading06 {
     position: relative;
     padding-top: 50px;
     font-size: 26px;
     text-align: center;
   }
-  .home_commition_container .heading06 span {
+  .heading06 span {
     position: relative;
     z-index: 2;
   }
-  .home_commition_container .heading06::before {
+  .heading06::before {
     content: attr(data-en);
     position: absolute;
     top: 10px !important;
@@ -206,13 +206,11 @@
     font-size: 55px !important;
     font-style: italic;
   }
-}
-
-.home_commition_container .home_commition_point p {
-  font-size: 2rem;
-}
-
-.home_commition_container .home_commition_items {
-  font-size: 12px;
+  .home_commition_point p {
+    font-size: 2rem;
+  }
+  .home_commition_items {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=point_index.css.map */
