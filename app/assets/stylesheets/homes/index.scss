@@ -23,6 +23,7 @@
     .home_index_about_title {
       font-size: $pc_main;
       border-left: none;
+      width: 70%
     }
 
     .home_index_about_contents {
@@ -463,6 +464,8 @@
           line-height: 2em;
           text-align: start;
           font-size: $sm_sub;
+          width: 85%;
+          margin: 0 auto;
         }
         .home_index_president_message_end {
           text-align: end;

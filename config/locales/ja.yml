@@ -221,7 +221,6 @@ ja:
       company:
         agency_name: 代理店名
         agency_code: 代理店コード
-        invitation_code: 招待コード
         human_name: 代表取締役名または代表社員名（代表者）
         birth_day: 代表者の生年月日
         postal_code: 代理店の郵便番号
@@ -233,7 +232,6 @@ ja:
         bank_account_type: 口座種別
         bank_account_number: 口座番号
         bank_account_holder: 口座名義人（カナ）
-        invited_person_number: 招待して登録した人の数
         password: パスワード
         password_confirmation: パスワード（確認用）
       product:

@@ -79,7 +79,6 @@ class ApplicationController < ActionController::Base
         # 代理店  
         # エンドユーザー
         :agency_name,
-        :invitation_code,
         :agency_code,
         :human_name,
         :birth_day,
@@ -92,7 +91,6 @@ class ApplicationController < ActionController::Base
         :bank_account_type,
         :bank_account_number,
         :bank_account_holder,
-        :invited_person_number,
         :product_name,
       ])
 
@@ -101,7 +99,6 @@ class ApplicationController < ActionController::Base
         # 代理店  
         # エンドユーザー
         :agency_name,
-        :invitation_code,
         :agency_code,
         :human_name,
         :birth_day,
@@ -114,7 +111,6 @@ class ApplicationController < ActionController::Base
         :bank_account_type,
         :bank_account_number,
         :bank_account_holder,
-        :invited_person_number,
       ])
 
     end

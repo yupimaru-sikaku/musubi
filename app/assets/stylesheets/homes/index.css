@@ -30,6 +30,7 @@
 .home_container .home_index_about .home_index_about_title {
   font-size: 32px;
   border-left: none;
+  width: 70%;
 }
 
 .home_container .home_index_about .home_index_about_contents {
@@ -481,6 +482,8 @@
     line-height: 2em;
     text-align: start;
     font-size: 14px;
+    width: 85%;
+    margin: 0 auto;
   }
   .home_container .home_index_president .home_index_president_message .home_index_president_message_end {
     text-align: end;
