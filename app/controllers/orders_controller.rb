@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user! , only: [:confirm]
   before_action :add_info, only: [:create, :confirm]
   before_action :is_master_admin!, only: [:index]
+  before_action :tax, only: [:create, :confirm]
   
   def index
     @orders = Order.all
@@ -39,7 +40,7 @@ class OrdersController < ApplicationController
         order_number: order_detail_number,
         model_number: Product.find_by(id: cart["product_id"]).model_number,
         product_name: Product.find_by(id: cart["product_id"]).product_name,
-        price: Product.find_by(id: cart["product_id"]).price,
+        price: (Product.find_by(id: cart["product_id"]).price * @tax).floor(0),
         quantity: cart["quantity"],
       )
     end
@@ -61,7 +62,7 @@ class OrdersController < ApplicationController
       @total_reward = 0
       session[:cart].each do |cart|
         product = Product.find_by(id: cart["product_id"])
-        @total_reward += ((product.sales_profit * @tax * cart["quantity"].to_i) * @reward_distribution_ratio).round(0)
+        @total_reward += (((product.sales_profit * cart["quantity"].to_i)* @tax) * @reward_distribution_ratio).round(0)
       end
 
       # ポイント加点の履歴を入力
@@ -185,7 +186,7 @@ class OrdersController < ApplicationController
     end
 
     # 請求金額
-    @billing_amount = @cart_total_price + @shipping_fee
+    @billing_amount = (@cart_total_price * TAX).floor(0) + @shipping_fee
 
   end
 
@@ -196,6 +197,10 @@ class OrdersController < ApplicationController
     else
         redirect_to root_path
     end
+  end
+
+  def tax
+    @tax = TAX
   end
 
 end

@@ -14,7 +14,7 @@
                         <% end %>
                         <div class="card-content">
                             <h1 class="card-title"><%= product.product_name.truncate(30) %></h1>
-                            <p class="card-text">¥<%= product.price.to_s(:delimited) %></p>
+                            <p class="card-text">¥<%= (product.price * @tax).floor(0).to_s(:delimited) %></p>
                         </div>
                     </section>
                 <% end %>

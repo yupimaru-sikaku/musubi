@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="cart_show_price">
-                        <p>¥<%= cart[:price].to_s(:delimited) %></p>
+                        <p>¥<%= (cart[:price] * @tax).floor(0).to_s(:delimited) %></p>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
             <div class="cart_show_total_price">
                 <p>小計</p>
                 <p>(<%= @cart_total_quantity %>個の商品)(税込)：</p>
-                <p>¥<%= @cart_total_price.to_s(:delimited) %></p>
+                <p>¥<%= (@cart_total_price * @tax).floor(0).to_s(:delimited) %></p>
             </div>
 
         </div>

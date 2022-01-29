@@ -3,10 +3,13 @@
 <nav class="home_sdgs_container">
 
     <div class="home_sdgs_title">
-        <h1>持続可能な開発目標<br class="sm_br tb_br">（SDGs）への取り組み</h1>
+        <h2 class="heading06" data-en="SDGs">持続可能な開発目標<br class="sm_br tb_br">への取り組み</h2>
     </div>
     <div class="home_sdgs_img">
-        <%= image_tag "sdgs_logo.png", alt: "SDGsロゴ" %>
+        <picture>
+            <source srcset="<%= image_path("sdgs_logo.webp") %>" type="image/webp">
+            <%= image_tag "sdgs_logo.png", alt: "SDGsロゴ" %>
+        </picture>
     </div>
     <div class="home_sdgs_philosophy">
         <p>
@@ -33,7 +36,10 @@
             当社のSDGsへの取り組みは、一般社団法人全国専門能力検定協会SDGｓ認定機構から認定を受けております。
         </p>
         <div class="module-spacer--small"></div>
-        <%= image_tag "sdgs_certified.png", alt: "SDGsロゴ" %>
+        <picture>
+            <source srcset="<%= image_path("sdgs_certified.webp") %>" type="image/webp">
+            <%= image_tag "sdgs_certified.png", alt: "SDGsロゴ" %>
+        </picture>
     </div>
     
     <div class="home_sdgs_actions">

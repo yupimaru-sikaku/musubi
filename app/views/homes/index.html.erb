@@ -55,7 +55,10 @@
         <div class="module-spacer--medium"></div>
 
         <div class="home_index_president_img">
-            <%= image_tag "miyazato_2.png", alt: "人物写真" %>
+            <picture>
+                <source srcset="<%= image_path("miyazato_2.webp") %>" type="image/webp">
+                <%= image_tag "miyazato_2.png", alt: "人物写真" %>
+            </picture>
         </div>  
 
         <div class="module-spacer--medium"></div>
@@ -108,7 +111,10 @@
             <div class="home_index_biography_context_detail">
 
                 <div class="home_index_biography_img">
-                    <%= image_tag "miyazato_1.jpg", alt: "人物写真" %>
+                    <picture>
+                        <source srcset="<%= image_path("miyazato_1.webp") %>" type="image/webp">
+                        <%= image_tag "miyazato_1.jpg", alt: "人物写真" %>
+                    </picture>
                 </div>  
 
                 <div class="home_index_biography_items">
@@ -176,7 +182,10 @@
             </section>
             <section class="home_index_activity_card">
                 <%= link_to products_path do %>
-                    <%= image_tag "vacteria.jpg", class: "card-img", alt: "Pay.jpロゴ" %>
+                    <picture>
+                        <source srcset="<%= image_path("vacteria.webp") %>" type="image/webp">
+                        <%= image_tag "vacteria.jpg", class: "card-img", alt: "Pay.jpロゴ" %>
+                    </picture>
                     <div class="card-content">
                         <h1 class="card-title">除菌液販売</h1>
                         <p class="card-text">高除菌率×長時間除菌を実現する商品を販売しています</p>
@@ -185,7 +194,10 @@
             </section>
             <section class="home_index_activity_card">
                 <%= link_to products_path do %>
-                    <%= image_tag "cosmetics.png", class: "card-img", alt: "化粧品画像" %>
+                    <picture>
+                        <source srcset="<%= image_path("cosmetics.webp") %>" type="image/webp">
+                        <%= image_tag "cosmetics.png", class: "card-img", alt: "化粧品画像" %>
+                    </picture>
                     <div class="card-content">
                         <h1 class="card-title">化粧品販売</h1>
                         <p class="card-text">酵素水、CBDを使用した商品を販売しています</p>
@@ -203,7 +215,10 @@
             </section>
             <section class="home_index_activity_card">
                 <a href="https://www.youtube.com/channel/UCtq-1hszppYGhRH3sEwDiVQ">
-                    <%= image_tag "youtube.png", class: "card-img", alt: "YouTubeロゴ" %>
+                    <picture>
+                        <source srcset="<%= image_path("youtube.webp") %>" type="image/webp">
+                        <%= image_tag "youtube.png", class: "card-img", alt: "YouTubeロゴ" %>
+                    </picture>
                     <div class="card-content">
                         <h1 class="card-title">YouTube</h1>
                         <p class="card-text">商品の説明をメインとしてYouTubeでも活動しています</p>

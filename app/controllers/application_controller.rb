@@ -7,50 +7,78 @@ class ApplicationController < ActionController::Base
     # 自分の日記や掲示板に意図しない書き込みがされたりといった被害を受ける可能性がある。
     protect_from_forgery with: :exception
 
+    # 消費税を決定
+    TAX = 1.1
+
     # 住所から送料を決める
     def decide_shipping_fee(address, cart_total_quantity, cart)
       # 消費税決定
-      tax = 1.1
       # 型番リスト作成
       model_number_list = cart.pluck(:model_number)
       @shipping_fee = 0
+      @AG_shipping_fee = 0
+      @IX_shipping_fee = 0
+      @ND_shipping_fee = 0
 
       # 銀イオン水の段ボールの数
       ag_box_quantity = 0
       # 銀イオン水のスプレーの数
-      ag_spray_quantity = 0
+      ag_spray_shipping_price = 0
       
       # 商品によって場合分けする
       @cart.each do |product|
-        
-    ######### 銀イオン水シリーズの場合
+        ######### 銀イオン水シリーズの場合
         if product[:model_number] == "AG010" || product[:model_number] == "AG011" || product[:model_number] == "AG012" || product[:model_number] == "AG013" || product[:model_number] == "AG014"
           # 銀イオン水シリーズー段ボール買いの場合
           if product[:model_number] == "AG010" || product[:model_number] == "AG011" || product[:model_number] == "AG012" || product[:model_number] == "AG013"
             ag_box_quantity  += product[:quantity]
           # 銀イオン水シリーズースプレー買いの場合
           elsif product[:model_number] == "AG014"
-            ag_spray_quantity = 1
+            # 数量によって送料を変更
+            if product[:quantity] >= 1 && product[:quantity] <= 7
+              ag_spray_shipping_price = 930
+            elsif product[:quantity] >= 8 && product[:quantity] <= 12
+              ag_spray_shipping_price = 1150
+            elsif product[:quantity] >= 13 && product[:quantity] <= 30
+              ag_spray_shipping_price = 1390
+            end
           end
-        @shipping_fee = ((2070 * ag_box_quantity + 930 * ag_spray_quantity) * tax).round
+        @AG_shipping_fee = (2070 * ag_box_quantity + ag_spray_shipping_price).round
         end
+        
+        ######### IotoiX（靴下）の場合
+        if product[:model_number] == "IX001"
+          @IX_shipping_fee = 930
+        end
+        
+        ######### 日本ダグラスの場合
+        if product[:model_number] == "ND001" || product[:model_number] == "ND002"
+          # 数量によって送料を変更
+          if product[:quantity] >= 1 && product[:quantity] <= 7
+            @ND_shipping_fee = 930
+          elsif product[:quantity] >= 8 && product[:quantity] <= 12
+            @ND_shipping_fee = 1150
+          elsif product[:quantity] >= 13 && product[:quantity] <= 30
+            @ND_shipping_fee = 1390
+          end
+        end
+
       end
       
+      @shipping_fee = @AG_shipping_fee + @IX_shipping_fee + @ND_shipping_fee
+
       return @shipping_fee
     end
 
     # 登録手数料の決定
     def registration_fee
-      tax = 1.1
-      @registration_fee = 1000 * tax
+      @registration_fee = 1000 * TAX
       @registration_fee = @registration_fee.round
       return @registration_fee
     end
 
     # ユーザーに紐付いている代理店のポイントによって報酬の分配比率を決定
     def decide_reward_distribution_ratio(current_user)
-      @tax = 1.1
-
       company = Company.find_by(agency_code: current_user.agency_code)
       company_point = company.point
       
@@ -68,7 +96,6 @@ class ApplicationController < ActionController::Base
       end
 
       return @reward_distribution_ratio
-      return @tax
     end
     
     private

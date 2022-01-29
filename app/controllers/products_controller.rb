@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
     before_action :is_master_admin!, only: [:new, :create, :edit, :destroy]
+    before_action :tax, only: [:index, :show]
 
     def index
         @products = Product.where(display: true)
@@ -84,5 +85,9 @@ class ProductsController < ApplicationController
             redirect_to root_path
         end
     end
-    
+
+    def tax
+        @tax = TAX
+    end
+
 end

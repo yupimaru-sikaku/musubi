@@ -26,7 +26,7 @@
         <div class="module-spacer--small"></div>
 
         <div class="product_show_price">
-            <p>¥<%=@product.price.to_s(:delimited) %></p>
+            <p>¥<%=(@product.price*@tax).floor(0).to_s(:delimited) %></p>
         </div>
 
         <div class="module-spacer--small"></div>
