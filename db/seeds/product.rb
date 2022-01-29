@@ -33,8 +33,8 @@ product.images.attach([io: File.open('app/assets/images/DHA_EPA.webp'), filename
 
 Product.create(id: 8, product_name: 'ItoiXソックス', price: 2145, description: "呼吸する、和紙の靴下。\n\n◆圧倒的なドライ感\n◆他社製品比較で15倍のの吸水性を実現。\n主原料である「マニラ麻」は、表面に無数の穴が空いているのが特長。\n汗や雨などの水分が、地面を踏みしめるタイミングで吸収する空気によりすぐに押し出され、肌との間に水分が留まることがない仕組み。\nムレによる不快感を大幅に軽減します。\n\n◆消臭書の力96〜99%\n靴下の主原料である「マニラ麻」は、汗の吸水・速乾の特性でムレの留まりを抑制します。\nさらに、臭いの元とされるイソ吉草酸ガス発生時に、ガスの滞留時間を短縮します。\n\n◆薄くて強靭。商品化基準の3倍の強度\n\n◆超軽量で抜群のフィット感\n驚きの25g", stock: 19, model_number:"IXD001", product_type: "スポーツ", point: 0.21, sales_profit: 750, display: true, product_link: "https://www.musubimusubi.com/products/introduction_itoix")
 product = Product.find(8)
-product.images.attach([io: File.open('app/assets/images/itoix_header_1.webp'), filename: 'itoix_header_1.webp'])
-product.images.attach([io: File.open('app/assets/images/ItoiX_2.webp'), filename: 'ItoiX_2.webp'])
-product.images.attach([io: File.open('app/assets/images/ItoiX_3.webp'), filename: 'ItoiX_3.webp'])
-product.images.attach([io: File.open('app/assets/images/ItoiX_4.webp'), filename: 'ItoiX_4.webp'])
-product.images.attach([io: File.open('app/assets/images/ItoiX_5.webp'), filename: 'ItoiX_5.webp'])
+product.images.attach([io: File.open('app/assets/images/itoix_1.webp'), filename: 'itoix_1.webp'])
+product.images.attach([io: File.open('app/assets/images/itoix_2.webp'), filename: 'itoix_2.webp'])
+product.images.attach([io: File.open('app/assets/images/itoix_3.webp'), filename: 'itoix_3.webp'])
+product.images.attach([io: File.open('app/assets/images/itoix_4.webp'), filename: 'itoix_4.webp'])
+product.images.attach([io: File.open('app/assets/images/itoix_5.webp'), filename: 'itoix_5.webp'])
