@@ -43,3 +43,4 @@ product.images.attach([io: File.open('app/assets/images/itoix_2.webp'), filename
 product.images.attach([io: File.open('app/assets/images/itoix_3.webp'), filename: 'itoix_3.webp'])
 product.images.attach([io: File.open('app/assets/images/itoix_4.webp'), filename: 'itoix_4.webp'])
 product.images.attach([io: File.open('app/assets/images/itoix_5.webp'), filename: 'itoix_5.webp'])
+product.images.attach([io: File.open('app/assets/images/itoix_6.webp'), filename: 'itoix_6.webp'])
