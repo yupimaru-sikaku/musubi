@@ -7,7 +7,7 @@
 
   // 最初のロゴ
   .home_index_img {
-    height: 100vh;
+    height: 90vh;
     text-align: center;
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
     .home_index_about_title {
       font-size: $pc_main;
       border-left: none;
-      width: 70%
+      width: 70%;
     }
 
     .home_index_about_contents {
@@ -374,10 +374,15 @@
   .home_container {
     margin: 0px 5px;
     margin-top: 50px;
-
+    .home_index_img {
+      height: 90vh;
+    }
     //   会社概要
     .home_index_about {
       text-align: center;
+      .home_index_about_title {
+        width: 90%;
+      }
 
       .home_index_about_contents {
         width: 95%;

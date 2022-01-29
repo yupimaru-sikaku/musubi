@@ -6,7 +6,7 @@
 }
 
 .home_container .home_index_img {
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -397,8 +397,14 @@
     margin: 0px 5px;
     margin-top: 50px;
   }
+  .home_container .home_index_img {
+    height: 90vh;
+  }
   .home_container .home_index_about {
     text-align: center;
+  }
+  .home_container .home_index_about .home_index_about_title {
+    width: 90%;
   }
   .home_container .home_index_about .home_index_about_contents {
     width: 95%;
