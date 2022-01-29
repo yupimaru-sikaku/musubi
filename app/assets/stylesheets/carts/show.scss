@@ -28,11 +28,12 @@
         text-align: center;
 
         .no_image {
-          width: 180px;
           height: 180px;
         }
         img {
           border-radius: 5px;
+          height: 180px;
+          width: 180px;
         }
       }
 
@@ -265,6 +266,10 @@
           text-align: center;
           .no_image {
             height: 90px;
+          }
+          img{
+            height: 100px;
+            width: 100px;
           }
         }
 

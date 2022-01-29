@@ -35,7 +35,7 @@
                                 <div class="user_purchase_history_item_context">
                                 <div class="user_purchase_history_item_img">
                                     <%= link_to product_path(Product.find_by(product_name: product.product_name).id) do %>
-                                        <%= image_tag Product.find_by(id: Product.find_by(product_name: product.product_name).id).images[0].variant(resize_to_fit: [100,100]).processed, class: 'img' %>
+                                        <%= image_tag Product.find_by(id: Product.find_by(product_name: product.product_name).id).images[0], class: 'img' %>
                                     <% end %>
                                 </div>
                                 <div class="user_purchase_history_item_title">

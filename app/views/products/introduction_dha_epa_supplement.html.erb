@@ -2,15 +2,25 @@
  
 <nav class="product_introduction_show_container">
 
-    <%= image_tag "dha_epa_supplement_1.png", alt: "代理店契約の説明", class: "product_introduction_show_img" %>
+    <picture>
+        <source srcset="<%= image_path("dha_epa_supplement_1.webp") %>" type="image/webp">
+        <%= image_tag "dha_epa_supplement_1.png", alt: "商品の説明資料", class: "product_introduction_show_img" %>
+    </picture>
 
     <div class="module-spacer--medium"></div>
 
-    <%= image_tag "dha_epa_supplement_2.png", alt: "代理店契約の説明", class: "product_introduction_show_img" %>
+    <picture>
+        <source srcset="<%= image_path("dha_epa_supplement_2.webp") %>" type="image/webp">
+        <%= image_tag "dha_epa_supplement_2.png", alt: "商品の説明資料", class: "product_introduction_show_img" %>
+    </picture>
 
     <div class="module-spacer--medium"></div>
+    <picture>
+        <source srcset="<%= image_path("dha_epa_supplement_3.webp") %>" type="image/webp">
+        <%= image_tag "dha_epa_supplement_3.png", alt: "商品の説明資料", class: "product_introduction_show_img" %>
+    </picture>
 
-    <%= image_tag "dha_epa_supplement_3.png", alt: "代理店契約の説明", class: "product_introduction_show_img" %>
+    <div class="module-spacer--medium"></div>
 
 </nav>
 

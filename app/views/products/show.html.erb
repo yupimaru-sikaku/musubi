@@ -45,7 +45,15 @@
 
         </div>
 
-        <div class="module-spacer--large"></div>
+        <div class="module-spacer--medium"></div>
+
+        <% if @product.product_link.present? %>
+            <div class="product_show_link">
+                <a href="<%= @product.product_link %>">商品詳細はこちら</a>
+            </div>
+        <% end %>
+
+        <div class="module-spacer--medium"></div>
 
         <div class="product_show_description">
             <p><%=safe_join(@product.description.split("\n"),tag(:br))%></p>

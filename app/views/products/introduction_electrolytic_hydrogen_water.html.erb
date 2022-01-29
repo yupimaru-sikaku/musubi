@@ -2,11 +2,17 @@
  
 <nav class="product_introduction_show_container">
 
-    <%= image_tag "electrolytic_hydrogen_water_1.png", alt: "代理店契約の説明", class: "product_introduction_show_img" %>
+    <picture>
+        <source srcset="<%= image_path("electrolytic_hydrogen_water_1.webp") %>" type="image/webp">
+        <%= image_tag "electrolytic_hydrogen_water_1.png", alt: "商品説明の資料", class: "product_introduction_show_img" %>
+    </picture>
 
     <div class="module-spacer--medium"></div>
 
-    <%= image_tag "electrolytic_hydrogen_water_2.png", alt: "代理店契約の説明", class: "product_introduction_show_img" %>
+    <picture>
+        <source srcset="<%= image_path("electrolytic_hydrogen_water_2.webp") %>" type="image/webp">
+        <%= image_tag "electrolytic_hydrogen_water_2.png", alt: "商品説明の資料", class: "product_introduction_show_img" %>
+    </picture>
 
 </nav>
 

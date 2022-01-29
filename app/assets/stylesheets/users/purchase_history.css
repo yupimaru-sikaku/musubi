@@ -54,6 +54,8 @@
 
 .user_purchase_history_content .user_purchase_history_items .user_purchase_history_item .user_purchase_history_item_footer .user_purchase_history_item_context .user_purchase_history_item_img img {
   border-radius: 8px;
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 1024px) {

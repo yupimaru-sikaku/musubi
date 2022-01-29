@@ -1,9 +1,10 @@
 <%= render partial: 'shared/header' %>
  
 <nav class="product_introduction_show_container">
-
-    <%= image_tag "silver_ion_water.png", alt: "代理店契約の説明", class: "product_introduction_show_img" %>
-
+    <picture>
+        <source srcset="<%= image_path("silver_ion_water.webp") %>" type="image/webp">
+        <%= image_tag "silver_ion_water.png", alt: "商品の説明資料", class: "product_introduction_show_img" %>
+    </picture>
 </nav>
 
 <%= render partial: 'shared/footer' %>

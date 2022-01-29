@@ -3,10 +3,18 @@
 <div class="company_explain_content">
     <p class="company_explain_title" data-en="Agency">代理店説明</p>
     <div class="module-spacer--large"></div>
-    <%= image_tag "explain_agency_1.png", alt: "代理店契約の説明", class: "explain_agency_img" %>
+    <picture>
+        <source srcset="<%= image_path("explain_agency_1.webp") %>" type="image/webp">
+        <%= image_tag "explain_agency_1.png", alt: "代理店契約の説明", class: "explain_agency_img" %>
+    </picture>
     <div class="module-spacer--large"></div>
-    <%= image_tag "explain_agency_2.png", alt: "代理店契約の説明", class: "explain_agency_img" %>
+    <picture>
+        <source srcset="<%= image_path("explain_agency_2.webp") %>" type="image/webp">
+        <%= image_tag "explain_agency_2.png", alt: "代理店契約の説明", class: "explain_agency_img" %>
+    </picture>
     <div class="module-spacer--large"></div>
-    <%= image_tag "explain_agency_3.png", alt: "代理店契約の説明", class: "explain_agency_img" %>
-    <div class="module-spacer--large"></div>
+    <picture>
+        <source srcset="<%= image_path("explain_agency_3.webp") %>" type="image/webp">
+        <%= image_tag "explain_agency_3.png", alt: "代理店契約の説明", class: "explain_agency_img" %>
+    </picture>
 </div>
