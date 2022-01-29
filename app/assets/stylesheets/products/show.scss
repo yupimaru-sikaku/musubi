@@ -312,11 +312,11 @@
       }
       .product_show_link {
         text-align: center;
-        // margin-bottom: 20px;
         a {
+          font-size: $sm_sub;
           background-color: #1a0dab;
           box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
-          padding: 10px 20px;
+          padding: 10px 25px;
           border-radius: 8px;
           cursor: pointer;
           color: white;
