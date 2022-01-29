@@ -1,9 +1,12 @@
 class Company < ApplicationRecord
-
+  
   has_many :commitions
-
+  
   before_create :make_agency_code
   
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable
+         
   with_options presence: true do
     validates :agency_name
     validates :human_name
@@ -45,34 +48,22 @@ class Company < ApplicationRecord
   # # password_comfirmationと同じか
   validates :password, confirmation: { message: 'がパスワードと一致していません'}
   
-  # scope :search, -> (search_params) do
-  #   return if search_params.blank?
-  #   year(search_params[:year])
-  #   month(search_params[:month])
-  # end
-  # # # 参考
-  # # # モデル名.where('カラム名 like ?','%検索したい文字列%')文字列のどの部分にでも検索したい文字列が含まれていればOK
-  # # # モデル名.where('カラム名 like ?','_検索したい文字列_')先頭と後方に一文字だけ何か文字が付いていて、検索したい文字列が中間にある場合。
-  # scope :year, -> (from) { where('? <= created_at', from) if from.present? }
-  # scope :month, -> (to) { where('created_at <= ?', to) if to.present? }
-
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable
-
-  private
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
-    
+
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
       params.delete(:password_confirmation)
     end
-    
+
     result = update_attributes(params, *options)
     clean_up_passwords
     result
   end
+
+  private
+
 
   # ランダムな8桁を生成
   def make_agency_code

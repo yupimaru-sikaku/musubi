@@ -80,7 +80,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     users_sign_up_complete_path(resource)
   end
-  
+  # 編集時にパスワードと確認パスワードが一致しているか判断
   def update_resource(resource, params)
     resource.update_without_current_password(params)
   end

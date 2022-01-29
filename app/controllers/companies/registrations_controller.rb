@@ -134,9 +134,9 @@ class Companies::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     companies_sign_up_complete_path(resource)
   end
-
+  # 編集時にパスワードと確認パスワードが一致しているか判断
   def update_resource(resource, params)
-    resource.update_without_password(params)
+    resource.update_without_current_password(params)
   end
 
   # company情報更新後はcompany情報詳細に飛ぶ

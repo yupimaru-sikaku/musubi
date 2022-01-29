@@ -51,8 +51,9 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
+  
   private
+  
 
   def check_agency_code
     if self.agency_code != ""
