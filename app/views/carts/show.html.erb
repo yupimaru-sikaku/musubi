@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="module-spacer--medium"></div>
-                        
+
                         <div class="cart_show_context_buy">
                             <%= form_with url: change_item_quantity_path, method: :patch, local: true, class: "cart_show_context_buy_add_form" do |f| %>
                                 <div class="cart_show_context_buy_button">
@@ -92,4 +92,4 @@
 </nav>
 
 <%= render partial: 'shared/footer' %>
-<%= javascript_pack_tag 'shared/counter' %>
+<%= javascript_pack_tag 'shared/counterList' %>
