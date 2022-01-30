@@ -12,6 +12,11 @@
     color: #59b69e;
     font-weight: bold;
     font-size: $pc_main;
+    span {
+      display: block;
+      font-size: 12px;
+      color: black;
+    }
   }
 
   .cart_show_items {
@@ -53,27 +58,50 @@
           display: flex;
           align-items: center;
 
-          // 数量選択
-          input.cart_show_context_buy_quantity {
-            border: 1px solid #eee;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            box-shadow: 0 2px 5px #ccc;
-            border-radius: 8px;
-            padding-left: 10px;
+          .cart_show_context_buy_add_form {
+            display: flex;
+          }
+
+          .cart_show_context_buy_button {
+            display: flex;
+            align-items: center;
+            :is(input, button) {
+              display: block;
+              width: 50px;
+              height: 50px;
+              text-align: center;
+              border: 1px solid #eee;
+            }
+            input {
+              border: 1px solid #eee;
+            }
+            button {
+              width: 40px;
+              height: 40px;
+            }
+            button.button_minus {
+              margin-right: 10px;
+            }
+            button.button_plus {
+              margin-left: 10px;
+            }
+            button:hover {
+              cursor: pointer;
+            }
+          }
+          .cart_show_context_buy_gabage {
+            button {
+              font-size: 20px;
+              padding: 5px 20px;
+              cursor: pointer;
+              color: rgb(164, 160, 223);
+            }
           }
           // 更新ボタン
           input.cart_show_context_buy_update {
             color: #0066c0;
             cursor: pointer;
             border-right: 1px solid #ddd;
-            padding: 5px 20px;
-          }
-          // 削除ボタン
-          input.cart_show_context_buy_delete {
-            color: #0066c0;
-            cursor: pointer;
             padding: 5px 20px;
           }
         }
@@ -166,29 +194,23 @@
 
           .cart_show_context_title {
             font-size: $pc_sub;
+            margin-left: 20px;
           }
 
           .cart_show_context_buy {
             display: flex;
             align-items: center;
-
-            // 数量選択
-            input.cart_show_context_buy_quantity {
-              border: 1px solid #eee;
-              width: 50px;
-              height: 50px;
-              text-align: center;
-              box-shadow: 0 2px 5px #ccc;
-              border-radius: 8px;
-              padding-left: 10px;
-              margin-left: 10px;
+            .cart_show_context_buy_add_form {
+              display: flex;
             }
-            // 更新ボタン
-            input.cart_show_context_buy_update {
-              color: #0066c0;
-              cursor: pointer;
-              border-right: 1px solid #ddd;
-              padding: 5px 20px;
+
+            .cart_show_context_buy_button {
+              margin-left: 20px;
+            }
+            .cart_show_context_buy_gabage {
+              button {
+                padding: 5px 15px;
+              }
             }
             // 削除ボタン
             input.cart_show_context_buy_delete {
@@ -253,6 +275,9 @@
       color: #59b69e;
       font-weight: bold;
       font-size: $sm_main;
+      span {
+        font-size: 10px;
+      }
     }
 
     .cart_show_items {
@@ -267,7 +292,7 @@
           .no_image {
             height: 90px;
           }
-          img{
+          img {
             height: 100px;
             width: 100px;
           }
@@ -280,11 +305,13 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          word-break: normal;
 
           .cart_show_context_title {
             width: 150px;
             font-size: $sm_subsub;
-            padding: 5px;
+            padding: 0px;
+            margin-left: 5px;
           }
 
           .cart_show_context_buy {
@@ -292,30 +319,38 @@
             align-items: center;
             width: 210px;
 
-            // 数量選択
-            input.cart_show_context_buy_quantity {
-              border: 1px solid #eee;
-              width: 50px;
-              height: 30px;
-              text-align: center;
-              box-shadow: 0 2px 5px #ccc;
-              border-radius: 8px;
-              margin-left: 10px;
-              padding: 0px;
-              padding-left: 15px;
+            .cart_show_context_buy_add_form {
+              display: flex;
+              .cart_show_context_buy_update {
+                padding: 5px 10px;
+                margin-left: 5px;
+              }
             }
-            // 更新ボタン
-            input.cart_show_context_buy_update {
-              color: #0066c0;
-              cursor: pointer;
-              border-right: 1px solid #ddd;
-              padding: 10px;
+
+            .cart_show_context_buy_button {
+              margin-left: 5px;
+              input {
+                height: 40px;
+                width: 40px;
+              }
+              button {
+                width: 25px;
+                height: 25px;
+                text-align: center;
+                padding-left: 3px;
+              }
+              button.button_minus {
+                margin-right: 5px;
+              }
+              button.button_plus {
+                margin-left: 5px;
+              }
             }
-            // 削除ボタン
-            input.cart_show_context_buy_delete {
-              color: #0066c0;
-              cursor: pointer;
-              padding: 10px;
+            .cart_show_context_buy_gabage {
+              button {
+                padding: 5px 10px;
+                font-size: 14px;
+              }
             }
           }
         }

@@ -34,13 +34,20 @@
         <div class="product_show_buy">
 
             <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
-                <%= f.label :quantity, "購入個数", class: "pur-number-box"%>
-                <%= f.number_field :quantity, :value =>1 %>
-                <%= hidden_field_tag :product_id, @product.id %>
-                <%= f.button :type => "submit", style: 'cart-button' do %>
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>カートへ入れる</span>
-                <% end %>
+                <div class="product_show_buy_button">
+                    <%= f.label :quantity, "購入個数", class: "pur-number-box"%>
+                    <button class="button_minus clay">-</button>
+                    <%= f.text_field :quantity, :value =>1, class:"textbox" %>
+                    <button class="button_plus clay">+</button>
+                    <%= hidden_field_tag :product_id, @product.id %>
+                </div>
+                <div class="module-spacer--medium"></div>
+                <div class="product_show_buy_cart">
+                    <%= f.button :type => "submit", style: 'cart-button' do %>
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>カートへ入れる</span>
+                    <% end %>
+                </div>
             <% end %>
 
         </div>
@@ -66,3 +73,4 @@
 <div class="module-spacer--large"></div>
 
 <%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag 'shared/counter' %>

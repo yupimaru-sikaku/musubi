@@ -12,6 +12,7 @@
 
         <div class="cart_show_title">
             <p>ショッピングカート</p>
+            <span>数量を変更する際は「更新」を押して下さい</span>
         </div>
         
         <div class="module-spacer--medium"></div>
@@ -36,14 +37,20 @@
                             <p><%= cart[:product_name].truncate(20) %></p>
                        </div>      
                         <div class="cart_show_context_buy">
-                            <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>
-                                <%= f.number_field :quantity, value: cart[:quantity], min: 1, class:"cart_show_context_buy_quantity" %> 個
+                            <%= form_with url: change_item_quantity_path, method: :patch, local: true, class: "cart_show_context_buy_add_form" do |f| %>
+                                <div class="cart_show_context_buy_button">
+                                    <button class="button_minus">-</button>
+                                    <%= f.text_field :quantity, value: cart[:quantity], min: 1, class:"cart_show_context_buy_quantity textbox" %>
+                                    <button class="button_plus">+</button>
+                                </div>
                                 <%= hidden_field_tag :product_id, cart[:product_id] %>
                                 <%= f.submit "更新", class:"cart_show_context_buy_update" %>
                             <% end %>
-                            <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
+                            <%= form_with url: destroy_carts_item_path, method: :delete, local: true, class: "cart_show_context_buy_gabage" do |f| %>
                                 <%= hidden_field_tag :product_id, cart[:product_id] %>
-                                <%= f.submit "削除", class:"cart_show_context_buy_delete" %>
+                                <%= button_tag :type => "submit", :class =>"cart_show_context_buy_delete" do %>
+                                  <i class="fas fa-trash-alt"></i>
+                                <% end %>
                             <% end %>
                         </div>
                     </div>
@@ -79,3 +86,4 @@
 </nav>
 
 <%= render partial: 'shared/footer' %>
+<%= javascript_pack_tag 'shared/counter' %>
