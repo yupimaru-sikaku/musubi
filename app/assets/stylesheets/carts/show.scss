@@ -22,6 +22,7 @@
   .cart_show_items {
     .cart_show_item {
       display: flex;
+      align-items: center;
       margin: 10px auto;
       padding: 20px;
       border-bottom: 1px solid #ddd;
@@ -30,87 +31,87 @@
 
       .cart_show_img {
         width: 30%;
-        text-align: center;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .no_image {
           height: 180px;
         }
         img {
+          display: block;
           border-radius: 5px;
           height: 180px;
           width: 180px;
         }
       }
-
-      .cart_show_context {
-        width: 50%;
-        font-size: $pc_subsub;
-        flex-direction: column;
+      .cart_show_title_price_button {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-
-        .cart_show_context_title {
-          font-size: $pc_sub;
-        }
-
-        .cart_show_context_buy {
-          display: flex;
-          align-items: center;
-
-          .cart_show_context_buy_add_form {
-            display: flex;
-          }
-
-          .cart_show_context_buy_button {
-            display: flex;
-            align-items: center;
-            :is(input, button) {
-              display: block;
-              width: 50px;
-              height: 50px;
-              text-align: center;
-              border: 1px solid #eee;
-            }
-            input {
-              border: 1px solid #eee;
-            }
-            button {
-              width: 40px;
-              height: 40px;
-            }
-            button.button_minus {
-              margin-right: 10px;
-            }
-            button.button_plus {
-              margin-left: 10px;
-            }
-            button:hover {
-              cursor: pointer;
-            }
-          }
-          .cart_show_context_buy_gabage {
-            button {
-              font-size: 20px;
-              padding: 5px 20px;
-              cursor: pointer;
-              color: rgb(164, 160, 223);
-            }
-          }
-          // 更新ボタン
-          input.cart_show_context_buy_update {
-            color: #0066c0;
-            cursor: pointer;
-            border-right: 1px solid #ddd;
-            padding: 5px 20px;
-          }
-        }
+        align-items: start;
+        width: 70%;
       }
 
-      .cart_show_price {
-        width: 20%;
-        font-size: $sm_sub;
-        text-align: right;
+      .cart_show_title_price {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: $pc_subsub;
+
+        .cart_show_title {
+          font-size: $pc_sub;
+          color: black;
+        }
+      }
+      .cart_show_context_buy {
+        display: flex;
+        // align-items: center;
+
+        .cart_show_context_buy_add_form {
+          display: flex;
+        }
+
+        .cart_show_context_buy_button {
+          display: flex;
+          align-items: center;
+          :is(input, button) {
+            display: block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid #eee;
+          }
+          input {
+            border: 1px solid #eee;
+          }
+          button {
+            width: 40px;
+            height: 40px;
+          }
+          button.button_minus {
+            margin-right: 10px;
+          }
+          button.button_plus {
+            margin-left: 10px;
+          }
+          button:hover {
+            cursor: pointer;
+          }
+        }
+        .cart_show_context_buy_gabage {
+          button {
+            font-size: 20px;
+            padding: 5px 20px;
+            cursor: pointer;
+            color: rgb(164, 160, 223);
+          }
+        }
+        // 更新ボタン
+        input.cart_show_context_buy_update {
+          color: #0066c0;
+          cursor: pointer;
+          border-right: 1px solid #ddd;
+          padding: 5px 20px;
+        }
       }
     }
   }
@@ -183,52 +184,80 @@
             border-radius: 5px;
           }
         }
-
-        .cart_show_context {
-          width: 50%;
-          font-size: $pc_subsub;
-          flex-direction: column;
+        .cart_show_title_price_button {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-
-          .cart_show_context_title {
-            font-size: $pc_sub;
-            margin-left: 20px;
-          }
-
-          .cart_show_context_buy {
-            display: flex;
-            align-items: center;
-            .cart_show_context_buy_add_form {
-              display: flex;
-            }
-
-            .cart_show_context_buy_button {
-              margin-left: 20px;
-            }
-            .cart_show_context_buy_gabage {
-              button {
-                padding: 5px 15px;
-              }
-            }
-            // 削除ボタン
-            input.cart_show_context_buy_delete {
-              color: #0066c0;
-              cursor: pointer;
-              padding: 5px 20px;
-            }
-          }
+          align-items: start;
+          width: 70%;
+          margin-left: 20px;
         }
 
-        .cart_show_price {
-          width: 20%;
-          font-size: $sm_sub;
-          text-align: right;
+        .cart_show_title_price {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          font-size: $tb_subsub;
+
+          .cart_show_title {
+            font-size: $tb_sub;
+            color: black;
+            text-align: start;
+            word-break: normal;
+          }
+        }
+        .cart_show_context_buy {
+          display: flex;
+          // align-items: center;
+
+          .cart_show_context_buy_add_form {
+            display: flex;
+          }
+
+          .cart_show_context_buy_button {
+            display: flex;
+            align-items: center;
+            :is(input, button) {
+              display: block;
+              width: 50px;
+              height: 50px;
+              text-align: center;
+              border: 1px solid #eee;
+            }
+            input {
+              border: 1px solid #eee;
+            }
+            button {
+              width: 40px;
+              height: 40px;
+            }
+            button.button_minus {
+              margin-right: 10px;
+            }
+            button.button_plus {
+              margin-left: 10px;
+            }
+            button:hover {
+              cursor: pointer;
+            }
+          }
+          .cart_show_context_buy_gabage {
+            button {
+              font-size: 20px;
+              padding: 5px 20px;
+              cursor: pointer;
+              color: rgb(164, 160, 223);
+            }
+          }
+          // 更新ボタン
+          input.cart_show_context_buy_update {
+            color: #0066c0;
+            cursor: pointer;
+            border-right: 1px solid #ddd;
+            padding: 5px 20px;
+          }
         }
       }
     }
-
     .cart_show_total_price {
       display: flex;
       font-size: $sm_sub;
@@ -285,6 +314,7 @@
         display: flex;
         padding: 20px 5px;
         border-bottom: 1px solid #ddd;
+        align-items: center;
 
         .cart_show_img {
           width: 30%;
@@ -297,68 +327,80 @@
             width: 100px;
           }
         }
-
-        .cart_show_context {
-          width: 45%;
-          font-size: $sm_subsub;
-          flex-direction: column;
+        .cart_show_title_price_button {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          word-break: normal;
-
-          .cart_show_context_title {
-            width: 150px;
-            font-size: $sm_subsub;
-            padding: 0px;
-            margin-left: 5px;
-          }
-
-          .cart_show_context_buy {
-            display: flex;
-            align-items: center;
-            width: 210px;
-
-            .cart_show_context_buy_add_form {
-              display: flex;
-              .cart_show_context_buy_update {
-                padding: 5px 10px;
-                margin-left: 5px;
-              }
-            }
-
-            .cart_show_context_buy_button {
-              margin-left: 5px;
-              input {
-                height: 40px;
-                width: 40px;
-              }
-              button {
-                width: 25px;
-                height: 25px;
-                text-align: center;
-                padding-left: 3px;
-              }
-              button.button_minus {
-                margin-right: 5px;
-              }
-              button.button_plus {
-                margin-left: 5px;
-              }
-            }
-            .cart_show_context_buy_gabage {
-              button {
-                padding: 5px 10px;
-                font-size: 14px;
-              }
-            }
-          }
+          align-items: start;
+          width: 70%;
+          margin-left: 5px;
         }
 
-        .cart_show_price {
-          width: 15%;
-          font-size: $sm_sub;
-          text-align: right;
+        .cart_show_title_price {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          font-size: $sm_subsub;
+
+          .cart_show_title {
+            font-size: $sm_sub;
+            color: black;
+            text-align: start;
+            word-break: normal;
+          }
+        }
+        .cart_show_context_buy {
+          display: flex;
+          font-size: $sm_subsub;
+
+          .cart_show_context_buy_add_form {
+            display: flex;
+          }
+
+          .cart_show_context_buy_button {
+            display: flex;
+            align-items: center;
+            :is(input, button) {
+              display: block;
+              width: 30px;
+              height: 30px;
+              text-align: center;
+              border: 1px solid #eee;
+            }
+            input {
+              border: 1px solid #eee;
+            }
+            button {
+              width: 30px;
+              height: 30px;
+            }
+            button.button_minus {
+              margin-right: 10px;
+            }
+            button.button_plus {
+              margin-left: 10px;
+            }
+            button:hover {
+              cursor: pointer;
+            }
+          }
+          .cart_show_context_buy_gabage {
+            display: flex;
+            align-items: center;
+            button {
+              font-size: 12px;
+              padding: 5px 10px;
+              cursor: pointer;
+              color: rgb(164, 160, 223);
+            }
+          }
+          // 更新ボタン
+          input.cart_show_context_buy_update {
+            font-size: $sm_subsub;
+            color: #0066c0;
+            cursor: pointer;
+            border-right: 1px solid #ddd;
+            padding: 5px 10px;
+          }
         }
       }
     }
@@ -399,4 +441,9 @@
       }
     }
   }
+}
+
+form.cart_show_context_buy_gabage {
+  display: flex;
+  align-items: center;
 }

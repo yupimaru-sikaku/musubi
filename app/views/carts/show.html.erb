@@ -32,10 +32,19 @@
                             <% end%>
                         <% end%>
                     </div>
-                    <div class="cart_show_context">
-                        <div class="cart_show_context_title">
-                            <p><%= cart[:product_name].truncate(20) %></p>
-                       </div>      
+                    <div class="cart_show_title_price_button">
+
+                        <div class="cart_show_title_price">
+                            <div class="cart_show_title">
+                                <p><%= cart[:product_name].truncate(20) %></p>
+                        </div>      
+                            <div class="cart_show_price">
+                                <p>¥<%= (cart[:price] * @tax).floor(0).to_s(:delimited) %></p>
+                            </div>
+                        </div>
+
+                        <div class="module-spacer--medium"></div>
+                        
                         <div class="cart_show_context_buy">
                             <%= form_with url: change_item_quantity_path, method: :patch, local: true, class: "cart_show_context_buy_add_form" do |f| %>
                                 <div class="cart_show_context_buy_button">
@@ -49,13 +58,10 @@
                             <%= form_with url: destroy_carts_item_path, method: :delete, local: true, class: "cart_show_context_buy_gabage" do |f| %>
                                 <%= hidden_field_tag :product_id, cart[:product_id] %>
                                 <%= button_tag :type => "submit", :class =>"cart_show_context_buy_delete" do %>
-                                  <i class="fas fa-trash-alt"></i>
+                                <i class="fas fa-trash-alt"></i>
                                 <% end %>
                             <% end %>
                         </div>
-                    </div>
-                    <div class="cart_show_price">
-                        <p>¥<%= (cart[:price] * @tax).floor(0).to_s(:delimited) %></p>
                     </div>
                 </div>
 
