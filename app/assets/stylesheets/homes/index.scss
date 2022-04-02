@@ -133,6 +133,35 @@
     }
   }
 
+  // 活動紹介
+  .home_index_activity {
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+
+    .home_index_activity_title {
+      font-size: $pc_main;
+    }
+    .home_index_activity_video {
+      .video {
+        width: 80%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+    .home_index_activity_message {
+      .home_index_activity_message_main {
+        line-height: 2em;
+        text-align: start;
+        font-size: $pc_subsub + 2;
+        .home_index_activity_message_main_strong {
+          color: #ffd700;
+          font-size: $pc_main;
+        }
+      }
+    }
+  }
+
   // 社長あいさつ
   .home_index_president {
     text-align: center;
@@ -275,6 +304,21 @@
     // 経営陣略歴
     .home_index_biography {
       width: 90%;
+    }
+
+    // 活動紹介
+    .home_index_activity {
+      width: 80%;
+      .home_index_activity_video {
+        .video {
+          width: 540px;
+          height: 300px;
+        }
+      }
+      .home_index_activity_message {
+        width: 80%;
+        margin: 0 auto;
+      }
     }
 
     // 社長あいさつ
@@ -449,6 +493,29 @@
       }
     }
 
+    // 活動紹介
+    .home_index_activity {
+      width: 90%;
+      .home_index_activity_video {
+        .video {
+          width: 90%;
+        }
+      }
+      .home_index_activity_message {
+        .home_index_activity_message_main {
+          font-size: $sm_sub;
+          .home_index_activity_message_main_strong {
+            color: #ffd700;
+            font-size: $sm_main;
+            .home_index_activity_message_main_strong {
+              color: #ffd700;
+              font-size: $pc_sub;
+            }
+          }
+        }
+      }
+    }
+
     // 社長あいさつ
     .home_index_president {
       text-align: center;
@@ -460,7 +527,8 @@
       }
       .home_index_president_img {
         img {
-          height: 140px;
+          width: 80%;
+          height: auto;
           box-shadow: 5px 5px 0px 0 rgba(104, 141, 83, 0.5);
         }
       }
