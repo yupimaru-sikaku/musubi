@@ -25,6 +25,7 @@
 
 .home_container .home_index_about {
   text-align: center;
+  background-color: #bbc1c638;
 }
 
 .home_container .home_index_about .home_index_about_title {
@@ -86,8 +87,9 @@
 
 .home_container .home_index_biography {
   text-align: center;
-  margin: 0 auto;
-  width: 70%;
+  width: 100%;
+  padding: 0 15%;
+  background-color: #bbc1c638;
 }
 
 .home_container .home_index_biography .home_index_biography_title {
@@ -149,29 +151,29 @@
   border-top: 1px solid #ddd;
 }
 
-.home_container .home_index_activity {
+.home_container .home_index_action {
   text-align: center;
   margin: 0 auto;
   width: 70%;
 }
 
-.home_container .home_index_activity .home_index_activity_title {
+.home_container .home_index_action .home_index_action_title {
   font-size: 32px;
 }
 
-.home_container .home_index_activity .home_index_activity_video .video {
+.home_container .home_index_action .home_index_action_video .video {
   width: 80%;
   height: 450px;
   border-radius: 8px;
 }
 
-.home_container .home_index_activity .home_index_activity_message .home_index_activity_message_main {
+.home_container .home_index_action .home_index_action_message .home_index_action_message_main {
   line-height: 2em;
   text-align: start;
   font-size: 18px;
 }
 
-.home_container .home_index_activity .home_index_activity_message .home_index_activity_message_main .home_index_activity_message_main_strong {
+.home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_activity_message_main_strong {
   color: #ffd700;
   font-size: 32px;
 }
@@ -205,6 +207,7 @@
 
 .home_container .home_index_activity {
   text-align: center;
+  background-color: #bbc1c638;
 }
 
 .home_container .home_index_activity .home_index_activity_title {
@@ -330,16 +333,17 @@
 
 @media screen and (max-width: 1024px) {
   .home_container .home_index_biography {
-    width: 90%;
+    width: 100%;
+    padding: 0px 5%;
   }
-  .home_container .home_index_activity {
+  .home_container .home_index_action {
     width: 80%;
   }
-  .home_container .home_index_activity .home_index_activity_video .video {
+  .home_container .home_index_action .home_index_action_video .video {
     width: 540px;
     height: 300px;
   }
-  .home_container .home_index_activity .home_index_activity_message {
+  .home_container .home_index_action .home_index_action_message {
     width: 80%;
     margin: 0 auto;
   }
@@ -509,20 +513,20 @@
   .home_container .home_index_biography .home_index_biography_context .home_index_biography_context_detail .home_index_biography_items .home_index_biography_item:first-child {
     border-top: 1px solid #ddd;
   }
-  .home_container .home_index_activity {
+  .home_container .home_index_action {
     width: 90%;
   }
-  .home_container .home_index_activity .home_index_activity_video .video {
+  .home_container .home_index_action .home_index_action_video .video {
     width: 90%;
   }
-  .home_container .home_index_activity .home_index_activity_message .home_index_activity_message_main {
+  .home_container .home_index_action .home_index_action_message .home_index_action_message_main {
     font-size: 14px;
   }
-  .home_container .home_index_activity .home_index_activity_message .home_index_activity_message_main .home_index_activity_message_main_strong {
+  .home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_action_message_main_strong {
     color: #ffd700;
     font-size: 20px;
   }
-  .home_container .home_index_activity .home_index_activity_message .home_index_activity_message_main .home_index_activity_message_main_strong .home_index_activity_message_main_strong {
+  .home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_action_message_main_strong .home_index_action_message_main_strong {
     color: #ffd700;
     font-size: 24px;
   }
@@ -553,6 +557,8 @@
   }
   .home_container .home_index_activity {
     text-align: center;
+    width: 100%;
+    padding: 0 5%;
   }
   .home_container .home_index_activity .home_index_activity_title {
     font-size: 20px;

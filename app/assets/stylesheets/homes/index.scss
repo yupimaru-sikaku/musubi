@@ -20,6 +20,8 @@
   //   会社概要
   .home_index_about {
     text-align: center;
+    background-color: #bbc1c638;
+
     .home_index_about_title {
       font-size: $pc_main;
       border-left: none;
@@ -79,8 +81,9 @@
   // 経営陣略歴
   .home_index_biography {
     text-align: center;
-    margin: 0 auto;
-    width: 70%;
+    width: 100%;
+    padding: 0 15%;
+    background-color: #bbc1c638;
 
     .home_index_biography_title {
       font-size: $pc_main;
@@ -134,23 +137,23 @@
   }
 
   // 活動紹介
-  .home_index_activity {
+  .home_index_action {
     text-align: center;
     margin: 0 auto;
     width: 70%;
 
-    .home_index_activity_title {
+    .home_index_action_title {
       font-size: $pc_main;
     }
-    .home_index_activity_video {
+    .home_index_action_video {
       .video {
         width: 80%;
         height: 450px;
         border-radius: 8px;
       }
     }
-    .home_index_activity_message {
-      .home_index_activity_message_main {
+    .home_index_action_message {
+      .home_index_action_message_main {
         line-height: 2em;
         text-align: start;
         font-size: $pc_subsub + 2;
@@ -190,9 +193,11 @@
     }
   }
 
-  //   事業紹介
+  // 活動紹介
   .home_index_activity {
     text-align: center;
+    background-color: #bbc1c638;
+    
     .home_index_activity_title {
       font-size: $pc_main;
     }
@@ -303,19 +308,20 @@
   .home_container {
     // 経営陣略歴
     .home_index_biography {
-      width: 90%;
+      width: 100%;
+      padding: 0px 5%;
     }
 
     // 活動紹介
-    .home_index_activity {
+    .home_index_action {
       width: 80%;
-      .home_index_activity_video {
+      .home_index_action_video {
         .video {
           width: 540px;
           height: 300px;
         }
       }
-      .home_index_activity_message {
+      .home_index_action_message {
         width: 80%;
         margin: 0 auto;
       }
@@ -494,20 +500,20 @@
     }
 
     // 活動紹介
-    .home_index_activity {
+    .home_index_action {
       width: 90%;
-      .home_index_activity_video {
+      .home_index_action_video {
         .video {
           width: 90%;
         }
       }
-      .home_index_activity_message {
-        .home_index_activity_message_main {
+      .home_index_action_message {
+        .home_index_action_message_main {
           font-size: $sm_sub;
-          .home_index_activity_message_main_strong {
+          .home_index_action_message_main_strong {
             color: #ffd700;
             font-size: $sm_main;
-            .home_index_activity_message_main_strong {
+            .home_index_action_message_main_strong {
               color: #ffd700;
               font-size: $pc_sub;
             }
@@ -549,6 +555,8 @@
     //   事業紹介
     .home_index_activity {
       text-align: center;
+      width: 100%;
+      padding: 0 5%;
       .home_index_activity_title {
         font-size: $sm_main;
       }
