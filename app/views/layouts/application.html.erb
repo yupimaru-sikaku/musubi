@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>株式会社むすび</title>
+    <title><%= content_for?(:html_title) ? yield(:html_title) : "株式会社むすび" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="format-detection" content="telephone=no">
