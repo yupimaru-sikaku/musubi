@@ -34,5 +34,3 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
-
-set :deploy_to, '/var/musubi/musubi'
