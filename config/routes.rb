@@ -107,3 +107,15 @@ Rails.application.routes.draw do
 
 
 end
+
+def answer(arr)
+  □window sizeが配列の数より大きい場合は空配列を返す
+  □window sizeが奇数の場合
+  _次以降の項目を一つづつずらしながらwindowsize個
+  　取り出し、昇順に並べて、配列のおを出力
+  　最後にそれぞれの中央値を配列として出力
+  □window sizeが偶数の場合
+  _次以降の項目を一つづつずらしながらwindowsize個
+  　取り出し、昇順に並べて、中央順位2個の値の算術平均を出力
+  　最後にそれぞれの中央値を配列として出力
+end

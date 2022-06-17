@@ -25,7 +25,6 @@
 
 .home_container .home_index_about {
   text-align: center;
-  background-color: #bbc1c638;
 }
 
 .home_container .home_index_about .home_index_about_title {
@@ -89,7 +88,6 @@
   text-align: center;
   width: 100%;
   padding: 0 15%;
-  background-color: #bbc1c638;
 }
 
 .home_container .home_index_biography .home_index_biography_title {
@@ -167,6 +165,10 @@
   border-radius: 8px;
 }
 
+.home_container .home_index_action .home_index_action_message {
+  padding: 50px;
+}
+
 .home_container .home_index_action .home_index_action_message .home_index_action_message_main {
   line-height: 2em;
   text-align: start;
@@ -207,7 +209,6 @@
 
 .home_container .home_index_activity {
   text-align: center;
-  background-color: #bbc1c638;
 }
 
 .home_container .home_index_activity .home_index_activity_title {
@@ -344,6 +345,7 @@
     height: 300px;
   }
   .home_container .home_index_action .home_index_action_message {
+    padding: 0px;
     width: 80%;
     margin: 0 auto;
   }
@@ -519,14 +521,17 @@
   .home_container .home_index_action .home_index_action_video .video {
     width: 90%;
   }
+  .home_container .home_index_action .home_index_action_message {
+    padding: 0px;
+  }
   .home_container .home_index_action .home_index_action_message .home_index_action_message_main {
     font-size: 14px;
   }
-  .home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_action_message_main_strong {
+  .home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_activity_message_main_strong {
     color: #ffd700;
     font-size: 20px;
   }
-  .home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_action_message_main_strong .home_index_action_message_main_strong {
+  .home_container .home_index_action .home_index_action_message .home_index_action_message_main .home_index_activity_message_main_strong .home_index_activity_message_main_strong {
     color: #ffd700;
     font-size: 24px;
   }
